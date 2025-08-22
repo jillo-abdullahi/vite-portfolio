@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
 import { externalLinks } from "../data";
 import Timer from "@/components/Timer";
+import { Link } from "@tanstack/react-router";
 
 interface NavigationItem {
   name: string;
@@ -21,10 +22,10 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-  { name: "Experience", href: "#about" },
-  { name: "Stacks", href: "#stacks" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Experience", href: "/about" },
+  { name: "Stacks", href: "/stacks" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const NavBar: FC = () => {
@@ -81,13 +82,13 @@ const NavBar: FC = () => {
                 </a>
                 <div className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -126,8 +127,8 @@ const NavBar: FC = () => {
                 {navigation.map((item) => (
                   <DisclosureButton
                     key={item.name}
-                    as="a"
-                    href={item.href}
+                    as={Link}
+                    to={item.href}
                     className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center"
                   >
                     {item.name}
