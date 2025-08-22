@@ -1,0 +1,67 @@
+import type { FC } from 'react';
+import type { Experience } from '@/types';
+import { SlideMeIn } from "./shared/slideMeIn";
+import { experiences } from "@/data";
+
+export const AboutMeTimeline: FC = () => {
+  return (
+    <div className="flex flex-col space-y-6">
+      {experiences.map((experience: Experience, index: number) => {
+        const {
+          title,
+          company,
+          companyUrl,
+          companyLogo,
+          date,
+          location,
+          description,
+          isCurrent,
+        } = experience;
+
+        return (
+          <SlideMeIn cascade key={index}>
+            <div
+              className={`border bg-[#272f3790] text-white rounded-2xl py-5 px-6 shadowy ${
+                isCurrent ? "border-orange/50" : "border-gray-900"
+              }`}
+            >
+              <div className="timeLineContent text-left space-y-3">
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-lg text-orange/90">
+                    {title}
+                  </h3>
+                  <div className="flex items-center space-x-2">
+                    <img
+                      src={`/src/assets/experience/${companyLogo}`}
+                      alt={`${company} logo`}
+                      className="w-6 h-6 rounded-full"
+                    />
+                    <a
+                      href={companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-200 hover:text-orange transition-all duration-300"
+                    >
+                      {company}
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-gray-400">
+                    <span>{date}</span>
+                    <span>•</span>
+                    <span>{location}</span>
+                  </div>
+                </div>
+
+                <div className="text-gray-300 space-y-2">
+                  {description.map((desc: string, idx: number) => (
+                    <p key={idx}>{desc}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </SlideMeIn>
+        );
+      })}
+    </div>
+  );
+};

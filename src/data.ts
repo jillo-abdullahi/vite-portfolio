@@ -1,0 +1,229 @@
+import type { ExternalLinks, Experience, PortfolioProject, Skills } from "./types";
+
+export const externalLinks: ExternalLinks = {
+  github: "https://github.com/jillo-abdullahi",
+  linkedIn: "https://www.linkedin.com/in/jilloabdullahi/",
+  twitter: "https://x.com/shrewd_turtle",
+  facebook: "https://www.facebook.com/p/Shrewd-Turtle-61570536062535/",
+  stackoverflow: "https://stackoverflow.com/users/7300926/jillo-abdullahi",
+  repositories: "https://github.com/jillo-abdullahi?tab=repositories",
+  instagram: "https://www.instagram.com/jillo_woche/",
+  calLink: "https://cal.com/jillowoche/15min",
+};
+
+export const experiences: Experience[] = [
+  {
+    isCurrent: true,
+    type: "work",
+    title: "Full Stack Software Engineer",
+    company: "GasHawk",
+    companyUrl: "https://www.linkedin.com/company/gashawk/",
+    companyLogo: "gashawkLogo.jpeg",
+    location: "Remote, Global",
+    date: "2024 - present",
+    description: [
+      "Currently writing robust backend and frontend code to make living on-chain more efficient, safe, and secure.",
+      "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum and OP Mainnet.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    title: "Full Stack Software Engineer",
+    company: "IOTA",
+    companyUrl: "https://www.linkedin.com/company/iotafoundation/",
+    companyLogo: "iotaLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "2023 - 2024",
+    description: [
+      "Wrote high-performance, secure, and maintainable code that met business requirements and followed industry best practices.",
+      "Developed a full stack web application using modern technologies such as React, Node.js, and DynamoDB.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    title: "Full Stack Software Engineer",
+    company: "Syndicate",
+    companyUrl: "https://www.linkedin.com/company/syndicate-protocol/",
+    companyLogo: "syndicateLogo.jpeg",
+    location: "Global, OO",
+    date: "2021 - 2023",
+    description: [
+      "Successfully built (from the ground up) and deployed a performant web3 dApp within 3 months using TypeScript and React on the Ethereum and Polygon chains.",
+      "Successfully built and launched Collectives, a dApp feature focused on creating communities around generative art NFTs.",
+      "Collaborated with team members to develop and deploy a GraphQL back-end API to store off-chain data within a month.",
+      "Wrote robust tests for the existing smart contracts to ensure reliability and security.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    title: "Front-end Software Engineer",
+    company: "Cellulant",
+    companyUrl: "https://www.linkedin.com/company/cellulant/",
+    companyLogo: "cellulantLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "2019 - 2021",
+    description: [
+      "Worked closely with the design team to dramatically improve the accessibility and user-friendliness of applications with React and NextJS.",
+      "Continuously iterated over front-end web apps and used observation tools like Hotjar to significantly improve user payment flows for over 6 payment options.",
+      "Collaborated with the back-end team to build reusable components and libraries for future use.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    title: "Full Stack Software Engineer",
+    company: "Andela",
+    companyUrl: "https://www.linkedin.com/company/andela/",
+    companyLogo: "andelaLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "2018 - 2019",
+    description: [
+      "Collaborated with the design team to quickly and efficiently build front-end apps using ReactJS.",
+      " Collaborated with team members to build and deploy a performant REST API using Python/Django within a month.",
+      "Worked with the team to improve the codebase and overall product quality.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    title: "Team Leader",
+    company: "Sama",
+    companyUrl: "https://www.linkedin.com/company/sama-ai/",
+    companyLogo: "samaLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "2016 - 2018",
+    description: [
+      "Supervised and coordinated the work efforts of a team of 22 leading to the success of a major pilot project.",
+      "Ensured that the allocated work is done professionally as per the required standards and targets as defined and desired by Sama.",
+      "Ensured that the team is motivated and that the team members are working in harmony.",
+      "Closely worked with the training and quality departments to achieve targeted SLAs.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    title: "Quality Analyst",
+    company: "Sama",
+    companyUrl: "https://www.linkedin.com/company/sama-ai/",
+    companyLogo: "samaLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "2015 - 2016",
+    description: [
+      "Analyzed the levels of quality of work in the different Sama work streams, measuring compliance against set standards and recommending actions to be taken to improve quality based on assessment findings.",
+      "Assessed agents transactions and adviced on required measures to improve quality.",
+      "compiled and sent reports to the training and quality manager and to other relevant stakeholders and ensured that each work stream is consistently delivering standard work.",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "education",
+    title: "Bachelor of Science in Information Technology",
+    company: "Jomo Kenyatta University of Agriculture and Technology",
+    companyUrl: "https://www.linkedin.com/school/jkuat/",
+    companyLogo: "jkuatLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "2012 - 2015",
+    description: [
+      "Comprehensive technology education.",
+      "In-demand Skills.",
+      "Problem solving and innovation.",
+      "Collaboration and communication",
+    ],
+  },
+];
+
+export const portfolioProjects: PortfolioProject[] = [
+  {
+    title: "Web app for managing GasHawk transactions",
+    description:
+      "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum, Optimism, and Base. Connect your wallet to the GasHawk RPC and manage your transactions from here.",
+    image: "gashawk.png",
+    preview: "https://app.gashawk.io/",
+    stacks: ["React", "Vite", "Chakra UI", "TypeScript"],
+    completed: true,
+  },
+  {
+    title: "A link sharing app for developers",
+    description:
+      "A fully-functional link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
+    image: "devlinks.png",
+    preview: "https://my-links-amber.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/my-links",
+    stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
+    completed: true,
+  },
+  {
+    title: "A real estate listing platform",
+    description:
+      "An app that allows users to list properties for sale. User can register accounts, login, add, edit, and delete properties.",
+    image: "homestead.png",
+    preview: "https://homestead-three.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/homestead",
+    stacks: ["Next.js", "GraphQL", "TypeScript", "Prisma"],
+    completed: true,
+  },
+  {
+    title: "Memory Game",
+    description:
+      "A fun memory game where players try to match pairs against each other or against the CPU.",
+    image: "memory.png",
+    preview: "https://memory-game-green-nine.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/memory-game",
+    stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
+    completed: true,
+  },
+  {
+    title: "Dictionary web app solution",
+    description:
+      "A dictionary web app built with TailwindCSS and Next.js. It uses a free Dictionary API to fetch data for the searched word. It also uses the Web Speech API to play the audio file for the searched word.",
+    image: "dictionary.png",
+    preview: "https://dictionary-web-app-ashy.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/dictionary-web-app",
+    stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
+    completed: true,
+  },
+  {
+    title: "Advanced Rock Paper Scissors",
+    description:
+      "A Rock, Paper, Scissors, Lizard, Spock game you can play against the CPU.",
+    image: "rockPaperScissors.png",
+    preview: "https://advanced-rock-paper-scissors.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/advanced-rock-paper-scissors",
+    stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
+    completed: false,
+  },
+];
+
+export const skills: Skills = {
+  backend: [
+    { name: "Node.js", level: "85%" },
+    { name: "Nest.js", level: "89%" },
+    { name: "Python", level: "60%" },
+    { name: "GraphQL", level: "90%" },
+    { name: "Solidity", level: "30%" },
+  ],
+  frontend: [
+    { name: "React", level: "90%" },
+    { name: "Vue.js", level: "80%" },
+    { name: "TypeScript", level: "90%" },
+    { name: "Next.js", level: "85%" },
+    { name: "Component libraries", level: "85%" },
+  ],
+  databases: [
+    { name: "Postgres", level: "82%" },
+    { name: "MySQL", level: "75%" },
+    { name: "Google Firestore", level: "80%" },
+    { name: "SQLite", level: "70%" },
+    { name: "DynamoDB", level: "80%" },
+  ],
+  devops: [
+    { name: "Docker", level: "80%" },
+    { name: "Firebase", level: "70%" },
+    { name: "Github Actions", level: "80%" },
+    { name: "Vercel", level: "80%" },
+    { name: "CircleCI", level: "60%" },
+  ],
+};
