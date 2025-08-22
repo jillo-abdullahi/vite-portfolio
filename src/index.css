@@ -29,7 +29,7 @@ header {
   align-items: center;
   color: white;
   background-color: #0e0e0e;
-  background: url("./static/images/icon-bg.svg") no-repeat center center;
+  background: url("./src/assets/icon-bg.svg") no-repeat center center;
   background-size: cover;
 }
 

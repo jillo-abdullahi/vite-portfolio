@@ -1,4 +1,4 @@
-import type { FC, ReactElement } from 'react';
+import type { FC, ReactElement } from "react";
 import {
   ComputerDesktopIcon,
   ServerStackIcon,
@@ -7,11 +7,11 @@ import {
 } from "@heroicons/react/24/outline";
 import { skills } from "../data";
 import { StackCard } from "./shared/stackCard";
-import type { Skill } from '../types';
+import type { Skill } from "../types";
 
 interface StackItemProps {
   icon: ReactElement;
-  title: 'front-end' | 'back-end' | 'databases' | 'devops';
+  title: "front-end" | "back-end" | "databases" | "devops";
   skills: Skill[];
 }
 
@@ -19,38 +19,34 @@ const stackItems: StackItemProps[] = [
   {
     icon: <ComputerDesktopIcon className="text-orange w-8 h-8" />,
     title: "front-end",
-    skills: skills.frontend
+    skills: skills.frontend,
   },
   {
     icon: <ServerStackIcon className="text-orange w-8 h-8" />,
     title: "back-end",
-    skills: skills.backend
+    skills: skills.backend,
   },
   {
     icon: <CircleStackIcon className="text-orange w-8 h-8" />,
     title: "databases",
-    skills: skills.databases
+    skills: skills.databases,
   },
   {
     icon: <WrenchScrewdriverIcon className="text-orange w-8 h-8" />,
     title: "devops",
-    skills: skills.devops
-  }
+    skills: skills.devops,
+  },
 ];
 
 const Stacks: FC = () => {
   return (
-  <div className="content" style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundAttachment: 'fixed',
-      background: 'url("./src/assets/icon-stacks-bg.svg") no-repeat center center',
-      backgroundSize: 'cover'
-  }}>
+    <div className="content">
       <div className="grid grid-cols-12 gap-3">
         {stackItems.map((item) => (
-          <div key={item.title} className="col-span-12 md:col-span-6 lg:col-span-3">
+          <div
+            key={item.title}
+            className="col-span-12 md:col-span-6 lg:col-span-3"
+          >
             <StackCard
               icon={item.icon}
               title={item.title}

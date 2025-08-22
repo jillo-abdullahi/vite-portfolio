@@ -111,7 +111,19 @@ const LandingPage: FC = () => {
       </section>
 
       {/* Stacks section  */}
-      <section id="stacks" className="border-0">
+      <section
+        id="stacks"
+        className="border-0"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundAttachment: "fixed",
+          background:
+            'url("./src/assets/icon-stacks-bg.svg") no-repeat center center',
+          backgroundSize: "cover",
+        }}
+      >
         <div className="mb-1 mt-20">
           <SectionHeading
             heading={"My"}

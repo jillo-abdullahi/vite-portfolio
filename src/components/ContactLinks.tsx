@@ -1,14 +1,13 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
   faXTwitter,
   faStackOverflow,
-  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { externalLinks } from "../data";
 import { SlideMeIn } from "./shared/slideMeIn";
 
@@ -23,7 +22,7 @@ interface ContactLinksProps {
 }
 
 const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
-  const { linkedIn, github, twitter, stackoverflow, instagram } = externalLinks;
+  const { linkedIn, github, twitter, stackoverflow } = externalLinks;
 
   const socialLinks: SocialLink[] = [
     { icon: faGithub, href: github },
@@ -43,52 +42,72 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
       name: "Github",
     },
     {
-      icon: faInstagram,
-      href: instagram,
-      name: "Instagram",
+      icon: faXTwitter,
+      href: twitter,
+      name: "Twitter(X)",
+    },
+    {
+      icon: faLinkedin,
+      href: linkedIn,
+      name: "LinkedIn",
     },
   ];
 
-  if (isInFooter) {
+  // footer link box
+  const FooterLinkBox = ({ icon, href, name }: SocialLink) => {
     return (
-      <div className="flex items-center space-x-4">
-        {footerSocialLinks.map(({ icon, href, name }) => (
-          <a
-            key={name}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-500 flex items-center space-x-2 group"
-          >
-            <span className="sr-only">{name}</span>
+      <a
+        className="w-full sm:w-64 rounded-xl border border-gray-900 bg-[#272F3790] hover:bg-[#272F37] flex items-center justify-between group cursor-pointer p-2 transition duration-300 shadowy"
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className="flex items-center justify-start space-x-2">
+          <div className="rounded-md bg-gray-700/50 border-gray-700 border p-2 w-10 h-10 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
-              className="h-6 w-6 transition-all duration-300 group-hover:scale-110"
+              style={{ fontSize: "24px" }}
+              className="text-gray-300 transition"
             />
-          </a>
-        ))}
-      </div>
+          </div>
+          <div className="text-left">
+            <div className="text-gray-100">{name}</div>
+          </div>
+        </div>
+        <ArrowRightIcon className="group-hover:-rotate-45 group-hover:text-white origin-center w-5 text-gray-200 transition duration-300" />
+      </a>
     );
+  };
+
+  // show different styles when rendered in the footer section
+  const footerLinks = (
+    <div className="flex flex-col space-y-2 w-full">
+      {footerSocialLinks.map(({ icon, href, name }, index) => {
+        return (
+          <SlideMeIn key={index}>
+            <FooterLinkBox icon={icon} href={href} name={name} />
+          </SlideMeIn>
+        );
+      })}
+    </div>
+  );
+
+  if (isInFooter) {
+    return footerLinks;
   }
 
   return (
     <SlideMeIn>
-      <div className="flex items-center space-x-4 border border-gray-900 w-fit px-4 py-3 rounded-lg bg-[#272f3790] shadowy">
+      <div className="flex items-center justify-center space-x-3 py-1">
         {socialLinks.map(({ icon, href }, index) => (
           <a
-            key={href}
+            className="text-gray-300 hover:text-orange transition-all duration-150 flex"
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-500 flex items-center space-x-2 group"
+            key={index}
           >
-            <FontAwesomeIcon
-              icon={icon}
-              className="h-6 w-6 transition-all duration-300 group-hover:scale-110"
-            />
-            {index === socialLinks.length - 1 && (
-              <ArrowRightIcon className="w-4 h-4 text-orange" />
-            )}
+            <FontAwesomeIcon icon={icon} style={{ fontSize: "18px" }} />
           </a>
         ))}
       </div>

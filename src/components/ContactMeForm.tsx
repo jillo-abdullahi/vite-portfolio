@@ -29,14 +29,14 @@ const ContactMeForm: FC = () => {
   // toast notification for message sent
   const notify = ({ success, errorText }: NotifyProps) => {
     console.log(success, errorText);
-  }
-    // toaster.create({
-    //   title: success ? "Your message was sent." : "Your message was not sent.",
-    //   description: success
-    //     ? "I'll be sure to get back to you ASAP!"
-    //     : `Something went wrong! Please give it another try, or feel free to email me directly.`,
-    //   duration: 5000,
-    // });
+  };
+  // toaster.create({
+  //   title: success ? "Your message was sent." : "Your message was not sent.",
+  //   description: success
+  //     ? "I'll be sure to get back to you ASAP!"
+  //     : `Something went wrong! Please give it another try, or feel free to email me directly.`,
+  //   duration: 5000,
+  // });
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -69,91 +69,81 @@ const ContactMeForm: FC = () => {
   };
 
   return (
-    <div className="space-y-8">
-      <div>
-        <ContactLinks />
-      </div>
-      <form className="space-y-6" onSubmit={handleSubmit}>
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium leading-6 text-gray-200"
-          >
-            Name
-          </label>
-          <div className="mt-2">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              autoComplete="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
+    <form onSubmit={handleSubmit}>
+      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 space-x-0 sm:space-x-4 justify-center pt-6">
+        {/* contact form  */}
+        <div className="w-full sm:w-1/2 space-y-3">
+          <div className="grid grid-cols-1 gap-x-3 gap-y-3 sm:grid-cols-12">
+            <div className="sm:col-span-6">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                required
+                autoComplete="given-name"
+                className="block w-full rounded-lg border-0 bg-white/5 py-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange/90 font-medium sm:text-sm sm:leading-6"
+              />
+            </div>
 
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium leading-6 text-gray-200"
-          >
-            Email
-          </label>
-          <div className="mt-2">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-            />
+            <div className="sm:col-span-6">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                autoComplete="email"
+                className="block w-full rounded-lg border-0 bg-white/5 py-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange/90 font-medium sm:text-sm sm:leading-6"
+              />
+            </div>
           </div>
-        </div>
 
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium leading-6 text-gray-200"
-          >
-            Message
-          </label>
-          <div className="mt-2">
+          <div className="col-span-full">
             <textarea
               id="message"
               name="message"
-              rows={4}
-              required
               value={formData.message}
               onChange={handleChange}
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+              required
+              rows={5}
+              placeholder="Your message"
+              className="block w-full rounded-lg border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange/90 font-medium sm:text-sm sm:leading-6"
             />
+          </div>
+
+          <div className="mt-6 flex items-center justify-end gap-x-6">
+            <button
+              type="submit"
+              className={`rounded-lg px-3 py-3 text-base font-semibold shadow-sm flex items-center justify-center space-x-2 w-full mt-0.5 transition duration-200 group ${
+                loading
+                  ? "cursor-not-allowed bg-orange/90 hover:bg-orange/90"
+                  : "hover:bg-orange/90 focus-visible:outline text-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/90 bg-orange"
+              }`}
+              disabled={loading}
+            >
+              {loading ? (
+                <FontAwesomeIcon icon={faSpinner} spin />
+              ) : (
+                <PaperAirplaneIcon className="text-blue w-4 h-4 group-hover:translate-x-0.5 transition origin-center duration-200" />
+              )}
+              <span>
+                {loading ? "Sending your message..." : "Send your message"}
+              </span>
+            </button>
           </div>
         </div>
 
-        <div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="flex w-full justify-center rounded-md bg-orange/90 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-          >
-            {loading ? (
-              <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-            ) : (
-              <>
-                Send message
-                <PaperAirplaneIcon className="ml-2 h-5 w-5" />
-              </>
-            )}
-          </button>
+        {/* contact links  */}
+        <div className="flex flex-col items-start justify-around text-white w-full sm:w-64">
+          <ContactLinks isInFooter={true} />
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 
