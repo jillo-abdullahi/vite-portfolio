@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import type { PortfolioProject, TechStack } from '@/types';
+import type { FC } from "react";
+import type { PortfolioProject, TechStack } from "@/types";
 import { ProjectStatusBadge } from "./projectStatusBadge";
 import ButtonGroup from "./buttonGroup";
 
@@ -8,8 +8,9 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
-  const { title, description, image, preview, github, stacks, completed } = project;
-  
+  const { title, description, image, preview, github, stacks, completed } =
+    project;
+
   return (
     <li
       key={title}
@@ -57,9 +58,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           {/* Note: Image should be imported in the parent component */}
           <div className="h-full">
             <img
-              src={image}
+              src={`/src/assets/portfolio/${image}`}
               alt={title}
-              className="w-full h-full object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
+              className="w-full h-full object-cover rounded-lg hover:grayscale-0 transition-all duration-300"
             />
           </div>
         </a>

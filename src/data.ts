@@ -1,4 +1,9 @@
-import type { ExternalLinks, Experience, PortfolioProject, Skills } from "./types";
+import type {
+  ExternalLinks,
+  Experience,
+  PortfolioProject,
+  Skills,
+} from "./types";
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
