@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --color-orange: #e7a11a;
+  --color-orange-dark: #d19115;
+}
+
 body {
   font-family: "Exo", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,7 +55,7 @@ header {
 
 .withBubblesBackground {
   background-color: #0e0e0e;
-  background: url("./static/images/icon-stacks-bg.svg") no-repeat center center;
+  background: url("./src/assets/icon-stacks-bg.svg") no-repeat center center;
   background-size: cover;
 }
 
@@ -217,21 +222,7 @@ header .landing-btn {
   border-radius: 20px;
 }
 
-/*==========stacks section =====*/
 
-#stacks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-attachment: fixed;
-  background: url("./static/images/icon-stacks-bg.svg") no-repeat center center;
-  background-size: cover;
-}
-
-.icon {
-  font-size: 2rem;
-  color: rgb(231 161 26 / 0.9);
-}
 
 /* =============Portfolio section =========== */
 

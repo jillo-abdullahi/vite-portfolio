@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from 'react';
-import type { Skill } from '@/types';
-import { SlideMeIn } from "./slideMeIn";
+import type { FC, ReactNode } from "react";
+import type { Skill } from "@/types";
+import { SlideMeIn } from "@/components/shared/slideMeIn";
 
 interface StackCardProps {
   title: string;
@@ -12,7 +12,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
     <SlideMeIn cascade>
       <div className="h-auto my-5 p-8 text-center rounded-2xl border border-gray-900 bg-[#272f3790] hover:-translate-y-2 transition-all duration-300 text-base shadowy">
-        <div className="flex items-center justify-start space-x-2 mb-6">
+        <div className="flex items-center justify-start space-x-2 mb-6 text-orange-dark">
           {icon}
           <span className="text-gray-200 uppercase font-bold text-base">
             {title}

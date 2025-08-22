@@ -1,6 +1,5 @@
 import { type FC, type ChangeEvent, type FormEvent, useState } from "react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
-import { toaster } from "@/components/ui/toaster";
 import emailjs from "@emailjs/browser";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,14 +27,16 @@ const ContactMeForm: FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   // toast notification for message sent
-  const notify = ({ success, errorText }: NotifyProps) =>
-    toaster.create({
-      title: success ? "Your message was sent." : "Your message was not sent.",
-      description: success
-        ? "I'll be sure to get back to you ASAP!"
-        : `Something went wrong! Please give it another try, or feel free to email me directly.`,
-      duration: 5000,
-    });
+  const notify = ({ success, errorText }: NotifyProps) => {
+    console.log(success, errorText);
+  }
+    // toaster.create({
+    //   title: success ? "Your message was sent." : "Your message was not sent.",
+    //   description: success
+    //     ? "I'll be sure to get back to you ASAP!"
+    //     : `Something went wrong! Please give it another try, or feel free to email me directly.`,
+    //   duration: 5000,
+    // });
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

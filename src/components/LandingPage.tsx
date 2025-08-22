@@ -5,17 +5,16 @@ import {
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-import { SlideMeIn } from "./shared/slideMeIn";
+import { SlideMeIn } from "@/components/shared/slideMeIn";
 import Stacks from "@/components/Stacks";
-import { externalLinks } from "../data";
-import ContactLinks from "./ContactLinks";
-import { SectionHeading } from "./shared/sectionHeading";
-import { AboutMeTimeline } from "./AboutMeTimeline";
-import { ProjectCard } from "./shared/projectCard";
-import { portfolioProjects } from "../data";
+import { portfolioProjects, externalLinks } from "@/data";
+import ContactLinks from "@/components/ContactLinks";
+import { SectionHeading } from "@/components/shared/sectionHeading";
+import { AboutMeTimeline } from "@/components/AboutMeTimeline";
+import { ProjectCard } from "@/components/shared/projectCard";
 import WavingHand from "@/components/WavingHand";
-import ContactMeForm from "./ContactMeForm";
-import NavBar from "./NavBar";
+import ContactMeForm from "@/components/ContactMeForm";
+import NavBar from "@/components/NavBar";
 
 const LandingPage: FC = () => {
   const dividerStyle: CSSProperties = {
@@ -33,7 +32,7 @@ const LandingPage: FC = () => {
         <div className="flex flex-col items-center justify-center relative w-full max-w-7xl mt-24 md:mt-48 px-4 md:px-0">
           <div className="w-full p-2 rounded-[2rem] border border-gray-800 w-full md:w-[82vw] shadowy bg-[#2A2F3C]">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center header-title justify-center rounded-[1.5rem] bg-[#272F37] p-4 pt-8 md:p-10 w-full">
-              <div className="rounded-full bg-transparent border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8">
+              <div className="rounded-full bg-yellow border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8">
                 <div className="profile-img">
                   <img
                     src={"/src/assets/me.webp"}
