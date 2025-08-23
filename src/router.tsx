@@ -7,7 +7,7 @@ import {
 import NotFound from "@/components/NotFound";
 import LandingPage from "@/components/LandingPage";
 import NavBar from "@/components/NavBar";
-import { AboutMe } from "./components/pages/AboutMe";
+import { MyResume } from "./components/pages/MyResume";
 import { MyProjects } from "./components/pages/MyProjects";
 import { ContactMe } from "./components/pages/ContactMe";
 
@@ -37,8 +37,8 @@ const indexRoute = createRoute({
 // create about route
 const aboutRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/about",
-  component: AboutMe,
+  path: "/resume",
+  component: MyResume,
 });
 
 // create projects route

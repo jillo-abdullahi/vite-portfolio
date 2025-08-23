@@ -3,10 +3,10 @@ import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/sectionHeading";
 import { SlideMeIn } from "../shared/slideMeIn";
 
-export const AboutMe = () => {
+export const MyResume = () => {
   return (
     <PageContainer>
-      <section id="about" className="px-4 bg-[#272F37]">
+      <section id="about" className="px-4">
         <div className="mb-1 mt-20">
           <SectionHeading
             heading={"Education and work experience"}

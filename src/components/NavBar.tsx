@@ -33,7 +33,7 @@ const NavBar: FC = () => {
 
   const navigation: NavigationItem[] = [
     { name: "Projects", href: "/projects", isActive: pathname === "/projects" },
-    { name: "Resumé", href: "/about", isActive: pathname === "/about" },
+    { name: "Resumé", href: "/resume", isActive: pathname === "/resume" },
     { name: "Contact", href: "/contact", isActive: pathname === "/contact" },
   ];
   const isHome = pathname === "/";
@@ -46,16 +46,18 @@ const NavBar: FC = () => {
     };
   }, []);
 
+  const isScrolled = scrollOffset > 0;
+
   return (
     <Disclosure
       as="nav"
       className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-10 sm:px-22 lg:px-36 ${
-        scrollOffset > 0 ? "mt-2" : "mt-4"
+        isScrolled ? "mt-2" : "mt-4"
       }`}
     >
       {({ open }: { open: boolean }) => (
         <>
-          <div className="mx-auto px-6 relative bg-gray-900/70 border border-gray-800 rounded-2xl">
+          <div className={`mx-auto px-6 relative border border-gray-700 rounded-2xl ${isScrolled ? "bg-gray-900" : "bg-gray-900/70"}`}>
             <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 mr-2 flex items-center lg:hidden">
