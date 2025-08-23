@@ -32,13 +32,15 @@ export default function SkillSplitBar({
           height: `${height}px`,
         }}
       >
-        <div className="flex items-center justify-between px-4 bg-orange/80 text-gray-900">
-          <span className="font-medium">{leftLabel}</span>
+        <div className="flex items-center justify-between px-2 md:px-4 bg-orange/80 text-gray-900">
+          <span className="hidden md:block font-medium">{leftLabel}</span>
+          <span className="md:hidden font-medium">FE</span>
           <span className="font-semibold">{left}%</span>
         </div>
 
-        <div className="flex items-center justify-between px-4 bg-orange/50 text-gray-300">
-          <span className="font-medium">{rightLabel}</span>
+        <div className="flex items-center justify-between px-2 md:px-4 bg-orange/50 text-gray-300">
+          <span className="hidden md:block font-medium">{rightLabel}</span>
+          <span className="md:hidden font-medium">BE</span>
           <span className="font-semibold">{right}%</span>
         </div>
       </div>

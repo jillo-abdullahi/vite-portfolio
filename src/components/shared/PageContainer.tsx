@@ -34,7 +34,7 @@ export const PageContainer = ({
   return (
     <SlideMeIn duration={200}>
       <div
-        className="mx-auto px-2 sm:px-24 lg:px-48 pt-32 md:pt-40 min-h-screen bg-gray-900/70 pb-20"
+        className="mx-auto px-8 md:px-10 lg:px-28 xl:px-48 pt-32 md:pt-40 min-h-screen bg-gray-900/70 pb-20"
         style={isHomePage ? bgStyle : {}}
       >
         {children}

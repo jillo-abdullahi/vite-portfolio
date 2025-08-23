@@ -51,7 +51,7 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-2 sm:px-22 lg:px-36 ${
+      className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-2 md:px-6 lg:px-24 xl:px-40 ${
         isScrolled ? "mt-2" : "mt-4"
       }`}
     >
@@ -62,13 +62,13 @@ const NavBar: FC = () => {
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 mr-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
+                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XMarkIcon className="block h-7 w-7" aria-hidden="true" />
+                      <XMarkIcon className="block h-7 w-7 cursor-pointer" aria-hidden="true" />
                     ) : (
-                      <Bars3Icon className="block h-7 w-7" aria-hidden="true" />
+                      <Bars3Icon className="block h-7 w-7 cursor-pointer" aria-hidden="true" />
                     )}
                   </DisclosureButton>
                 </div>
@@ -105,7 +105,7 @@ const NavBar: FC = () => {
                 <div className="flex-shrink-0">
                   <a
                     type="button"
-                    className="relative inline-flex uppercase items-center gap-x-1.5 rounded-md bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition"
+                    className="relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition"
                     href={externalLinks.calLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -129,13 +129,13 @@ const NavBar: FC = () => {
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
             <DisclosurePanel className="lg:hidden">
-              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-[#272F37] border border-gray-900 rounded-xl">
+              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900 border border-gray-700 rounded-xl">
                 {navigation.map((item) => (
                   <DisclosureButton
                     key={item.name}
                     as={Link}
                     to={item.href}
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center"
+                    className="cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center"
                   >
                     {item.name}
                   </DisclosureButton>
@@ -146,7 +146,7 @@ const NavBar: FC = () => {
                     <div className="w-full text-center">
                       <a
                         type="button"
-                        className="relative inline-flex uppercase items-center gap-x-1.5 rounded-md bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition"
+                        className="cursor-pointer relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 group transition"
                         href={externalLinks.calLink}
                         target="_blank"
                         rel="noopener noreferrer"

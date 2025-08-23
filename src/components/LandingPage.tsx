@@ -12,7 +12,7 @@ const LandingPage: FC = () => {
   return (
     <PageContainer isHomePage={true}>
       <SlideMeIn>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center rounded-3xl border border-gray-700 bg-gray-900/70 p-4 pt-8 md:p-10 w-full">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center rounded-3xl border border-gray-700 bg-gray-900/70 p-6 pt-8 md:p-10 w-full">
           <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8">
             <div className="profile-img">
               <img
@@ -26,20 +26,20 @@ const LandingPage: FC = () => {
           <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700 pl-0 md:pl-8 pt-4 md:pt-0">
             <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
               <WavingHand />
-              <span className="text-2xl text-gray-300/90 font-medium flex-shrink-0">
+              <span className="text-xl sm:text-2xl text-gray-300/90 font-medium">
                 Hello, I am
               </span>
             </div>
 
             <div className="flex flex-col md:flex-row md:items-baseline justify-center space-x-3 pt-2 w-full">
-              <span className="text-5xl text-orange font-bold flex-shrink-0">
+              <span className="text-3xl md:text-4xl sm:text-5xl text-orange font-bold flex-shrink-0 text-center md:text-left">
                 Jillo Woche
               </span>
               <div className="hidden md:flex items-center justify-center md:justify-start space-x-1 w-fit-content md:w-full">
                 <ContactLinks />
               </div>
             </div>
-            <span className="font-semibold pt-1 text-2xl text-gray-300 w-full text-center md:text-left">
+            <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
               Full Stack Software Engineer
             </span>
 
@@ -71,11 +71,11 @@ const LandingPage: FC = () => {
       <SlideMeIn>
         <div className="rounded-3xl border border-gray-700 bg-gray-900/70 p-4 pt-8 md:p-10 w-full mt-6">
           {/* skill split bar  */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
-            <div className="text-center md:text-left">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+            <div className="text-center md:text-left md:flex-shrink-0">
               <p className="text-lg font-medium text-gray-300">Skill split</p>
             </div>
-            <div>
+            <div className="flex-1 flex justify-center md:justify-end">
               <SkillSplitBar
                 leftLabel="Frontend"
                 rightLabel="Backend"
@@ -86,11 +86,11 @@ const LandingPage: FC = () => {
           </div>
 
           {/* Main languages  */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mt-6">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
             <div className="text-center md:text-left">
               <p className="text-lg font-medium text-gray-300">Languages</p>
             </div>
-            <div className="flex space-x-4 justify-center md:justify-start">
+            <div className="flex-1 flex space-x-4 justify-center md:justify-end">
               <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-4 py-2 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
                 <RiJavascriptFill className="text-yellow-400 h-6 w-6" />
                 <span className="text-gray-300 font-semibold">JavaScript</span>
