@@ -4,6 +4,7 @@
 @theme {
   --color-orange: #e7a11a;
   --color-orange-dark: #d19115;
+  --color-blue-dark: #272f37;
 }
 
 body {
@@ -21,7 +22,7 @@ main {
 
 /*==========Landing section============= */
 
-header {
+/* header {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -31,16 +32,7 @@ header {
   background-color: #0e0e0e;
   background: url("./src/assets/icon-bg.svg") no-repeat center center;
   background-size: cover;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+} */
 
 @keyframes slideInFromTop {
   from {
@@ -61,10 +53,6 @@ header {
 
 .slideInFromTop {
   animation: slideInFromTop 0.5s;
-}
-
-.fadeIn {
-  animation: fadeIn 2s;
 }
 
 .header-title,
@@ -221,8 +209,6 @@ header .landing-btn {
 .timelineItem {
   border-radius: 20px;
 }
-
-
 
 /* =============Portfolio section =========== */
 
@@ -493,6 +479,3 @@ footer {
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.08) 0px 0px 0px 1px inset;
 }
-
-
-

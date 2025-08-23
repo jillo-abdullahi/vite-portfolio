@@ -4,9 +4,8 @@ import {
   faLinkedin,
   faGithub,
   faXTwitter,
-  faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { externalLinks } from "../data";
 import { SlideMeIn } from "./shared/slideMeIn";
@@ -22,7 +21,7 @@ interface ContactLinksProps {
 }
 
 const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
-  const { linkedIn, github, twitter, stackoverflow } = externalLinks;
+  const { linkedIn, github, twitter } = externalLinks;
 
   const socialLinks: SocialLink[] = [
     { icon: faGithub, href: github },
@@ -32,9 +31,9 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
 
   const footerSocialLinks: SocialLink[] = [
     {
-      icon: faStackOverflow,
-      href: stackoverflow,
-      name: "Stackoverflow",
+      icon: faEnvelope,
+      href: `mailto:${externalLinks.email}`,
+      name: "Email",
     },
     {
       icon: faGithub,
@@ -57,7 +56,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
   const FooterLinkBox = ({ icon, href, name }: SocialLink) => {
     return (
       <a
-        className="w-full sm:w-64 rounded-xl border border-gray-900 bg-[#272F3790] hover:bg-[#272F37] flex items-center justify-between group cursor-pointer p-2 transition duration-300 shadowy"
+        className="w-full rounded-xl border border-gray-700 hover:bg-gray-900/60 flex items-center justify-between group cursor-pointer p-2 transition duration-300 "
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -74,14 +73,17 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
             <div className="text-gray-100">{name}</div>
           </div>
         </div>
-        <ArrowRightIcon className="group-hover:-rotate-45 group-hover:text-white origin-center w-5 text-gray-200 transition duration-300" />
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          className="group-hover:-rotate-45 group-hover:text-white origin-center w-5 text-gray-200 transition duration-300"
+        />
       </a>
     );
   };
 
   // show different styles when rendered in the footer section
   const footerLinks = (
-    <div className="flex flex-col space-y-2 w-full">
+    <div className="flex flex-col space-y-2 w-full divider-y divider-gray-800">
       {footerSocialLinks.map(({ icon, href, name }, index) => {
         return (
           <SlideMeIn key={index}>
@@ -97,21 +99,19 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
   }
 
   return (
-    <SlideMeIn>
-      <div className="flex items-center justify-center space-x-3 py-1">
-        {socialLinks.map(({ icon, href }, index) => (
-          <a
-            className="text-gray-300 hover:text-orange transition-all duration-150 flex"
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={index}
-          >
-            <FontAwesomeIcon icon={icon} style={{ fontSize: "18px" }} />
-          </a>
-        ))}
-      </div>
-    </SlideMeIn>
+    <div className="flex items-center justify-center space-x-3 py-1">
+      {socialLinks.map(({ icon, href }, index) => (
+        <a
+          className="text-gray-300 hover:text-orange transition-all duration-150 flex"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={index}
+        >
+          <FontAwesomeIcon icon={icon} style={{ fontSize: "18px" }} />
+        </a>
+      ))}
+    </div>
   );
 };
 

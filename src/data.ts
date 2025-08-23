@@ -14,6 +14,7 @@ export const externalLinks: ExternalLinks = {
   repositories: "https://github.com/jillo-abdullahi?tab=repositories",
   instagram: "https://www.instagram.com/jillo_woche/",
   calLink: "https://cal.com/jillowoche/15min",
+  email: "jayloabdullahi@gmail.com",
 };
 
 export const experiences: Experience[] = [

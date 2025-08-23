@@ -14,27 +14,29 @@ import { useState, useEffect } from "react";
 import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
 import { externalLinks } from "../data";
 import Timer from "@/components/Timer";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 
 interface NavigationItem {
   name: string;
   href: string;
+  isActive: boolean;
 }
-
-const navigation: NavigationItem[] = [
-  { name: "Experience", href: "/about" },
-  { name: "Stacks", href: "/stacks" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-];
 
 const NavBar: FC = () => {
   const [scrollOffset, setScrollOffset] = useState<number>(0);
 
+  const pathname = useLocation().pathname;
   const handleScroll = () => {
     const currentScrollOffset = window.scrollY;
     setScrollOffset(currentScrollOffset);
   };
+
+  const navigation: NavigationItem[] = [
+    { name: "Projects", href: "/projects", isActive: pathname === "/projects" },
+    { name: "Resumé", href: "/about", isActive: pathname === "/about" },
+    { name: "Contact", href: "/contact", isActive: pathname === "/contact" },
+  ];
+  const isHome = pathname === "/";
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -47,14 +49,14 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`bg-[#272F37] border border-gray-900 rounded-xl mx-4 z-50 fixed right-0 lg:right-10 left-0 lg:left-10 h-16 slideInFromTop transition-all duration-200 shadowy ${
+      className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-10 sm:px-22 lg:px-36 ${
         scrollOffset > 0 ? "mt-2" : "mt-4"
       }`}
     >
       {({ open }: { open: boolean }) => (
         <>
-          <div className="mx-auto max-w-7xl md:pl-4 md:pr-3 pl-2 md:px-4 relative">
-            <div className="flex h-16 justify-between">
+          <div className="mx-auto px-6 relative bg-gray-900/70 border border-gray-800 rounded-2xl">
+            <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 mr-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
@@ -68,24 +70,26 @@ const NavBar: FC = () => {
                     )}
                   </DisclosureButton>
                 </div>
-                <a
+                <Link
                   className="flex flex-shrink-0 items-center cursor-pointer"
-                  href="#home"
+                  to="/"
                 >
-                  <button className="relative inline-flex items-center justify-center rounded-full p-1 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
+                  <button className="relative inline-flex items-center justify-center rounded-full p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
                     <img
                       src={"/src/assets/sneakerhead985.png"}
                       alt="home"
-                      className="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden shadow-lg cursor-pointer"
+                      className="flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer"
                     />
                   </button>
-                </a>
+                </Link>
                 <div className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium"
+                      className={`text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg px-3 py-2 text-base font-medium transition-all duration-300 ${
+                        item.isActive ? "bg-gray-800/60 text-gray-200" : ""
+                      }`}
                     >
                       {item.name}
                     </Link>

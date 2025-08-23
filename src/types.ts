@@ -51,6 +51,7 @@ export interface ExternalLinks {
   repositories: string;
   instagram: string;
   calLink: string;
+  email: string;
 }
 
 /**

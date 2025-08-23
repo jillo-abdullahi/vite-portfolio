@@ -1,4 +1,3 @@
-import { TbLeaf2 } from "react-icons/tb";
 import { type PortfolioProject } from "@/types";
 
 export const PortfolioCard = ({

@@ -8,7 +8,6 @@ import NotFound from "@/components/NotFound";
 import LandingPage from "@/components/LandingPage";
 import NavBar from "@/components/NavBar";
 import { AboutMe } from "./components/pages/AboutMe";
-import { MyStacks } from "./components/pages/MyStacks";
 import { MyProjects } from "./components/pages/MyProjects";
 import { ContactMe } from "./components/pages/ContactMe";
 
@@ -19,7 +18,9 @@ const rootRoute = createRootRoute({
       <div className="h-[10%] w-full max-w-7xl">
         <NavBar />
       </div>
-      <Outlet />
+      <div className="w-full min-h-screen">
+        <Outlet />
+      </div>
     </>
   ),
 
@@ -38,13 +39,6 @@ const aboutRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/about",
   component: AboutMe,
-});
-
-// create stacks route
-const stacksRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/stacks",
-  component: MyStacks,
 });
 
 // create projects route
@@ -75,7 +69,6 @@ const notFoundRoute = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   aboutRoute,
-  stacksRoute,
   projectsRoute,
   contactRoute,
   notFoundRoute,
