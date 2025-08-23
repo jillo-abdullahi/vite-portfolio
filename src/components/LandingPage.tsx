@@ -4,6 +4,9 @@ import ContactLinks from "@/components/ContactLinks";
 import WavingHand from "@/components/WavingHand";
 import { SlideMeIn } from "./shared/slideMeIn";
 import { PageContainer } from "./shared/PageContainer";
+import SkillSplitBar from "./SkillSplitBar";
+import { FaPython } from "react-icons/fa";
+import { RiJavascriptFill } from "react-icons/ri";
 
 const LandingPage: FC = () => {
   return (
@@ -20,10 +23,10 @@ const LandingPage: FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-900 pl-0 md:pl-8 pt-4 md:pt-0">
+          <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700 pl-0 md:pl-8 pt-4 md:pt-0">
             <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
               <WavingHand />
-              <span className="text-2xl text-gray-300 font-medium flex-shrink-0">
+              <span className="text-2xl text-gray-300/90 font-medium flex-shrink-0">
                 Hello, I am
               </span>
             </div>
@@ -40,8 +43,8 @@ const LandingPage: FC = () => {
               Full Stack Software Engineer
             </span>
 
-            <div className="description w-full max-w-3xl pt-6">
-              <p className="text-gray-300 text-center md:text-left tracking-wide">
+            <div className="w-full max-w-3xl pt-6">
+              <p className="text-gray-300/90 text-center md:text-left tracking-wide">
                 As a Full Stack Software Engineer, I'm on a mission to build
                 amazing things - with a <b>dash of innovation</b> and a whole
                 lot of
@@ -66,8 +69,38 @@ const LandingPage: FC = () => {
       </SlideMeIn>
 
       <SlideMeIn>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center rounded-3xl border border-gray-700 bg-gray-900/70 p-4 pt-8 md:p-10 w-full mt-6">
-          some stats here
+        <div className="rounded-3xl border border-gray-700 bg-gray-900/70 p-4 pt-8 md:p-10 w-full mt-6">
+          {/* skill split bar  */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+            <div className="text-center md:text-left">
+              <p className="text-lg font-medium text-gray-300">Skill split</p>
+            </div>
+            <div>
+              <SkillSplitBar
+                leftLabel="Frontend"
+                rightLabel="Backend"
+                leftPercent={70}
+                height={40}
+              />
+            </div>
+          </div>
+
+          {/* Main languages  */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mt-6">
+            <div className="text-center md:text-left">
+              <p className="text-lg font-medium text-gray-300">Languages</p>
+            </div>
+            <div className="flex space-x-4 justify-center md:justify-start">
+              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-4 py-2 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
+                <RiJavascriptFill className="text-yellow-400 h-6 w-6" />
+                <span className="text-gray-300 font-semibold">JavaScript</span>
+              </div>
+              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-4 py-2 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
+                <FaPython className="text-blue-400 h-6 w-6" />
+                <span className="text-gray-300 font-semibold">Python</span>
+              </div>
+            </div>
+          </div>
         </div>
       </SlideMeIn>
     </PageContainer>

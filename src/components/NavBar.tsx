@@ -114,7 +114,7 @@ const NavBar: FC = () => {
                       className="-ml-0.5 h-5 w-5 group-hover:translate-x-0.5 transition origin-center duration-200"
                       aria-hidden="true"
                     />
-                    <span>schedule call</span>
+                    <span className="text-gray-900">schedule call</span>
                   </a>
                 </div>
               </div>
@@ -155,7 +155,7 @@ const NavBar: FC = () => {
                           className="-ml-0.5 h-5 w-5 group-hover:translate-x-0.5 transition origin-center duration-200"
                           aria-hidden="true"
                         />
-                        <span>schedule call</span>
+                        <span className="text-gray-900">schedule call</span>
                       </a>
                     </div>
                   </div>

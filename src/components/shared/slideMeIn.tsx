@@ -9,6 +9,7 @@ interface SlideMeInProps {
 export const SlideMeIn: FC<SlideMeInProps> = ({
   children,
   cascade = false,
+  
 }) => {
-  return <Fade cascade={cascade} damping={0.1} duration={2000}>{children}</Fade>;
+  return <Fade cascade={cascade} damping={0.1} duration={2000} triggerOnce>{children}</Fade>;
 };

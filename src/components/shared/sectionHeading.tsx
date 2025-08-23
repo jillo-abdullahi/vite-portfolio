@@ -35,7 +35,7 @@ export const SectionHeading = ({
 }: SectionHeadingProps) => {
   const fontSizeClass = isContactPage
     ? "text-4xl md:text-6xl lg:text-7xl"
-    : "text-lg md:text-xl lg:text-2xl font-semibold";
+    : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
     <SlideMeIn>
       <div className="w-full">
