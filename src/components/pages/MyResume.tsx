@@ -12,7 +12,7 @@ export const MyResume = () => {
         <div className="w-full">
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
-            linkText="Download resume"
+            linkText="Download resumé"
             isContactPage={false}
             isDownload={true}
             downloadFileName="Jillo_Woche_Resume.pdf"

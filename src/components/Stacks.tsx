@@ -40,21 +40,15 @@ const stackItems: StackItemProps[] = [
 
 const Stacks: FC = () => {
   return (
-    <div className="content">
-      <div className="grid grid-cols-12 gap-3">
-        {stackItems.map((item) => (
-          <div
-            key={item.title}
-            className="col-span-12 md:col-span-6 lg:col-span-3"
-          >
-            <StackCard
-              icon={item.icon}
-              title={item.title}
-              skills={item.skills}
-            />
-          </div>
-        ))}
-      </div>
+    <div className="grid grid-cols-12 gap-3">
+      {stackItems.map((item) => (
+        <div
+          key={item.title}
+          className="col-span-12 md:col-span-6 lg:col-span-3"
+        >
+          <StackCard icon={item.icon} title={item.title} skills={item.skills} />
+        </div>
+      ))}
     </div>
   );
 };

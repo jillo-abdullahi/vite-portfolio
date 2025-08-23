@@ -8,16 +8,14 @@ import { PageContainer } from "../shared/PageContainer";
 export const MyProjects = () => {
   return (
     <PageContainer>
-      <Stacks />
-      <section id="projects" className="withBubblesBackground">
+      {/* Stacks */}
+      <section>
+        <Stacks />
+      </section>
+
+      {/* Projects */}
+      <section>
         <div className="pt-20">
-          <div className="mb-1">
-            {/* <SectionHeading
-              heading={"Featured"}
-              subHeading={"projects"}
-              id="projects"
-            /> */}
-          </div>
           <div className="w-full flex items-center justify-center">
             <SlideMeIn>
               <div className="description w-full max-w-4xl">
@@ -38,7 +36,6 @@ export const MyProjects = () => {
           </div>
         </div>
 
-        <div className="content">
           <PortfolioGrid>
             {portfolioProjects.map((project, index) => (
               <SlideMeIn cascade key={index}>
@@ -46,7 +43,6 @@ export const MyProjects = () => {
               </SlideMeIn>
             ))}
           </PortfolioGrid>
-        </div>
       </section>
     </PageContainer>
   );
