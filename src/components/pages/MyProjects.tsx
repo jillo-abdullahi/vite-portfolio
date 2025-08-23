@@ -1,4 +1,3 @@
-import { SectionHeading } from "../shared/sectionHeading";
 import { SlideMeIn } from "../shared/slideMeIn";
 import { portfolioProjects, externalLinks } from "@/data";
 import { PortfolioGrid } from "../PortfolioGrid";
@@ -13,11 +12,11 @@ export const MyProjects = () => {
       <section id="projects" className="withBubblesBackground">
         <div className="pt-20">
           <div className="mb-1">
-            <SectionHeading
+            {/* <SectionHeading
               heading={"Featured"}
               subHeading={"projects"}
               id="projects"
-            />
+            /> */}
           </div>
           <div className="w-full flex items-center justify-center">
             <SlideMeIn>

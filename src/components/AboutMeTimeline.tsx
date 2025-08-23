@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import type { Experience } from '@/types';
+import type { FC } from "react";
+import type { Experience } from "@/types";
 import { SlideMeIn } from "./shared/slideMeIn";
 import { experiences } from "@/data";
 
@@ -21,7 +21,7 @@ export const AboutMeTimeline: FC = () => {
         return (
           <SlideMeIn cascade key={index}>
             <div
-              className={`border bg-[#272f3790] text-white rounded-2xl py-5 px-6 shadowy ${
+              className={`border border-gray-200 bg-gray-900/30 text-white rounded-2xl py-5 px-6 ${
                 isCurrent ? "border-orange/50" : "border-gray-900"
               }`}
             >
@@ -52,11 +52,13 @@ export const AboutMeTimeline: FC = () => {
                   </div>
                 </div>
 
-                <div className="text-gray-300 space-y-2">
+                <ul className="text-gray-300 space-y-2">
                   {description.map((desc: string, idx: number) => (
-                    <p key={idx}>{desc}</p>
+                    <li key={idx}>
+                      <span className="tracking-wide text-gray-300">{desc}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           </SlideMeIn>

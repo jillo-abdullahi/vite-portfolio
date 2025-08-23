@@ -1,42 +1,65 @@
-import type { FC } from "react";
-import {
-  UserCircleIcon,
-  Square3Stack3DIcon,
-  RocketLaunchIcon,
-  ChatBubbleBottomCenterTextIcon,
-  AcademicCapIcon,
-} from "@heroicons/react/24/outline";
-import { SlideMeIn } from "@/components/shared/slideMeIn";
+import type { ReactNode } from "react";
+import { SlideMeIn } from "./slideMeIn";
 
 interface SectionHeadingProps {
-  heading: string;
-  subHeading?: string;
-  id: "about" | "contact" | "stack" | "projects" | "education";
+  children: ReactNode;
+  linkText: string;
+  linkHref: string;
+  isContactPage?: boolean;
+  isDownload?: boolean;
+  downloadFileName?: string;
+  rightLink?: ReactNode;
 }
 
-export const SectionHeading: FC<SectionHeadingProps> = ({
-  heading,
-  subHeading,
-  id,
-}) => {
+/**
+ * A component that renders a section heading with optional link.
+ * @component
+ * @param {object} props - The component props
+ * @param {React.ReactNode} props.children - The content to be displayed as the main heading text
+ * @param {string} props.linkText - The text to be displayed as a link
+ * @param {string} props.linkHref - The URL that the link should navigate to
+ * @param {Boolean} [props.isContactPage=false] - Whether the heading is for the contact page
+ * @param {Boolean} [props.isDownload=false] - Whether the link should download a file
+ * @param {string} [props.downloadFileName] - Optional filename for the download
+ * @param {React.ReactNode} [props.rightLink] - Optional React node to be displayed on the right side of the heading
+ * @returns {JSX.Element} A section heading component with optional link
+ */
+export const SectionHeading = ({
+  children,
+  linkText,
+  linkHref,
+  isContactPage = false,
+  isDownload = false,
+  downloadFileName,
+  rightLink,
+}: SectionHeadingProps) => {
+  const fontSizeClass = isContactPage
+    ? "text-4xl md:text-6xl lg:text-7xl"
+    : "text-lg md:text-xl lg:text-2xl font-semibold";
   return (
     <SlideMeIn>
-      <div className="flex items-center justify-center space-x-1">
-        {id === "about" ? (
-          <UserCircleIcon className="w-6 h-6 text-orange" />
-        ) : id === "contact" ? (
-          <ChatBubbleBottomCenterTextIcon className="w-6 h-6 text-orange" />
-        ) : id === "stack" ? (
-          <Square3Stack3DIcon className="w-6 h-6 text-orange" />
-        ) : id === "projects" ? (
-          <RocketLaunchIcon className="w-6 h-6 text-orange" />
-        ) : id === "education" ? (
-          <AcademicCapIcon className="w-6 h-6 text-orange" />
-        ) : null}
-        <h2 className="font-semibold text-lg md:text-2xl text-gray-200">
-          {heading} {subHeading}
-        </h2>
+      <div className="w-full">
+        <div className="flex space-x-4 items-center justify-between">
+          <p
+            className={`${fontSizeClass} text-gray-300 text-center md:text-left space-x-2`}
+          >
+            <span>{children}</span>
+            <a
+              href={linkHref}
+              className="text-orange/80 underline hover:text-orange transition-all duration-150"
+              {...(isDownload && { download: downloadFileName || true })}
+            >
+              {linkText}
+            </a>
+          </p>
+          {rightLink ? rightLink : null}
+        </div>
       </div>
+      <hr
+        className={`border-t border-gray-700 w-full ${
+          isContactPage ? "my-10" : "my-6"
+        }`}
+      />
     </SlideMeIn>
   );
 };

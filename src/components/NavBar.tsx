@@ -51,7 +51,7 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-10 sm:px-22 lg:px-36 ${
+      className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-2 sm:px-22 lg:px-36 ${
         isScrolled ? "mt-2" : "mt-4"
       }`}
     >

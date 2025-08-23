@@ -1,4 +1,3 @@
-import { SectionHeading } from "../shared/sectionHeading";
 import { SlideMeIn } from "../shared/slideMeIn";
 import Stacks from "../Stacks";
 
@@ -18,11 +17,11 @@ export const MyStacks = () => {
       }}
     >
       <div className="mb-1 mt-20">
-        <SectionHeading
+        {/* <SectionHeading
           heading={"My"}
           subHeading={"tools of trade"}
           id="stack"
-        />
+        /> */}
       </div>
       <SlideMeIn>
         <div className="description w-full max-w-4xl pb-2">

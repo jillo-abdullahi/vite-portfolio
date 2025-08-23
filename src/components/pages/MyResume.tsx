@@ -1,31 +1,39 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
-import { SectionHeading } from "../shared/sectionHeading";
-import { SlideMeIn } from "../shared/slideMeIn";
+import { SectionHeading } from "../shared/SectionHeading";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { externalLinks } from "@/data";
 
 export const MyResume = () => {
   return (
     <PageContainer>
-      <section id="about" className="px-4">
-        <div className="mb-1 mt-20">
+      <section className="px-4 w-full">
+        <div className="w-full">
           <SectionHeading
-            heading={"Education and work experience"}
-            id="education"
-          />
+            linkHref="/jillo_woche_resume.pdf"
+            linkText="Download resume"
+            isContactPage={false}
+            isDownload={true}
+            downloadFileName="Jillo_Woche_Resume.pdf"
+            rightLink={
+              <a href={externalLinks.linkedIn} target="_blank" rel="noreferrer">
+                <div className="rounded-md bg-gray-700/50 hover:bg-gray-700/90 border-gray-700 border p-2 w-10 h-10 flex items-center justify-center transition duration-300">
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="text-gray-300 w-5 h-5"
+                  />
+                </div>
+              </a>
+            }
+          >
+            My Journey So Far.
+          </SectionHeading>
         </div>
-        <SlideMeIn>
-          <div className="description w-full max-w-4xl pb-2">
-            <p className="text-base text-gray-300 text-center">
-              Navigating my journey through academia and the professional world.
-            </p>
-          </div>
-        </SlideMeIn>
 
-        <div className="content pt-6 border-0">
-          <div className="flex flex-col space-y-10 items-center w-full">
-            <div className="flex flex-col space-y-2">
-              <AboutMeTimeline />
-            </div>
+        <div className="flex flex-col space-y-10 items-center w-full pt-4">
+          <div className="flex flex-col space-y-2">
+            <AboutMeTimeline />
           </div>
         </div>
       </section>
