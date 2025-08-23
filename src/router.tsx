@@ -3,6 +3,7 @@ import {
   createRoute,
   createRouter,
   Outlet,
+  redirect,
 } from "@tanstack/react-router";
 import NotFound from "@/components/NotFound";
 import LandingPage from "@/components/LandingPage";
@@ -41,6 +42,15 @@ const aboutRoute = createRoute({
   component: MyResume,
 });
 
+// redirect /about to /
+const aboutRedirectRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/about",
+  beforeLoad: () => {
+    throw redirect({ to: "/", replace: true });
+  },
+});
+
 // create projects route
 const projectsRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -69,6 +79,7 @@ const notFoundRoute = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   aboutRoute,
+  aboutRedirectRoute,
   projectsRoute,
   contactRoute,
   notFoundRoute,
