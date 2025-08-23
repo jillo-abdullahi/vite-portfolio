@@ -7,6 +7,7 @@ import { PageContainer } from "./shared/PageContainer";
 import SkillSplitBar from "./SkillSplitBar";
 import { FaPython } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
 
 const LandingPage: FC = () => {
   return (
@@ -88,7 +89,7 @@ const LandingPage: FC = () => {
           {/* Main languages  */}
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
             <div className="text-center md:text-left">
-              <p className="text-lg font-medium text-gray-300">Languages</p>
+              <p className="text-lg font-medium text-gray-300">Languages/supersets</p>
             </div>
             <div className="flex-1 flex space-x-4 justify-center md:justify-end">
               <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-4 py-2 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
@@ -98,6 +99,10 @@ const LandingPage: FC = () => {
               <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-4 py-2 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
                 <FaPython className="text-blue-400 h-6 w-6" />
                 <span className="text-gray-300 font-semibold">Python</span>
+              </div>
+              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-4 py-2 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
+                <BiLogoTypescript className="text-blue-600 h-6 w-6" />
+                <span className="text-gray-300 font-semibold">TypeScript</span>
               </div>
             </div>
           </div>

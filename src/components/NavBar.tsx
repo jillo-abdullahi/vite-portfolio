@@ -57,7 +57,11 @@ const NavBar: FC = () => {
     >
       {({ open }: { open: boolean }) => (
         <>
-          <div className={`mx-auto px-6 relative border border-gray-700 rounded-2xl ${isScrolled ? "bg-gray-900" : "bg-gray-900/70"}`}>
+          <div
+            className={`mx-auto px-6 relative border border-gray-700 rounded-2xl ${
+              isScrolled ? "bg-gray-900" : "bg-gray-900/70"
+            }`}
+          >
             <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 mr-2 flex items-center lg:hidden">
@@ -66,9 +70,15 @@ const NavBar: FC = () => {
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XMarkIcon className="block h-7 w-7 cursor-pointer" aria-hidden="true" />
+                      <XMarkIcon
+                        className="block h-7 w-7 cursor-pointer"
+                        aria-hidden="true"
+                      />
                     ) : (
-                      <Bars3Icon className="block h-7 w-7 cursor-pointer" aria-hidden="true" />
+                      <Bars3Icon
+                        className="block h-7 w-7 cursor-pointer"
+                        aria-hidden="true"
+                      />
                     )}
                   </DisclosureButton>
                 </div>
@@ -80,7 +90,9 @@ const NavBar: FC = () => {
                     <img
                       src={"/src/assets/sneakerhead985.png"}
                       alt="home"
-                      className="flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer"
+                      className={`flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer ${
+                        isHome ? "ring-4 ring-orange/80" : ""
+                      }`}
                     />
                   </button>
                 </Link>
