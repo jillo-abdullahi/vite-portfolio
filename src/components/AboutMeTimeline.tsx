@@ -21,8 +21,8 @@ export const AboutMeTimeline: FC = () => {
         return (
           <SlideMeIn cascade key={index}>
             <div
-              className={`border border-gray-200 bg-gray-900/30 text-white rounded-2xl py-5 px-6 ${
-                isCurrent ? "border-orange/50" : "border-gray-900"
+              className={`border bg-gray-900/30 text-white rounded-2xl py-5 px-6 ${
+                isCurrent ? "border-orange/50" : "border-gray-800"
               }`}
             >
               <div className="timeLineContent text-left space-y-3">

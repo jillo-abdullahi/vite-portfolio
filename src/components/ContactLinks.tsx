@@ -56,7 +56,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
   const FooterLinkBox = ({ icon, href, name }: SocialLink) => {
     return (
       <a
-        className="w-full rounded-xl border border-gray-700 hover:bg-gray-900/60 flex items-center justify-between group cursor-pointer p-2 transition duration-300 "
+        className="w-full rounded-xl border border-gray-800 hover:bg-gray-900/60 flex items-center justify-between group cursor-pointer p-2 transition duration-300 "
         href={href}
         target="_blank"
         rel="noreferrer"
