@@ -205,18 +205,18 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const skills: Skills = {
   backend: [
-    { name: "Node.js", level: "85%" },
-    { name: "Nest.js", level: "89%" },
-    { name: "Python", level: "60%" },
+    { name: "Express.js", level: "85%" },
     { name: "GraphQL", level: "90%" },
-    { name: "Solidity", level: "30%" },
+    { name: "Nest.js", level: "89%" },
+    { name: "Django", level: "60%" },
+    { name: "Flask", level: "50%" },
   ],
   frontend: [
     { name: "React", level: "90%" },
-    { name: "Vue.js", level: "80%" },
-    { name: "TypeScript", level: "90%" },
     { name: "Next.js", level: "85%" },
-    { name: "Component libraries", level: "85%" },
+    { name: "Vue.js", level: "80%" },
+    { name: "TailwindCSS", level: "90%" },
+    { name: "Chakra UI", level: "85%" },
   ],
   databases: [
     { name: "Postgres", level: "82%" },
@@ -225,11 +225,18 @@ export const skills: Skills = {
     { name: "SQLite", level: "70%" },
     { name: "DynamoDB", level: "80%" },
   ],
-  devops: [
-    { name: "Docker", level: "80%" },
-    { name: "Firebase", level: "70%" },
-    { name: "Github Actions", level: "80%" },
-    { name: "Vercel", level: "80%" },
-    { name: "CircleCI", level: "60%" },
+  // devops: [
+  //   { name: "Docker", level: "80%" },
+  //   { name: "Firebase", level: "70%" },
+  //   { name: "Github Actions", level: "80%" },
+  //   { name: "Vercel", level: "80%" },
+  //   { name: "CircleCI", level: "60%" },
+  // ],
+  web3: [
+    { name: "ethers.js", level: "85%" },
+    { name: "Wagmi", level: "85%" },
+    { name: "Smart Contracts", level: "60%" },
+    { name: "NFTs", level: "85%" },
+    { name: "WalletConnect", level: "80%" },
   ],
 };

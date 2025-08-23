@@ -11,7 +11,7 @@ interface StackCardProps {
 export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
     <SlideMeIn cascade>
-      <div className="h-auto my-5 p-8 text-center rounded-2xl border border-gray-900 bg-[#272f3790] hover:-translate-y-2 transition-all duration-300 text-base shadowy">
+      <div className="h-auto my-5 p-8 text-center rounded-2xl border border-gray-700 bg-gray-900/80 hover:-translate-y-2 transition-all duration-300 text-base">
         <div className="flex items-center justify-start space-x-2 mb-6 text-orange-dark">
           {icon}
           <span className="text-gray-200 uppercase font-bold text-base">

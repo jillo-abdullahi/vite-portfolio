@@ -3,8 +3,8 @@ import { SlideMeIn } from "./slideMeIn";
 
 interface SectionHeadingProps {
   children: ReactNode;
-  linkText: string;
-  linkHref: string;
+  linkText?: string;
+  linkHref?: string;
   isContactPage?: boolean;
   isDownload?: boolean;
   downloadFileName?: string;
@@ -44,13 +44,17 @@ export const SectionHeading = ({
             className={`${fontSizeClass} text-gray-300 text-center md:text-left space-x-2`}
           >
             <span>{children}</span>
-            <a
-              href={linkHref}
-              className="text-orange/80 underline hover:text-orange transition-all duration-150"
-              {...(isDownload && { download: downloadFileName || true })}
-            >
-              {linkText}
-            </a>
+            {linkHref ? (
+              <a
+                href={linkHref}
+                target="_blank"
+                rel="noreferrer"
+                className="text-orange/80 underline hover:text-orange transition-all duration-150"
+                {...(isDownload && { download: downloadFileName || true })}
+              >
+                {linkText}
+              </a>
+            ) : null}
           </p>
           {rightLink ? rightLink : null}
         </div>

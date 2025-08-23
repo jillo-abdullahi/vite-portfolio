@@ -37,7 +37,8 @@ export type TechStack =
   | "Github Actions"
   | "CircleCI"
   | "Vercel"
-  | "Component libraries";
+  | "Component libraries"
+  | "Flask";
 
 /**
  * External social and professional links
@@ -103,7 +104,7 @@ export interface PortfolioProject {
  */
 export interface Skill {
   /** Name of the technology or skill */
-  name: TechStack;
+  name: string;
   /** Proficiency level as a percentage */
   level: Percentage;
 }
@@ -119,5 +120,7 @@ export interface Skills {
   /** Database technology skills */
   databases: Skill[];
   /** DevOps and deployment skills */
-  devops: Skill[];
+  devops?: Skill[];
+  /** Web3 and blockchain skills */
+  web3?: Skill[];
 }

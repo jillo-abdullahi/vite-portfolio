@@ -3,15 +3,16 @@ import {
   ComputerDesktopIcon,
   ServerStackIcon,
   CircleStackIcon,
-  WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
+import { LiaEthereum } from "react-icons/lia";
+
 import { skills } from "../data";
 import { StackCard } from "./shared/stackCard";
 import type { Skill } from "../types";
 
 interface StackItemProps {
   icon: ReactElement;
-  title: "front-end" | "back-end" | "databases" | "devops";
+  title: "front-end" | "back-end" | "databases" | "devops" | "web3";
   skills: Skill[];
 }
 
@@ -31,10 +32,16 @@ const stackItems: StackItemProps[] = [
     title: "databases",
     skills: skills.databases,
   },
+  //   {
+  //     icon: <WrenchScrewdriverIcon className="text-orange w-8 h-8" />,
+  //     title: "devops",
+  //     skills: skills.devops,
+  //   },
+
   {
-    icon: <WrenchScrewdriverIcon className="text-orange w-8 h-8" />,
-    title: "devops",
-    skills: skills.devops,
+    icon: <LiaEthereum className="text-orange w-8 h-8" />,
+    title: "web3",
+    skills: skills.web3 || [],
   },
 ];
 
