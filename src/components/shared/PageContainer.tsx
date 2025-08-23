@@ -11,6 +11,7 @@ interface PageContainerProps {
  * @component
  * @param {Object} props - Component props
  * @param {React.ReactNode} props.children - The content to be rendered inside the container
+ * @param {boolean} [props.isHomePage=false] - Whether the container is for the home page (applies special background styling)
  * @returns {JSX.Element} A styled div container with the provided children
  *
  * @example
@@ -31,7 +32,7 @@ export const PageContainer = ({
     backgroundPosition: "center",
   };
   return (
-    <SlideMeIn>
+    <SlideMeIn duration={200}>
       <div
         className="mx-auto px-2 sm:px-24 lg:px-48 pt-32 md:pt-40 min-h-screen bg-gray-900/70 pb-20"
         style={isHomePage ? bgStyle : {}}
