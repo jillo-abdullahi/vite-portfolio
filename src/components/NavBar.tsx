@@ -147,7 +147,9 @@ const NavBar: FC = () => {
                     key={item.name}
                     as={Link}
                     to={item.href}
-                    className="cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center"
+                    className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center ${
+                      item.isActive ? "bg-gray-800/60 text-gray-200" : ""
+                    }`}
                   >
                     {item.name}
                   </DisclosureButton>
