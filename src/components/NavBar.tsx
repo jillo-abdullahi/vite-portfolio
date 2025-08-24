@@ -88,7 +88,7 @@ const NavBar: FC = () => {
                 >
                   <button className="relative inline-flex items-center justify-center rounded-full p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
                     <img
-                      src={"/src/assets/sneakerhead985.png"}
+                      src={"/sneakerhead985.png"}
                       alt="home"
                       className={`flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer ${
                         isHome ? "ring-4 ring-orange/80" : ""

@@ -18,7 +18,7 @@ const LandingPage: FC = () => {
           <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8">
             <div className="profile-img">
               <img
-                src={"/src/assets/me.webp"}
+                src={"/me.webp"}
                 alt="profile"
                 className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg"
               />

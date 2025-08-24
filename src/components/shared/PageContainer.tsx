@@ -26,7 +26,7 @@ export const PageContainer = ({
   isHomePage = false,
 }: PageContainerProps) => {
   const bgStyle = {
-    backgroundImage: "url('/src/assets/icon-bg.svg')",
+    backgroundImage: "url('/icon-bg.svg')",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",

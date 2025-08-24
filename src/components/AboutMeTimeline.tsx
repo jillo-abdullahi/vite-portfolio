@@ -32,7 +32,7 @@ export const AboutMeTimeline: FC = () => {
                   </h3>
                   <div className="flex items-center space-x-2">
                     <img
-                      src={`/src/assets/experience/${companyLogo}`}
+                      src={`/experience/${companyLogo}`}
                       alt={`${company} logo`}
                       className="w-6 h-6 rounded-full"
                     />

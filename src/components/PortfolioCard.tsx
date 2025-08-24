@@ -25,7 +25,7 @@ export const PortfolioCard = ({
             <div className="relative aspect-[16/10] rounded-sm overflow-hidden bg-gray-900">
               {image ? (
                 <img
-                  src={`/src/assets/portfolio/${image}`}
+                  src={`/portfolio/${image}`}
                   alt={title}
                   loading="lazy"
                   decoding="async"

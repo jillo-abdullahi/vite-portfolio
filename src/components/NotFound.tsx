@@ -10,7 +10,7 @@ const NotFound: FC = () => {
         <div className="flex flex-col items-center justify-center pt-10">
           <div className="mb-2">
             <img
-              src={"/src/assets/notFound.svg"}
+              src={"/notFound.svg"}
               alt="not-found"
               className="w-64"
             />
