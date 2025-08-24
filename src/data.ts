@@ -145,7 +145,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     title: "Web app for managing GasHawk transactions",
     description:
-      "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum, Optimism, and Base. Connect your wallet to the GasHawk RPC and manage your transactions from here.",
+      "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum, Optimism, and Base.",
     image: "gashawk.png",
     preview: "https://app.gashawk.io/",
     stacks: ["React", "Vite", "Chakra UI", "TypeScript"],

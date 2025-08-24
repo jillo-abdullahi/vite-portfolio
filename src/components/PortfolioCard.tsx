@@ -1,4 +1,8 @@
 import { type PortfolioProject } from "@/types";
+import {
+  ArrowTopRightOnSquareIcon,
+  CodeBracketIcon,
+} from "@heroicons/react/24/outline";
 
 export const PortfolioCard = ({
   title,
@@ -10,68 +14,141 @@ export const PortfolioCard = ({
   completed,
 }: PortfolioProject) => {
   return (
-    <div className="rounded-xl border-none bg-gray-800 flex flex-col shadowy">
-      {/* Top: thumbnail with reserved aspect ratio (prevents layout shift) */}
-      <a href={preview} className="block relative rounded-t-xl overflow-hidden">
-        <div className="aspect-[16/9] w-full bg-gray-200">
-          {image ? (
-            <img
-              src={`/src/assets/portfolio/${image}`}
-              alt={title}
-              loading="lazy"
-              decoding="async"
-              width="1280"
-              height="720"
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="h-full w-full flex items-center justify-center bg-gray-300">
-              <span className="text-gray-500 text-sm">No Image</span>
+    <div className="group relative h-auto lg:h-[560px] flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange/10">
+      {/* Image Container with Device Mockup */}
+      <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800">
+        {/* MacBook Mockup */}
+        <div className="relative bg-gray-800 rounded-lg p-1.5 shadow-2xl">
+          {/* MacBook Screen Bezel */}
+          <div className="bg-black rounded-md p-1.5">
+            {/* MacBook Screen */}
+            <div className="relative aspect-[16/10] rounded-sm overflow-hidden bg-gray-900">
+              {image ? (
+                <img
+                  src={`/src/assets/portfolio/${image}`}
+                  alt={title}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
+                  <span className="text-gray-400 text-sm font-medium">
+                    No Image Available
+                  </span>
+                </div>
+              )}
+
+              {/* Subtle screen glare effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-20" />
             </div>
-          )}
+          </div>
+
+          {/* MacBook Base/Keyboard Area */}
+          <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-lg relative">
+            {/* Apple Logo Area */}
+            <div className="absolute top-0.5 left-1/2 transform -translate-x-1/2 w-2 h-1 bg-gray-600 rounded-full opacity-50"></div>
+          </div>
         </div>
 
-        {/* published status for admins  */}
-        {!completed ? (
-          <div className="absolute top-2 right-2 flex items-end gap-1 ">
-            <span
-              className={`px-2 py-1 text-xs rounded-lg bg-yellow-100 text-yellow-800 border border-yellow-800/40  `}
-            >
+        {/* Status Badge */}
+        {!completed && (
+          <div className="absolute top-6 right-6 z-10">
+            <div className="px-3 py-1.5 text-xs font-semibold rounded-full bg-yellow-500/90 text-yellow-900 backdrop-blur-sm border border-yellow-400/30 shadow-lg">
               In Progress
-            </span>
+            </div>
           </div>
-        ) : null}
+        )}
 
-        <div className="absolute bottom-2 left-3 right-3 bg-black/40 backdrop-blur-sm rounded-xl p-3 h-[110px] border border-gray-800/40">
-          <h3 className="text-white text-lg font-semibold drop-shadow">
+        {/* Action Buttons */}
+        <div className="absolute top-6 left-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+          {preview && (
+            <a
+              href={preview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-orange/90 hover:bg-orange text-white transition-colors duration-200 shadow-lg backdrop-blur-sm"
+              aria-label="View Live Demo"
+            >
+              <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-gray-800/90 hover:bg-gray-700 text-white transition-colors duration-200 shadow-lg backdrop-blur-sm"
+              aria-label="View Source Code"
+            >
+              <CodeBracketIcon className="h-4 w-4" />
+            </a>
+          )}
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="flex-1 flex flex-col p-6 space-y-4">
+        {/* Title and Description */}
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold text-white group-hover:text-orange transition-colors duration-200">
             {title}
           </h3>
-          <p className="text-white/90 text-xs mt-1 line-clamp-2 drop-shadow">
+          <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">
             {description}
           </p>
         </div>
-      </a>
 
-      {/* branch tags  */}
-      {stacks && stacks.length > 0 ? (
-        <div className="flex flex-wrap gap-1 mb-3 px-3">
-          {stacks.slice(0, 5).map((stack) => (
-            <span
-              key={stack}
-              className="px-2 py-1 text-xs bg-green-800/30 text-green-200 rounded-md"
-            >
-              {stack}
-            </span>
-          ))}
-          {stacks.length > 5 && (
-            <div className="flex items-center justify-center">
-              <span className="px-2 text-xs text-gray-100 rounded">
-                +{stacks.length - 5}
-              </span>
+        {/* Tech Stack */}
+        <div className="flex-1">
+          {stacks && stacks.length > 0 && (
+            <div className="space-y-2">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                Tech Stack
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {stacks.map((stack) => (
+                  <span
+                    key={stack}
+                    className="px-2.5 py-1 text-xs font-medium bg-orange/10 text-orange border border-orange/20 rounded-md hover:bg-orange/20 transition-colors duration-200"
+                  >
+                    {stack}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </div>
-      ) : null}
+
+        {/* Action Links - Mobile Fallback */}
+        <div className="flex gap-3 pt-2 md:hidden">
+          {preview && (
+            <a
+              href={preview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-orange rounded-lg hover:bg-orange/90 transition-colors duration-200"
+            >
+              <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+              Live Demo
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-200"
+            >
+              <CodeBracketIcon className="h-4 w-4" />
+              Code
+            </a>
+          )}
+        </div>
+      </div>
+
+      {/* Subtle Border Glow on Hover */}
+      <div className="absolute inset-0 rounded-2xl border border-orange/0 group-hover:border-orange/30 transition-colors duration-300 pointer-events-none" />
     </div>
   );
 };
