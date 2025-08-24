@@ -21,7 +21,7 @@ export const AboutMeTimeline: FC = () => {
         return (
           <SlideMeIn cascade key={index}>
             <div
-              className={`border bg-gray-900/30 text-white rounded-2xl py-5 px-6 ${
+              className={`border bg-gray-900/30 text-white rounded-2xl py-5 px-6 transform hover:scale-101 transition-transform duration-500 ${
                 isCurrent ? "border-orange/50" : "border-gray-800"
               }`}
             >
@@ -55,7 +55,9 @@ export const AboutMeTimeline: FC = () => {
                 <ul className="text-gray-300 space-y-2">
                   {description.map((desc: string, idx: number) => (
                     <li key={idx}>
-                      <span className="tracking-wide text-gray-300">{desc}</span>
+                      <span className="tracking-wide text-gray-300">
+                        {desc}
+                      </span>
                     </li>
                   ))}
                 </ul>

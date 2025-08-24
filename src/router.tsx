@@ -54,7 +54,7 @@ const aboutRedirectRoute = createRoute({
 // create projects route
 const projectsRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/projects",
+  path: "/work",
   component: MyProjects,
 });
 
