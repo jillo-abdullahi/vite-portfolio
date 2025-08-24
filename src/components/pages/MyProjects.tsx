@@ -4,7 +4,7 @@ import { PortfolioGrid } from "../PortfolioGrid";
 import { PortfolioCard } from "../PortfolioCard";
 import Stacks from "../Stacks";
 import { PageContainer } from "../shared/PageContainer";
-import { SectionHeading } from "../shared/SectionHeading";
+import { SectionHeading } from "../shared/PageTitle";
 
 export const MyProjects = () => {
   return (
