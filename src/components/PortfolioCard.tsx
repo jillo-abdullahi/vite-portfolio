@@ -14,7 +14,7 @@ export const PortfolioCard = ({
   completed,
 }: PortfolioProject) => {
   return (
-    <div className="group relative h-auto lg:h-[560px] flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange/10">
+    <div className="group relative h-auto lg:h-[560px] flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 overflow-hidden transition-all duration-300 hover:scale-[1.02]">
       {/* Image Container with Device Mockup */}
       <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800">
         {/* MacBook Mockup */}
@@ -54,7 +54,7 @@ export const PortfolioCard = ({
         {/* Status Badge */}
         {!completed && (
           <div className="absolute top-6 right-6 z-10">
-            <div className="px-3 py-1.5 text-xs font-semibold rounded-full bg-yellow-500/90 text-yellow-900 backdrop-blur-sm border border-yellow-400/30 shadow-lg">
+            <div className="px-3 py-1.5 text-xs font-semibold rounded-full bg-yellow-500/90 text-gray-900 backdrop-blur-sm border border-yellow-400/30 shadow-lg">
               In Progress
             </div>
           </div>
@@ -67,7 +67,7 @@ export const PortfolioCard = ({
               href={preview}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-orange/90 hover:bg-orange text-white transition-colors duration-200 shadow-lg backdrop-blur-sm"
+              className="p-2 rounded-full border border-gray-300 bg-orange/90 hover:bg-orange text-gray-900 transition-colors duration-200 shadow-lg backdrop-blur-sm"
               aria-label="View Live Demo"
             >
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
@@ -78,7 +78,7 @@ export const PortfolioCard = ({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-gray-800/90 hover:bg-gray-700 text-white transition-colors duration-200 shadow-lg backdrop-blur-sm"
+              className="p-2 rounded-full border border-gray-300 bg-gray-800/90 hover:bg-gray-700 text-gray-100 transition-colors duration-200 shadow-lg backdrop-blur-sm"
               aria-label="View Source Code"
             >
               <CodeBracketIcon className="h-4 w-4" />
@@ -127,7 +127,7 @@ export const PortfolioCard = ({
               href={preview}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-orange rounded-lg hover:bg-orange/90 transition-colors duration-200"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 bg-orange rounded-lg hover:bg-orange/90 transition-colors duration-200"
             >
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
               Live Demo
@@ -138,7 +138,7 @@ export const PortfolioCard = ({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-200"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-100 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-200"
             >
               <CodeBracketIcon className="h-4 w-4" />
               Code
@@ -146,9 +146,6 @@ export const PortfolioCard = ({
           )}
         </div>
       </div>
-
-      {/* Subtle Border Glow on Hover */}
-      <div className="absolute inset-0 rounded-2xl border border-orange/0 group-hover:border-orange/30 transition-colors duration-300 pointer-events-none" />
     </div>
   );
 };
