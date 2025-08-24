@@ -148,7 +148,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum, Optimism, and Base.",
     image: "gashawk.png",
     preview: "https://app.gashawk.io/",
-    stacks: ["React", "Vite", "Chakra UI", "TypeScript"],
+    stacks: ["React", "Vite", "Chakra UI", "TypeScript", "Express.js"],
     completed: true,
   },
   {

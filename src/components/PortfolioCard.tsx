@@ -14,7 +14,7 @@ export const PortfolioCard = ({
   completed,
 }: PortfolioProject) => {
   return (
-    <div className="group relative h-auto lg:h-[560px] flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 overflow-hidden transition-all duration-300 hover:scale-[1.02]">
       {/* Image Container with Device Mockup */}
       <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800">
         {/* MacBook Mockup */}
