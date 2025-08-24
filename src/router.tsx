@@ -65,16 +65,6 @@ const contactRoute = createRoute({
   component: ContactMe,
 });
 
-// Create a catch-all route for 404s
-const notFoundRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "*",
-  component: NotFound,
-  beforeLoad: () => {
-    throw new Error("Not Found");
-  },
-});
-
 // Create the route tree
 const routeTree = rootRoute.addChildren([
   indexRoute,
@@ -82,7 +72,6 @@ const routeTree = rootRoute.addChildren([
   aboutRedirectRoute,
   projectsRoute,
   contactRoute,
-  notFoundRoute,
 ]);
 
 // Create the router
