@@ -45,12 +45,6 @@ main {
   }
 }
 
-.withBubblesBackground {
-  background-color: #0e0e0e;
-  background: url("./src/assets/icon-stacks-bg.svg") no-repeat center center;
-  background-size: cover;
-}
-
 .slideInFromTop {
   animation: slideInFromTop 0.5s;
 }
@@ -405,17 +399,6 @@ footer {
 
 * {
   box-sizing: border-box;
-}
-
-.not-found-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: url("./static/images/background-plain.png") no-repeat center
-    center;
-  background-size: cover;
 }
 
 .not-found-message span {

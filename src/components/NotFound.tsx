@@ -1,4 +1,4 @@
-import type { FC, CSSProperties } from "react";
+import type { FC } from "react";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { PageContainer } from "./shared/PageContainer";
 import { SlideMeIn } from "./shared/slideMeIn";
