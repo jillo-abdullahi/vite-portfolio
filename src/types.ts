@@ -38,7 +38,18 @@ export type TechStack =
   | "CircleCI"
   | "Vercel"
   | "Component libraries"
-  | "Flask";
+  | "Flask"
+  | "Zustand"
+  | "ethers.js"
+  | "Metamask"
+  | "Wagmi"
+  | "RabbitMQ"
+  | "Redux"
+  | "HTML/CSS"
+  | "Regular Expressions"
+  | "Xpath"
+  | "Framer"
+  | "Ms Excel";
 
 /**
  * External social and professional links
@@ -77,6 +88,7 @@ export interface Experience {
   date: string;
   /** List of achievements or responsibilities */
   description: string[];
+  technologies?: TechStack[];
 }
 
 /**

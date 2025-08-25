@@ -25,11 +25,23 @@ export const experiences: Experience[] = [
     company: "GasHawk",
     companyUrl: "https://www.linkedin.com/company/gashawk/",
     companyLogo: "gashawkLogo.jpeg",
-    location: "Remote, Global",
+    location: "Remote",
     date: "2024 - present",
     description: [
-      "Currently writing robust backend and frontend code to make living on-chain more efficient, safe, and secure.",
-      "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum and OP Mainnet.",
+      "Spearheaded the complete redesign and rebuild of the GasHawk web application, leveraging TypeScript, React, and Node.js to deliver a significantly enhanced user experience.",
+      "Engineered and integrated critical features across the entire stack, such as multi-chain interoperability, a comprehensive quota plan system, and efficient session transfer functionalitys, thereby elevating user engagement and satisfaction.",
+      "Redesigned savings calculator on the company Framer site, leading to increased user interaction and higher conversion rates.",
+    ],
+    technologies: [
+      "React",
+      "Chakra UI",
+      "Zustand",
+      "TypeScript",
+      "Wagmi",
+      "ethers.js",
+      "Express.js",
+      "Postgres",
+      "Framer",
     ],
   },
   {
@@ -42,9 +54,10 @@ export const experiences: Experience[] = [
     location: "Nairobi, Kenya",
     date: "2023 - 2024",
     description: [
-      "Wrote high-performance, secure, and maintainable code that met business requirements and followed industry best practices.",
-      "Developed a full stack web application using modern technologies such as React, Node.js, and DynamoDB.",
+      "Developed backend systems to automate exchange of SPS documents between IOTA and its partners making the process more efficient.",
+      "Significantly improved the user experience of the IOTA TLIP web app by revamping the front-end using React and TypeScript.",
     ],
+    technologies: ["React", "TypeScript", "DynamoDB", "Express.js", "RabbitMQ"],
   },
   {
     isCurrent: false,
@@ -53,13 +66,25 @@ export const experiences: Experience[] = [
     company: "Syndicate",
     companyUrl: "https://www.linkedin.com/company/syndicate-protocol/",
     companyLogo: "syndicateLogo.jpeg",
-    location: "Global, OO",
+    location: "Remote",
     date: "2021 - 2023",
     description: [
       "Successfully built (from the ground up) and deployed a performant web3 dApp within 3 months using TypeScript and React on the Ethereum and Polygon chains.",
-      "Successfully built and launched Collectives, a dApp feature focused on creating communities around generative art NFTs.",
+      "Built and launched Collectives, a dApp feature focused on creating communities around generative art NFTs.",
       "Collaborated with team members to develop and deploy a GraphQL back-end API to store off-chain data within a month.",
       "Wrote robust tests for the existing smart contracts to ensure reliability and security.",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "GraphQL",
+      "TailwindCSS",
+      "Redux",
+      "Postgres",
+      "Solidity",
+      "ethers.js",
+      "Metamask",
     ],
   },
   {
@@ -74,8 +99,8 @@ export const experiences: Experience[] = [
     description: [
       "Worked closely with the design team to dramatically improve the accessibility and user-friendliness of applications with React and NextJS.",
       "Continuously iterated over front-end web apps and used observation tools like Hotjar to significantly improve user payment flows for over 6 payment options.",
-      "Collaborated with the back-end team to build reusable components and libraries for future use.",
     ],
+    technologies: ["React", "Redux", "Next.js", "TypeScript", "Express.js"],
   },
   {
     isCurrent: false,
@@ -88,9 +113,10 @@ export const experiences: Experience[] = [
     date: "2018 - 2019",
     description: [
       "Collaborated with the design team to quickly and efficiently build front-end apps using ReactJS.",
-      " Collaborated with team members to build and deploy a performant REST API using Python/Django within a month.",
+      "Collaborated with team members to build and deploy a performant REST API using Python/Django within a month.",
       "Worked with the team to improve the codebase and overall product quality.",
     ],
+    technologies: ["React", "TypeScript", "Django", "Postgres"],
   },
   {
     isCurrent: false,
@@ -107,6 +133,13 @@ export const experiences: Experience[] = [
       "Ensured that the team is motivated and that the team members are working in harmony.",
       "Closely worked with the training and quality departments to achieve targeted SLAs.",
     ],
+    technologies: [
+      "JavaScript",
+      "HTML/CSS",
+      "Ms Excel",
+      "Regular Expressions",
+      "Xpath",
+    ],
   },
   {
     isCurrent: false,
@@ -119,8 +152,15 @@ export const experiences: Experience[] = [
     date: "2015 - 2016",
     description: [
       "Analyzed the levels of quality of work in the different Sama work streams, measuring compliance against set standards and recommending actions to be taken to improve quality based on assessment findings.",
-      "Assessed agents transactions and adviced on required measures to improve quality.",
-      "compiled and sent reports to the training and quality manager and to other relevant stakeholders and ensured that each work stream is consistently delivering standard work.",
+      "Assessed agents transactions and advised on required measures to improve quality.",
+      "Compiled and sent reports to the training and quality manager and to other relevant stakeholders and ensured that each work stream is consistently delivering standard work.",
+    ],
+    technologies: [
+      "JavaScript",
+      "HTML/CSS",
+      "Ms Excel",
+      "Regular Expressions",
+      "Xpath",
     ],
   },
   {
@@ -145,7 +185,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     title: "Web app for managing GasHawk transactions",
     description:
-      "GasHawk is saving retails and institutions up to 95% on gas fees on Ethereum, Optimism, and Base.",
+      "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
     image: "gashawk.png",
     preview: "https://app.gashawk.io/",
     stacks: ["React", "Vite", "Chakra UI", "TypeScript", "Express.js"],

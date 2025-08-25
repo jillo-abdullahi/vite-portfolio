@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { Experience } from "@/types";
+import type { Experience, TechStack } from "@/types";
 import { SlideMeIn } from "./shared/slideMeIn";
 import { experiences } from "@/data";
 
@@ -16,6 +16,7 @@ export const AboutMeTimeline: FC = () => {
           location,
           description,
           isCurrent,
+          technologies = [],
         } = experience;
 
         return (
@@ -61,6 +62,24 @@ export const AboutMeTimeline: FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                {technologies.length > 0 && (
+                  <div className="pt-2">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                      Technologies
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {technologies.map((tech: TechStack, idx: number) => (
+                        <span
+                          key={idx}
+                          className="bg-gray-800 text-gray-300 rounded-full px-3 py-1 text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </SlideMeIn>
