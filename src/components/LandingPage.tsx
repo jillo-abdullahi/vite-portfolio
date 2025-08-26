@@ -28,7 +28,7 @@ const LandingPage: FC = () => {
           <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700 pl-0 md:pl-8 pt-4 md:pt-0">
             <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
               <WavingHand />
-              <span className="text-xl sm:text-2xl text-gray-300/90 font-medium">
+              <span className="text-xl sm:text-2xl text-gray-300/80 font-medium">
                 Hello, I am
               </span>
             </div>
@@ -46,7 +46,7 @@ const LandingPage: FC = () => {
             </span>
 
             <div className="w-full max-w-3xl pt-6">
-              <p className="text-gray-300/90 text-center md:text-left tracking-wide">
+              <p className="text-gray-300/80 text-center md:text-left tracking-wide">
                 As a Full Stack Software Engineer, I'm on a mission to build
                 amazing things - with a <b>dash of innovation</b> and a whole
                 lot of
