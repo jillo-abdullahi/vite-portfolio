@@ -34,10 +34,24 @@ export const PageContainer = ({
   return (
     <SlideMeIn duration={200}>
       <div
-        className="mx-auto px-8 md:px-10 lg:px-28 xl:px-48 pt-32 md:pt-40 min-h-screen bg-gray-900/70 pb-20"
+        className="mx-auto px-8 md:px-10 lg:px-28 xl:px-48 pt-32 md:pt-40 min-h-screen bg-gray-900/70"
         style={isHomePage ? bgStyle : {}}
       >
         {children}
+
+        <footer
+          className={`mt-20 border-t pb-6 ${
+            isHomePage ? "border-gray-500" : "border-gray-700"
+          }`}
+        >
+          <div
+            className={`text-center md:text-right text-sm mt-6 ${
+              isHomePage ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
+            &copy; {new Date().getFullYear()} Jillo Woche
+          </div>
+        </footer>
       </div>
     </SlideMeIn>
   );
