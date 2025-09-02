@@ -11,7 +11,7 @@ export const MyProjects = () => {
     <PageContainer>
       {/* Stacks */}
       <section>
-        <SectionHeading>My Tech Stack</SectionHeading>
+        <SectionHeading>My Tools</SectionHeading>
         <Stacks />
       </section>
 

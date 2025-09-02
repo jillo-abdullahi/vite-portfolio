@@ -183,12 +183,22 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    title: "Web app for managing GasHawk transactions",
+    title: "dApp for managing GasHawk transactions",
     description:
       "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
     image: "gashawk.png",
     preview: "https://app.gashawk.io/",
     stacks: ["React", "Vite", "Chakra UI", "TypeScript", "Express.js"],
+    completed: true,
+  },
+  {
+    title: "Ballot dApp for decentralized voting",
+    description:
+      "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
+    image: "ballot.png",
+    preview: "https://ballot-box-green.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/ballotBox",
+    stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "Wagmi", "Viem"],
     completed: true,
   },
   {
@@ -199,16 +209,6 @@ export const portfolioProjects: PortfolioProject[] = [
     preview: "https://my-links-amber.vercel.app/",
     github: "https://github.com/jillo-abdullahi/my-links",
     stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
-    completed: true,
-  },
-  {
-    title: "A real estate listing platform",
-    description:
-      "An app that allows users to list properties for sale. User can register accounts, login, add, edit, and delete properties.",
-    image: "homestead.png",
-    preview: "https://homestead-three.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/homestead",
-    stacks: ["Next.js", "GraphQL", "TypeScript", "Prisma"],
     completed: true,
   },
   {
@@ -239,7 +239,7 @@ export const portfolioProjects: PortfolioProject[] = [
     preview: "https://advanced-rock-paper-scissors.vercel.app/",
     github: "https://github.com/jillo-abdullahi/advanced-rock-paper-scissors",
     stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
-    completed: false,
+    completed: true,
   },
 ];
 
@@ -273,10 +273,10 @@ export const skills: Skills = {
   //   { name: "CircleCI", level: "60%" },
   // ],
   web3: [
-    { name: "ethers.js", level: "85%" },
     { name: "Wagmi", level: "85%" },
-    { name: "Smart Contracts", level: "60%" },
-    { name: "NFTs", level: "85%" },
-    { name: "WalletConnect", level: "80%" },
+    { name: "ethers.js", level: "85%" },
+    { name: "Foundry", level: "70%" },
+    { name: "Viem", level: "80%" },
+    { name: "WalletConnect", level: "85%" },
   ],
 };

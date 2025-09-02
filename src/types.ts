@@ -49,7 +49,9 @@ export type TechStack =
   | "Regular Expressions"
   | "Xpath"
   | "Framer"
-  | "Ms Excel";
+  | "Ms Excel"
+  | "Viem";
+
 
 /**
  * External social and professional links
