@@ -66,6 +66,7 @@ export interface ExternalLinks {
   instagram: string;
   calLink: string;
   email: string;
+  telegram: string;
 }
 
 /**

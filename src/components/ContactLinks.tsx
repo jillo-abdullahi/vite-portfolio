@@ -4,6 +4,7 @@ import {
   faLinkedin,
   faGithub,
   faXTwitter,
+  faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -36,9 +37,9 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
       name: "Email",
     },
     {
-      icon: faGithub,
-      href: github,
-      name: "Github",
+      icon: faTelegram,
+      href: externalLinks.telegram,
+      name: "Telegram",
     },
     {
       icon: faXTwitter,
@@ -101,15 +102,17 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
   return (
     <div className="flex items-center justify-center space-x-3 py-1">
       {socialLinks.map(({ icon, href }, index) => (
-        <a
-          className="text-gray-300 hover:text-orange transition-all duration-150 flex"
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          key={index}
-        >
-          <FontAwesomeIcon icon={icon} style={{ fontSize: "18px" }} />
-        </a>
+        <div className="flex" key={index}>
+          <a
+            key={index}
+            className="text-gray-300 hover:text-orange transform hover:scale-140 transition-all duration-150 flex"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={icon} style={{ fontSize: "18px" }} />
+          </a>
+        </div>
       ))}
     </div>
   );
