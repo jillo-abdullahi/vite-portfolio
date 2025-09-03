@@ -52,7 +52,6 @@ export type TechStack =
   | "Ms Excel"
   | "Viem";
 
-
 /**
  * External social and professional links
  */
@@ -112,6 +111,8 @@ export interface PortfolioProject {
   stacks: TechStack[];
   /** Whether the project is completed */
   completed: boolean;
+  /** Optional link to smart contracts code if applicable */
+  contract?: string;
 }
 
 /**

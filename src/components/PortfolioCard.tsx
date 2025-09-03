@@ -2,6 +2,7 @@ import { type PortfolioProject } from "@/types";
 import {
   ArrowTopRightOnSquareIcon,
   CodeBracketIcon,
+  CodeBracketSquareIcon,
 } from "@heroicons/react/24/outline";
 
 export const PortfolioCard = ({
@@ -12,6 +13,7 @@ export const PortfolioCard = ({
   github,
   stacks,
   completed,
+  contract,
 }: PortfolioProject) => {
   return (
     <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 overflow-hidden transition-all duration-300 hover:scale-[1.02]">
@@ -82,6 +84,18 @@ export const PortfolioCard = ({
               aria-label="View Source Code"
             >
               <CodeBracketIcon className="h-4 w-4" />
+            </a>
+          )}
+
+          {contract && (
+            <a
+              href={contract}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full border border-gray-300 bg-purple-800/90 hover:bg-purple-700 text-gray-100 transition-colors duration-200 shadow-lg backdrop-blur-sm"
+              aria-label="View Smart Contracts Code"
+            >
+              <CodeBracketSquareIcon className="h-4 w-4" />
             </a>
           )}
         </div>
