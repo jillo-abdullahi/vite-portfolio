@@ -4,6 +4,7 @@ import {
   CodeBracketIcon,
   CodeBracketSquareIcon,
 } from "@heroicons/react/24/outline";
+import { TooltipButton } from "./shared/TooltipButton";
 
 export const PortfolioCard = ({
   title,
@@ -16,9 +17,9 @@ export const PortfolioCard = ({
   contract,
 }: PortfolioProject) => {
   return (
-    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
       {/* Image Container with Device Mockup */}
-      <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800">
+      <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800 rounded-t-2xl">
         {/* MacBook Mockup */}
         <div className="relative bg-gray-800 rounded-lg p-1.5 shadow-2xl">
           {/* MacBook Screen Bezel */}
@@ -65,38 +66,35 @@ export const PortfolioCard = ({
         {/* Action Buttons */}
         <div className="absolute top-6 left-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
           {preview && (
-            <a
+            <TooltipButton
               href={preview}
-              target="_blank"
-              rel="noopener noreferrer"
+              tooltipText="View Live Demo"
               className="p-2 rounded-full border border-gray-300 bg-orange/90 hover:bg-orange text-gray-900 transition-colors duration-200 shadow-lg backdrop-blur-sm"
-              aria-label="View Live Demo"
+              ariaLabel="View Live Demo"
             >
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-            </a>
+            </TooltipButton>
           )}
           {github && (
-            <a
+            <TooltipButton
               href={github}
-              target="_blank"
-              rel="noopener noreferrer"
+              tooltipText="View Source Code"
               className="p-2 rounded-full border border-gray-300 bg-gray-800/90 hover:bg-gray-700 text-gray-100 transition-colors duration-200 shadow-lg backdrop-blur-sm"
-              aria-label="View Source Code"
+              ariaLabel="View Source Code"
             >
               <CodeBracketIcon className="h-4 w-4" />
-            </a>
+            </TooltipButton>
           )}
 
           {contract && (
-            <a
+            <TooltipButton
               href={contract}
-              target="_blank"
-              rel="noopener noreferrer"
+              tooltipText="View Smart Contract Code"
               className="p-2 rounded-full border border-gray-300 bg-purple-800/90 hover:bg-purple-700 text-gray-100 transition-colors duration-200 shadow-lg backdrop-blur-sm"
-              aria-label="View Smart Contracts Code"
+              ariaLabel="View Smart Contracts Code"
             >
               <CodeBracketSquareIcon className="h-4 w-4" />
-            </a>
+            </TooltipButton>
           )}
         </div>
       </div>
