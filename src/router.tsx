@@ -11,6 +11,7 @@ import NavBar from "@/components/NavBar";
 import { MyResume } from "./components/pages/MyResume";
 import { MyProjects } from "./components/pages/MyProjects";
 import { ContactMe } from "./components/pages/ContactMe";
+import { ScrollToTop } from "./components/shared/ScrollToTop";
 
 // Create a root route that just provides the layout
 const rootRoute = createRootRoute({
@@ -19,6 +20,7 @@ const rootRoute = createRootRoute({
       <div className="h-[10%] w-full max-w-7xl">
         <NavBar />
       </div>
+      <ScrollToTop />
       <div className="w-full min-h-screen">
         <Outlet />
       </div>
