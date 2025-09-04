@@ -17,9 +17,9 @@ export const PortfolioCard = ({
   contract,
 }: PortfolioProject) => {
   return (
-    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
+    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
       {/* Image Container with Device Mockup */}
-      <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800 rounded-t-2xl">
+      <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800">
         {/* MacBook Mockup */}
         <div className="relative bg-gray-800 rounded-lg p-1.5 shadow-2xl">
           {/* MacBook Screen Bezel */}
@@ -68,7 +68,7 @@ export const PortfolioCard = ({
           {preview && (
             <TooltipButton
               href={preview}
-              tooltipText="View Live Demo"
+              tooltipText="Live Demo"
               className="p-2 rounded-full border border-gray-300 bg-orange/90 hover:bg-orange text-gray-900 transition-colors duration-200 shadow-lg backdrop-blur-sm"
               ariaLabel="View Live Demo"
             >
