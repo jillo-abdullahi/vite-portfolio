@@ -231,20 +231,13 @@ export const skills: Skills = {
     { name: "TailwindCSS", level: "90%" },
     { name: "Chakra UI", level: "85%" },
   ],
-  databases: [
+  infra: [
     { name: "Postgres", level: "82%" },
     { name: "MySQL", level: "75%" },
-    { name: "Google Firestore", level: "80%" },
-    { name: "SQLite", level: "70%" },
-    { name: "DynamoDB", level: "80%" },
+    { name: "Google Firebase", level: "80%" },
+    { name: "Docker", level: "70%" },
+    { name: "Github Actions", level: "80%" },
   ],
-  // devops: [
-  //   { name: "Docker", level: "80%" },
-  //   { name: "Firebase", level: "70%" },
-  //   { name: "Github Actions", level: "80%" },
-  //   { name: "Vercel", level: "80%" },
-  //   { name: "CircleCI", level: "60%" },
-  // ],
   web3: [
     { name: "Wagmi", level: "85%" },
     { name: "ethers.js", level: "85%" },

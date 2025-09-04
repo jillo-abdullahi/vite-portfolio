@@ -12,31 +12,26 @@ import type { Skill } from "../types";
 
 interface StackItemProps {
   icon: ReactElement;
-  title: "front-end" | "back-end" | "databases" | "devops" | "web3";
+  title: "frontend" | "backend" | "infra" | "devops" | "web3";
   skills: Skill[];
 }
 
 const stackItems: StackItemProps[] = [
   {
     icon: <ComputerDesktopIcon className="text-orange w-8 h-8" />,
-    title: "front-end",
+    title: "frontend",
     skills: skills.frontend,
   },
   {
     icon: <ServerStackIcon className="text-orange w-8 h-8" />,
-    title: "back-end",
+    title: "backend",
     skills: skills.backend,
   },
   {
     icon: <CircleStackIcon className="text-orange w-8 h-8" />,
-    title: "databases",
-    skills: skills.databases,
+    title: "infra",
+    skills: skills.infra,
   },
-  //   {
-  //     icon: <WrenchScrewdriverIcon className="text-orange w-8 h-8" />,
-  //     title: "devops",
-  //     skills: skills.devops,
-  //   },
 
   {
     icon: <LiaEthereum className="text-orange w-8 h-8" />,

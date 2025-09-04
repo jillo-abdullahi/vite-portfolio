@@ -134,7 +134,7 @@ export interface Skills {
   /** Frontend development skills */
   frontend: Skill[];
   /** Database technology skills */
-  databases: Skill[];
+  infra: Skill[];
   /** DevOps and deployment skills */
   devops?: Skill[];
   /** Web3 and blockchain skills */

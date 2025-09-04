@@ -63,8 +63,6 @@ main {
 }
 
 .profile-img img {
-  width: 30vh;
-  height: 30vh;
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
   border: 8px solid #e7a11a;

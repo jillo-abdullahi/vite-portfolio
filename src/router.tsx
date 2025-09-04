@@ -4,6 +4,7 @@ import {
   createRouter,
   Outlet,
   redirect,
+  useLocation,
 } from "@tanstack/react-router";
 import NotFound from "@/components/NotFound";
 import LandingPage from "@/components/LandingPage";
@@ -12,20 +13,36 @@ import { MyResume } from "./components/pages/MyResume";
 import { MyProjects } from "./components/pages/MyProjects";
 import { ContactMe } from "./components/pages/ContactMe";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
+import { PageFooter } from "./components/PageFooter";
 
-// Create a root route that just provides the layout
+const bgStyle = {
+  backgroundImage: "url('/icon-bg.svg')",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+};
+
+// root route that just provides the layout
 const rootRoute = createRootRoute({
-  component: () => (
-    <>
-      <div className="h-[10%] w-full max-w-7xl">
-        <NavBar />
-      </div>
-      <ScrollToTop />
-      <div className="w-full min-h-screen">
-        <Outlet />
-      </div>
-    </>
-  ),
+  component: () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
+    return (
+      <>
+        <div className="h-[10%] w-full max-w-7xl">
+          <NavBar />
+        </div>
+        <ScrollToTop />
+        <div
+          className="w-full min-h-screen relative"
+          style={isHomePage ? bgStyle : {}}
+        >
+          <Outlet />
+          <PageFooter />
+        </div>
+      </>
+    );
+  },
 
   notFoundComponent: () => <NotFound />,
 });
@@ -56,7 +73,7 @@ const aboutRedirectRoute = createRoute({
 // create projects route
 const projectsRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/work",
+  path: "/projects",
   component: MyProjects,
 });
 
@@ -79,7 +96,7 @@ const routeTree = rootRoute.addChildren([
 // Create the router
 export const router = createRouter({ routeTree });
 
-// Register your router for maximum type safety
+// Register router for maximum type safety
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;

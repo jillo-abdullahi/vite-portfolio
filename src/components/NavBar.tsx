@@ -32,7 +32,7 @@ const NavBar: FC = () => {
   };
 
   const navigation: NavigationItem[] = [
-    { name: "Work", href: "/work", isActive: pathname === "/work" },
+    { name: "Projects", href: "/projects", isActive: pathname === "/projects" },
     { name: "Resumé", href: "/resume", isActive: pathname === "/resume" },
     { name: "Contact", href: "/contact", isActive: pathname === "/contact" },
   ];
@@ -51,11 +51,11 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`mx-4 z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-2 md:px-6 lg:px-24 xl:px-40 ${
+      className={`z-50 fixed right-0 left-0 h-18 slideInFromTop transition-all duration-200 px-4 md:px-8 lg:px-26 xl:px-42 ${
         isScrolled ? "mt-2" : "mt-4"
       }`}
     >
-      {({ open }: { open: boolean }) => (
+      {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
             className={`mx-auto px-6 relative border border-gray-700 rounded-2xl ${
@@ -85,6 +85,7 @@ const NavBar: FC = () => {
                 <Link
                   className="flex flex-shrink-0 items-center cursor-pointer"
                   to="/"
+                  onClick={close}
                 >
                   <button className="relative inline-flex items-center justify-center rounded-full p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
                     <img

@@ -7,15 +7,14 @@ import { PageContainer } from "./shared/PageContainer";
 import SkillSplitBar from "./SkillSplitBar";
 import { FaPython } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
-import { BiLogoTypescript } from "react-icons/bi";
 import { SiSolidity } from "react-icons/si";
 
 const LandingPage: FC = () => {
   return (
-    <PageContainer isHomePage={true}>
+    <PageContainer>
       <SlideMeIn>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center rounded-3xl border border-gray-700 bg-gray-900/70 p-6 pt-8 md:p-10 w-full">
-          <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8">
+          <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8 flex-shrink-0">
             <div className="profile-img">
               <img
                 src={"/me.webp"}
@@ -33,14 +32,9 @@ const LandingPage: FC = () => {
               </span>
             </div>
 
-            <div className="flex flex-col md:flex-row md:items-baseline justify-center space-x-3 pt-2 w-full">
-              <span className="text-3xl md:text-4xl sm:text-5xl text-orange font-bold flex-shrink-0 text-center md:text-left">
-                Jillo Woche
-              </span>
-              <div className="hidden md:flex items-center justify-center md:justify-start space-x-1 w-fit-content md:w-full">
-                <ContactLinks />
-              </div>
-            </div>
+            <span className="text-3xl md:text-4xl sm:text-5xl text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full">
+              Jillo Woche
+            </span>
             <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
               Full Stack Software Engineer
             </span>
@@ -63,7 +57,7 @@ const LandingPage: FC = () => {
                 Nairobi, Kenya
               </span>
             </div>
-            <div className="flex items-center justify-center space-x-1 w-full pt-2 md:hidden">
+            <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
               <ContactLinks />
             </div>
           </div>
@@ -90,30 +84,29 @@ const LandingPage: FC = () => {
           {/* Main languages  */}
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
             <div className="text-center md:text-left">
-              <p className="text-lg font-medium text-gray-300">
-                Languages
-              </p>
+              <p className="text-lg font-medium text-gray-300">Languages</p>
             </div>
 
             <div className="flex-1 flex flex-wrap justify-center md:justify-end gap-2">
               <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
                 <RiJavascriptFill className="text-yellow-400 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">JavaScript</span>
-              </div>
-              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
-                <FaPython className="text-blue-400 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">Python</span>
+                <span className="text-gray-300 font-semibold text-sm">
+                  JavaScript/TypeScript
+                </span>
               </div>
               <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
                 <SiSolidity className="text-gray-300 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">Solidity</span>
+                <span className="text-gray-300 font-semibold text-sm">
+                  Solidity
+                </span>
               </div>
               <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
-                <BiLogoTypescript className="text-blue-600 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">TypeScript</span>
+                <FaPython className="text-blue-400 h-4.5 w-4.5" />
+                <span className="text-gray-300 font-semibold text-sm">
+                  Python
+                </span>
               </div>
             </div>
-
           </div>
         </div>
       </SlideMeIn>

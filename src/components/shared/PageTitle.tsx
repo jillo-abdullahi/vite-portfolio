@@ -34,7 +34,7 @@ export const SectionHeading = ({
   rightLink,
 }: SectionHeadingProps) => {
   const fontSizeClass = isContactPage
-    ? "text-4xl md:text-6xl lg:text-7xl"
+    ? "text-4xl md:text-5xl lg:text-6xl"
     : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
     <SlideMeIn>

@@ -1,40 +1,71 @@
 import type { FC } from "react";
-import { HomeIcon } from "@heroicons/react/24/outline";
+import {
+  HomeIcon,
+  UserIcon,
+  BriefcaseIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/outline";
 import { PageContainer } from "./shared/PageContainer";
 import { SlideMeIn } from "./shared/slideMeIn";
+import NavigationCard from "./shared/NavigationCard";
 
 const NotFound: FC = () => {
   return (
     <PageContainer>
       <SlideMeIn>
-        <div className="flex flex-col items-center justify-center pt-10">
-          <div className="mb-2">
+        <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
+          <div className="mb-6">
             <img
               src={"/notFound.svg"}
               alt="not-found"
-              className="w-64"
+              className="w-36 opacity-80"
             />
           </div>
-          <div className="text-white/90 text-xl sm:text-2xl font-semibold">
-            <span>Page not be found.</span>
+
+          <div className="text-center mb-8">
+            <h1 className="text-white text-3xl sm:text-4xl font-bold mb-4">
+              Oops! Page Not Found
+            </h1>
+            <p className="text-gray-300 text-lg mb-2">
+              The page you're looking for seems to have wandered off into the
+              digital void.
+            </p>
+            <p className="text-gray-400 text-base">
+              Don't worry though - let's get you back on track!
+            </p>
           </div>
-          <div className="text-white/90 text-base text-center mb-4">
-            <span>
-              The page you are looking for doesn't exist or has been moved.
-            </span>
-          </div>
-          <div className="flex-shrink-0">
-            <a
-              type="button"
-              className="relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-4 py-3 text-base font-semibold text-gray-800 shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition"
-              href="/"
-            >
-              <HomeIcon
-                className="-ml-0.5 h-5 w-5 group-hover:translate-x-0.5 transition origin-center duration-200"
-                aria-hidden="true"
+
+          {/* Navigation Suggestions */}
+          <div className="w-full mb-8">
+            <h2 className="text-white text-xl font-semibold mb-4 text-center">
+              Where would you like to go?
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <NavigationCard
+                href="/"
+                icon={HomeIcon}
+                title="Home"
+                description="Start your journey"
               />
-              <span>Go back home</span>
-            </a>
+              <NavigationCard
+                href="/resume"
+                icon={UserIcon}
+                title="Resume"
+                description="My experience"
+              />
+              <NavigationCard
+                href="/projects"
+                icon={BriefcaseIcon}
+                title="Projects"
+                description="See my work"
+              />
+              <NavigationCard
+                href="/contact"
+                icon={EnvelopeIcon}
+                title="Contact"
+                description="Let's connect"
+              />
+            </div>
           </div>
         </div>
       </SlideMeIn>

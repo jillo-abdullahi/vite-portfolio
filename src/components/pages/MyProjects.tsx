@@ -19,7 +19,7 @@ export const MyProjects = () => {
       <section>
         <div className="pt-10">
           <SectionHeading linkHref={externalLinks.github} linkText="See GitHub">
-            Some of My Recent Works.
+            Some of My Recent Projects.
           </SectionHeading>
         </div>
 

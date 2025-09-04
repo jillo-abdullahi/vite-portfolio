@@ -8,7 +8,7 @@ import { externalLinks } from "@/data";
 export const MyResume = () => {
   return (
     <PageContainer>
-      <section className="px-4 w-full">
+      <section className="w-full">
         <div className="w-full">
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
