@@ -22,14 +22,15 @@ export const MyProjects = () => {
             Some of My Recent Projects.
           </SectionHeading>
         </div>
-
-        <PortfolioGrid>
-          {portfolioProjects.map((project, index) => (
-            <SlideMeIn cascade key={index}>
-              <PortfolioCard {...project} />
-            </SlideMeIn>
-          ))}
-        </PortfolioGrid>
+        <div className="pt-6">
+          <PortfolioGrid>
+            {portfolioProjects.map((project, index) => (
+              <SlideMeIn cascade key={index}>
+                <PortfolioCard {...project} />
+              </SlideMeIn>
+            ))}
+          </PortfolioGrid>
+        </div>
       </section>
     </PageContainer>
   );

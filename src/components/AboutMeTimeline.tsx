@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { IoDocumentTextOutline } from "react-icons/io5";
 import type { Experience, TechStack } from "@/types";
 import { SlideMeIn } from "./shared/slideMeIn";
 import { experiences } from "@/data";
@@ -16,16 +17,25 @@ export const AboutMeTimeline: FC = () => {
           location,
           description,
           isCurrent,
+          workType,
           technologies = [],
         } = experience;
 
         return (
           <SlideMeIn cascade key={index}>
             <div
-              className={`border bg-gray-900/30 text-white rounded-2xl py-5 px-6 transform hover:scale-101 transition-transform duration-500 ${
+              className={`border bg-gray-900/30 text-white rounded-3xl py-5 px-6 transform hover:scale-101 transition-transform duration-500 ${
                 isCurrent ? "border-orange/50" : "border-gray-800"
               }`}
             >
+              {workType ? (
+                <div className="flex items-center space-x-1">
+                  <IoDocumentTextOutline className="text-gray-400 text-sm" />
+                  <span className="text-sm font-medium text-gray-400">
+                    {workType}
+                  </span>
+                </div>
+              ) : null}
               <div className="timeLineContent text-left space-y-3">
                 <div className="space-y-2">
                   <h3 className="font-semibold text-lg text-orange/90">
@@ -41,7 +51,7 @@ export const AboutMeTimeline: FC = () => {
                       href={companyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-200 hover:text-orange transition-all duration-300"
+                      className="text-gray-200 hover:text-orange transition-all duration-300 font-medium"
                     >
                       {company}
                     </a>

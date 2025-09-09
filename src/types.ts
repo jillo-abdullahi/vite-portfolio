@@ -90,6 +90,9 @@ export interface Experience {
   date: string;
   /** List of achievements or responsibilities */
   description: string[];
+  /** Nature of the work (if applicable) */
+  workType?: "Full-time" | "Part-time" | "Contract" | "Internship";
+  /** List of technologies used */
   technologies?: TechStack[];
 }
 

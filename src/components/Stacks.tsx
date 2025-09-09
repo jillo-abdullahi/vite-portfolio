@@ -18,23 +18,23 @@ interface StackItemProps {
 
 const stackItems: StackItemProps[] = [
   {
-    icon: <ComputerDesktopIcon className="text-orange w-8 h-8" />,
+    icon: <ComputerDesktopIcon className="text-orange w-6 h-6" />,
     title: "frontend",
     skills: skills.frontend,
   },
   {
-    icon: <ServerStackIcon className="text-orange w-8 h-8" />,
+    icon: <ServerStackIcon className="text-orange w-6 h-6" />,
     title: "backend",
     skills: skills.backend,
   },
   {
-    icon: <CircleStackIcon className="text-orange w-8 h-8" />,
+    icon: <CircleStackIcon className="text-orange w-6 h-6" />,
     title: "infra",
     skills: skills.infra,
   },
 
   {
-    icon: <LiaEthereum className="text-orange w-8 h-8" />,
+    icon: <LiaEthereum className="text-orange w-6 h-6" />,
     title: "web3",
     skills: skills.web3 || [],
   },

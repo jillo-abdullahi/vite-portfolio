@@ -20,14 +20,15 @@ export const externalLinks: ExternalLinks = {
 
 export const experiences: Experience[] = [
   {
-    isCurrent: true,
+    isCurrent: false,
     type: "work",
+    workType: "Contract",
     title: "Full Stack Software Engineer",
     company: "GasHawk",
     companyUrl: "https://www.linkedin.com/company/gashawk/",
     companyLogo: "gashawkLogo.jpeg",
     location: "Remote",
-    date: "2024 - 2025",
+    date: "Apr 2024 - Aug 2025",
     description: [
       "Rebuilt and redesigned the core web application (React, TypeScript), improving reliability and reducing load times for a smoother user experience.",
       "Implemented a secure authentication system and optimized REST APIs, cutting latency and eliminating recurring timeout errors.",
@@ -49,12 +50,13 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
+    workType: "Contract",
     title: "Full Stack Software Engineer",
     company: "IOTA",
     companyUrl: "https://www.linkedin.com/company/iotafoundation/",
     companyLogo: "iotaLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "2023 - 2024",
+    date: "Nov 2023 - March 2024",
     description: [
       "Built backend systems to automate the exchange of SPS documents between IOTA and partners, reducing manual steps and improving process reliability.",
       "Revamped the TLIP web app frontend with React and TypeScript, enhancing usability and delivering a smoother, more responsive user experience.",
@@ -64,12 +66,13 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
+    workType: "Contract",
     title: "Full Stack Software Engineer",
     company: "Syndicate",
     companyUrl: "https://www.linkedin.com/company/syndicate-protocol/",
     companyLogo: "syndicateLogo.jpeg",
     location: "Remote",
-    date: "2021 - 2023",
+    date: "April 2021 - March 2023",
     description: [
       "Built and deployed a production-ready Web3 dApp in under 3 months (TypeScript, React, Ethereum/Polygon), accelerating Syndicate's go-to-market timeline.",
       "Launched Collectives, enabling NFT-based communities to organize around generative art and driving early engagement among creators and collectors.",
@@ -92,12 +95,13 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
+    workType: "Full-time",
     title: "Front-end Software Engineer",
     company: "Cellulant",
     companyUrl: "https://www.linkedin.com/company/cellulant/",
     companyLogo: "cellulantLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "2019 - 2021",
+    date: "Nov 2019 - March 2021",
     description: [
       "Improved accessibility and usability of payment apps by redesigning flows in React/Next.js.",
       "Optimized checkout UX across 6+ payment options, leading to smoother transaction completion.",
@@ -107,12 +111,13 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
+    workType: "Full-time",
     title: "Full Stack Software Engineer",
     company: "Andela",
     companyUrl: "https://www.linkedin.com/company/andela/",
     companyLogo: "andelaLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "2018 - 2019",
+    date: "Nov 2018 - Sep 2019",
     description: [
       "Delivered multiple front-end applications with ReactJS on tight sprint cycles, enabling faster product iterations and improving user experience.",
       "Developed and deployed a REST API with Python/Django that supported scalable data handling and reduced backend response times under production load.",
@@ -122,15 +127,62 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
+    workType: "Full-time",
     title: "Team Leader",
     company: "Sama",
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "2016 - 2018",
+    date: "Jun 2016 - Nov 2018",
     description: [
       "Led a 22-person team in executing a large-scale web crawling project for Glassdoor.",
       "Coordinated workflows, evaluated team performance, and delivered constructive feedback that improved accuracy and efficiency.",
+    ],
+    technologies: [
+      "JavaScript",
+      "HTML/CSS",
+      "Ms Excel",
+      "Regular Expressions",
+      "Xpath",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    workType: "Full-time",
+    title: "Quality Analyst",
+    company: "Sama",
+    companyUrl: "https://www.linkedin.com/company/sama-ai/",
+    companyLogo: "samaLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "Nov 2015 - May 2016",
+    description: [
+      "Improved quality across multiple work streams by analyzing compliance gaps and recommending corrective actions.",
+      "Boosted agent performance by assessing transactions, giving feedback, and driving measurable quality gains.",
+      "Delivered clear quality reports to managers and stakeholders, ensuring consistent performance standards.",
+    ],
+    technologies: [
+      "JavaScript",
+      "HTML/CSS",
+      "Ms Excel",
+      "Regular Expressions",
+      "Xpath",
+    ],
+  },
+  {
+    isCurrent: false,
+    type: "work",
+    workType: "Full-time",
+    title: "Agent Junior Developer",
+    company: "Sama",
+    companyUrl: "https://www.linkedin.com/company/sama-ai/",
+    companyLogo: "samaLogo.jpeg",
+    location: "Nairobi, Kenya",
+    date: "July 2015 - Nov 2015",
+    description: [
+      "Optimized and maintained client job feeds using HTML, CSS, XPaths, and regular expressions, ensuring accurate integrations and reliable updates.",
+      "Streamlined error resolution processes by reviewing feed issues, escalating complex cases, and recommending improvements that enhanced data quality and detection.",
+      "Delivered consistent, high-quality results in a fast-paced environment by verifying large data volumes, eliminating duplication, and supporting overall team performance.",
     ],
     technologies: [
       "JavaScript",
@@ -148,7 +200,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/school/jkuat/",
     companyLogo: "jkuatLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "2012 - 2015",
+    date: "Jan 2012 - Jan 2015",
     description: ["Graduated with First Class Honors."],
   },
 ];
@@ -177,7 +229,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     title: "A link sharing app for developers",
     description:
-      "A fully-functional link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
+      "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
     image: "devlinks.png",
     preview: "https://my-links-amber.vercel.app/",
     github: "https://github.com/jillo-abdullahi/my-links",
