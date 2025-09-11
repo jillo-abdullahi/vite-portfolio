@@ -5,8 +5,11 @@ import { PortfolioCard } from "../PortfolioCard";
 import Stacks from "../Stacks";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export const MyProjects = () => {
+  usePageTitle("Projects | Jillo Woche");
+  
   return (
     <PageContainer>
       {/* Stacks */}

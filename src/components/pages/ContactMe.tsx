@@ -2,8 +2,11 @@ import { SlideMeIn } from "../shared/slideMeIn";
 import { SectionHeading } from "../shared/PageTitle";
 import { PageContainer } from "../shared/PageContainer";
 import ContactLinks from "../ContactLinks";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export const ContactMe = () => {
+  usePageTitle("Contact | Jillo Woche");
+
   return (
     <PageContainer>
       <section id="contact" className="contact pb-8">

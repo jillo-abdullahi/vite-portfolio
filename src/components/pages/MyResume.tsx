@@ -5,8 +5,11 @@ import { SectionHeading } from "../shared/PageTitle";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { externalLinks } from "@/data";
 import Testimonials from "../Testimonials";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export const MyResume = () => {
+  usePageTitle("Resumé | Jillo Woche");
+
   return (
     <PageContainer>
       <section className="w-full">

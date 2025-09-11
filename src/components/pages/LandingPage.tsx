@@ -2,14 +2,17 @@ import type { FC } from "react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import ContactLinks from "@/components/ContactLinks";
 import WavingHand from "@/components/WavingHand";
-import { SlideMeIn } from "./shared/slideMeIn";
-import { PageContainer } from "./shared/PageContainer";
-import SkillSplitBar from "./SkillSplitBar";
+import { SlideMeIn } from "../shared/slideMeIn";
+import { PageContainer } from "../shared/PageContainer";
+import SkillSplitBar from "../SkillSplitBar";
 import { FaPython } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSolidity } from "react-icons/si";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 const LandingPage: FC = () => {
+  usePageTitle("Portfolio | Jillo Woche");
+
   return (
     <PageContainer>
       <SlideMeIn>

@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "@tanstack/react-router";
 import NotFound from "@/components/NotFound";
-import LandingPage from "@/components/LandingPage";
+import LandingPage from "@/components/pages/LandingPage";
 import NavBar from "@/components/NavBar";
 import { MyResume } from "./components/pages/MyResume";
 import { MyProjects } from "./components/pages/MyProjects";
