@@ -4,6 +4,7 @@ import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { externalLinks } from "@/data";
+import Testimonials from "../Testimonials";
 
 export const MyResume = () => {
   return (
@@ -31,10 +32,23 @@ export const MyResume = () => {
           </SectionHeading>
         </div>
 
-        <div className="flex flex-col space-y-10 items-center w-full pt-4">
-          <div className="flex flex-col space-y-2">
-            <AboutMeTimeline />
-          </div>
+        <div className="pt-4">
+          <AboutMeTimeline />
+        </div>
+      </section>
+      <section className="w-full pt-14">
+        <div className="w-full">
+          <SectionHeading
+            isContactPage={false}
+            linkText="View on LinkedIn"
+            linkHref={externalLinks.linkedIn}
+          >
+            What People Say.
+          </SectionHeading>
+        </div>
+
+        <div className="pt-4">
+          <Testimonials />
         </div>
       </section>
     </PageContainer>

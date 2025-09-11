@@ -143,3 +143,25 @@ export interface Skills {
   /** Web3 and blockchain skills */
   web3?: Skill[];
 }
+
+/**
+ * Testimonial entry
+ */
+export interface Testimonial {
+  /** Full name of the person giving the testimonial */
+  name: string;
+  /** Job title */
+  role: string;
+  /** Profile image file name */
+  image: string;
+  /** Date of the testimonial */
+  date: string;
+  /** Company name */
+  company: string;
+  /** Relationship level (e.g., "Directly managed", "Peer", etc.) */
+  level: string;
+  /** The testimonial quote */
+  quote: string;
+  /** Optional LinkedIn profile URL */
+  linkedInUrl?: string;
+}

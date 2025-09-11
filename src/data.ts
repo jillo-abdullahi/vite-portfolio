@@ -3,6 +3,7 @@ import type {
   Experience,
   PortfolioProject,
   Skills,
+  Testimonial,
 } from "./types";
 
 export const externalLinks: ExternalLinks = {
@@ -298,3 +299,35 @@ export const skills: Skills = {
     { name: "WalletConnect", level: "85%" },
   ],
 };
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Dr. Daniel Pfeffer",
+    image: "daniel.jpeg",
+    role: "CTO",
+    date: "July 31, 2025",
+    level: "Directly managed Jillo",
+    company: "GasHawk",
+    quote: `I had the pleasure of working with Jillo Woche at GasHawk, where he was our go-to Web Developer from April 2024 to August 2025. During that time, he made a massive impact across both the frontend and backend of our product.
+
+Jillo fully refactored our web application (React with ChakraUI) and significantly elevated the user experience with a keen eye for design language and user flow. On the backend, he contributed to our Node.js codebase, working with REST APIs (OpenAPI) and WebSockets - bringing clarity and quality to the entire stack.
+
+What stood out most was Jillo's ability to translate vague feature ideas into actionable tasks and even go beyond the brief to improve our product. He worked seamlessly across the frontend, backend, and leadership teams - bringing smart ideas, strong execution, and high-quality code to everything he touched. His pull request reviews were thoughtful and often included insights that benefited the whole team.
+
+Jillo doesn't just "do the job"- he owns it. He operates with autonomy, yet never in a silo. Communication was always crisp, feedback loops short, and his drive to iterate quickly without sacrificing quality made him a very valuable asset of our development efforts.
+
+He's a fantastic hire for any team looking for a versatile, proactive, and high-impact developer. While he's currently working in the web3 space, his skills and mindset are broadly applicable across any tech stack or industry.
+
+Highly recommended!`,
+  },
+  {
+    name: "Nathan Hausman",
+    role: "CTO",
+    image: "nathan.jpeg",
+    date: "March 7, 2023",
+    level: "Directly managed Jillo",
+    company: "Syndicate",
+    quote:
+      "Jillo's positive attitude resonates across the engineering teams he works on! In addition to being a great fullstack engineer technically, Jillo is never afraid to take on new project scope and is able to energize those around him towards action. During his 2 year tenure on my team, Jillo successfully lead the development of numerous new components and user flows and ensured the quality of his work and those around him. In short, you'd be lucky to have Jillo on your team!",
+  },
+];
