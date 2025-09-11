@@ -24,8 +24,8 @@ export const AboutMeTimeline: FC = () => {
         return (
           <SlideMeIn cascade key={index}>
             <div
-              className={`border bg-gray-900/30 text-white rounded-3xl py-5 px-6 transform hover:scale-101 transition-transform duration-500 ${
-                isCurrent ? "border-orange/50" : "border-gray-800"
+              className={`border bg-gray-900/80 text-white rounded-3xl py-5 px-6 transform hover:scale-101 transition-transform duration-500 ${
+                isCurrent ? "border-orange/50" : "border-gray-700"
               }`}
             >
               {workType ? (

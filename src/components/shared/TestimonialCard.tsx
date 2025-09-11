@@ -22,7 +22,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   linkedInUrl,
 }) => {
   return (
-    <div className="bg-gray-900/80 border border-gray-700 rounded-3xl p-6 hover:scale-101 transition-transform duration-500">
+    <div className="bg-gray-900/60 border border-gray-700 rounded-3xl p-6 hover:scale-101 transition-transform duration-500">
       <div className="flex items-start space-x-4 mb-4">
         <img
           src={`/experience/${image}`}
