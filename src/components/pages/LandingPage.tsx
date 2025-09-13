@@ -91,24 +91,39 @@ const LandingPage: FC = () => {
             </div>
 
             <div className="flex-1 flex flex-wrap justify-center md:justify-end gap-2">
-              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
+              <a
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-pointer"
+              >
                 <RiJavascriptFill className="text-yellow-400 h-4.5 w-4.5" />
                 <span className="text-gray-300 font-semibold text-sm">
                   JavaScript/TypeScript
                 </span>
-              </div>
-              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
+              </a>
+              <a
+                href="https://soliditylang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-pointer"
+              >
                 <SiSolidity className="text-gray-300 h-4.5 w-4.5" />
                 <span className="text-gray-300 font-semibold text-sm">
                   Solidity
                 </span>
-              </div>
-              <div className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-default">
+              </a>
+              <a
+                href="https://www.python.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-pointer"
+              >
                 <FaPython className="text-blue-400 h-4.5 w-4.5" />
                 <span className="text-gray-300 font-semibold text-sm">
                   Python
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
