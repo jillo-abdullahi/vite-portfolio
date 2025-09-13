@@ -144,16 +144,18 @@ const NavBar: FC = () => {
             <DisclosurePanel className="lg:hidden">
               <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900 border border-gray-700 rounded-xl">
                 {navigation.map((item) => (
-                  <DisclosureButton
+                  <Link
                     key={item.name}
-                    as={Link}
                     to={item.href}
                     className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center ${
                       item.isActive ? "bg-gray-800/60 text-gray-200" : ""
                     }`}
+                    onClick={() => {
+                      close();
+                    }}
                   >
                     {item.name}
-                  </DisclosureButton>
+                  </Link>
                 ))}
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
                   <div className="flex flex-col items-center justify-center space-y-2">
