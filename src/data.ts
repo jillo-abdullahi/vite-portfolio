@@ -217,7 +217,17 @@ export const portfolioProjects: PortfolioProject[] = [
     completed: true,
   },
   {
-    title: "Ballot dApp for decentralized voting",
+    title: "Ethereum dApp for AI insights into any wallet",
+    description:
+      "A comprehensive Ethereum wallet analytics application that provides AI-powered insights into blockchain activity.",
+    image: "blockwise.png",
+    preview: "https://blockwise-ai.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/blockwise-ai",
+    stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "OpenAI", "Viem"],
+    completed: true,
+  },
+  {
+    title: "Ballot app for decentralized voting",
     description:
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
     image: "ballot.png",
@@ -254,16 +264,6 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "dictionary.png",
     preview: "https://dictionary-web-app-ashy.vercel.app/",
     github: "https://github.com/jillo-abdullahi/dictionary-web-app",
-    stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
-    completed: true,
-  },
-  {
-    title: "Advanced Rock Paper Scissors",
-    description:
-      "A Rock, Paper, Scissors, Lizard, Spock game you can play against the CPU.",
-    image: "rockPaperScissors.png",
-    preview: "https://advanced-rock-paper-scissors.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/advanced-rock-paper-scissors",
     stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
   },

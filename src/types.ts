@@ -50,7 +50,8 @@ export type TechStack =
   | "Xpath"
   | "Framer"
   | "Ms Excel"
-  | "Viem";
+  | "Viem"
+  | "OpenAI";
 
 /**
  * External social and professional links
