@@ -234,7 +234,7 @@ export const portfolioProjects: PortfolioProject[] = [
     preview: "https://ballot-box-green.vercel.app/",
     github: "https://github.com/jillo-abdullahi/ballotBox",
     contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
-    stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "Wagmi", "Viem"],
+    stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
     completed: true,
   },
   {
