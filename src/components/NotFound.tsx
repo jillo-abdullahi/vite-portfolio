@@ -50,7 +50,7 @@ const NotFound: FC = () => {
               <NavigationCard
                 href="/resume"
                 icon={UserIcon}
-                title="Resume"
+                title="Resumé"
                 description="My experience"
               />
               <NavigationCard
