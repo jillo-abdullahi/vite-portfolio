@@ -9,6 +9,7 @@ import { FaPython } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSolidity } from "react-icons/si";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { Link } from "@tanstack/react-router";
 
 const LandingPage: FC = () => {
   usePageTitle("Portfolio | Jillo Woche");
@@ -41,9 +42,19 @@ const LandingPage: FC = () => {
             <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
               Full Stack Software Engineer
             </span>
+            <div className="flex items-center justify-center md:justify-start w-full pt-2">
+              <Link
+                to="/resume"
+                className="flex items-center justify-center space-x-2 border border-orange/30 rounded-full px-3 py-1 bg-orange/10 hover:bg-orange/20 transition-all duration-200 cursor-pointer"
+              >
+                <span className="text-orange font-semibold text-sm">
+                  6+ years of experience
+                </span>
+              </Link>
+            </div>
 
             <div className="w-full max-w-3xl pt-6">
-              <p className="text-gray-300/80 text-center md:text-left tracking-wide">
+              <p className="text-gray-300/90 text-center md:text-left tracking-wide">
                 As a Full Stack Software Engineer, I'm on a mission to build
                 amazing things - with a <b>dash of innovation</b> and a whole
                 lot of
