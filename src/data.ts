@@ -284,7 +284,7 @@ export const skills: Skills = {
     { name: "TailwindCSS", level: "90%" },
     { name: "Chakra UI", level: "85%" },
   ],
-  infra: [
+  "databases/devops": [
     { name: "Postgres", level: "82%" },
     { name: "MySQL", level: "75%" },
     { name: "Google Firebase", level: "80%" },

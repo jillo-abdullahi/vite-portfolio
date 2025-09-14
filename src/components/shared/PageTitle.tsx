@@ -9,6 +9,7 @@ interface SectionHeadingProps {
   isDownload?: boolean;
   downloadFileName?: string;
   rightLink?: ReactNode;
+  linkTextIcon?: ReactNode;
 }
 
 /**
@@ -22,6 +23,7 @@ interface SectionHeadingProps {
  * @param {Boolean} [props.isDownload=false] - Whether the link should download a file
  * @param {string} [props.downloadFileName] - Optional filename for the download
  * @param {React.ReactNode} [props.rightLink] - Optional React node to be displayed on the right side of the heading
+ * @param {React.ReactNode} [props.linkTextIcon] - Optional React node to be displayed as an icon next to the link text
  * @returns {JSX.Element} A section heading component with optional link
  */
 export const SectionHeading = ({
@@ -32,6 +34,7 @@ export const SectionHeading = ({
   isDownload = false,
   downloadFileName,
   rightLink,
+  linkTextIcon,
 }: SectionHeadingProps) => {
   const fontSizeClass = isContactPage
     ? "text-4xl md:text-5xl lg:text-6xl"
@@ -53,10 +56,15 @@ export const SectionHeading = ({
                 {...(isDownload && { download: downloadFileName || true })}
               >
                 {linkText}
+                {linkTextIcon ? (
+                  <span className="inline-block ml-2 text-sm lg:text-lg">{linkTextIcon}</span>
+                ) : null}
               </a>
             ) : null}
           </p>
-          {rightLink ? <div className="hidden sm:block">{rightLink}</div> : null}
+          {rightLink ? (
+            <div className="hidden sm:block">{rightLink}</div>
+          ) : null}
         </div>
       </div>
       <hr

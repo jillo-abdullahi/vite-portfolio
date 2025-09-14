@@ -12,7 +12,7 @@ import type { Skill } from "../types";
 
 interface StackItemProps {
   icon: ReactElement;
-  title: "frontend" | "backend" | "infra" | "devops" | "web3";
+  title: "frontend" | "backend" | "infra" | "db/devops" | "web3";
   skills: Skill[];
 }
 
@@ -29,8 +29,8 @@ const stackItems: StackItemProps[] = [
   },
   {
     icon: <CircleStackIcon className="text-orange w-6 h-6" />,
-    title: "infra",
-    skills: skills.infra,
+    title: "db/devops",
+    skills: skills["databases/devops"] || [],
   },
 
   {
