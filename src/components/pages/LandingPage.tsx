@@ -6,6 +6,7 @@ import { SlideMeIn } from "../shared/slideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
 import { FaPython } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSolidity } from "react-icons/si";
 import { usePageTitle } from "../../hooks/usePageTitle";
@@ -13,6 +14,15 @@ import { Link } from "@tanstack/react-router";
 
 const LandingPage: FC = () => {
   usePageTitle("Portfolio | Jillo Woche");
+
+  const projectsLink = (
+    <Link to="/projects" className="text-orange/80 group py-0 sm:py-2">
+      <span className="font-semibold text-md sm:text-sm group-hover:text-orange transition-all duration-300">
+        Projects{" "}
+        <FaArrowRightLong className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
+      </span>
+    </Link>
+  );
 
   return (
     <PageContainer>
@@ -45,11 +55,12 @@ const LandingPage: FC = () => {
             <div className="flex items-center justify-center md:justify-start w-full pt-2">
               <Link
                 to="/resume"
-                className="flex items-center justify-center space-x-2 border border-orange/30 rounded-full px-3 py-1 bg-orange/10 hover:bg-orange/20 transition-all duration-200 cursor-pointer"
+                className="group flex items-center justify-center space-x-2 border border-orange/30 rounded-full px-3 py-1 bg-orange/10 hover:bg-orange/20 transition-all duration-200 cursor-pointer"
               >
                 <span className="text-orange font-semibold text-sm">
                   6+ years of experience
                 </span>
+                <FaArrowRightLong className="text-orange group-hover:translate-x-0.5 transition-all duration-300" />
               </Link>
             </div>
 
@@ -59,9 +70,7 @@ const LandingPage: FC = () => {
                 amazing things - with a <b>dash of innovation</b> and a whole
                 lot of
                 <b> precision!</b> From <b>pixel-perfect front-ends</b> to{" "}
-                <b>rock-solid back-ends</b>. I genuinely enjoy transforming
-                intricate problems into <b>streamlined, impactful solutions</b>{" "}
-                within the dynamic web2 and web3 realms.
+                <b>rock-solid back-ends</b> within the dynamic web2 and web3 realms.
               </p>
             </div>
 
@@ -101,7 +110,7 @@ const LandingPage: FC = () => {
               <p className="text-lg font-medium text-gray-300">Languages</p>
             </div>
 
-            <div className="flex-1 flex flex-wrap justify-center md:justify-end gap-2">
+            <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
               <a
                 href="https://www.typescriptlang.org/"
                 target="_blank"
@@ -135,7 +144,9 @@ const LandingPage: FC = () => {
                   Python
                 </span>
               </a>
+              <div className="hidden sm:block">{projectsLink}</div>
             </div>
+            <div className="block sm:hidden w-full flex items-center justify-center">{projectsLink}</div>
           </div>
         </div>
       </SlideMeIn>
