@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -6,6 +7,9 @@ import {
   faXTwitter,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
+import { FaRegCopy } from "react-icons/fa";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
+
 import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { externalLinks } from "../data";
@@ -55,29 +59,64 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
 
   // footer link box
   const FooterLinkBox = ({ icon, href, name }: SocialLink) => {
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleCopy = (e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const copyText = href.replace(/^mailto:/, "");
+      navigator.clipboard.writeText(copyText);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    };
+
+    const displayHref = href
+      .replace(/^mailto:/, "")
+      .replace(/^https?:\/\//, "");
+
     return (
       <a
-        className="w-full rounded-xl border border-gray-800 hover:bg-gray-900/60 flex items-center justify-between group cursor-pointer p-2 transition duration-300 "
+        className="w-full rounded-2xl border border-gray-800 hover:bg-gray-900/60 flex items-center justify-between group cursor-pointer p-3 transition duration-300 "
         href={href}
         target="_blank"
         rel="noreferrer"
       >
         <div className="flex items-center justify-start space-x-2">
-          <div className="rounded-md bg-gray-700/50 border-gray-700 border p-2 w-10 h-10 flex items-center justify-center">
+          <div className="rounded-lg bg-gray-700/50 border-gray-700 border p-2 w-12 h-12 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
-              style={{ fontSize: "24px" }}
+              style={{ fontSize: "28px" }}
               className="text-gray-300 transition group-hover:text-orange"
             />
           </div>
           <div className="text-left">
             <div className="text-gray-100">{name}</div>
+            <div className="flex items-center space-x-1">
+              <span className="text-sm text-gray-400">{displayHref}</span>
+              <button
+                onClick={handleCopy}
+                className={`transition duration-200 ${
+                  isCopied
+                    ? "text-green-400"
+                    : "text-gray-500 hover:text-gray-300"
+                }`}
+                title={isCopied ? "Copied!" : "Copy link"}
+              >
+                {isCopied ? (
+                  <IoCheckmarkDoneOutline className="w-4 h-4" />
+                ) : (
+                  <FaRegCopy className="w-4 h-4" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
-        <FontAwesomeIcon
-          icon={faArrowRight}
-          className="group-hover:-rotate-45 group-hover:text-white origin-center w-5 text-gray-200 transition duration-300"
-        />
+        <div className="hidden md:block">
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="group-hover:-rotate-45 group-hover:text-white origin-center w-5 text-gray-200 transition duration-300"
+          />
+        </div>
       </a>
     );
   };
