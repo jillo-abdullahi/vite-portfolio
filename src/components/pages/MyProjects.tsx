@@ -6,8 +6,7 @@ import Stacks from "../Stacks";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
 import { usePageTitle } from "../../hooks/usePageTitle";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RxExternalLink } from "react-icons/rx";
 
 export const MyProjects = () => {
   usePageTitle("Projects | Jillo Woche");
@@ -26,7 +25,7 @@ export const MyProjects = () => {
           <SectionHeading
             linkHref={externalLinks.github}
             linkText="See GitHub"
-            linkTextIcon={<FontAwesomeIcon icon={faExternalLink} />}
+            linkTextIcon={<RxExternalLink className="inline-block" />}
           >
             Some of My Recent Projects.
           </SectionHeading>

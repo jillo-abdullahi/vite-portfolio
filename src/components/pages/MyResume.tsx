@@ -3,7 +3,8 @@ import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLink, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { RxExternalLink } from "react-icons/rx";
+import { PiFilePdfLight } from "react-icons/pi";
 import { externalLinks } from "@/data";
 import Testimonials from "../Testimonials";
 import { usePageTitle } from "../../hooks/usePageTitle";
@@ -18,7 +19,7 @@ export const MyResume = () => {
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
             linkText="Download resumé"
-            linkTextIcon={<FontAwesomeIcon icon={faFilePdf} />}
+            linkTextIcon={<PiFilePdfLight className="inline-block" />}
             isContactPage={false}
             isDownload={true}
             downloadFileName="Jillo_Woche_Resume.pdf"
@@ -47,7 +48,7 @@ export const MyResume = () => {
             isContactPage={false}
             linkText="See LinkedIn"
             linkHref={externalLinks.linkedIn}
-            linkTextIcon={<FontAwesomeIcon icon={faExternalLink} />}
+            linkTextIcon={<RxExternalLink className="inline-block" />}
           >
             What People Say.
           </SectionHeading>
