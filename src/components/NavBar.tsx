@@ -92,7 +92,7 @@ const NavBar: FC = () => {
                       src={"/sneakerhead985.png"}
                       alt="home"
                       className={`flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer ${
-                        isHome ? "ring-4 ring-orange/80" : ""
+                        isHome ? "ring-2 ring-orange/80" : ""
                       }`}
                     />
                   </button>
@@ -102,8 +102,10 @@ const NavBar: FC = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`text-gray-300 hover:bg-gray-800 hover:text-white rounded-xl px-3 py-2 text-base font-medium transition-all duration-300 ${
-                        item.isActive ? "bg-gray-800/60 text-gray-200" : ""
+                      className={`text-gray-300 hover:bg-gray-800 hover:text-white rounded-xl px-3 py-2 text-base font-medium transition-all duration-300 border ${
+                        item.isActive 
+                          ? "bg-gray-800/60 text-gray-200 border-orange/20" 
+                          : "border-transparent"
                       }`}
                     >
                       {item.name}
@@ -147,8 +149,10 @@ const NavBar: FC = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center ${
-                      item.isActive ? "bg-gray-800/60 text-gray-200" : ""
+                    className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center border ${
+                      item.isActive 
+                        ? "bg-gray-800/60 text-gray-200 border-orange/30" 
+                        : "border-transparent"
                     }`}
                     onClick={() => {
                       close();
