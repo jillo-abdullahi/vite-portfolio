@@ -23,6 +23,7 @@
     "@tanstack/react-router": "^1.131.27",
     "@tanstack/router": "^0.0.1-beta.53",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "date-fns-tz": "^3.2.0",
     "framer-motion": "^12.23.12",
     "next-themes": "^0.4.6",
