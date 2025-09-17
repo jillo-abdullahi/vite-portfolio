@@ -203,6 +203,7 @@ export const experiences: Experience[] = [
     location: "Nairobi, Kenya",
     date: "Jan 2012 - Jan 2015",
     description: ["Graduated with First Class Honors."],
+    isEducational: true,
   },
 ];
 

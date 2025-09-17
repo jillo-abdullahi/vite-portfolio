@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { PiGraduationCapDuotone } from "react-icons/pi";
 import type { Experience, TechStack } from "@/types";
 import { SlideMeIn } from "./shared/slideMeIn";
 import { experiences } from "@/data";
@@ -19,6 +20,7 @@ export const AboutMeTimeline: FC = () => {
           isCurrent,
           workType,
           technologies = [],
+          isEducational = false,
         } = experience;
 
         return (
@@ -36,6 +38,14 @@ export const AboutMeTimeline: FC = () => {
                   </span>
                 </div>
               ) : null}
+              {isEducational ? (
+                <div className="flex items-center space-x-1">
+                  <PiGraduationCapDuotone className="text-gray-400 text-sm" />
+                  <span className="text-sm font-medium text-gray-400">
+                    Education
+                  </span>
+                </div>
+              ) : null}
               <div className="timeLineContent text-left space-y-3">
                 <div className="space-y-2">
                   <h3 className="font-semibold text-lg text-orange/90">
@@ -45,7 +55,7 @@ export const AboutMeTimeline: FC = () => {
                     <img
                       src={`/experience/${companyLogo}`}
                       alt={`${company} logo`}
-                      className="w-6 h-6 rounded-full"
+                      className="w-6 h-6 rounded-full border border-gray-400"
                     />
                     <a
                       href={companyUrl}
@@ -58,20 +68,32 @@ export const AboutMeTimeline: FC = () => {
                   </div>
                   <div className="flex items-center space-x-2 text-sm text-gray-400">
                     <span>{date}</span>
-                    <span>•</span>
+                    <span className="text-xl">•</span>
                     <span>{location}</span>
                   </div>
                 </div>
 
-                <ul className="text-gray-300 space-y-2">
-                  {description.map((desc: string, idx: number) => (
-                    <li key={idx}>
-                      <span className="tracking-wide text-gray-300">
+                {!isEducational && (
+                  <ul className="text-gray-300 space-y-2">
+                    {description.map((desc: string, idx: number) => (
+                      <li key={idx}>
+                        <span className="tracking-wide text-gray-300">
+                          {desc}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {isEducational && (
+                  <div className="text-gray-300 space-y-2">
+                    {description.map((desc: string, idx: number) => (
+                      <p key={idx} className="tracking-wide text-gray-300">
                         {desc}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                      </p>
+                    ))}
+                  </div>
+                )}
 
                 {technologies.length > 0 && (
                   <div className="pt-2">

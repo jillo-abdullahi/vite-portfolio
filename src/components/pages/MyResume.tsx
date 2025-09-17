@@ -44,7 +44,7 @@ export const MyResume = () => {
       <section className="w-full pt-14">
         <div className="w-full">
           <SectionHeading isContactPage={false}>
-            What People Say.
+            What People Say
           </SectionHeading>
         </div>
 

@@ -95,6 +95,8 @@ export interface Experience {
   workType?: "Full-time" | "Part-time" | "Contract" | "Internship";
   /** List of technologies used */
   technologies?: TechStack[];
+  /** Whether the experience is educational */
+  isEducational?: boolean;
 }
 
 /**

@@ -28,7 +28,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         <img
           src={`/experience/${image}`}
           alt={name}
-          className="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2 border-orange/40"
+          className="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2 border-gray-700"
         />
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">

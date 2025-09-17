@@ -6,7 +6,7 @@ import { SlideMeIn } from "../shared/slideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
 import { FaPython } from "react-icons/fa";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { IoChevronForward } from "react-icons/io5";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSolidity } from "react-icons/si";
 import { usePageTitle } from "../../hooks/usePageTitle";
@@ -16,11 +16,11 @@ const LandingPage: FC = () => {
   usePageTitle("Portfolio | Jillo Woche");
 
   const projectsLink = (
-    <Link to="/projects" className="text-orange/80 group py-0 sm:py-2">
-      <span className="font-semibold text-md sm:text-sm group-hover:text-orange transition-all duration-300">
-        Projects{" "}
-        <FaArrowRightLong className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
+    <Link to="/projects" className="text-orange/80 group py-0 sm:py-2 flex items-center space-x-1 font-medium hover:text-orange transition-all duration-300">
+      <span className="font-semibold text-md sm:text-sm">
+        Projects
       </span>
+      <IoChevronForward className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
     </Link>
   );
 
@@ -60,7 +60,7 @@ const LandingPage: FC = () => {
                 <span className="text-orange font-semibold text-sm">
                   6+ years of experience
                 </span>
-                <FaArrowRightLong className="text-orange group-hover:translate-x-0.5 transition-all duration-300" />
+                <IoChevronForward className="text-orange group-hover:translate-x-0.5 transition-all duration-300" />
               </Link>
             </div>
 
@@ -70,7 +70,8 @@ const LandingPage: FC = () => {
                 amazing things - with a <b>dash of innovation</b> and a whole
                 lot of
                 <b> precision!</b> From <b>pixel-perfect front-ends</b> to{" "}
-                <b>rock-solid back-ends</b> within the dynamic web2 and web3 realms.
+                <b>rock-solid back-ends</b> within the dynamic web2 and web3
+                realms.
               </p>
             </div>
 
@@ -146,7 +147,9 @@ const LandingPage: FC = () => {
               </a>
               <div className="hidden sm:block">{projectsLink}</div>
             </div>
-            <div className="block sm:hidden w-full flex items-center justify-center">{projectsLink}</div>
+            <div className="block sm:hidden w-full flex items-center justify-center">
+              {projectsLink}
+            </div>
           </div>
         </div>
       </SlideMeIn>
