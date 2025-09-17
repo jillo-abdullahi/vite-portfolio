@@ -57,7 +57,7 @@ export const SectionHeading = ({
               >
                 {linkText}
                 {linkTextIcon ? (
-                  <span className="inline-block ml-1 text-sm lg:text-lg">{linkTextIcon}</span>
+                  <span className="inline-block ml-1 text-xl">{linkTextIcon}</span>
                 ) : null}
               </a>
             ) : null}

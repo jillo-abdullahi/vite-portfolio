@@ -76,26 +76,29 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
 
     return (
       <a
-        className="w-full rounded-2xl border border-gray-800 hover:bg-gray-900/60 flex items-center justify-between group cursor-pointer p-3 transition duration-300 "
+        className="group relative w-full rounded-3xl border border-gray-700/40 hover:border-gray-600/60 hover:bg-gray-900/80 bg-gray-900/20 flex items-center justify-between cursor-pointer p-4 transition-all duration-300 ease-out hover:-translate-y-0.5"
         href={href}
         target="_blank"
         rel="noreferrer"
       >
-        <div className="flex items-center justify-start space-x-2">
-          <div className="rounded-lg bg-gray-700/50 border-gray-700 border p-2 w-12 h-12 flex items-center justify-center">
+        {/* Subtle hover overlay */}
+        <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div className="relative z-10 flex items-center justify-start space-x-3">
+          <div className="rounded-xl bg-gray-700/40 border border-gray-600 p-2 w-10 h-10 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
-              style={{ fontSize: "26px" }}
-              className="text-gray-300 transition-all group-hover:text-orange group-hover:scale-110 duration-300"
+              style={{ fontSize: "20px" }}
+              className="text-gray-300 transition-all group-hover:text-orange/90 duration-300"
             />
           </div>
           <div className="text-left">
-            <div className="text-gray-100">{name}</div>
+            <div className="text-gray-100 font-medium">{name}</div>
             <div className="flex items-center space-x-1">
               <span className="text-sm text-gray-400">{displayHref}</span>
               <button
                 onClick={handleCopy}
-                className={`transition duration-200 ${
+                className={`p-1 rounded transition-all duration-200 ${
                   isCopied
                     ? "text-green-400"
                     : "text-gray-500 hover:text-gray-300"
@@ -103,18 +106,18 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
                 title={isCopied ? "Copied!" : "Copy link"}
               >
                 {isCopied ? (
-                  <IoCheckmarkDoneOutline className="w-4 h-4" />
+                  <IoCheckmarkDoneOutline className="w-3 h-3" />
                 ) : (
-                  <FaRegCopy className="w-4 h-4" />
+                  <FaRegCopy className="w-3 h-3" />
                 )}
               </button>
             </div>
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className="relative z-10 hidden md:block">
           <FontAwesomeIcon
             icon={faArrowRight}
-            className="group-hover:-rotate-45 group-hover:text-white origin-center w-5 text-gray-200 transition duration-300"
+            className="group-hover:-rotate-45 group-hover:text-orange/90 origin-center w-4 text-gray-300 transition-all duration-300"
           />
         </div>
       </a>

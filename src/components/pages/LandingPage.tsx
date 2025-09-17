@@ -27,18 +27,22 @@ const LandingPage: FC = () => {
   return (
     <PageContainer>
       <SlideMeIn>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center rounded-3xl border border-gray-700 bg-gray-900/70 p-6 pt-8 md:p-10 w-full">
-          <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8 flex-shrink-0">
-            <div className="profile-img">
-              <img
-                src={"/me.webp"}
-                alt="profile"
-                className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg"
-              />
+        <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
+          {/* Subtle hover overlay */}
+          <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
+            <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8 flex-shrink-0">
+              <div className="profile-img">
+                <img
+                  src={"/me.webp"}
+                  alt="profile"
+                  className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700 pl-0 md:pl-8 pt-4 md:pt-0">
+            <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700/30 pl-0 md:pl-8 pt-4 md:pt-0">
             <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
               <WavingHand />
               <span className="text-xl sm:text-2xl text-gray-300/80 font-medium">
@@ -85,70 +89,76 @@ const LandingPage: FC = () => {
               <ContactLinks />
             </div>
           </div>
+          </div>
         </div>
       </SlideMeIn>
 
       <SlideMeIn>
-        <div className="rounded-3xl border border-gray-700 bg-gray-900/70 p-6 md:p-10 w-full mt-6">
-          {/* skill split bar  */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-            <div className="text-center md:text-left md:flex-shrink-0">
-              <p className="text-lg font-medium text-gray-300">Skill split</p>
-            </div>
-            <div className="flex-1 flex justify-center md:justify-end">
-              <SkillSplitBar
-                leftLabel="Frontend"
-                rightLabel="Backend"
-                leftPercent={70}
-                height={40}
-              />
-            </div>
-          </div>
-
-          {/* Main languages  */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
-            <div className="text-center md:text-left">
-              <p className="text-lg font-medium text-gray-300">Languages</p>
+        <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full mt-6">
+          {/* Subtle hover overlay */}
+          <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div className="relative z-10">
+            {/* skill split bar  */}
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+              <div className="text-center md:text-left md:flex-shrink-0">
+                <p className="text-lg font-medium text-gray-200">Skill split</p>
+              </div>
+              <div className="flex-1 flex justify-center md:justify-end">
+                <SkillSplitBar
+                  leftLabel="Frontend"
+                  rightLabel="Backend"
+                  leftPercent={70}
+                  height={40}
+                />
+              </div>
             </div>
 
-            <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
-              <a
-                href="https://www.typescriptlang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-pointer"
-              >
-                <RiJavascriptFill className="text-yellow-400 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">
-                  JavaScript/TypeScript
-                </span>
-              </a>
-              <a
-                href="https://soliditylang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-pointer"
-              >
-                <SiSolidity className="text-gray-300 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">
-                  Solidity
-                </span>
-              </a>
-              <a
-                href="https://www.python.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 border border-gray-700 rounded-full px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 transition cursor-pointer"
-              >
-                <FaPython className="text-blue-400 h-4.5 w-4.5" />
-                <span className="text-gray-300 font-semibold text-sm">
-                  Python
-                </span>
-              </a>
-              <div className="hidden sm:block">{projectsLink}</div>
-            </div>
-            <div className="block sm:hidden w-full flex items-center justify-center">
-              {projectsLink}
+            {/* Main languages  */}
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
+              <div className="text-center md:text-left">
+                <p className="text-lg font-medium text-gray-200">Languages</p>
+              </div>
+
+              <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
+                <a
+                  href="https://www.typescriptlang.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
+                >
+                  <RiJavascriptFill className="text-yellow-400 h-4.5 w-4.5" />
+                  <span className="text-gray-300 font-medium text-sm">
+                    JavaScript/TypeScript
+                  </span>
+                </a>
+                <a
+                  href="https://soliditylang.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
+                >
+                  <SiSolidity className="text-gray-300 h-4.5 w-4.5" />
+                  <span className="text-gray-300 font-medium text-sm">
+                    Solidity
+                  </span>
+                </a>
+                <a
+                  href="https://www.python.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
+                >
+                  <FaPython className="text-blue-400 h-4.5 w-4.5" />
+                  <span className="text-gray-300 font-medium text-sm">
+                    Python
+                  </span>
+                </a>
+                <div className="hidden sm:block">{projectsLink}</div>
+              </div>
+              <div className="block sm:hidden w-full flex items-center justify-center">
+                {projectsLink}
+              </div>
             </div>
           </div>
         </div>

@@ -57,7 +57,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/iotafoundation/",
     companyLogo: "iotaLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "Nov 2023 - March 2024",
+    date: "Nov 2023 - Mar 2024",
     description: [
       "Built backend systems to automate the exchange of SPS documents between IOTA and partners, reducing manual steps and improving process reliability.",
       "Revamped the TLIP web app frontend with React and TypeScript, enhancing usability and delivering a smoother, more responsive user experience.",
@@ -73,7 +73,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/syndicate-protocol/",
     companyLogo: "syndicateLogo.jpeg",
     location: "Remote",
-    date: "April 2021 - March 2023",
+    date: "Apr 2021 - Mar 2023",
     description: [
       "Built and deployed a production-ready Web3 dApp in under 3 months (TypeScript, React, Ethereum/Polygon), accelerating Syndicate's go-to-market timeline.",
       "Launched Collectives, enabling NFT-based communities to organize around generative art and driving early engagement among creators and collectors.",
@@ -102,7 +102,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/cellulant/",
     companyLogo: "cellulantLogo.jpeg",
     location: "Nairobi, Kenya",
-    date: "Nov 2019 - March 2021",
+    date: "Nov 2019 - Mar 2021",
     description: [
       "Improved accessibility and usability of payment apps by redesigning flows in React/Next.js.",
       "Optimized checkout UX across 6+ payment options, leading to smoother transaction completion.",

@@ -3,7 +3,8 @@ import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { PiFilePdfLight } from "react-icons/pi";
+import { MdOutlineFileDownload } from "react-icons/md";
+
 import { externalLinks } from "@/data";
 import Testimonials from "../Testimonials";
 import { usePageTitle } from "../../hooks/usePageTitle";
@@ -17,8 +18,8 @@ export const MyResume = () => {
         <div className="w-full">
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
-            linkText="Download resumé"
-            linkTextIcon={<PiFilePdfLight className="inline-block" />}
+            linkText="Download Resumé"
+            linkTextIcon={<MdOutlineFileDownload className="inline-block w-6 h-6" />}
             isContactPage={false}
             isDownload={true}
             downloadFileName="Jillo_Woche_Resume.pdf"
@@ -43,9 +44,7 @@ export const MyResume = () => {
       </section>
       <section className="w-full pt-14">
         <div className="w-full">
-          <SectionHeading isContactPage={false}>
-            What People Say
-          </SectionHeading>
+          <SectionHeading isContactPage={false}>What People Say</SectionHeading>
         </div>
 
         <div className="pt-4">
