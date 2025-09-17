@@ -203,7 +203,6 @@ export const experiences: Experience[] = [
     location: "Nairobi, Kenya",
     date: "Jan 2012 - Jan 2015",
     description: ["Graduated with First Class Honors."],
-    isEducational: true,
   },
 ];
 
@@ -280,10 +279,10 @@ export const skills: Skills = {
   ],
   frontend: [
     { name: "React", level: "90%" },
+    { name: "Redux/Zustand", level: "90%" },
     { name: "Next.js", level: "85%" },
     { name: "Vue.js", level: "80%" },
     { name: "TailwindCSS", level: "90%" },
-    { name: "Chakra UI", level: "85%" },
   ],
   "databases/devops": [
     { name: "Postgres", level: "82%" },

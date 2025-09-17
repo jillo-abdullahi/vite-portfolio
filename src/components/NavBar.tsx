@@ -120,16 +120,18 @@ const NavBar: FC = () => {
                 <div className="flex-shrink-0">
                   <a
                     type="button"
-                    className="relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition"
+                    className="relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition hover:scale-[1.02]"
                     href={externalLinks.calLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <CalendarDaysIcon
-                      className="-ml-0.5 h-5 w-5 group-hover:translate-x-0.5 transition origin-center duration-200"
+                      className="-ml-0.5 h-5 w-5"
                       aria-hidden="true"
                     />
-                    <span className="text-gray-900">schedule call</span>
+                    <span className="text-gray-900">
+                      schedule call
+                    </span>
                   </a>
                 </div>
               </div>
