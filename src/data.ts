@@ -203,6 +203,7 @@ export const experiences: Experience[] = [
     location: "Nairobi, Kenya",
     date: "Jan 2012 - Jan 2015",
     description: ["Graduated with First Class Honors."],
+    isEducational: true,
   },
 ];
 
@@ -273,7 +274,7 @@ export const skills: Skills = {
   backend: [
     { name: "Express.js", level: "85%" },
     { name: "GraphQL", level: "90%" },
-    { name: "Nest.js", level: "89%" },
+    { name: "Nest.js", level: "70%" },
     { name: "Django", level: "60%" },
     { name: "Flask", level: "50%" },
   ],
@@ -285,7 +286,7 @@ export const skills: Skills = {
     { name: "TailwindCSS", level: "90%" },
   ],
   "databases/devops": [
-    { name: "Postgres", level: "82%" },
+    { name: "Postgres", level: "80%" },
     { name: "MySQL", level: "75%" },
     { name: "Google Firebase", level: "80%" },
     { name: "Docker", level: "70%" },
