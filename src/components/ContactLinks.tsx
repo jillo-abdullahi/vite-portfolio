@@ -85,8 +85,8 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
           <div className="rounded-lg bg-gray-700/50 border-gray-700 border p-2 w-12 h-12 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
-              style={{ fontSize: "28px" }}
-              className="text-gray-300 transition group-hover:text-orange"
+              style={{ fontSize: "26px" }}
+              className="text-gray-300 transition-all group-hover:text-orange group-hover:scale-110 duration-300"
             />
           </div>
           <div className="text-left">

@@ -3,7 +3,6 @@ import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { RxExternalLink } from "react-icons/rx";
 import { PiFilePdfLight } from "react-icons/pi";
 import { externalLinks } from "@/data";
 import Testimonials from "../Testimonials";
@@ -25,10 +24,10 @@ export const MyResume = () => {
             downloadFileName="Jillo_Woche_Resume.pdf"
             rightLink={
               <a href={externalLinks.linkedIn} target="_blank" rel="noreferrer">
-                <div className="rounded-md bg-gray-700/50 hover:bg-gray-700/90 border-gray-700 border p-2 w-10 h-10 flex items-center justify-center transition duration-300">
+                <div className="group rounded-lg bg-gray-700/50 hover:bg-gray-700/90 border-gray-700 border p-1 w-10 h-10 flex items-center justify-center transition duration-300">
                   <FontAwesomeIcon
                     icon={faLinkedin}
-                    className="text-gray-300 w-5 h-5"
+                    className="text-gray-300 group-hover:scale-110 transition-all duration-300 group-hover:text-orange"
                   />
                 </div>
               </a>
@@ -44,12 +43,7 @@ export const MyResume = () => {
       </section>
       <section className="w-full pt-14">
         <div className="w-full">
-          <SectionHeading
-            isContactPage={false}
-            linkText="See LinkedIn"
-            linkHref={externalLinks.linkedIn}
-            linkTextIcon={<RxExternalLink className="inline-block" />}
-          >
+          <SectionHeading isContactPage={false}>
             What People Say.
           </SectionHeading>
         </div>

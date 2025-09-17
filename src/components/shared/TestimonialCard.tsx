@@ -1,4 +1,6 @@
 import type { FC } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 interface TestimonialCardProps {
   name: string;
@@ -19,15 +21,14 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   company,
   level,
   quote,
-  linkedInUrl,
 }) => {
   return (
     <div className="bg-gray-900/60 border border-gray-700 rounded-3xl p-6 hover:scale-101 transition-transform duration-500">
-      <div className="flex items-start space-x-4 mb-4">
+      <div className="flex items-center space-x-4 mb-4">
         <img
           src={`/experience/${image}`}
           alt={name}
-          className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+          className="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2 border-orange/40"
         />
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
@@ -50,18 +51,13 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         "{quote}"
       </blockquote>
 
-      {linkedInUrl && (
-        <div className="mt-4 pt-4 border-t border-gray-700">
-          <a
-            href={linkedInUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-orange hover:text-orange/80 text-sm font-medium transition-colors duration-200"
-          >
-            View on LinkedIn →
-          </a>
-        </div>
-      )}
+      <div className="mt-4 w-full flex justify-end">
+        <FontAwesomeIcon
+          icon={faLinkedin}
+          className="w-4 h-4 text-gray-500/60"
+          title="LinkedIn testimonial"
+        />
+      </div>
     </div>
   );
 };
