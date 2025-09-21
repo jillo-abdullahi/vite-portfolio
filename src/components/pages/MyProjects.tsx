@@ -7,12 +7,15 @@ import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/PageTitle";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { RxExternalLink } from "react-icons/rx";
+import { FeaturedPresigProject } from "../FeaturedPresigProject";
 
 export const MyProjects = () => {
   usePageTitle("Projects | Jillo Woche");
 
   return (
     <PageContainer>
+      {/* Featured Project Section - Presig */}
+      <FeaturedPresigProject />
       {/* Stacks */}
       <section>
         <SectionHeading>My Tools</SectionHeading>
@@ -31,6 +34,7 @@ export const MyProjects = () => {
           </SectionHeading>
         </div>
         <div className="pt-6">
+
           <PortfolioGrid>
             {portfolioProjects.map((project, index) => (
               <SlideMeIn cascade key={index}>
