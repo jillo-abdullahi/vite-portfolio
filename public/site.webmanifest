@@ -1,0 +1,21 @@
+{
+  "name": "Jillo Woche Portfolio",
+  "short_name": "Jillo Portfolio",
+  "description": "Portfolio website of Jillo Woche - Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3 technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#e7a11a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["portfolio", "developer", "technology"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

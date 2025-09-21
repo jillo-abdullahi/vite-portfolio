@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://jillowoche.dev/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any in the future)
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /api/
+
+# Allow important assets
+Allow: /assets/
+Allow: /public/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$
+Allow: /*.avif$
+Allow: /*.png$
+Allow: /*.svg$
