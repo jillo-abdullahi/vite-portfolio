@@ -31,7 +31,7 @@ export const FeaturedPresigProject = () => {
 
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Content Section */}
-              <div className="flex-1 space-y-6">
+              <div className="flex-1 space-y-4">
                 <div className="space-y-4">
                   <h2 className="text-4xl lg:text-5xl font-bold text-white group-hover:text-orange transition-colors duration-300">
                     Presig
@@ -47,6 +47,8 @@ export const FeaturedPresigProject = () => {
                     <i>before the wallet popup appears.</i>
                   </p>
                 </div>
+
+                <hr className="border-t border-gray-700/40" />
 
                 {/* Features */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -83,6 +85,8 @@ export const FeaturedPresigProject = () => {
                     </span>
                   </div>
                 </div>
+
+                <hr className="border-t border-gray-700/40" />
 
                 {/* Tech Stack */}
                 <div className="space-y-3">
