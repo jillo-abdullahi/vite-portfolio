@@ -15,6 +15,7 @@ import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
 import { externalLinks } from "../data";
 import Timer from "@/components/Timer";
 import { Link, useLocation } from "@tanstack/react-router";
+import ResponsiveImage from "@/components/shared/ResponsiveImage";
 
 interface NavigationItem {
   name: string;
@@ -88,12 +89,15 @@ const NavBar: FC = () => {
                   onClick={close}
                 >
                   <button className="relative inline-flex items-center justify-center rounded-full p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
-                    <img
-                      src={"/sneakerhead985.png"}
-                      alt="home"
+                    <ResponsiveImage
+                      src="/sneakerhead985"
+                      alt="Profile picture - Navigate to home"
                       className={`flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer ${
                         isHome ? "ring-2 ring-orange/80" : ""
                       }`}
+                      width={40}
+                      height={40}
+                      priority={true}
                     />
                   </button>
                 </Link>
