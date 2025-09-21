@@ -1,7 +1,4 @@
-import {
-  CodeBracketIcon,
-  ArrowTopRightOnSquareIcon,
-} from "@heroicons/react/24/outline";
+import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import {
   LuConstruction,
   LuSearch,
