@@ -10,7 +10,7 @@ export const ContactMe = () => {
   return (
     <PageContainer showBreadcrumbs>
       <section id="contact" className="contact pb-8">
-        <div className="w-full flex flex-col space-y-4 pb-4">
+        <div className="w-full pb-4">
           <SectionHeading
             linkText="say hi!"
             linkHref="mailto:jayloabdullahi@gmail.com"

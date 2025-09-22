@@ -35,7 +35,7 @@ export const Breadcrumbs = () => {
 
   return (
     <nav
-      className="flex items-center space-x-1 text-sm text-gray-400 mb-4"
+      className="flex items-center space-x-1 text-sm text-gray-400 mb-6"
       aria-label="Breadcrumb"
     >
       {breadcrumbs.map((item, index) => (
