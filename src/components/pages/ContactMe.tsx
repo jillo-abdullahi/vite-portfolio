@@ -8,7 +8,7 @@ export const ContactMe = () => {
   usePageTitle("Contact | Jillo Woche");
 
   return (
-    <PageContainer>
+    <PageContainer showBreadcrumbs>
       <section id="contact" className="contact pb-8">
         <div className="w-full flex flex-col space-y-4 pb-4">
           <SectionHeading

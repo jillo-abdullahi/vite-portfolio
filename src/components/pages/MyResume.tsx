@@ -13,7 +13,7 @@ export const MyResume = () => {
   usePageTitle("Resumé | Jillo Woche");
 
   return (
-    <PageContainer>
+    <PageContainer showBreadcrumbs>
       <section className="w-full">
         <div className="w-full">
           <SectionHeading

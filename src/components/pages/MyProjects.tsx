@@ -13,7 +13,7 @@ export const MyProjects = () => {
   usePageTitle("Projects | Jillo Woche");
 
   return (
-    <PageContainer>
+    <PageContainer showBreadcrumbs>
       {/* Featured Project Section - Presig */}
       <FeaturedPresigProject />
       {/* Stacks */}

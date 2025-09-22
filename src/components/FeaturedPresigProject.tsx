@@ -23,7 +23,7 @@ export const FeaturedPresigProject = () => {
           <div className="relative z-10 p-8 lg:p-10">
             {/* Work in Progress Badge - Now in normal flow */}
             <div className="flex justify-start mb-6">
-              <div className="px-4 py-2 text-sm font-bold rounded-xl bg-gray-900/80 text-orange backdrop-blur-sm border-2 border-orange/40 shadow-lg animate-pulse flex items-center space-x-2">
+              <div className="px-4 py-2 text-sm font-bold rounded-xl bg-gray-900/80 text-orange backdrop-blur-sm border-2 border-orange/40 shadow-lg flex items-center space-x-2">
                 <LuConstruction className="inline-block lg:mr-2 text-lg" />
                 <span>Currently Working On</span>
               </div>
