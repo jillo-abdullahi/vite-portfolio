@@ -1,5 +1,6 @@
 import type { FC } from "react";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import { LuMapPinHouse } from "react-icons/lu";
+
 import ContactLinks from "@/components/ContactLinks";
 import WavingHand from "@/components/WavingHand";
 import { SlideMeIn } from "../shared/slideMeIn";
@@ -16,10 +17,11 @@ const LandingPage: FC = () => {
   usePageTitle("Portfolio | Jillo Woche");
 
   const projectsLink = (
-    <Link to="/projects" className="text-orange/80 group py-0 sm:py-2 flex items-center space-x-1 font-medium hover:text-orange transition-all duration-300">
-      <span className="font-semibold text-md sm:text-sm">
-        Projects
-      </span>
+    <Link
+      to="/projects"
+      className="text-orange/80 group py-0 sm:py-2 flex items-center space-x-1 font-medium hover:text-orange transition-all duration-300 sm:pl-2"
+    >
+      <span className="font-semibold text-md sm:text-sm">Projects</span>
       <IoChevronForward className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
     </Link>
   );
@@ -30,9 +32,9 @@ const LandingPage: FC = () => {
         <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
           {/* Subtle hover overlay */}
           <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
+
           <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
-            <div className="rounded-full border-8 border-[#E7A11A78] flex-shrink-0 md:mr-8 flex-shrink-0">
+            <div className="rounded-full border-6 border-[#E7A11A78] flex-shrink-0 md:mr-8 flex-shrink-0">
               <div className="profile-img">
                 <img
                   src={"/me.webp"}
@@ -42,53 +44,51 @@ const LandingPage: FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700/30 pl-0 md:pl-8 pt-4 md:pt-0">
-            <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
-              <WavingHand />
-              <span className="text-xl sm:text-2xl text-gray-300/80 font-medium">
-                Hello, I am
-              </span>
-            </div>
-
-            <span className="text-3xl md:text-4xl sm:text-5xl text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full">
-              Jillo Woche
-            </span>
-            <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
-              Full Stack Software Engineer
-            </span>
-            <div className="flex items-center justify-center md:justify-start w-full pt-2">
-              <Link
-                to="/resume"
-                className="group flex items-center justify-center space-x-2 border border-orange/30 rounded-full px-3 py-1 bg-orange/10 hover:bg-orange/20 transition-all duration-200 cursor-pointer"
-              >
-                <span className="text-orange font-semibold text-sm">
-                  6+ years of experience
+            <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700/40 pl-0 md:pl-8 pt-4 md:pt-0">
+              <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
+                <WavingHand />
+                <span className="text-xl sm:text-2xl text-gray-300 font-medium">
+                  Hello, I am
                 </span>
-                <IoChevronForward className="text-orange group-hover:translate-x-0.5 transition-all duration-300" />
-              </Link>
-            </div>
+              </div>
 
-            <div className="w-full max-w-3xl pt-6">
-              <p className="text-gray-300/90 text-center md:text-left tracking-wide">
-                As a Full Stack Software Engineer, I'm on a mission to build
-                amazing things - with a <b>dash of innovation</b> and a whole
-                lot of
-                <b> precision!</b> From <b>pixel-perfect front-ends</b> to{" "}
-                <b>rock-solid back-ends</b> within the dynamic web2 and web3
-                realms.
-              </p>
-            </div>
-
-            <div className="flex items-center justify-center md:justify-start space-x-1 pt-4 w-full">
-              <MapPinIcon className="text-orange h-4 w-4" />{" "}
-              <span className="text-md text-gray-300 font-semibold">
-                Nairobi, Kenya
+              <span className="text-2xl md:text-3xl text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase">
+                Jillo Woche,
               </span>
+              <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
+                Full Stack Software Engineer.
+              </span>
+              <div className="flex items-center justify-center md:justify-start w-full pt-2">
+                <Link
+                  to="/resume"
+                  className="group flex items-center justify-center space-x-2 border border-orange/30 rounded-full px-3 py-1 bg-orange/10 hover:bg-orange/20 transition-all duration-200 cursor-pointer"
+                >
+                  <span className="text-orange font-semibold text-sm">
+                    6+ years of experience
+                  </span>
+                  <IoChevronForward className="text-orange group-hover:translate-x-0.5 transition-all duration-300" />
+                </Link>
+              </div>
+
+              <div className="w-full max-w-3xl pt-6">
+                <p className="text-gray-300/90 text-center md:text-left text-base md:text-xl">
+                  I build cool things for the web -{" "}
+                  <b>pixel-perfect frontends,</b>
+                  <b> rock-solid backends,</b> and the occasional{" "}
+                  <b>Web3 magic trick</b>. Innovation with precision, always.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center md:justify-start space-x-1 pt-4 w-full">
+                <LuMapPinHouse className="text-orange/80 h-4 w-4" />{" "}
+                <span className="text-md text-gray-300 font-semibold">
+                  Nairobi, Kenya
+                </span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
+                <ContactLinks />
+              </div>
             </div>
-            <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
-              <ContactLinks />
-            </div>
-          </div>
           </div>
         </div>
       </SlideMeIn>
@@ -97,7 +97,7 @@ const LandingPage: FC = () => {
         <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full mt-6">
           {/* Subtle hover overlay */}
           <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
+
           <div className="relative z-10">
             {/* skill split bar  */}
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">

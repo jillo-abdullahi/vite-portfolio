@@ -29,9 +29,9 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
   const { linkedIn, github, twitter } = externalLinks;
 
   const socialLinks: SocialLink[] = [
-    { icon: faGithub, href: github },
-    { icon: faLinkedin, href: linkedIn },
-    { icon: faXTwitter, href: twitter },
+    { icon: faGithub, href: github, name: "GitHub" },
+    { icon: faLinkedin, href: linkedIn, name: "LinkedIn" },
+    { icon: faXTwitter, href: twitter, name: "Twitter(X)" },
   ];
 
   const footerSocialLinks: SocialLink[] = [
@@ -83,7 +83,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
       >
         {/* Subtle hover overlay */}
         <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
+
         <div className="relative z-10 flex items-center justify-start space-x-3">
           <div className="rounded-xl bg-gray-700/40 border border-gray-600 p-2 w-10 h-10 flex items-center justify-center">
             <FontAwesomeIcon
@@ -142,20 +142,26 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
   }
 
   return (
-    <div className="flex items-center justify-center space-x-3 py-1">
-      {socialLinks.map(({ icon, href }, index) => (
-        <div className="flex" key={index}>
+    <div className="flex flex-wrap items-center justify-center gap-2">
+      {socialLinks.map(({ icon, href, name }, index) => {
+        return (
           <a
             key={index}
-            className="text-gray-300 hover:text-orange transform hover:scale-140 transition-all duration-150 flex"
+            className="group flex items-center space-x-1.5 border border-gray-700/40 rounded-xl px-2.5 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
             href={href}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={icon} style={{ fontSize: "18px" }} />
+            <FontAwesomeIcon
+              icon={icon}
+              className="text-gray-300 group-hover:text-orange transition-colors duration-200 w-3.5 h-3.5"
+            />
+            <span className="text-gray-300 group-hover:text-orange font-medium text-xs transition-colors duration-200">
+              {name}
+            </span>
           </a>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
