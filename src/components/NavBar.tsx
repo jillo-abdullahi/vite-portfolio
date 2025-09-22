@@ -124,16 +124,16 @@ const NavBar: FC = () => {
                 <div className="flex-shrink-0">
                   <a
                     type="button"
-                    className="relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 cursor-pointer group transition hover:scale-[1.02]"
+                    className="group relative inline-flex uppercase items-center gap-x-1.5 rounded-xl border border-orange/40 bg-orange/10 hover:bg-orange/20 px-3 py-2 text-sm font-semibold text-orange shadow-sm hover:border-orange/60 transition-all duration-200 cursor-pointer"
                     href={externalLinks.calLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <CalendarDaysIcon
-                      className="-ml-0.5 h-5 w-5"
+                      className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                       aria-hidden="true"
                     />
-                    <span className="text-gray-900">
+                    <span className="font-medium">
                       schedule call
                     </span>
                   </a>
@@ -173,16 +173,16 @@ const NavBar: FC = () => {
                     <div className="w-full text-center">
                       <a
                         type="button"
-                        className="cursor-pointer relative inline-flex uppercase items-center gap-x-1.5 rounded-lg bg-orange px-3 py-2 text-sm font-semibold text-blue shadow-sm hover:bg-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange/80 group transition"
+                        className="group cursor-pointer relative inline-flex uppercase items-center gap-x-1.5 rounded-xl border border-orange/40 bg-orange/10 hover:bg-orange/20 px-3 py-2 text-sm font-semibold text-orange shadow-sm hover:border-orange/60 transition-all duration-200"
                         href={externalLinks.calLink}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <CalendarDaysIcon
-                          className="-ml-0.5 h-5 w-5 group-hover:translate-x-0.5 transition origin-center duration-200"
+                          className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                           aria-hidden="true"
                         />
-                        <span className="text-gray-900">schedule call</span>
+                        <span className="font-medium">schedule call</span>
                       </a>
                     </div>
                   </div>
