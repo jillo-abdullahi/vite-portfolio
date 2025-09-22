@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
+import { GiBullseye } from "react-icons/gi";
 
 import ContactLinks from "@/components/ContactLinks";
 import WavingHand from "@/components/WavingHand";
@@ -34,7 +35,7 @@ const LandingPage: FC = () => {
           <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
-            <div className="rounded-full border-6 border-[#E7A11A78] flex-shrink-0 md:mr-8 flex-shrink-0">
+            <div className="relative rounded-full border-6 border-[#E7A11A78] flex-shrink-0 md:mr-8">
               <div className="profile-img">
                 <img
                   src={"/me.webp"}
@@ -42,10 +43,15 @@ const LandingPage: FC = () => {
                   className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg"
                 />
               </div>
+              {/* Status indicator */}
+              <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-gray-800/90 border-2 border-orange/60 rounded-full px-2 py-1 flex items-center space-x-1 shadow-lg backdrop-blur-sm">
+                <GiBullseye className="text-orange/80 h-4 w-4" />
+                <span className="text-xs font-medium text-gray-200 whitespace-nowrap">Crafting...</span>
+              </div>
             </div>
 
             <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700/40 pl-0 md:pl-8 pt-4 md:pt-0">
-              <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-4">
+              <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-2 sm:pb-4">
                 <WavingHand />
                 <span className="text-xl sm:text-2xl text-gray-300 font-medium">
                   Hello, I am
