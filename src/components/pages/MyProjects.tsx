@@ -27,7 +27,7 @@ export const MyProjects = () => {
         <div className="pt-10">
           <SectionHeading
             linkHref={externalLinks.github}
-            linkText="See GitHub"
+            linkText="GitHub"
             linkTextIcon={<RxExternalLink className="inline-block" />}
           >
             Some of My Recent Projects.

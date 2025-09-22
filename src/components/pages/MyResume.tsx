@@ -18,7 +18,7 @@ export const MyResume = () => {
         <div className="w-full">
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
-            linkText="Download Resumé"
+            linkText="Download CV"
             linkTextIcon={<MdOutlineFileDownload className="inline-block w-6 h-6" />}
             isContactPage={false}
             isDownload={true}

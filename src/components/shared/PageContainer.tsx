@@ -25,7 +25,7 @@ interface PageContainerProps {
 export const PageContainer = ({ children, showBreadcrumbs = false }: PageContainerProps) => {
   return (
     <SlideMeIn duration={200}>
-      <div className="mx-auto px-8 md:px-10 lg:px-28 xl:px-48 py-32 md:py-36 bg-gradient-to-b from-gray-900/80 to-gray-900/20">
+      <div className="mx-auto px-5 md:px-10 lg:px-28 xl:px-48 py-32 md:py-36 bg-gradient-to-b from-gray-900/80 to-gray-900/20">
         {showBreadcrumbs && <Breadcrumbs />}
         {children}
       </div>

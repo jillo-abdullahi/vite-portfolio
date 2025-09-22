@@ -76,16 +76,16 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
 
     return (
       <a
-        className="group relative w-full rounded-3xl border border-gray-700/40 hover:border-gray-600/60 hover:bg-gray-900/80 bg-gray-900/20 flex items-center justify-between cursor-pointer p-4 transition-all duration-300 ease-out hover:-translate-y-0.5"
+        className="group relative w-full rounded-2xl border border-gray-700/40 hover:border-gray-600/60 hover:bg-gray-900/80 bg-gray-900/20 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-out hover:-translate-y-0.5"
         href={href}
         target="_blank"
         rel="noreferrer"
       >
         {/* Subtle hover overlay */}
-        <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 rounded-2xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <div className="relative z-10 flex items-center justify-start space-x-3">
-          <div className="rounded-xl bg-gray-700/40 border border-gray-600 p-2 w-10 h-10 flex items-center justify-center">
+          <div className="rounded-lg bg-gray-700/40 border border-gray-600 p-2 w-10 h-10 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
               style={{ fontSize: "20px" }}
