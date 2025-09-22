@@ -26,13 +26,13 @@ export default function SkillSplitBar({
       style={{ ["--split" as any]: `${left}%` }}
     >
       <div
-        className="grid overflow-hidden rounded-xl border border-gray-700/40 shadow-lg transition-all duration-200 group-hover:border-gray-600/60"
+        className="grid overflow-hidden rounded-xl border border-orange/20 shadow-lg transition-all duration-200 group-hover:border-orange/30"
         style={{
           gridTemplateColumns: `${left}% ${right}%`,
           height: `${height}px`,
         }}
       >
-        <div className="flex items-center justify-between px-1.5 md:px-3 bg-gradient-to-r from-orange to-orange/90 text-gray-900 relative">
+        <div className="flex items-center justify-between px-1.5 md:px-3 bg-orange/20 text-orange relative">
           <span className="hidden md:block font-medium text-sm">{leftLabel}</span>
           <span className="md:hidden font-medium text-sm">FE</span>
           <span className="font-bold text-sm">{left}%</span>
@@ -45,14 +45,11 @@ export default function SkillSplitBar({
         </div>
       </div>
 
-      {/* Modern divider */}
+      {/* Simple divider */}
       <div
-        className="pointer-events-none absolute top-1/2 h-[80%] w-0.5 -translate-y-1/2 bg-gradient-to-b from-transparent via-gray-900/60 to-transparent rounded-full"
+        className="pointer-events-none absolute top-1/2 h-[115%] w-px -translate-y-1/2 bg-orange/80 transition-colors duration-300"
         style={{ left: "var(--split)" }}
       />
-      
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 rounded-xl bg-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
     </div>
   );
 }
