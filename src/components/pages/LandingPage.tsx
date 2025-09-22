@@ -20,7 +20,7 @@ const LandingPage: FC = () => {
   const projectsLink = (
     <Link
       to="/projects"
-      className="text-orange/80 group py-0 sm:py-2 flex items-center space-x-1 font-medium hover:text-orange transition-all duration-300 sm:pl-2"
+      className="text-orange group py-0 sm:py-2 flex items-center space-x-1 font-medium transition-all duration-300 sm:pl-2"
     >
       <span className="font-semibold text-md sm:text-sm">Projects</span>
       <IoChevronForward className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
@@ -115,7 +115,7 @@ const LandingPage: FC = () => {
                   leftLabel="Frontend"
                   rightLabel="Backend"
                   leftPercent={70}
-                  height={40}
+                  height={35}
                 />
               </div>
             </div>
