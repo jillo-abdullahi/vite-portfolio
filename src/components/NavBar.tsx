@@ -59,15 +59,15 @@ const NavBar: FC = () => {
       {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
-            className={`mx-auto px-6 relative border border-gray-700 rounded-2xl ${
+            className={`mx-auto px-5 relative border border-gray-700 rounded-[20px] ${
               isScrolled ? "bg-gray-900" : "bg-gray-900/70"
             }`}
           >
             <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
-                <div className="-ml-2 mr-2 flex items-center lg:hidden">
+                <div className="-ml-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
+                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -92,7 +92,7 @@ const NavBar: FC = () => {
                     <ResponsiveImage
                       src="/sneakerhead985"
                       alt="Profile picture - Navigate to home"
-                      className={`flex-shrink-0 w-10 h-10 rounded-full overflow-hidden shadow-lg cursor-pointer ${
+                      className={`flex-shrink-0 w-9 h-9 rounded-full overflow-hidden shadow-lg cursor-pointer ${
                         isHome ? "ring-2 ring-orange/80" : ""
                       }`}
                       width={40}
@@ -108,7 +108,7 @@ const NavBar: FC = () => {
                       to={item.href}
                       className={`text-gray-300 hover:bg-gray-800 hover:text-white rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
                         item.isActive 
-                          ? "bg-gray-800/60 text-gray-200 border-orange/40" 
+                          ? "bg-gray-800/60 text-gray-200 border-orange/50" 
                           : "border-transparent"
                       }`}
                     >
@@ -150,14 +150,14 @@ const NavBar: FC = () => {
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
             <DisclosurePanel className="lg:hidden">
-              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900 border border-gray-700 rounded-xl">
+              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900 border border-gray-700 rounded-[20px]">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
                     className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center border ${
                       item.isActive 
-                        ? "bg-gray-800/60 text-gray-200 border-orange/30" 
+                        ? "bg-gray-800/60 text-gray-200 border-orange/50" 
                         : "border-transparent"
                     }`}
                     onClick={() => {
