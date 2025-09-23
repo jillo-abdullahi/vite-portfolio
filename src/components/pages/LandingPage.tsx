@@ -44,7 +44,7 @@ const LandingPage: FC = () => {
                 />
               </div>
               {/* Status indicator */}
-              <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-gray-800/90 border-2 border-orange/60 rounded-full px-2 py-1 flex items-center space-x-0 backdrop-blur-sm">
+              <div className="absolute -bottom-2 -right-1 md:-bottom-2 md:right-2 bg-gray-800/90 border-2 border-orange/60 rounded-full px-2 py-1 flex items-center space-x-0 backdrop-blur-sm">
                 <GiBullseye className="text-orange/80 h-4 w-4 rotate-145" />
                 <span className="text-xs font-medium text-gray-200 whitespace-nowrap">Crafting...</span>
               </div>

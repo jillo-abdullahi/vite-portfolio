@@ -51,7 +51,7 @@ export const FeaturedPresigProject = () => {
                 <hr className="border-t border-gray-700/40" />
 
                 {/* Features */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-3">
                   <div className="flex items-start gap-3 text-gray-300">
                     <LuSearch className="text-orange text-lg mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
@@ -62,7 +62,7 @@ export const FeaturedPresigProject = () => {
                   <div className="flex items-start gap-3 text-gray-300">
                     <LuShield className="text-orange text-lg mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Risk scoring engine highlights unlimited approvals and
+                      Highlight unlimited approvals and
                       unknown spenders
                     </span>
                   </div>
@@ -105,7 +105,7 @@ export const FeaturedPresigProject = () => {
                     ].map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 text-sm font-medium bg-orange/20 text-orange border border-orange/40 rounded-lg hover:bg-orange/30 transition-colors duration-200"
+                        className="px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-medium bg-orange/20 text-orange border border-orange/40 rounded-lg hover:bg-orange/30 transition-colors duration-200"
                       >
                         {tech}
                       </span>
@@ -119,25 +119,25 @@ export const FeaturedPresigProject = () => {
                     href="https://www.npmjs.com/package/@presig/core"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn flex items-center gap-3 px-6 py-3 text-sm font-semibold text-gray-900 bg-orange rounded-xl hover:bg-orange/90 transition-all duration-200 hover:scale-105 shadow-lg"
+                    className="group/btn flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-gray-900 bg-orange rounded-xl hover:bg-orange/90 transition-all duration-200 hover:scale-105 shadow-lg"
                   >
-                    <FaNpm className="h-5 w-5 group-hover/btn:scale-110 transition-transform duration-200" />
-                    View on NPM
+                    <FaNpm className="h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:scale-110 transition-transform duration-200" />
+                    <span className="whitespace-nowrap">View on NPM</span>
                   </a>
                   <a
                     href="https://github.com/jillo-abdullahi/presig"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn flex items-center gap-3 px-6 py-3 text-sm font-semibold text-gray-100 bg-gray-700/80 border border-gray-600 rounded-xl hover:bg-gray-600 transition-all duration-200 hover:scale-105 shadow-lg"
+                    className="group/btn flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-gray-100 bg-gray-700/80 border border-gray-600 rounded-xl hover:bg-gray-600 transition-all duration-200 hover:scale-105 shadow-lg"
                   >
-                    <CodeBracketIcon className="h-5 w-5 group-hover/btn:scale-110 transition-transform duration-200" />
-                    View Source
+                    <CodeBracketIcon className="h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:scale-110 transition-transform duration-200" />
+                    <span className="whitespace-nowrap">View Source</span>
                   </a>
                 </div>
               </div>
 
               {/* Visual Element */}
-              <div className="lg:w-96 xl:w-[500px] flex-shrink-0">
+              <div className="w-full lg:w-96 xl:w-[500px] lg:flex-shrink-0">
                 <div className="relative">
                   {/* Terminal/Code Mockup */}
                   <div className="bg-gray-900 rounded-xl border border-gray-700 shadow-2xl overflow-hidden">
