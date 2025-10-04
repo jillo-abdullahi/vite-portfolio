@@ -11,12 +11,9 @@ import { FaPython } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSolidity } from "react-icons/si";
-import { usePageTitle } from "../../hooks/usePageTitle";
 import { Link } from "@tanstack/react-router";
 
 const LandingPage: FC = () => {
-  usePageTitle("Portfolio | Jillo Woche");
-
   const projectsLink = (
     <Link
       to="/projects"
