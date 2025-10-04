@@ -45,7 +45,7 @@ const LandingPage: FC = () => {
               </div>
               {/* Status indicator */}
               <div className="absolute -bottom-2 right-1 md:-bottom-2 md:right-2">
-                <StatusPill status={StatusType.VACATION} />
+                <StatusPill status={StatusType.BUILDING} />
               </div>
             </div>
 
