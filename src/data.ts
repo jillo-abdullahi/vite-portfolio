@@ -24,7 +24,7 @@ export const experiences: Experience[] = [
     isCurrent: true,
     type: "work",
     workType: "Full-time",
-    title: "Senior Developer FE (React/TypeScript)",
+    title: "Senior Developer FE (React)",
     company: "Rainforest Alliance",
     companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
     companyLogo: "rainforestLogo.jpg",
