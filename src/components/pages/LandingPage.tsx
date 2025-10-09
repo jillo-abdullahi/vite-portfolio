@@ -42,7 +42,7 @@ const LandingPage: FC = () => {
               </div>
               {/* Status indicator */}
               <div className="absolute -bottom-2 right-1 md:-bottom-2 md:right-2">
-                <StatusPill status={StatusType.BUILDING} />
+                <StatusPill status={StatusType.CRAFTING} />
               </div>
             </div>
 
@@ -83,9 +83,14 @@ const LandingPage: FC = () => {
 
               <div className="flex items-center justify-center md:justify-start space-x-1 pt-4 w-full">
                 <LuMapPinHouse className="text-orange/80 h-4 w-4" />{" "}
-                <span className="text-md text-gray-300 font-semibold">
-                  Nairobi, Kenya
-                </span>
+                <div className="flex items-baseline justify-start space-x-1">
+                  <span className="text-md text-gray-300 font-semibold">
+                    Nairobi, Kenya
+                  </span>
+                  <span className="text-sm text-gray-500 font-normal">
+                    (working worldwide)
+                  </span>
+                </div>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
                 <ContactLinks />

@@ -14,7 +14,7 @@ export const externalLinks: ExternalLinks = {
   stackoverflow: "https://stackoverflow.com/users/7300926/jillo-abdullahi",
   repositories: "https://github.com/jillo-abdullahi?tab=repositories",
   instagram: "https://www.instagram.com/jillo_woche/",
-  calLink: "https://cal.com/jillowoche/15min",
+  calLink: "https://calendar.app.google/UjK3FBKSAaX6jXvK6",
   email: "jayloabdullahi@gmail.com",
   telegram: "https://t.me/shrewdTurtle",
 };

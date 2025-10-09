@@ -5,11 +5,8 @@ import {
   DisclosurePanel,
   Transition,
 } from "@headlessui/react";
-import {
-  Bars3Icon,
-  XMarkIcon,
-  CalendarDaysIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { SiGooglemeet } from "react-icons/si";
 import { useState, useEffect } from "react";
 import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
 import { externalLinks } from "../data";
@@ -107,8 +104,8 @@ const NavBar: FC = () => {
                       key={item.name}
                       to={item.href}
                       className={`text-gray-300 hover:bg-gray-800 hover:text-white rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
-                        item.isActive 
-                          ? "bg-gray-800/60 text-gray-200 border-orange/50" 
+                        item.isActive
+                          ? "bg-gray-800/60 text-gray-200 border-orange/50"
                           : "border-transparent"
                       }`}
                     >
@@ -129,13 +126,11 @@ const NavBar: FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <CalendarDaysIcon
+                    <SiGooglemeet
                       className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                       aria-hidden="true"
                     />
-                    <span className="font-medium">
-                      schedule call
-                    </span>
+                    <span className="font-medium">schedule call</span>
                   </a>
                 </div>
               </div>
@@ -156,8 +151,8 @@ const NavBar: FC = () => {
                     key={item.name}
                     to={item.href}
                     className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center border ${
-                      item.isActive 
-                        ? "bg-gray-800/60 text-gray-200 border-orange/50" 
+                      item.isActive
+                        ? "bg-gray-800/60 text-gray-200 border-orange/50"
                         : "border-transparent"
                     }`}
                     onClick={() => {
@@ -178,7 +173,7 @@ const NavBar: FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CalendarDaysIcon
+                        <SiGooglemeet
                           className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                           aria-hidden="true"
                         />
