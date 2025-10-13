@@ -385,7 +385,7 @@ toast-details {
 
 .waving-emoji {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   transform: rotate(50%); /* Slightly tilt the emoji to the left */
   animation: wave 2s infinite;
   transform-origin: 80% 80%; /* Adjust to make the wave look natural */
