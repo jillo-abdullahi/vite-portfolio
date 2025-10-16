@@ -20,21 +20,21 @@ export const externalLinks: ExternalLinks = {
 };
 
 export const experiences: Experience[] = [
-  {
-    isCurrent: true,
-    type: "work",
-    workType: "Full-time",
-    title: "Senior Developer FE (React)",
-    company: "Rainforest Alliance",
-    companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
-    companyLogo: "rainforestLogo.jpg",
-    location: "Nairobi, Kenya - Hybrid",
-    date: "Oct 2025 - present",
-    description: [
-      "Turning coffee into code and generally making the world a better place.",
-    ],
-    technologies: ["React", "TypeScript"],
-  },
+  // {
+  //   isCurrent: true,
+  //   type: "work",
+  //   workType: "Full-time",
+  //   title: "Senior Developer FE (React)",
+  //   company: "Rainforest Alliance",
+  //   companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
+  //   companyLogo: "rainforestLogo.jpg",
+  //   location: "Nairobi, Kenya - Hybrid",
+  //   date: "Oct 2025 - present",
+  //   description: [
+  //     "Turning coffee into code and generally making the world a better place.",
+  //   ],
+  //   technologies: ["React", "TypeScript"],
+  // },
 
   {
     isCurrent: false,
