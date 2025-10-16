@@ -26,7 +26,7 @@ export const ContactMe = () => {
             <p className="text-gray-300 text-2xl">Let's connect</p>
           </SlideMeIn>
           <div className="md:col-span-2">
-            <ContactLinks isInFooter={true} />
+            <ContactLinks isContactPage />
           </div>
         </div>
       </section>

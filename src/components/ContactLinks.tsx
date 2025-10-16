@@ -8,7 +8,7 @@ import {
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
 import { FaRegCopy } from "react-icons/fa";
-import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa6";
 
 import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -22,10 +22,10 @@ interface SocialLink {
 }
 
 interface ContactLinksProps {
-  isInFooter?: boolean;
+  isContactPage?: boolean;
 }
 
-const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
+const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   const { linkedIn, github, twitter } = externalLinks;
 
   const socialLinks: SocialLink[] = [
@@ -34,7 +34,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
     { icon: faXTwitter, href: twitter, name: "Twitter(X)" },
   ];
 
-  const footerSocialLinks: SocialLink[] = [
+  const contactPageSocialLinks: SocialLink[] = [
     {
       icon: faEnvelope,
       href: `mailto:${externalLinks.email}`,
@@ -74,6 +74,22 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
       .replace(/^mailto:/, "")
       .replace(/^https?:\/\//, "");
 
+    // Display username for mobile (e.g. /shrewdTurtle from t.me/shrewdTurtle)
+    const getMobileDisplay = (href: string) => {
+      // Remove mailto and protocol
+      let url = href.replace(/^mailto:/, '').replace(/^https?:\/\//, '');
+      // If it's an email, just show the username before @
+      if (href.startsWith('mailto:')) {
+        return '/' + url.split('@')[0];
+      }
+      // For URLs, show only the last path segment (username)
+      const parts = url.split('/');
+      if (parts.length > 1) {
+        return '/' + parts[parts.length - 1];
+      }
+      return url;
+    };
+
     return (
       <a
         className="group relative w-full rounded-2xl border border-gray-700/40 hover:border-gray-600/60 hover:bg-gray-900/80 bg-gray-900/20 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-out hover:-translate-y-0.5"
@@ -95,39 +111,51 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
           <div className="text-left">
             <div className="text-gray-100 font-medium">{name}</div>
             <div className="flex items-center space-x-1">
-              <span className="text-sm text-gray-400">{displayHref}</span>
-              <button
-                onClick={handleCopy}
-                className={`p-1 rounded transition-all duration-200 ${
-                  isCopied
-                    ? "text-green-400"
-                    : "text-gray-500 hover:text-gray-300"
-                }`}
-                title={isCopied ? "Copied!" : "Copy link"}
-              >
-                {isCopied ? (
-                  <IoCheckmarkDoneOutline className="w-3 h-3" />
-                ) : (
-                  <FaRegCopy className="w-3 h-3" />
-                )}
-              </button>
+              <span className="text-sm text-gray-400 hidden sm:inline">{displayHref}</span>
+              <span className="text-sm text-gray-400 sm:hidden">{getMobileDisplay(href)}</span>
             </div>
           </div>
         </div>
-        <div className="relative z-10 hidden md:block">
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            className="group-hover:-rotate-45 group-hover:text-orange/90 origin-center w-4 text-gray-300 transition-all duration-300"
-          />
+        <div className="relative z-10 flex gap-2 items-center flex">
+          {/* Open Link Button */}
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              window.open(href, "_blank", "noopener,noreferrer");
+            }}
+            className="p-2 rounded-lg bg-gray-800/60 hover:bg-orange/20 text-gray-300 group-hover:text-orange transition-colors duration-200 h-10 sm:h-8 w-10 sm:w-8 flex items-center justify-center cursor-pointer"
+            title={`Open ${name}`}
+            aria-label={`Open ${name}`}
+          >
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="w-4 h-4 group-hover:-rotate-45 transition-transform duration-200"
+            />
+          </button>
+          {/* Copy Link Button */}
+          <button
+            onClick={handleCopy}
+            className={`p-2 rounded-lg bg-gray-800/60 hover:bg-green-100/20 text-gray-300 group-hover:text-green-400 transition-colors duration-200 h-10 sm:h-8 w-10 sm:w-8 flex items-center justify-center cursor-pointer ${
+              isCopied ? "text-green-400" : ""
+            }`}
+            title={isCopied ? "Copied!" : "Copy link"}
+            aria-label="Copy link"
+          >
+            {isCopied ? (
+              <FaCheck className="w-4 h-4" />
+            ) : (
+              <FaRegCopy className="w-4 h-4" />
+            )}
+          </button>
         </div>
       </a>
     );
   };
 
   // show different styles when rendered in the footer section
-  const footerLinks = (
+  const contactPageLinks = (
     <div className="flex flex-col space-y-2 w-full divider-y divider-gray-800">
-      {footerSocialLinks.map(({ icon, href, name }, index) => {
+      {contactPageSocialLinks.map(({ icon, href, name }, index) => {
         return (
           <SlideMeIn key={index}>
             <FooterLinkBox icon={icon} href={href} name={name} />
@@ -137,8 +165,8 @@ const ContactLinks: FC<ContactLinksProps> = ({ isInFooter }) => {
     </div>
   );
 
-  if (isInFooter) {
-    return footerLinks;
+  if (isContactPage) {
+    return contactPageLinks;
   }
 
   return (

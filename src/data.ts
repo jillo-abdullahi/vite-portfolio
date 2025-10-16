@@ -8,7 +8,7 @@ import type {
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
-  linkedIn: "https://linkedin.com/in/jilloabdullahi/",
+  linkedIn: "https://linkedin.com/in/jilloabdullahi",
   twitter: "https://x.com/shrewd_turtle",
   facebook: "https://www.facebook.com/p/Shrewd-Turtle-61570536062535/",
   stackoverflow: "https://stackoverflow.com/users/7300926/jillo-abdullahi",
