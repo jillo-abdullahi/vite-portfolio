@@ -14,9 +14,6 @@ export const MyProjects = () => {
 
   return (
     <PageContainer showBreadcrumbs>
-      {/* Featured Project Section - Presig */}
-      <FeaturedPresigProject />
-      {/* Stacks */}
       <section>
         <SectionHeading>My Tools</SectionHeading>
         <Stacks />
@@ -34,7 +31,10 @@ export const MyProjects = () => {
           </SectionHeading>
         </div>
         <div className="pt-6">
+          {/* Featured Project Section - Presig */}
+          <FeaturedPresigProject />
 
+          {/* other projects */}
           <PortfolioGrid>
             {portfolioProjects.map((project, index) => (
               <SlideMeIn cascade key={index}>

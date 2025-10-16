@@ -297,9 +297,9 @@ export const skills: Skills = {
   frontend: [
     { name: "React", level: "90%" },
     { name: "Redux/Zustand", level: "90%" },
-    { name: "Next.js", level: "85%" },
-    { name: "Vue.js", level: "80%" },
+    { name: "Next.js", level: "90%" },
     { name: "TailwindCSS", level: "90%" },
+    { name: "Vue.js", level: "80%" },
   ],
   "databases/devops": [
     { name: "Postgres", level: "80%" },

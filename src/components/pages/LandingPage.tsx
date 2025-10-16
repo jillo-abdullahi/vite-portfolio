@@ -7,19 +7,20 @@ import { SlideMeIn } from "../shared/slideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
 import { StatusPill, StatusType } from "../shared/StatusPill";
-import { FaPython } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSolidity } from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
+
 import { Link } from "@tanstack/react-router";
 
 const LandingPage: FC = () => {
   const projectsLink = (
     <Link
       to="/projects"
-      className="text-orange group py-0 sm:py-2 flex items-center space-x-1 font-medium transition-all duration-300 sm:pl-2"
+      className="rounded-full text-orange group py-1 pl-3 pr-2 border border-orange/30 flex items-center space-x-1 font-medium transition-all duration-300 bg-orange/10 hover:bg-orange/20"
     >
-      <span className="font-semibold text-md sm:text-sm">Projects</span>
+      <span className="font-semibold text-sm">Projects</span>
       <IoChevronForward className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
     </Link>
   );
@@ -105,7 +106,7 @@ const LandingPage: FC = () => {
             {/* skill split bar  */}
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
               <div className="text-center md:text-left md:flex-shrink-0">
-                <p className="text-lg font-medium text-gray-200">Skill split</p>
+                <p className="text-lg font-medium text-gray-200">Focus</p>
               </div>
               <div className="flex-1 flex justify-center md:justify-end">
                 <SkillSplitBar
@@ -125,16 +126,29 @@ const LandingPage: FC = () => {
 
               <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
                 <a
-                  href="https://www.typescriptlang.org/"
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
                 >
                   <RiJavascriptFill className="text-yellow-400 h-4.5 w-4.5" />
                   <span className="text-gray-300 font-medium text-sm">
-                    JavaScript/TypeScript
+                    JavaScript
                   </span>
                 </a>
+
+                <a
+                  href="https://www.typescriptlang.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
+                >
+                  <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
+                  <span className="text-gray-300 font-medium text-sm">
+                    TypeScript
+                  </span>
+                </a>
+
                 <a
                   href="https://soliditylang.org/"
                   target="_blank"
@@ -144,17 +158,6 @@ const LandingPage: FC = () => {
                   <SiSolidity className="text-gray-300 h-4.5 w-4.5" />
                   <span className="text-gray-300 font-medium text-sm">
                     Solidity
-                  </span>
-                </a>
-                <a
-                  href="https://www.python.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
-                >
-                  <FaPython className="text-blue-400 h-4.5 w-4.5" />
-                  <span className="text-gray-300 font-medium text-sm">
-                    Python
                   </span>
                 </a>
                 <div className="hidden sm:block">{projectsLink}</div>

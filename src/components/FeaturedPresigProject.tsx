@@ -12,7 +12,7 @@ import { SlideMeIn } from "./shared/slideMeIn";
 
 export const FeaturedPresigProject = () => {
   return (
-    <section className="mb-16">
+    <section className="mb-10">
       <SlideMeIn>
         <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange/10 via-gray-800/80 to-gray-900/80 backdrop-blur-sm border-2 border-orange/30 hover:border-orange/60 transition-all duration-500 hover:scale-[1.01]">
           {/* Background Pattern */}
