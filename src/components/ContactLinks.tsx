@@ -77,15 +77,15 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
     // Display username for mobile (e.g. /shrewdTurtle from t.me/shrewdTurtle)
     const getMobileDisplay = (href: string) => {
       // Remove mailto and protocol
-      let url = href.replace(/^mailto:/, '').replace(/^https?:\/\//, '');
+      let url = href.replace(/^mailto:/, "").replace(/^https?:\/\//, "");
       // If it's an email, just show the username before @
-      if (href.startsWith('mailto:')) {
-        return '/' + url.split('@')[0];
+      if (href.startsWith("mailto:")) {
+        return "/" + url.split("@")[0];
       }
       // For URLs, show only the last path segment (username)
-      const parts = url.split('/');
+      const parts = url.split("/");
       if (parts.length > 1) {
-        return '/' + parts[parts.length - 1];
+        return "/" + parts[parts.length - 1];
       }
       return url;
     };
@@ -101,18 +101,22 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         <div className="absolute inset-0 rounded-2xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <div className="relative z-10 flex items-center justify-start space-x-3">
-          <div className="rounded-lg bg-gray-700/40 border border-gray-600 p-2 w-10 h-10 flex items-center justify-center">
+          <div className="rounded-lg bg-gray-700/40 border border-gray-700/40 p-2 w-10 h-10 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
-              style={{ fontSize: "20px" }}
+              style={{ fontSize: "24px" }}
               className="text-gray-300 transition-all group-hover:text-orange/90 duration-300"
             />
           </div>
           <div className="text-left">
             <div className="text-gray-100 font-medium">{name}</div>
             <div className="flex items-center space-x-1">
-              <span className="text-sm text-gray-400 hidden sm:inline">{displayHref}</span>
-              <span className="text-sm text-gray-400 sm:hidden">{getMobileDisplay(href)}</span>
+              <span className="text-sm text-gray-400 hidden sm:inline">
+                {displayHref}
+              </span>
+              <span className="text-sm text-gray-400 sm:hidden">
+                {getMobileDisplay(href)}
+              </span>
             </div>
           </div>
         </div>
@@ -127,15 +131,23 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             title={`Open ${name}`}
             aria-label={`Open ${name}`}
           >
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              className="w-4 h-4 group-hover:-rotate-45 transition-transform duration-200"
-            />
+            <div className="hidden sm:block ">
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="w-4 h-4 group-hover:-rotate-45 transition-transform duration-200"
+              />
+            </div>
+            <div className="block sm:hidden">
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="block sm:hidden w-4 h-4 -rotate-45"
+              />
+            </div>
           </button>
           {/* Copy Link Button */}
           <button
             onClick={handleCopy}
-            className={`p-2 rounded-lg bg-gray-800/60 hover:bg-green-100/20 text-gray-300 group-hover:text-green-400 transition-colors duration-200 h-10 sm:h-8 w-10 sm:w-8 flex items-center justify-center cursor-pointer ${
+            className={`p-2 rounded-lg bg-gray-800/60 transform hover:bg-green-100/20 group-hover:scale-105 text-gray-300 group-hover:text-green-400 transition-all duration-200 h-10 sm:h-8 w-10 sm:w-8 flex items-center justify-center cursor-pointer ${
               isCopied ? "text-green-400" : ""
             }`}
             title={isCopied ? "Copied!" : "Copy link"}
@@ -152,7 +164,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
     );
   };
 
-  // show different styles when rendered in the footer section
+  // for contact page
   const contactPageLinks = (
     <div className="flex flex-col space-y-2 w-full divider-y divider-gray-800">
       {contactPageSocialLinks.map(({ icon, href, name }, index) => {
@@ -169,6 +181,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
     return contactPageLinks;
   }
 
+  // for landing page
   return (
     <div className="flex flex-wrap items-center justify-center gap-2">
       {socialLinks.map(({ icon, href, name }, index) => {

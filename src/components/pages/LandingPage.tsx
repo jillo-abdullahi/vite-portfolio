@@ -15,6 +15,16 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { Link } from "@tanstack/react-router";
 
 const LandingPage: FC = () => {
+  /**
+   * A styled React Router Link component that navigates to the "/projects" route.
+   *
+   * The link displays the text "Projects" with an orange-themed rounded appearance,
+   * and includes a forward chevron icon (`IoChevronForward`) that animates slightly on hover.
+   *
+   * @remarks
+   * - Uses Tailwind CSS utility classes for styling and transitions.
+   * - Intended for use as a navigation element to the projects page.
+   */
   const projectsLink = (
     <Link
       to="/projects"
@@ -33,6 +43,7 @@ const LandingPage: FC = () => {
           <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
+            
             <div className="relative rounded-full border-6 border-[#E7A11A78] flex-shrink-0 md:mr-8">
               <div className="profile-img">
                 <img

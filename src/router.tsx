@@ -4,7 +4,6 @@ import {
   createRouter,
   Outlet,
   redirect,
-  useLocation,
 } from "@tanstack/react-router";
 import NotFound from "@/components/NotFound";
 import LandingPage from "@/components/pages/LandingPage";
@@ -15,18 +14,9 @@ import { ContactMe } from "./components/pages/ContactMe";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
 import { PageFooter } from "./components/PageFooter";
 
-const bgStyle = {
-  backgroundImage: "url('/icon-bg.svg')",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
 // root route that just provides the layout
 const rootRoute = createRootRoute({
   component: () => {
-    const location = useLocation();
-    const isHomePage = location.pathname === "/";
     return (
       <>
         <div className="h-[10%] w-full max-w-7xl">
@@ -35,7 +25,7 @@ const rootRoute = createRootRoute({
         <ScrollToTop />
         <div
           className="w-full min-h-screen relative"
-          style={isHomePage ? bgStyle : {}}
+          // style={isHomePage ? bgStyle : {}}
         >
           <Outlet />
           <PageFooter />
