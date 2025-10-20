@@ -8,6 +8,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { externalLinks } from "@/data";
 import Testimonials from "../Testimonials";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { SlideMeIn } from "../shared/slideMeIn";
+import { SectionContent } from "../shared/SectionContent";
 
 export const MyResume = () => {
   usePageTitle("Resumé | Jillo Woche");
@@ -19,7 +21,9 @@ export const MyResume = () => {
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
             linkText="Download CV"
-            linkTextIcon={<MdOutlineFileDownload className="inline-block w-6 h-6" />}
+            linkTextIcon={
+              <MdOutlineFileDownload className="inline-block w-6 h-6" />
+            }
             isContactPage={false}
             isDownload={true}
             downloadFileName="Jillo_Woche_Resume.pdf"
@@ -38,18 +42,22 @@ export const MyResume = () => {
           </SectionHeading>
         </div>
 
-        <div className="pt-4">
-          <AboutMeTimeline />
-        </div>
+        <SlideMeIn cascade>
+          <SectionContent padding="py-6 md:py-10">
+            <AboutMeTimeline />
+          </SectionContent>
+        </SlideMeIn>
       </section>
+
       <section className="w-full pt-14">
         <div className="w-full">
           <SectionHeading isContactPage={false}>What People Say</SectionHeading>
         </div>
-
-        <div className="pt-4">
-          <Testimonials />
-        </div>
+        <SlideMeIn cascade>
+          <SectionContent padding="py-6 md:py-10">
+            <Testimonials />
+          </SectionContent>
+        </SlideMeIn>
       </section>
     </PageContainer>
   );

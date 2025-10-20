@@ -23,10 +23,19 @@ const rootRoute = createRootRoute({
           <NavBar />
         </div>
         <ScrollToTop />
-        <div
-          className="w-full min-h-screen relative"
-          // style={isHomePage ? bgStyle : {}}
-        >
+        <div className="w-full min-h-screen relative">
+          <div className="absolute fixed flex justify-between w-screen h-full top-0 left-0 w-full h-full -z-10">
+            {Array.from({ length: 2 }).map((_, idx) => (
+              <div
+                key={idx}
+                className="w-2 md:w-6 lg:w-20 xl:w-30 h-full border border-gray-700/40"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(145deg, rgba(231,161,26,0.16) 0, rgba(231,161,26,0.16) 2px, transparent 2px, transparent 8px)",
+                }}
+              />
+            ))}
+          </div>
           <Outlet />
           <PageFooter />
         </div>

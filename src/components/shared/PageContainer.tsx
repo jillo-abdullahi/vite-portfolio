@@ -1,4 +1,4 @@
-import { SlideMeIn } from "./slideMeIn";
+import { useLocation } from "@tanstack/react-router";
 import { Breadcrumbs } from "./Breadcrumbs";
 
 interface PageContainerProps {
@@ -22,13 +22,20 @@ interface PageContainerProps {
  * </PageContainer>
  * ```
  */
-export const PageContainer = ({ children, showBreadcrumbs = false }: PageContainerProps) => {
+
+// px-5 md:px-10 lg:px-28 xl:px-48
+export const PageContainer = ({
+  children,
+  showBreadcrumbs = false,
+}: PageContainerProps) => {
+
+  const location = useLocation();
+  const pathname = location.pathname;
+  const isHomePage = pathname === "/";
   return (
-    <SlideMeIn duration={200}>
-      <div className="mx-auto px-5 md:px-10 lg:px-28 xl:px-48 py-32 md:py-36 bg-gradient-to-b from-gray-900/90 to-gray-900/20">
-        {showBreadcrumbs && <Breadcrumbs />}
-        {children}
-      </div>
-    </SlideMeIn>
+    <div className={`mx-auto ${isHomePage ? "py-38" : "py-32"} bg-gray-900/60 min-h-screen`}>
+      {showBreadcrumbs && <Breadcrumbs />}
+      {children}
+    </div>
   );
 };

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { SlideMeIn } from "./slideMeIn";
+import { SectionContent } from "./SectionContent";
 
 interface SectionHeadingProps {
   children: ReactNode;
@@ -40,38 +41,35 @@ export const SectionHeading = ({
     ? "text-4xl md:text-5xl lg:text-6xl"
     : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
-    <SlideMeIn>
-      <div className="w-full">
-        <div className="flex space-x-4 items-center justify-between">
-          <p
-            className={`${fontSizeClass} text-gray-300 text-left space-x-2`}
-          >
-            <span>{children}</span>
-            {linkHref ? (
-              <a
-                href={linkHref}
-                target="_blank"
-                rel="noreferrer"
-                className="text-orange/80 underline hover:text-orange transition-all duration-150"
-                {...(isDownload && { download: downloadFileName || true })}
-              >
-                {linkText}
-                {linkTextIcon ? (
-                  <span className="inline-block ml-1 text-xl">{linkTextIcon}</span>
-                ) : null}
-              </a>
+    <SlideMeIn marginBottom="mb-6">
+      <SectionContent padding={isContactPage ? "py-6 md:py-10" : "py-4"}>
+        <div className="w-full">
+          <div className="flex space-x-4 items-center justify-between">
+            <p className={`${fontSizeClass} text-gray-300 text-left space-x-2`}>
+              <span>{children}</span>
+              {linkHref ? (
+                <a
+                  href={linkHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-orange/80 underline hover:text-orange transition-all duration-150"
+                  {...(isDownload && { download: downloadFileName || true })}
+                >
+                  {linkText}
+                  {linkTextIcon ? (
+                    <span className="inline-block ml-1 text-xl">
+                      {linkTextIcon}
+                    </span>
+                  ) : null}
+                </a>
+              ) : null}
+            </p>
+            {rightLink ? (
+              <div className="hidden sm:block">{rightLink}</div>
             ) : null}
-          </p>
-          {rightLink ? (
-            <div className="hidden sm:block">{rightLink}</div>
-          ) : null}
+          </div>
         </div>
-      </div>
-      <hr
-        className={`border-t border-gray-700 w-full ${
-          isContactPage ? "my-10" : "my-6"
-        }`}
-      />
+      </SectionContent>
     </SlideMeIn>
   );
 };

@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { IoChevronForward } from "react-icons/io5";
 import { HomeIcon } from "@heroicons/react/24/outline";
+import { SectionContent } from "./SectionContent";
 
 interface BreadcrumbItem {
   label: string;
@@ -11,6 +12,7 @@ interface BreadcrumbItem {
 export const Breadcrumbs = () => {
   const location = useLocation();
   const pathname = location.pathname;
+  const isHomePage = pathname === "/";
 
   // Generate breadcrumb items based on current path
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
@@ -18,7 +20,7 @@ export const Breadcrumbs = () => {
       { label: "home", path: "/", isActive: pathname === "/" },
     ];
 
-    if (pathname !== "/") {
+    if (!isHomePage) {
       const pathSegment = pathname.slice(1); // Remove leading slash
       const label = pathSegment.toLowerCase();
       items.push({
@@ -34,30 +36,32 @@ export const Breadcrumbs = () => {
   const breadcrumbs = generateBreadcrumbs();
 
   return (
-    <nav
-      className="flex items-center space-x-1 text-sm text-gray-400 mb-6"
-      aria-label="Breadcrumb"
-    >
-      {breadcrumbs.map((item, index) => (
-        <div key={item.path} className="flex items-center space-x-1 group">
-          {index === 0 ? (
-            <HomeIcon className="w-3.5 h-3.5 group-hover:text-orange transition-colors duration-200" />
-          ) : (
-            <IoChevronForward className="w-3 h-3 text-gray-500" />
-          )}
+    <SectionContent>
+      <nav
+        className={`flex items-center space-x-1 text-sm text-gray-400 ${isHomePage ? "mb-6" : "mb-1"}`}
+        aria-label="Breadcrumb"
+      >
+        {breadcrumbs.map((item, index) => (
+          <div key={item.path} className="flex items-center space-x-1 group">
+            {index === 0 ? (
+              <HomeIcon className="w-3.5 h-3.5 group-hover:text-orange transition-colors duration-200" />
+            ) : (
+              <IoChevronForward className="w-3 h-3 text-gray-500" />
+            )}
 
-          {item.isActive ? (
-            <span className="text-orange/80 font-medium">{item.label}</span>
-          ) : (
-            <Link
-              to={item.path}
-              className="hover:text-orange/80 transition-colors duration-200 font-medium"
-            >
-              {item.label}
-            </Link>
-          )}
-        </div>
-      ))}
-    </nav>
+            {item.isActive ? (
+              <span className="text-orange/80 font-medium">{item.label}</span>
+            ) : (
+              <Link
+                to={item.path}
+                className="hover:text-orange/80 transition-colors duration-200 font-medium"
+              >
+                {item.label}
+              </Link>
+            )}
+          </div>
+        ))}
+      </nav>
+    </SectionContent>
   );
 };

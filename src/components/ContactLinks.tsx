@@ -13,7 +13,6 @@ import { FaCheck } from "react-icons/fa6";
 import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { externalLinks } from "../data";
-import { SlideMeIn } from "./shared/slideMeIn";
 
 interface SocialLink {
   icon: IconDefinition;
@@ -169,9 +168,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
     <div className="flex flex-col space-y-2 w-full divider-y divider-gray-800">
       {contactPageSocialLinks.map(({ icon, href, name }, index) => {
         return (
-          <SlideMeIn key={index}>
-            <FooterLinkBox icon={icon} href={href} name={name} />
-          </SlideMeIn>
+          <FooterLinkBox icon={icon} href={href} name={name} key={index} />
         );
       })}
     </div>
