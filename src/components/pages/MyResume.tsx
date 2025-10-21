@@ -10,6 +10,7 @@ import Testimonials from "../Testimonials";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { SectionContent } from "../shared/SectionContent";
+import { MemeText } from "../shared/MemeText";
 
 export const MyResume = () => {
   usePageTitle("Resumé | Jillo Woche");
@@ -59,6 +60,12 @@ export const MyResume = () => {
           </SectionContent>
         </SlideMeIn>
       </section>
+
+      <MemeText
+        text={
+          "Deploying on Friday? Bold move, Cotton."
+        }
+      />
     </PageContainer>
   );
 };

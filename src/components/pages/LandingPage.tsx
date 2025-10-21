@@ -41,11 +41,6 @@ const LandingPage: FC = () => {
 
   return (
     <PageContainer>
-      <MemeText
-        text={
-          "I will stop the war in a minute. First I must pick 47 flowers and pet this fox."
-        }
-      />
       <SlideMeIn marginBottom="mb-0">
         <SectionContent padding="py-6 md:py-10">
           <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
@@ -197,11 +192,7 @@ const LandingPage: FC = () => {
           </div>
         </SectionContent>
       </SlideMeIn>
-      <MemeText
-        text={
-          "You gotta put your behind in your past."
-        }
-      />
+      <MemeText text={"You gotta put your behind in your past."} />
     </PageContainer>
   );
 };

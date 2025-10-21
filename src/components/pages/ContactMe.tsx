@@ -4,6 +4,7 @@ import { PageContainer } from "../shared/PageContainer";
 import ContactLinks from "../ContactLinks";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { SectionContent } from "../shared/SectionContent";
+import { MemeText } from "../shared/MemeText";
 
 export const ContactMe = () => {
   usePageTitle("Contact | Jillo Woche");
@@ -33,6 +34,11 @@ export const ContactMe = () => {
           </SectionContent>
         </SlideMeIn>
       </section>
+      <MemeText
+        text={
+          "I will stop the war in a minute. First I must pick 47 flowers and pet this fox."
+        }
+      />
     </PageContainer>
   );
 };

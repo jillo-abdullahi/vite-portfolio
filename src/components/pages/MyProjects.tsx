@@ -10,6 +10,7 @@ import { SectionContent } from "../shared/SectionContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { SectionHeading } from "../shared/SectionHeading";
+import { MemeText } from "../shared/MemeText";
 
 export const MyProjects = () => {
   usePageTitle("Projects | Jillo Woche");
@@ -63,6 +64,12 @@ export const MyProjects = () => {
           </SlideMeIn>
         </div>
       </section>
+
+      <MemeText
+        text={
+          "Any is the JavaScript inside TypeScript trying to break free."
+        }
+      />
     </PageContainer>
   );
 };
