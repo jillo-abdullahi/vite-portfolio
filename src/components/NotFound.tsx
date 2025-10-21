@@ -13,17 +13,20 @@ import { SectionContent } from "./shared/SectionContent";
 const NotFound: FC = () => {
   return (
     <PageContainer>
+      <SlideMeIn marginBottom="mt-4 mb-6">
+        <SectionContent>
+          <div className="flex items-center justify-center">
+            <img
+              src={"/notFound.svg"}
+              alt="not-found"
+              className="w-36 opacity-80"
+            />
+          </div>
+        </SectionContent>
+      </SlideMeIn>
       <SlideMeIn marginBottom="mt-4">
         <SectionContent>
           <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
-            <div className="mb-6">
-              <img
-                src={"/notFound.svg"}
-                alt="not-found"
-                className="w-36 opacity-80"
-              />
-            </div>
-
             <div className="text-center mb-8">
               <h1 className="text-white text-3xl sm:text-4xl font-bold mb-4">
                 Oops! Page Not Found
