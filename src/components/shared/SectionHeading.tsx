@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { SlideMeIn } from "./slideMeIn";
+import { SlideMeIn } from "./SlideMeIn";
 import { SectionContent } from "./SectionContent";
 
 interface SectionHeadingProps {

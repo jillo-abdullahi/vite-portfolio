@@ -3,7 +3,7 @@ import { LuMapPinHouse } from "react-icons/lu";
 
 import ContactLinks from "@/components/ContactLinks";
 import WavingHand from "@/components/WavingHand";
-import { SlideMeIn } from "../shared/slideMeIn";
+import { SlideMeIn } from "../shared/SlideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
 import { StatusPill, StatusType } from "../shared/StatusPill";
@@ -13,6 +13,10 @@ import { SiSolidity } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { SectionContent } from "../shared/SectionContent";
 import { Link } from "@tanstack/react-router";
+import BackgroundIcons from "../shared/BackgroundIcons";
+import { EmojioneMonotoneFox } from "../icons/EmojioneMonotoneFox";
+import { GrRobot } from "react-icons/gr";
+import { MemeText } from "@/components/shared/MemeText";
 
 const LandingPage: FC = () => {
   /**
@@ -37,13 +41,12 @@ const LandingPage: FC = () => {
 
   return (
     <PageContainer>
-      {/* <SlideMeIn>
-        <SectionContent>
-          <></>
-        </SectionContent>
-      </SlideMeIn> */}
-
-      <SlideMeIn>
+      <MemeText
+        text={
+          "I will stop the war in a minute. First I must pick 47 flowers and pet this fox."
+        }
+      />
+      <SlideMeIn marginBottom="mb-0">
         <SectionContent padding="py-6 md:py-10">
           <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
             {/* Subtle hover overlay */}
@@ -114,6 +117,11 @@ const LandingPage: FC = () => {
           </div>
         </SectionContent>
       </SlideMeIn>
+
+      <BackgroundIcons
+        icons={[EmojioneMonotoneFox, GrRobot]}
+        className="pt-4 pb-1.5 justify-end"
+      />
 
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10">
@@ -189,6 +197,11 @@ const LandingPage: FC = () => {
           </div>
         </SectionContent>
       </SlideMeIn>
+      <MemeText
+        text={
+          "You gotta put your behind in your past."
+        }
+      />
     </PageContainer>
   );
 };

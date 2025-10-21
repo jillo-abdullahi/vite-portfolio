@@ -7,7 +7,7 @@ import {
 import { LiaEthereum } from "react-icons/lia";
 
 import { skills } from "../data";
-import { StackCard } from "./shared/stackCard";
+import { StackCard } from "./shared/StackCard";
 import type { Skill } from "../types";
 
 interface StackItemProps {

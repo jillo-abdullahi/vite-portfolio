@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
-import { SectionHeading } from "../shared/PageTitle";
+import { SectionHeading } from "../shared/SectionHeading";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { MdOutlineFileDownload } from "react-icons/md";
 
 import { externalLinks } from "@/data";
 import Testimonials from "../Testimonials";
 import { usePageTitle } from "../../hooks/usePageTitle";
-import { SlideMeIn } from "../shared/slideMeIn";
+import { SlideMeIn } from "../shared/SlideMeIn";
 import { SectionContent } from "../shared/SectionContent";
 
 export const MyResume = () => {

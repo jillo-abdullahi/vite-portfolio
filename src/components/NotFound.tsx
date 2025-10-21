@@ -6,7 +6,7 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import { PageContainer } from "./shared/PageContainer";
-import { SlideMeIn } from "./shared/slideMeIn";
+import { SlideMeIn } from "./shared/SlideMeIn";
 import NavigationCard from "./shared/NavigationCard";
 import { SectionContent } from "./shared/SectionContent";
 

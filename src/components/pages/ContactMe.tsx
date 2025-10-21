@@ -1,5 +1,5 @@
-import { SlideMeIn } from "../shared/slideMeIn";
-import { SectionHeading } from "../shared/PageTitle";
+import { SlideMeIn } from "../shared/SlideMeIn";
+import { SectionHeading } from "../shared/SectionHeading";
 import { PageContainer } from "../shared/PageContainer";
 import ContactLinks from "../ContactLinks";
 import { usePageTitle } from "../../hooks/usePageTitle";

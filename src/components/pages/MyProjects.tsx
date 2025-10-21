@@ -1,15 +1,15 @@
-import { SlideMeIn } from "../shared/slideMeIn";
+import { SlideMeIn } from "../shared/SlideMeIn";
 import { portfolioProjects, externalLinks } from "@/data";
 import { PortfolioGrid } from "../PortfolioGrid";
 import { PortfolioCard } from "../PortfolioCard";
 import Stacks from "../Stacks";
 import { PageContainer } from "../shared/PageContainer";
-import { SectionHeading } from "../shared/PageTitle";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { FeaturedPresigProject } from "../FeaturedPresigProject";
 import { SectionContent } from "../shared/SectionContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { SectionHeading } from "../shared/SectionHeading";
 
 export const MyProjects = () => {
   usePageTitle("Projects | Jillo Woche");
