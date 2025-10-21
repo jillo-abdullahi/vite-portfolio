@@ -67,7 +67,7 @@ const LandingPage: FC = () => {
               <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-gray-700/40 pl-0 md:pl-8 pt-4 md:pt-0">
                 <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-2 sm:pb-4">
                   <WavingHand />
-                  <span className="text-xl text-gray-400 font-medium">
+                  <span className="text-xl text-gray-400 font-medium pt-1">
                     Hello, I am
                   </span>
                 </div>
