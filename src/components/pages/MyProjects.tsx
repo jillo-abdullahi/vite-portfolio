@@ -65,11 +65,7 @@ export const MyProjects = () => {
         </div>
       </section>
 
-      <MemeText
-        text={
-          "Any is the JavaScript inside TypeScript trying to break free."
-        }
-      />
+      <MemeText text={"JavaScript: Where false == true is almost true."} />
     </PageContainer>
   );
 };
