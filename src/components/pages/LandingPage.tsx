@@ -26,7 +26,7 @@ import Timer from "../Timer";
 
 const LandingPage: FC = () => {
   // words for
-  const words = ["scalable.", "fast.", "modern.", "beautiful."];
+  const words = ["scalable.", "fast.", "modern."];
   return (
     <PageContainer>
       <SlideMeIn marginBottom="mb-0">
@@ -54,15 +54,14 @@ const LandingPage: FC = () => {
                   </span>
                 </div>
 
-                <span className="text-2xl md:text-[36px] text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
+                <span className="text-2xl md:text-3xl text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
                   Jillo Woche,
                 </span>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
                   <Typewriter
                     phrases={[
-                      "Full Stack Software Engineer.",
+                      "Full Stack Engineer.",
                       "Frontend Engineer.",
-                      "TypeScript Enthusiast.",
                       "Web3 Developer.",
                     ]}
                     speed={40}
@@ -70,19 +69,19 @@ const LandingPage: FC = () => {
                 </span>
                 <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
                   <LuMapPinHouse className="text-orange/80 h-4 w-4" />
-                  <span className="text-md text-gray-300/70 font-semibold">
+                  <span className="text-gray-300/70 font-semibold">
                     Nairobi, Kenya
                   </span>
                 </div>
 
                 <div className="w-full max-w-3xl pt-6">
-                  <p className="text-gray-300/90 text-center md:text-left text-lg md:text-2xl">
+                  <p className="text-gray-300/90 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.5]">
                     <span>
-                      I build pixel-perfect, robust web apps that are
+                      I build pixel-perfect, robust web apps that are{" "}
                       <FlipWords
                         words={words}
                         duration={2500}
-                        className="text-orange font-semibold"
+                        className="text-orange font-semibold px-0 w-12"
                       />
                     </span>
                     <br />
