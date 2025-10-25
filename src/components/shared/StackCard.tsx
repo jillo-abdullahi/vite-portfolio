@@ -9,7 +9,7 @@ interface StackCardProps {
 
 export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
-    <div className="group relative h-auto my-5 p-6 rounded-2xl border border-gray-700/50 bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-sm hover:border-orange/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/10 transition-all duration-500 ease-out">
+    <div className="group relative h-auto my-5 p-6 rounded-2xl border border-gray-700/80 bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-sm hover:border-orange/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/10 transition-all duration-500 ease-out">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 

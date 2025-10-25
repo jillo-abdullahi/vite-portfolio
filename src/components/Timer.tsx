@@ -22,9 +22,9 @@ const Timer: FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center space-x-2 text-white">
-      <p className="text-sm text-gray-300 font-medium">Local Time (EAT)</p>
-      <p className="text-sm font-semibold text-orange/90 w-[4.5rem] flex items-center justify-center">
+    <div className="flex items-center justify-center space-x-1">
+      <p className="text-xs text-gray-400 font-medium">Local Time (EAT)</p>
+      <p className="text-xs font-semibold text-orange/90 w-[4rem] flex items-center justify-center">
         <span>{currentTime}</span>
       </p>
     </div>

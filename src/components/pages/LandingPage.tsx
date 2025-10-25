@@ -22,9 +22,10 @@ import { SectionHeading } from "../shared/SectionHeading";
 import Testimonials from "../Testimonials";
 import Stacks from "../Stacks";
 import { FlipWords } from "../ui/shadcn-io/flip-words";
+import Timer from "../Timer";
 
 const LandingPage: FC = () => {
-  // words for 
+  // words for
   const words = ["scalable.", "fast.", "modern.", "beautiful."];
   return (
     <PageContainer>
@@ -77,7 +78,7 @@ const LandingPage: FC = () => {
                 <div className="w-full max-w-3xl pt-6">
                   <p className="text-gray-300/90 text-center md:text-left text-lg md:text-2xl">
                     <span>
-                      I build pixel-perfect, robust web applications that are
+                      I build pixel-perfect, robust web apps that are
                       <FlipWords
                         words={words}
                         duration={2500}
@@ -97,11 +98,7 @@ const LandingPage: FC = () => {
                   </p>
                 </div>
 
-                {/* <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
-                  <ContactLinks />
-                </div> */}
-
-                <div className="flex items-center justify-center md:justify-start space-x-3 pt-6 w-full">
+                <div className="flex items-center justify-center md:justify-start space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
                   <ViewProjectsBtn />
                 </div>
@@ -117,9 +114,9 @@ const LandingPage: FC = () => {
       />
 
       {/* Main stack */}
-      <SlideMeIn>
+      <SlideMeIn marginBottom="mb-3">
         <SectionContent padding="py-6 md:py-10">
-          <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
+          <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full">
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -182,6 +179,12 @@ const LandingPage: FC = () => {
           </div>
         </SectionContent>
       </SlideMeIn>
+
+      <div className="mb-3 w-full flex items-center justify-end">
+        <SectionContent padding="py-0">
+          <Timer />
+        </SectionContent>
+      </div>
 
       {/* My tools */}
       <SectionHeading>My Tools</SectionHeading>

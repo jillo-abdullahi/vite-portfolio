@@ -6,10 +6,8 @@ import {
   Transition,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { SiGooglemeet } from "react-icons/si";
 import { useState, useEffect } from "react";
 import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
-import { externalLinks } from "../data";
 import Timer from "@/components/Timer";
 import { Link, useLocation } from "@tanstack/react-router";
 import ResponsiveImage from "@/components/shared/ResponsiveImage";
@@ -152,21 +150,7 @@ const NavBar: FC = () => {
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
                   <div className="flex flex-col items-center justify-center space-y-2">
                     <WorkAvailabilityIndicator available />
-                    <div className="w-full text-center">
-                      <a
-                        type="button"
-                        className="group cursor-pointer relative inline-flex uppercase items-center gap-x-1.5 rounded-xl border border-orange/40 bg-orange/10 hover:bg-orange/20 px-3 py-2 text-sm font-semibold text-orange shadow-sm hover:border-orange/60 transition-all duration-200"
-                        href={externalLinks.calLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <SiGooglemeet
-                          className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
-                          aria-hidden="true"
-                        />
-                        <span className="font-medium">schedule call</span>
-                      </a>
-                    </div>
+                    <ScheduleCallBtn />
                   </div>
 
                   <Timer />
