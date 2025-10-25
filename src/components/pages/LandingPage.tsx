@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useEffect, useRef, useState } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
 
 import WavingHand from "@/components/WavingHand";
@@ -11,8 +12,6 @@ import { GrGraphQl } from "react-icons/gr";
 
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SectionContent } from "../shared/SectionContent";
-import BackgroundIcons from "../shared/BackgroundIcons";
-import { EmojioneMonotoneFox } from "../icons/EmojioneMonotoneFox";
 
 import { MemeText } from "@/components/shared/MemeText";
 import Typewriter from "@/components/shared/Typewriter";
@@ -24,9 +23,35 @@ import Stacks from "../Stacks";
 import { FlipWords } from "../ui/shadcn-io/flip-words";
 import Timer from "../Timer";
 
+import {
+  ChevronDownIcon,
+  type ChevronDownIconHandle,
+} from "../ui/ChevronDownIcon";
+
 const LandingPage: FC = () => {
-  // words for
+  const chevronRef = useRef<ChevronDownIconHandle>(null);
+  const SCROLL_HINT_DELAY = 10000; // Delay in milliseconds before showing the scroll hint
+  const [showScrollHint, setShowScrollHint] = useState(false);
+  // words for role description
   const words = ["scalable.", "fast.", "modern."];
+
+  // show scroll hint after delay
+  useEffect(() => {
+    setTimeout(() => {
+      setShowScrollHint(true);
+    }, SCROLL_HINT_DELAY);
+  }, []);
+
+  // chevron down icon animation for scroll hint
+  useEffect(() => {
+    setInterval(() => {
+      chevronRef.current?.startAnimation();
+      setTimeout(() => {
+        chevronRef.current?.stopAnimation();
+      }, 2000);
+    }, 5000);
+  }, []);
+
   return (
     <PageContainer>
       <SlideMeIn marginBottom="mb-0">
@@ -81,12 +106,12 @@ const LandingPage: FC = () => {
                       <FlipWords
                         words={words}
                         duration={2500}
-                        className="text-orange font-semibold px-0 w-12"
+                        className="text-orange/80 font-semibold px-0 w-12"
                       />
                     </span>
                     <br />
                     With over{" "}
-                    <span className="text-orange font-semibold">
+                    <span className="text-orange/80 font-semibold">
                       6 years
                     </span>{" "}
                     of experience{" "}
@@ -106,11 +131,18 @@ const LandingPage: FC = () => {
           </div>
         </SectionContent>
       </SlideMeIn>
-
-      <BackgroundIcons
-        icons={[EmojioneMonotoneFox]}
-        className="pt-4 pb-1.5 justify-end"
-      />
+      {/* Chevron Down Icon */}
+      <div
+        className={`w-full flex items-center justify-center my-1 opacity-${
+          showScrollHint ? "100" : "0"
+        } transition-opacity duration-500`}
+      >
+        <ChevronDownIcon
+          ref={chevronRef}
+          size={40}
+          className="text-orange/60"
+        />
+      </div>
 
       {/* Main stack */}
       <SlideMeIn marginBottom="mb-3">
