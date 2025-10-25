@@ -26,7 +26,7 @@ export default function SkillSplitBar({
       style={{ ["--split" as any]: `${left}%` }}
     >
       <div
-        className="grid overflow-hidden rounded-xl border-2 border-orange/20 shadow-lg transition-all duration-200 group-hover:border-orange/30"
+        className="grid overflow-hidden rounded-lg border-2 border-orange/20 shadow-lg transition-all duration-200 group-hover:border-orange/30"
         style={{
           gridTemplateColumns: `${left}% ${right}%`,
           height: `${height}px`,

@@ -288,38 +288,39 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const skills: Skills = {
   backend: [
-    { name: "Express.js", level: "85%" },
-    { name: "GraphQL", level: "90%" },
+    { name: "Express.js", level: "90%" },
+    { name: "Apollo GraphQL", level: "80%" },
     { name: "Nest.js", level: "70%" },
     { name: "Django", level: "60%" },
     { name: "Flask", level: "50%" },
   ],
   frontend: [
-    { name: "React", level: "90%" },
-    { name: "Redux/Zustand", level: "90%" },
+    { name: "Vite", level: "90%" },
     { name: "Next.js", level: "90%" },
-    { name: "TailwindCSS", level: "90%" },
+    { name: "Redux/Zustand", level: "90%" },
+    { name: "Tailwind/ChakraUI", level: "90%" },
     { name: "Vue.js", level: "80%" },
   ],
   "databases/devops": [
     { name: "Postgres", level: "80%" },
-    { name: "MySQL", level: "75%" },
     { name: "Google Firebase", level: "80%" },
+    { name: "MySQL", level: "75%" },
     { name: "Docker", level: "70%" },
-    { name: "Github Actions", level: "80%" },
+    { name: "Github Actions", level: "60%" },
   ],
   web3: [
     { name: "Wagmi", level: "85%" },
     { name: "ethers.js", level: "85%" },
-    { name: "Foundry", level: "70%" },
-    { name: "Viem", level: "80%" },
+    { name: "Viem", level: "85%" },
     { name: "WalletConnect", level: "85%" },
+    { name: "Foundry", level: "70%" },
   ],
 };
 
 export const testimonials: Testimonial[] = [
   {
     name: "Dr. Daniel Pfeffer",
+    linkedInUrl: "https://www.linkedin.com/in/daniel-pfeffer/",
     image: "daniel.jpeg",
     role: "CTO",
     date: "July 31, 2025",
@@ -339,6 +340,7 @@ Highly recommended!`,
   },
   {
     name: "Nathan Hausman",
+    linkedInUrl: "https://www.linkedin.com/in/nathan-hausman/",
     role: "CTO",
     image: "nathan.jpeg",
     date: "March 7, 2023",

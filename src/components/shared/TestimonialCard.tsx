@@ -21,24 +21,33 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   company,
   level,
   quote,
+  linkedInUrl,
 }) => {
   return (
-    <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60">
+    <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60">
       {/* Subtle hover overlay */}
       <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      
+
       <div className="relative z-10">
-        <div className="flex items-center space-x-3 mb-4">
+        <div className="group flex items-center space-x-3 mb-4">
           <img
+            role="button"
+            onClick={() => {
+              if (linkedInUrl) {
+                window.open(linkedInUrl, "_blank", "noopener,noreferrer");
+              }
+            }}
             src={`/experience/${image}`}
             alt={name}
-            className="w-12 h-12 rounded-xl object-cover flex-shrink-0 border border-gray-600"
+            className="w-12 h-12 rounded-xl object-cover flex-shrink-0 border-2 border-gray-600 group-hover:border-orange/60 transition-all duration-300 cursor-pointer"
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-1">
-              <h3 className="text-orange/90 font-semibold text-base truncate">
-                {name}
-              </h3>
+              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+                <h3 className="text-orange/90 font-semibold text-base truncate group-hover:underline">
+                  {name}
+                </h3>
+              </a>
               <span className="text-gray-400 text-xs whitespace-nowrap ml-2">
                 {date}
               </span>

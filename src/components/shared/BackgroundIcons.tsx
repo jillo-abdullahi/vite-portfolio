@@ -10,7 +10,7 @@ const BackgroundIcons: React.FC<BackgroundIconsProps> = ({
   className,
 }) => {
   return (
-    <SectionContent padding="py-0">
+    <SectionContent padding="py-0 pb-1">
       <div
         className={`flex items-center gap-2 pointer-events-none px-2 ${className}`}
       >

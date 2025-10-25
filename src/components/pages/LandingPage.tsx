@@ -1,63 +1,46 @@
 import type { FC } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
 
-import ContactLinks from "@/components/ContactLinks";
 import WavingHand from "@/components/WavingHand";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
 import { StatusPill, StatusType } from "../shared/StatusPill";
-import { IoChevronForward } from "react-icons/io5";
-import { RiJavascriptFill } from "react-icons/ri";
-import { SiSolidity } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
+import { GrGraphQl } from "react-icons/gr";
+
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SectionContent } from "../shared/SectionContent";
-import { Link } from "@tanstack/react-router";
 import BackgroundIcons from "../shared/BackgroundIcons";
 import { EmojioneMonotoneFox } from "../icons/EmojioneMonotoneFox";
-import { GrRobot } from "react-icons/gr";
+
 import { MemeText } from "@/components/shared/MemeText";
+import Typewriter from "@/components/shared/Typewriter";
+import { ScheduleCallBtn } from "../ScheduleCallBtn";
+import { ViewProjectsBtn } from "../ViewProjectsBtn";
+import { SectionHeading } from "../shared/SectionHeading";
+import Testimonials from "../Testimonials";
+import Stacks from "../Stacks";
+import { FlipWords } from "../ui/shadcn-io/flip-words";
 
 const LandingPage: FC = () => {
-  /**
-   * A styled React Router Link component that navigates to the "/projects" route.
-   *
-   * The link displays the text "Projects" with an orange-themed rounded appearance,
-   * and includes a forward chevron icon (`IoChevronForward`) that animates slightly on hover.
-   *
-   * @remarks
-   * - Uses Tailwind CSS utility classes for styling and transitions.
-   * - Intended for use as a navigation element to the projects page.
-   */
-  const projectsLink = (
-    <Link
-      to="/projects"
-      className="rounded-full text-orange group py-1 pl-3 pr-2 border border-orange/30 flex items-center space-x-1 font-medium transition-all duration-300 bg-orange/10 hover:bg-orange/20"
-    >
-      <span className="font-semibold text-sm">Projects</span>
-      <IoChevronForward className="inline-block group-hover:translate-x-0.5 transition-all duration-300" />
-    </Link>
-  );
-
+  // words for 
+  const words = ["scalable.", "fast.", "modern.", "beautiful."];
   return (
     <PageContainer>
       <SlideMeIn marginBottom="mb-0">
         <SectionContent padding="py-6 md:py-10">
-          <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
+          <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/80 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden">
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
             <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
-              <div className="relative rounded-full border-6 border-[#E7A11A78] flex-shrink-0 md:mr-8">
-                <div className="profile-img">
-                  <img
-                    src={"/me.webp"}
-                    alt="profile"
-                    className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg"
-                  />
-                </div>
-                {/* Status indicator */}
-                <div className="absolute -bottom-2 right-1 md:-bottom-2 md:right-2">
+              <div className="relative rounded-full border-6 border-orange/40 flex-shrink-0 md:mr-8 group-hover:border-orange/50 transition-all duration-300">
+                <img
+                  src={"/me.webp"}
+                  alt="profile"
+                  className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full border-[8px] border-orange overflow-hidden transition-all duration-300 group-hover:border-6"
+                />
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
                   <StatusPill status={StatusType.CRAFTING} />
                 </div>
               </div>
@@ -70,42 +53,57 @@ const LandingPage: FC = () => {
                   </span>
                 </div>
 
-                <span className="text-2xl md:text-3xl text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase">
+                <span className="text-2xl md:text-[36px] text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
                   Jillo Woche,
                 </span>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
-                  Full Stack Software Engineer.
+                  <Typewriter
+                    phrases={[
+                      "Full Stack Software Engineer.",
+                      "Frontend Engineer.",
+                      "TypeScript Enthusiast.",
+                      "Web3 Developer.",
+                    ]}
+                    speed={40}
+                  />
                 </span>
-                <div className="flex items-center justify-center md:justify-start w-full pt-2">
-                  <Link
-                    to="/resume"
-                    className="group flex items-center justify-center space-x-2 border border-orange/30 rounded-full px-3 py-1 bg-orange/10 hover:bg-orange/20 transition-all duration-200 cursor-pointer"
-                  >
-                    <span className="text-orange font-semibold text-sm">
-                      6+ years of experience
-                    </span>
-                    <IoChevronForward className="text-orange group-hover:translate-x-0.5 transition-all duration-300" />
-                  </Link>
-                </div>
-
-                <div className="w-full max-w-3xl pt-6">
-                  <p className="text-gray-300/90 text-center md:text-left text-base md:text-xl">
-                    I build cool things for the web -{" "}
-                    <b>pixel-perfect frontends,</b>
-                    <b> rock-solid backends,</b> and the occasional{" "}
-                    <b>Web3 magic trick</b>.
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-center md:justify-start space-x-1 pt-4 w-full">
+                <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
                   <LuMapPinHouse className="text-orange/80 h-4 w-4" />
-                  <span className="text-md text-gray-300 font-semibold">
+                  <span className="text-md text-gray-300/70 font-semibold">
                     Nairobi, Kenya
                   </span>
                 </div>
 
-                <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
+                <div className="w-full max-w-3xl pt-6">
+                  <p className="text-gray-300/90 text-center md:text-left text-lg md:text-2xl">
+                    <span>
+                      I build pixel-perfect, robust web applications that are
+                      <FlipWords
+                        words={words}
+                        duration={2500}
+                        className="text-orange font-semibold"
+                      />
+                    </span>
+                    <br />
+                    With over{" "}
+                    <span className="text-orange font-semibold">
+                      6 years
+                    </span>{" "}
+                    of experience{" "}
+                    <span>
+                      converting users into customers within the dynamic web2
+                      and web3 landscapes.
+                    </span>
+                  </p>
+                </div>
+
+                {/* <div className="flex items-center justify-center md:justify-start space-x-1 w-full pt-2">
                   <ContactLinks />
+                </div> */}
+
+                <div className="flex items-center justify-center md:justify-start space-x-3 pt-6 w-full">
+                  <ScheduleCallBtn />
+                  <ViewProjectsBtn />
                 </div>
               </div>
             </div>
@@ -114,10 +112,11 @@ const LandingPage: FC = () => {
       </SlideMeIn>
 
       <BackgroundIcons
-        icons={[EmojioneMonotoneFox, GrRobot]}
+        icons={[EmojioneMonotoneFox]}
         className="pt-4 pb-1.5 justify-end"
       />
 
+      {/* Main stack */}
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10">
           <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/40 hover:border-gray-600/60 w-full">
@@ -128,7 +127,9 @@ const LandingPage: FC = () => {
               {/* skill split bar  */}
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                 <div className="text-center md:text-left md:flex-shrink-0">
-                  <p className="text-lg font-medium text-gray-200">Focus</p>
+                  <p className="text-lg font-medium text-gray-200">
+                    Focus<sup>*</sup>
+                  </p>
                 </div>
                 <div className="flex-1 flex justify-center md:justify-end">
                   <SkillSplitBar
@@ -140,58 +141,66 @@ const LandingPage: FC = () => {
                 </div>
               </div>
 
-              {/* Main languages  */}
+              {/* Main stack  */}
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
                 <div className="text-center md:text-left">
-                  <p className="text-lg font-medium text-gray-200">Languages</p>
+                  <p className="text-lg font-medium text-gray-200">
+                    Main stack
+                  </p>
                 </div>
 
                 <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
-                  <a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
-                  >
-                    <RiJavascriptFill className="text-yellow-400 h-4.5 w-4.5" />
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                    <FaReact className="text-blue-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
-                      JavaScript
+                      React
                     </span>
-                  </a>
+                  </div>
 
-                  <a
-                    href="https://www.typescriptlang.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
-                  >
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
                     <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       TypeScript
                     </span>
-                  </a>
-
-                  <a
-                    href="https://soliditylang.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 border border-gray-700/40 rounded-xl px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer"
-                  >
-                    <SiSolidity className="text-gray-300 h-4.5 w-4.5" />
+                  </div>
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                    <FaNodeJs className="text-green-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
-                      Solidity
+                      Node.js
                     </span>
-                  </a>
-                  <div className="hidden sm:block">{projectsLink}</div>
-                </div>
-                <div className="block sm:hidden w-full flex items-center justify-center">
-                  {projectsLink}
+                  </div>
+
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                    <GrGraphQl className="text-pink-400 h-4.5 w-4.5" />
+                    <span className="text-gray-300 font-medium text-sm">
+                      GraphQL
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </SectionContent>
       </SlideMeIn>
+
+      {/* My tools */}
+      <SectionHeading>My Tools</SectionHeading>
+      <SlideMeIn>
+        <SectionContent>
+          <section>
+            <Stacks />
+          </section>
+        </SectionContent>
+      </SlideMeIn>
+
+      {/* Testimonials */}
+      <SectionHeading isContactPage={false}>What People Say</SectionHeading>
+      <SlideMeIn cascade>
+        <SectionContent padding="py-6 md:py-10">
+          <Testimonials />
+        </SectionContent>
+      </SlideMeIn>
+
       <MemeText text={"You gotta put your behind in your past."} />
     </PageContainer>
   );

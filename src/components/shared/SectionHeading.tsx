@@ -64,9 +64,7 @@ export const SectionHeading = ({
                 </a>
               ) : null}
             </p>
-            {rightLink ? (
-              <div className="hidden sm:block">{rightLink}</div>
-            ) : null}
+            {rightLink ? rightLink : null}
           </div>
         </div>
       </SectionContent>

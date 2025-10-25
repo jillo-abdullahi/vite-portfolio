@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -7,17 +7,25 @@ import {
   faXTwitter,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
-import { FaRegCopy } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa6";
 
-import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { externalLinks } from "../data";
+
+import { ClipboardIcon, type ClipboardIconHandle } from "./ui/ClipboardIcon";
+import { CheckIcon, type CheckIconHandle } from "./ui/CheckIcon";
+import {
+  SquareArrowOutUpRightIcon,
+  type SquareArrowOutUpRightIconHandle,
+} from "./ui/SquareArrowOutUpRightIcon";
 
 interface SocialLink {
   icon: IconDefinition;
   href: string;
   name?: string;
+  clipboardRef?: React.RefObject<ClipboardIconHandle | null>;
+  checkIconRef?: React.RefObject<CheckIconHandle | null>;
+  squareArrowRef?: React.RefObject<SquareArrowOutUpRightIconHandle | null>;
 }
 
 interface ContactLinksProps {
@@ -57,7 +65,14 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   ];
 
   // footer link box
-  const FooterLinkBox = ({ icon, href, name }: SocialLink) => {
+  const FooterLinkBox = ({
+    icon,
+    href,
+    name,
+    checkIconRef,
+    clipboardRef,
+    squareArrowRef,
+  }: SocialLink) => {
     const [isCopied, setIsCopied] = useState(false);
 
     const handleCopy = (e: React.MouseEvent) => {
@@ -126,36 +141,63 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
               e.preventDefault();
               window.open(href, "_blank", "noopener,noreferrer");
             }}
-            className="p-2 rounded-lg bg-gray-800/60 hover:bg-orange/20 text-gray-300 group-hover:text-orange transition-colors duration-200 h-10 sm:h-8 w-10 sm:w-8 flex items-center justify-center cursor-pointer"
-            title={`Open ${name}`}
+            className="transform group-hover:scale-105 transition-all duration-200 cursor-pointer"
             aria-label={`Open ${name}`}
           >
-            <div className="hidden sm:block ">
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className="w-4 h-4 group-hover:-rotate-45 transition-transform duration-200"
-              />
-            </div>
-            <div className="block sm:hidden">
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className="block sm:hidden w-4 h-4 -rotate-45"
+            <div
+              className="flex rounded-md bg-gray-800/60 items-center justify-center h-10 w-10"
+              onMouseEnter={() =>
+                squareArrowRef && squareArrowRef.current?.startAnimation()
+              }
+              onMouseLeave={() =>
+                squareArrowRef && squareArrowRef.current?.stopAnimation()
+              }
+            >
+              <SquareArrowOutUpRightIcon
+                ref={squareArrowRef}
+                size={22}
+                className="text-orange"
               />
             </div>
           </button>
           {/* Copy Link Button */}
           <button
             onClick={handleCopy}
-            className={`p-2 rounded-lg bg-gray-800/60 transform hover:bg-green-100/20 group-hover:scale-105 text-gray-300 group-hover:text-green-400 transition-all duration-200 h-10 sm:h-8 w-10 sm:w-8 flex items-center justify-center cursor-pointer ${
-              isCopied ? "text-green-400" : ""
-            }`}
-            title={isCopied ? "Copied!" : "Copy link"}
+            className={`transform group-hover:scale-105 transition-all duration-200 cursor-pointer`}
             aria-label="Copy link"
           >
             {isCopied ? (
-              <FaCheck className="w-4 h-4" />
+              <div
+                className="flex items-center justify-center p-2 rounded-md bg-gray-800/60 h-10 w-10"
+                onMouseEnter={() =>
+                  checkIconRef && checkIconRef.current?.startAnimation()
+                }
+                onMouseLeave={() =>
+                  checkIconRef && checkIconRef.current?.stopAnimation()
+                }
+              >
+                <CheckIcon
+                  ref={checkIconRef}
+                  size={22}
+                  className="text-green-400"
+                />
+              </div>
             ) : (
-              <FaRegCopy className="w-4 h-4" />
+              <div
+                className="flex items-center justify-center p-2 rounded-md bg-gray-800/60 h-10 w-10"
+                onMouseEnter={() =>
+                  clipboardRef && clipboardRef.current?.startAnimation()
+                }
+                onMouseLeave={() =>
+                  clipboardRef && clipboardRef.current?.stopAnimation()
+                }
+              >
+                <ClipboardIcon
+                  ref={clipboardRef}
+                  size={22}
+                  className="text-gray-300"
+                />
+              </div>
             )}
           </button>
         </div>
@@ -167,8 +209,21 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   const contactPageLinks = (
     <div className="flex flex-col space-y-2 w-full divider-y divider-gray-800">
       {contactPageSocialLinks.map(({ icon, href, name }, index) => {
+        const clipboardRef = useRef<ClipboardIconHandle | null>(null);
+        const checkIconRef = useRef<CheckIconHandle | null>(null);
+        const squareArrowRef = useRef<SquareArrowOutUpRightIconHandle | null>(
+          null
+        );
         return (
-          <FooterLinkBox icon={icon} href={href} name={name} key={index} />
+          <FooterLinkBox
+            icon={icon}
+            href={href}
+            name={name}
+            key={index}
+            clipboardRef={clipboardRef}
+            checkIconRef={checkIconRef}
+            squareArrowRef={squareArrowRef}
+          />
         );
       })}
     </div>

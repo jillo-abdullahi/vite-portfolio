@@ -9,7 +9,7 @@ interface StackCardProps {
 
 export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
-    <div className="group relative h-auto my-5 p-6 rounded-2xl border border-gray-700/50 bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-sm hover:border-orange/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange/10 transition-all duration-500 ease-out">
+    <div className="group relative h-auto my-5 p-6 rounded-2xl border border-gray-700/50 bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-sm hover:border-orange/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/10 transition-all duration-500 ease-out">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -17,7 +17,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
         {/* Header with icon and title */}
         <div className="flex items-center space-x-3 mb-6">
           <div className="relative">
-            <div className="p-3 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl shadow-lg transition-all duration-300 group-hover:scale-110">
+            <div className="p-3 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg transition-all duration-300 group-hover:scale-110">
               <div className="text-orange/90 group-hover:text-orange transition-colors duration-300">
                 {icon}
               </div>
@@ -42,7 +42,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
                   {name}
                 </span>
               </div>
-              <div className="relative h-1.5 bg-gray-700/60 rounded-full overflow-hidden">
+              <div className="relative h-1 bg-gray-700/60 rounded-full overflow-hidden">
                 <div
                   className="absolute top-0 left-0 h-full bg-gradient-to-r from-orange to-orange/80 rounded-full transition-all duration-700 ease-out"
                   style={{

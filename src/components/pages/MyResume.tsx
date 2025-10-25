@@ -1,18 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRef } from "react";
 import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/SectionHeading";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { MdOutlineFileDownload } from "react-icons/md";
 
-import { externalLinks } from "@/data";
-import Testimonials from "../Testimonials";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { SectionContent } from "../shared/SectionContent";
 import { MemeText } from "../shared/MemeText";
+import { DownloadIcon, type DownloadHandle } from "../ui/DownloadIcon";
 
 export const MyResume = () => {
+  const downloadRef = useRef<DownloadHandle>(null);
   usePageTitle("Resumé | Jillo Woche");
 
   return (
@@ -21,25 +19,35 @@ export const MyResume = () => {
         <div className="w-full">
           <SectionHeading
             linkHref="/jillo_woche_resume.pdf"
-            linkText="Download CV"
-            linkTextIcon={
-              <MdOutlineFileDownload className="inline-block w-6 h-6" />
-            }
+            linkText=""
             isContactPage={false}
             isDownload={true}
             downloadFileName="Jillo_Woche_Resume.pdf"
             rightLink={
-              <a href={externalLinks.linkedIn} target="_blank" rel="noreferrer">
-                <div className="group rounded-lg bg-gray-700/50 hover:bg-gray-700/90 border-gray-700 border p-1 w-10 h-10 flex items-center justify-center transition duration-300">
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    className="text-gray-300 group-hover:scale-110 transition-all duration-300 group-hover:text-orange"
+              <div
+                className="flex-shrink-0"
+                onMouseEnter={() => downloadRef.current?.startAnimation()}
+                onMouseLeave={() => downloadRef.current?.stopAnimation()}
+              >
+                <a
+                  type="button"
+                  className="group relative inline-flex items-center gap-x-1.5 rounded-lg border border-orange/40 bg-orange/10 hover:bg-orange/20 px-3 py-1 text-orange hover:text-orange shadow-sm hover:border-orange/60 transition-all duration-200 cursor-pointer"
+                  href="/jillo_woche_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download={true}
+                >
+                  <DownloadIcon
+                    ref={downloadRef}
+                    className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
+                    aria-hidden="true"
                   />
-                </div>
-              </a>
+                  <span className="font-bold">download cv</span>
+                </a>
+              </div>
             }
           >
-            My Journey So Far.
+            My journey so far
           </SectionHeading>
         </div>
 
@@ -50,22 +58,7 @@ export const MyResume = () => {
         </SlideMeIn>
       </section>
 
-      <section className="w-full pt-14">
-        <div className="w-full">
-          <SectionHeading isContactPage={false}>What People Say</SectionHeading>
-        </div>
-        <SlideMeIn cascade>
-          <SectionContent padding="py-6 md:py-10">
-            <Testimonials />
-          </SectionContent>
-        </SlideMeIn>
-      </section>
-
-      <MemeText
-        text={
-          "Deploying on Friday? Bold move, Cotton."
-        }
-      />
+      <MemeText text={"Deploying on Friday? Bold move, Cotton."} />
     </PageContainer>
   );
 };

@@ -6,7 +6,7 @@ export const BorderedContent = ({
   marginBottom?: string;
 }) => {
   return (
-    <div className={`border-t border-b border-gray-800 w-full ${marginBottom}`}>
+    <div className={`border-t border-b border-gray-700 w-full ${marginBottom}`}>
       {children}
     </div>
   );
