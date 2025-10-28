@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useEffect, useRef, useState } from "react";
+// import { useRef } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
 
 import WavingHand from "@/components/WavingHand";
@@ -13,7 +13,6 @@ import { GrGraphQl } from "react-icons/gr";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SectionContent } from "../shared/SectionContent";
 
-import { MemeText } from "@/components/shared/MemeText";
 import Typewriter from "@/components/shared/Typewriter";
 import { ScheduleCallBtn } from "../ScheduleCallBtn";
 import { ViewProjectsBtn } from "../ViewProjectsBtn";
@@ -23,38 +22,38 @@ import Stacks from "../Stacks";
 import { FlipWords } from "../ui/shadcn-io/flip-words";
 import Timer from "../Timer";
 
-import {
-  ChevronDownIcon,
-  type ChevronDownIconHandle,
-} from "../ui/ChevronDownIcon";
+// import {
+//   // ChevronDownIcon,
+//   type ChevronDownIconHandle,
+// } from "../ui/ChevronDownIcon";
 
 const LandingPage: FC = () => {
-  const chevronRef = useRef<ChevronDownIconHandle>(null);
-  const SCROLL_HINT_DELAY = 10000; // Delay in milliseconds before showing the scroll hint
-  const [showScrollHint, setShowScrollHint] = useState(false);
+  // const chevronRef = useRef<ChevronDownIconHandle>(null);
+  // const SCROLL_HINT_DELAY = 10000; // Delay in milliseconds before showing the scroll hint
+  // const [showScrollHint, setShowScrollHint] = useState(false);
   // words for role description
   const words = ["scalable.", "fast.", "modern."];
 
   // show scroll hint after delay
-  useEffect(() => {
-    setTimeout(() => {
-      setShowScrollHint(true);
-    }, SCROLL_HINT_DELAY);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowScrollHint(true);
+  //   }, SCROLL_HINT_DELAY);
+  // }, []);
 
-  // chevron down icon animation for scroll hint
-  useEffect(() => {
-    setInterval(() => {
-      chevronRef.current?.startAnimation();
-      setTimeout(() => {
-        chevronRef.current?.stopAnimation();
-      }, 2000);
-    }, 5000);
-  }, []);
+  // // chevron down icon animation for scroll hint
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     chevronRef.current?.startAnimation();
+  //     setTimeout(() => {
+  //       chevronRef.current?.stopAnimation();
+  //     }, 2000);
+  //   }, 5000);
+  // }, []);
 
   return (
     <PageContainer>
-      <SlideMeIn marginBottom="mb-0">
+      <SlideMeIn>
         <SectionContent padding="py-6 md:py-10">
           <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/80 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden">
             {/* Subtle hover overlay */}
@@ -132,7 +131,7 @@ const LandingPage: FC = () => {
         </SectionContent>
       </SlideMeIn>
       {/* Chevron Down Icon */}
-      <div
+      {/* <div
         className={`w-full flex items-center justify-center my-1 opacity-${
           showScrollHint ? "100" : "0"
         } transition-opacity duration-500`}
@@ -142,7 +141,7 @@ const LandingPage: FC = () => {
           size={40}
           className="text-orange/60"
         />
-      </div>
+      </div> */}
 
       {/* Main stack */}
       <SlideMeIn marginBottom="mb-3">
@@ -218,7 +217,7 @@ const LandingPage: FC = () => {
       </div>
 
       {/* My tools */}
-      <SectionHeading>My Tools</SectionHeading>
+      <SectionHeading>My tools</SectionHeading>
       <SlideMeIn>
         <SectionContent>
           <section>
@@ -228,14 +227,12 @@ const LandingPage: FC = () => {
       </SlideMeIn>
 
       {/* Testimonials */}
-      <SectionHeading isContactPage={false}>What People Say</SectionHeading>
+      <SectionHeading isContactPage={false}>What people say</SectionHeading>
       <SlideMeIn cascade>
         <SectionContent padding="py-6 md:py-10">
           <Testimonials />
         </SectionContent>
       </SlideMeIn>
-
-      <MemeText text={"You gotta put your behind in your past."} />
     </PageContainer>
   );
 };

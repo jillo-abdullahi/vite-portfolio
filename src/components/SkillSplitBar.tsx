@@ -1,3 +1,5 @@
+import { CountingNumber } from "@/components/ui/shadcn-io/counting-number";
+
 type Props = {
   leftLabel?: string;
   rightLabel?: string;
@@ -33,14 +35,36 @@ export default function SkillSplitBar({
         }}
       >
         <div className="flex items-center justify-between px-3 bg-orange/20 text-orange relative">
-          <span className="hidden md:block font-medium text-sm">{leftLabel}</span>
+          <span className="hidden md:block font-medium text-sm">
+            {leftLabel}
+          </span>
           <span className="md:hidden font-medium text-sm">FE</span>
-          <span className="font-bold text-sm">{left}%</span>
+          <span className="font-bold text-sm">
+            {
+              <CountingNumber
+                number={left}
+                inView={true}
+                transition={{ stiffness: 100, damping: 30 }}
+              />
+            }
+            %
+          </span>
         </div>
 
         <div className="flex items-center justify-between px-3 bg-gray-800/80 text-gray-300 relative">
-          <span className="font-bold text-sm">{right}%</span>
-          <span className="hidden md:block font-medium text-sm">{rightLabel}</span>
+          <span className="font-bold text-sm">
+            {
+              <CountingNumber
+                number={right}
+                inView={true}
+                transition={{ stiffness: 100, damping: 30 }}
+              />
+            }
+            %
+          </span>
+          <span className="hidden md:block font-medium text-sm">
+            {rightLabel}
+          </span>
           <span className="md:hidden font-medium text-sm">BE</span>
         </div>
       </div>
