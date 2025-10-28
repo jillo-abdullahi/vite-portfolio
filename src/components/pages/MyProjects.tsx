@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { GithubIcon, type GithubIconHandle } from "../ui/GithubIcon";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { portfolioProjects, externalLinks } from "@/data";
@@ -10,10 +10,25 @@ import { FeaturedPresigProject } from "../FeaturedPresigProject";
 import { SectionContent } from "../shared/SectionContent";
 import { SectionHeading } from "../shared/SectionHeading";
 import { MemeText } from "../shared/MemeText";
+import { LayoutGridIcon, type LayoutGridHandle } from "../ui/LayoutGridIcon";
+import { useInView } from "@/hooks/useInView";
 
 export const MyProjects = () => {
   const githubRef = useRef<GithubIconHandle>(null);
+  const blocksRef = useRef<LayoutGridHandle>(null);
   usePageTitle("Projects | Jillo Woche");
+
+  const { ref: blocksTitleRef, isInView: isBlocksTitleInView } = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (isBlocksTitleInView) {
+      blocksRef.current?.startAnimation();
+    } else {
+      blocksRef.current?.stopAnimation();
+    }
+  }, [isBlocksTitleInView]);
 
   return (
     <PageContainer showBreadcrumbs>
@@ -42,11 +57,23 @@ export const MyProjects = () => {
           </div>
         }
       >
-        My recent projects
+        <div
+          className="flex items-center justify-start space-x-2"
+          ref={blocksTitleRef}
+        >
+          <LayoutGridIcon
+            className="text-blue-400/80"
+            size={20}
+            ref={blocksRef}
+          />
+          <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+            My recent projects{" "}
+          </span>
+        </div>
       </SectionHeading>
       {/* Featured Project Section - Presig */}
       <SlideMeIn marginBottom="mb-0">
-        <SectionContent padding="py-10">
+        <SectionContent padding="py-10 bg-blue-300/5">
           <FeaturedPresigProject />
         </SectionContent>
       </SlideMeIn>

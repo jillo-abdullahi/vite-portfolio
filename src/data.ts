@@ -304,7 +304,7 @@ export const skills: Skills = {
   "databases/devops": [
     { name: "Postgres", level: "80%" },
     { name: "Google Firebase", level: "80%" },
-    { name: "MySQL", level: "75%" },
+    { name: "Supabase", level: "75%" },
     { name: "Docker", level: "70%" },
     { name: "Github Actions", level: "60%" },
   ],

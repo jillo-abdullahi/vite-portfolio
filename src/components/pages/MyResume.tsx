@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AboutMeTimeline } from "../AboutMeTimeline";
 import { PageContainer } from "../shared/PageContainer";
 import { SectionHeading } from "../shared/SectionHeading";
@@ -8,21 +8,33 @@ import { SlideMeIn } from "../shared/SlideMeIn";
 import { SectionContent } from "../shared/SectionContent";
 import { MemeText } from "../shared/MemeText";
 import { DownloadIcon, type DownloadHandle } from "../ui/DownloadIcon";
+import { GlobeIcon, type GlobeIconHandle } from "../ui/GlobeIcon";
+import { useInView } from "@/hooks/useInView";
 
 export const MyResume = () => {
   const downloadRef = useRef<DownloadHandle>(null);
+  const globeRef = useRef<GlobeIconHandle>(null);
   usePageTitle("Resumé | Jillo Woche");
+
+  const { ref: globeTitleRef, isInView: isGlobeTitleInView } = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (isGlobeTitleInView) {
+      globeRef.current?.startAnimation();
+    } else {
+      globeRef.current?.stopAnimation();
+    }
+  }, [isGlobeTitleInView]);
 
   return (
     <PageContainer showBreadcrumbs>
       <section className="w-full">
         <div className="w-full">
           <SectionHeading
-            linkHref="/jillo_woche_resume.pdf"
             linkText=""
             isContactPage={false}
-            isDownload={true}
-            downloadFileName="Jillo_Woche_Resume.pdf"
             rightLink={
               <div
                 className="flex-shrink-0"
@@ -47,7 +59,19 @@ export const MyResume = () => {
               </div>
             }
           >
-            My journey so far
+            <div
+              className="flex items-center justify-start space-x-2"
+              ref={globeTitleRef}
+            >
+              <GlobeIcon
+                className="text-purple-400/80"
+                size={20}
+                ref={globeRef}
+              />
+              <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+                My journey so far
+              </span>
+            </div>
           </SectionHeading>
         </div>
 

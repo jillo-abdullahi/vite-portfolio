@@ -1,5 +1,5 @@
 import type { FC } from "react";
-// import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
 
 import WavingHand from "@/components/WavingHand";
@@ -22,36 +22,38 @@ import Stacks from "../Stacks";
 import { FlipWords } from "../ui/shadcn-io/flip-words";
 import Timer from "../Timer";
 import { MemeText } from "../shared/MemeText";
-
-// import {
-//   // ChevronDownIcon,
-//   type ChevronDownIconHandle,
-// } from "../ui/ChevronDownIcon";
+import { SwordsIcon, type SwordsIconHandle } from "../ui/SwordsIcon";
+import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
+import { useInView } from "@/hooks/useInView";
 
 const LandingPage: FC = () => {
-  // const chevronRef = useRef<ChevronDownIconHandle>(null);
-  // const SCROLL_HINT_DELAY = 10000; // Delay in milliseconds before showing the scroll hint
-  // const [showScrollHint, setShowScrollHint] = useState(false);
+  const swordsRef = useRef<SwordsIconHandle>(null);
+  const heartRef = useRef<HeartIconHandle>(null);
+  const { ref: swordTitleRef, isInView: isSwordTitleInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: heartTitleRef, isInView: isHeartTitleInView } = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (isSwordTitleInView) {
+      swordsRef.current?.startAnimation();
+    } else {
+      swordsRef.current?.stopAnimation();
+    }
+  }, [isSwordTitleInView]);
+
+  useEffect(() => {
+    if (isHeartTitleInView) {
+      heartRef.current?.startAnimation();
+    } else {
+      heartRef.current?.stopAnimation();
+    }
+  }, [isHeartTitleInView]);
+
   // words for role description
   const words = ["scalable.", "fast.", "modern."];
-
-  // show scroll hint after delay
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowScrollHint(true);
-  //   }, SCROLL_HINT_DELAY);
-  // }, []);
-
-  // // chevron down icon animation for scroll hint
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     chevronRef.current?.startAnimation();
-  //     setTimeout(() => {
-  //       chevronRef.current?.stopAnimation();
-  //     }, 2000);
-  //   }, 5000);
-  // }, []);
-
   return (
     <PageContainer>
       <SlideMeIn>
@@ -131,23 +133,11 @@ const LandingPage: FC = () => {
           </div>
         </SectionContent>
       </SlideMeIn>
-      {/* Chevron Down Icon */}
-      {/* <div
-        className={`w-full flex items-center justify-center my-1 opacity-${
-          showScrollHint ? "100" : "0"
-        } transition-opacity duration-500`}
-      >
-        <ChevronDownIcon
-          ref={chevronRef}
-          size={40}
-          className="text-orange/60"
-        />
-      </div> */}
 
       {/* Main stack */}
       <SlideMeIn marginBottom="mb-3">
-        <SectionContent padding="py-6 md:py-10">
-          <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full">
+        <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
+          <div className="group relative border-2 rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-orange/20 hover:border-orange/30 w-full">
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -178,27 +168,27 @@ const LandingPage: FC = () => {
                 </div>
 
                 <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
                     <FaReact className="text-blue-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       React
                     </span>
                   </div>
 
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
                     <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       TypeScript
                     </span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
                     <FaNodeJs className="text-green-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       Node.js
                     </span>
                   </div>
 
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
                     <GrGraphQl className="text-pink-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       GraphQL
@@ -218,7 +208,17 @@ const LandingPage: FC = () => {
       </div>
 
       {/* My tools */}
-      <SectionHeading>My tools</SectionHeading>
+      <SectionHeading>
+        <div
+          className="flex items-center justify-start space-x-2"
+          ref={swordTitleRef}
+        >
+          <SwordsIcon className="text-green-400/60" size={20} ref={swordsRef} />
+          <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+            My tools
+          </span>
+        </div>
+      </SectionHeading>
       <SlideMeIn>
         <SectionContent>
           <section>
@@ -228,9 +228,19 @@ const LandingPage: FC = () => {
       </SlideMeIn>
 
       {/* Testimonials */}
-      <SectionHeading isContactPage={false}>What people say</SectionHeading>
+      <SectionHeading isContactPage={false}>
+        <div
+          className="flex items-center justify-start space-x-2"
+          ref={heartTitleRef}
+        >
+          <HeartIcon className="text-pink-400" size={20} ref={heartRef} />
+          <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+            What people say
+          </span>
+        </div>
+      </SectionHeading>
       <SlideMeIn cascade>
-        <SectionContent padding="py-6 md:py-10">
+        <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
           <Testimonials />
         </SectionContent>
       </SlideMeIn>

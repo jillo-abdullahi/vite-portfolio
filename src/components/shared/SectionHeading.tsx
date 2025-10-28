@@ -42,8 +42,8 @@ export const SectionHeading = ({
     : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
     <SlideMeIn marginBottom="mb-6">
-      <SectionContent padding={isContactPage ? "py-6 md:py-10" : "py-4"}>
-        <div className="w-full">
+      <SectionContent padding={isContactPage ? "py-6 md:py-10 bg-blue-300/5" : "py-4"}>
+        <div className="w-full ">
           <div className="flex space-x-4 items-center justify-between">
             <p className={`${fontSizeClass} text-gray-300 text-left space-x-2`}>
               <span>{children}</span>
