@@ -23,7 +23,6 @@ interface PageContainerProps {
  * ```
  */
 
-// px-5 md:px-10 lg:px-28 xl:px-48
 export const PageContainer = ({
   children,
   showBreadcrumbs = false,
@@ -33,7 +32,7 @@ export const PageContainer = ({
   const pathname = location.pathname;
   const isHomePage = pathname === "/";
   return (
-    <div className={`mx-auto ${isHomePage ? "py-38" : "py-32"}  min-h-screen`}>
+    <div className={`mx-auto ${isHomePage ? "py-38" : "pt-32 pb-40 md:pb-32"}  min-h-screen`}>
       {showBreadcrumbs && <Breadcrumbs />}
       {children}
     </div>
