@@ -21,6 +21,7 @@ import Testimonials from "../Testimonials";
 import Stacks from "../Stacks";
 import { FlipWords } from "../ui/shadcn-io/flip-words";
 import Timer from "../Timer";
+import { MemeText } from "../shared/MemeText";
 
 // import {
 //   // ChevronDownIcon,
@@ -233,6 +234,8 @@ const LandingPage: FC = () => {
           <Testimonials />
         </SectionContent>
       </SlideMeIn>
+
+      <MemeText text={"You gotta put your behind in your past"} />
     </PageContainer>
   );
 };
