@@ -13,13 +13,13 @@ import { SectionContent } from "./shared/SectionContent";
 const NotFound: FC = () => {
   return (
     <PageContainer>
-      <SlideMeIn marginBottom="mt-4 mb-6">
-        <SectionContent>
+      <SlideMeIn marginBottom="mt-8 mb-8">
+        <SectionContent padding="bg-blue-300/5 py-6">
           <div className="flex items-center justify-center">
             <img
               src={"/notFound.svg"}
               alt="not-found"
-              className="w-36 opacity-80"
+              className="w-48 opacity-80"
             />
           </div>
         </SectionContent>

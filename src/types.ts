@@ -167,4 +167,6 @@ export interface Testimonial {
   quote: string;
   /** Optional LinkedIn profile URL */
   linkedInUrl?: string;
+  /** Optional background image for the testimonial card */
+  bgImage?: string;
 }

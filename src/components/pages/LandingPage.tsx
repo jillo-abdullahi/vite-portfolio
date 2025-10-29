@@ -25,6 +25,7 @@ import { MemeText } from "../shared/MemeText";
 import { SwordsIcon, type SwordsIconHandle } from "../ui/SwordsIcon";
 import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
 import { useInView } from "@/hooks/useInView";
+import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 
 const LandingPage: FC = () => {
   const swordsRef = useRef<SwordsIconHandle>(null);
@@ -59,7 +60,7 @@ const LandingPage: FC = () => {
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
           <div
-            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/60 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden"
+            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -71,11 +72,24 @@ const LandingPage: FC = () => {
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
               <div className="relative rounded-full border-6 border-orange/40 flex-shrink-0 md:mr-8 group-hover:border-orange/50 transition-all duration-300">
-                <img
-                  src={"/me.webp"}
-                  alt="profile"
-                  className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full border-[8px] border-orange overflow-hidden transition-all duration-300 group-hover:border-6"
-                />
+                {/* Image and flickering grid wrapper with overflow-hidden */}
+                <div className="relative overflow-hidden rounded-full">
+                  <img
+                    src={"/me.webp"}
+                    alt="profile"
+                    className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full border-[8px] border-orange transition-all duration-300 group-hover:border-6"
+                  />
+                  <FlickeringGrid
+                    className="-z-100 absolute inset-0 size-full"
+                    squareSize={8}
+                    gridGap={6}
+                    color="#d19115"
+                    maxOpacity={0.3}
+                    flickerChance={0.4}
+                  />
+                </div>
+                
+                {/* Status pill outside overflow context */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
                   <StatusPill status={StatusType.CRAFTING} />
                 </div>
@@ -145,7 +159,15 @@ const LandingPage: FC = () => {
       {/* Main stack */}
       <SlideMeIn marginBottom="mb-3">
         <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
-          <div className="group relative border-2 rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-orange/20 hover:border-orange/30 w-full">
+          <div
+            className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full"
+            style={{
+              backgroundImage: "url('/icon-bg.svg')",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

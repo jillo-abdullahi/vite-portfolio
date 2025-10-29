@@ -11,6 +11,7 @@ interface TestimonialCardProps {
   level: string;
   quote: string;
   linkedInUrl?: string;
+  bgImage?: string;
 }
 
 const TestimonialCard: FC<TestimonialCardProps> = ({
@@ -22,9 +23,18 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   level,
   quote,
   linkedInUrl,
+  bgImage,
 }) => {
   return (
-    <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60">
+    <div
+      className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60"
+      style={{
+        backgroundImage: `url('${bgImage}')`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* Subtle hover overlay */}
       <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -39,7 +49,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
             }}
             src={`/experience/${image}`}
             alt={name}
-            className="w-12 h-12 rounded-xl object-cover flex-shrink-0 border-2 border-gray-600 group-hover:border-orange/60 transition-all duration-300 cursor-pointer"
+            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border-2 border-gray-700/80 group-hover:border-orange/60 transition-all duration-300 cursor-pointer"
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-1">

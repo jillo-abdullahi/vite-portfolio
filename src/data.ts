@@ -325,6 +325,7 @@ export const testimonials: Testimonial[] = [
     role: "Co-founder and CTO",
     date: "July 31, 2025",
     level: "Directly managed Jillo",
+    bgImage: "testimonial-bg.svg",
     company: "GasHawk",
     quote: `I had the pleasure of working with Jillo Woche at GasHawk, where he was our go-to Web Developer from April 2024 to August 2025. During that time, he made a massive impact across both the frontend and backend of our product.
 
@@ -344,6 +345,7 @@ Highly recommended!`,
     role: "Senior Security Engineer",
     image: "nathan.jpeg",
     date: "March 7, 2023",
+    bgImage: "testimonial2-bg.svg",
     level: "Directly managed Jillo",
     company: "AWS",
     quote:
