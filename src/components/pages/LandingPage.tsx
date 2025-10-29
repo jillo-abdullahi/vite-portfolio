@@ -132,7 +132,7 @@ const LandingPage: FC = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-x-3 pt-8 w-full">
+                <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row items-center justify-center md:justify-start space-x-0 sm:space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
                   <ViewProjectsBtn />
                 </div>
