@@ -58,7 +58,15 @@ const LandingPage: FC = () => {
     <PageContainer>
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
-          <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/80 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden">
+          <div
+            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/60 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden"
+            style={{
+              backgroundImage: "url('/icon-bg.svg')",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
@@ -124,7 +132,7 @@ const LandingPage: FC = () => {
                   </p>
                 </div>
 
-                <div className="flex items-center justify-center md:justify-start space-x-3 pt-8 w-full">
+                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
                   <ViewProjectsBtn />
                 </div>
