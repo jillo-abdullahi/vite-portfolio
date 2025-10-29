@@ -13,6 +13,7 @@ import { MyProjects } from "./components/pages/MyProjects";
 import { ContactMe } from "./components/pages/ContactMe";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
 import { PageFooter } from "./components/PageFooter";
+import { BackToTopBtn } from "./components/shared/BackToTopBtn";
 
 // root route that just provides the layout
 const rootRoute = createRootRoute({
@@ -38,6 +39,7 @@ const rootRoute = createRootRoute({
           </div>
           <Outlet />
           <PageFooter />
+          <BackToTopBtn />
         </div>
       </>
     );

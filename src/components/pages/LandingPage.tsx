@@ -57,7 +57,7 @@ const LandingPage: FC = () => {
   return (
     <PageContainer>
       <SlideMeIn>
-        <SectionContent padding="py-6 md:py-10">
+        <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
           <div className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/80 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden">
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

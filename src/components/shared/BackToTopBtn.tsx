@@ -1,0 +1,49 @@
+import { type FC, useState, useEffect } from "react";
+import { ChevronUpIcon } from "../ui/ChevronUpIcon";
+
+export const BackToTopBtn: FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const MAX_SCROLL_HEIGHT = 900;
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Show button when page is scrolled down 400px
+      if (window.scrollY > MAX_SCROLL_HEIGHT) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", toggleVisibility);
+
+    // Check initial scroll position
+    toggleVisibility();
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <button
+      onClick={scrollToTop}
+      className={`group fixed bottom-35.5 sm:bottom-32 right-6 md:right-12 lg:right-5 xl:right-10 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-orange/40 hover:bg-orange/50 transition-all duration-300 hover:scale-110 cursor-pointer ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-4 pointer-events-none"
+      }`}
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <ChevronUpIcon size={28} className="text-white" />
+    </button>
+  );
+};

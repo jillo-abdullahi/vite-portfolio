@@ -7,6 +7,7 @@
   --color-orange: #e7a11a;
   --color-orange-dark: #d19115;
   --color-blue-dark: #272f37;
+  --color-purple-light: #5f4d9f;
 }
 
 /* Non-critical styles - loaded after initial render */
