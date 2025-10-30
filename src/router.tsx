@@ -32,7 +32,7 @@ const rootRoute = createRootRoute({
                 className="w-2 md:w-6 lg:w-20 xl:w-30 h-full border border-gray-700/40"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(145deg, rgba(192,192,192,0.2) 0, rgba(192,192,192,0.2) 2px, transparent 2px, transparent 7px)",
+                    `repeating-linear-gradient(${idx === 0 ? "145deg" : "-145deg"}, rgba(192,192,192,0.2) 0, rgba(192,192,192,0.2) 2px, transparent 2px, transparent 7px)`,
                 }}
               />
             ))}

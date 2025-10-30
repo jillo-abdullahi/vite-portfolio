@@ -77,7 +77,7 @@ const LandingPage: FC = () => {
                   <img
                     src={"/me.webp"}
                     alt="profile"
-                    className="flex-shrink-0 w-40 h-40 md:w-52 md:h-52 rounded-full border-[8px] border-orange transition-all duration-300 group-hover:border-6"
+                    className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-[7px] border-orange transition-all duration-300 group-hover:border-6"
                   />
                   <FlickeringGrid
                     className="-z-100 absolute inset-0 size-full"
@@ -88,7 +88,7 @@ const LandingPage: FC = () => {
                     flickerChance={0.4}
                   />
                 </div>
-                
+
                 {/* Status pill outside overflow context */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
                   <StatusPill status={StatusType.CRAFTING} />
@@ -124,7 +124,7 @@ const LandingPage: FC = () => {
                 </div>
 
                 <div className="w-full max-w-3xl pt-6">
-                  <p className="text-gray-300/90 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.5]">
+                  <p className="text-gray-400 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.3] font-medium">
                     <span>
                       I build pixel-perfect, robust web apps that are{" "}
                       <FlipWords
@@ -134,19 +134,18 @@ const LandingPage: FC = () => {
                       />
                     </span>
                     <br />
-                    With over{" "}
+                    Backed by{" "}
                     <span className="text-orange/80 font-semibold">
-                      6 years
+                      6+ years
                     </span>{" "}
-                    of experience{" "}
                     <span>
-                      converting users into customers within the dynamic web2
-                      and web3 landscapes.
+                      of experience driving user growth and conversion across
+                      the evolving Web2 and Web3 spaces.
                     </span>
                   </p>
                 </div>
 
-                <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row items-center justify-center md:justify-start space-x-0 sm:space-x-3 pt-8 w-full">
+                <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
                   <ViewProjectsBtn />
                 </div>
