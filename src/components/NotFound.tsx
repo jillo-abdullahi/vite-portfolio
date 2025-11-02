@@ -24,12 +24,6 @@ const NotFound: FC = () => {
       <SlideMeIn marginBottom="mt-8 mb-8">
         <SectionContent padding="bg-blue-300/5 pt-6">
           <div className="flex items-center justify-center">
-            {/* <img
-              src={"/notFound.svg"}
-              alt="not-found"
-              className="w-48 opacity-80"
-            /> */}
-
             <DotLottieReact
               src="/notFound.lottie"
               loop
