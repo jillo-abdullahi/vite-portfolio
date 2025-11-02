@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { SectionContent } from "./SectionContent";
 
 type Props = {
-  text: string;
+  text: string | React.ReactNode;
   /** 'muted' uses gray text, 'accent' uses orange accent */
   variant?: "muted" | "accent";
   className?: string;

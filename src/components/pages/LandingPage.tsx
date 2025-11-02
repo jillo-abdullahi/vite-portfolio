@@ -274,7 +274,16 @@ const LandingPage: FC = () => {
         </SectionContent>
       </SlideMeIn>
 
-      <MemeText text={"You gotta put your behind in your past"} />
+      <MemeText
+        // variant="accent"
+        text={
+          <>
+            <sub className="font-bold text-base pr-0.5">*</sub>
+            <span>warning</span>: These percentages are based on 'How
+            I feel after a cup of coffee.' Do not use for financial planning.
+          </>
+        }
+      />
     </PageContainer>
   );
 };
