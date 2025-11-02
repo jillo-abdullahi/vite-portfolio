@@ -32,7 +32,7 @@ export const PageContainer = ({
   const pathname = location.pathname;
   const isHomePage = pathname === "/";
   return (
-    <div className={`mx-auto ${isHomePage ? "pt-32 pb-38 pb-40 md:pb-38 md:pt-38" : "pt-28 pb-40 md:pb-38"}  min-h-screen`}>
+    <div className={`mx-auto ${isHomePage ? "pt-32 pb-38 pb-40 md:pb-38 md:pt-38" : "pt-28 pb-40 md:pb-38 md:pt-32"}  min-h-screen`}>
       {showBreadcrumbs && <Breadcrumbs />}
       {children}
     </div>
