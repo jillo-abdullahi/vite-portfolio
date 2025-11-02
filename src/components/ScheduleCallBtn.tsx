@@ -1,6 +1,5 @@
 import { externalLinks } from "@/data";
 import { useRef } from "react";
-// import { ContactIcon, type ContactHandle } from "./ui/ContactIcon";
 import { PhoneIcon, type PhoneHandle } from "./ui/PhoneIcon";
 
 export const ScheduleCallBtn = () => {
