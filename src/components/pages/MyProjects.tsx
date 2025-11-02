@@ -42,7 +42,7 @@ export const MyProjects = () => {
           >
             <a
               type="button"
-              className="group relative inline-flex items-center gap-x-1.5 rounded-lg border border-orange/40 bg-orange/10 hover:bg-orange/20 px-3 py-1 text-orange hover:text-orange shadow-sm hover:border-orange/60 transition-all duration-200 cursor-pointer"
+              className="group relative inline-flex items-center gap-x-1.5 rounded-lg border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 px-3 py-1 text-[var(--color-primary)] hover:text-[var(--color-primary)] shadow-sm hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer"
               href={externalLinks.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export const MyProjects = () => {
           ref={blocksTitleRef}
         >
           <LayoutGridIcon
-            className="text-blue-400/80"
+            className="text-[var(--color-primary)]"
             size={20}
             ref={blocksRef}
           />

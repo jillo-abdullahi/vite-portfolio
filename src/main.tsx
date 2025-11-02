@@ -5,14 +5,17 @@ import { RouterProvider } from "@tanstack/react-router";
 import { router } from "./router";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Wait for the router to be ready
 await router.load();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <Analytics />
-    <SpeedInsights />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+      <Analytics />
+      <SpeedInsights />
+    </ThemeProvider>
   </StrictMode>
 );

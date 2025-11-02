@@ -13,7 +13,7 @@ export const ScheduleCallBtn = () => {
     >
       <a
         type="button"
-        className="group overflow-hidden relative flex items-center gap-x-1.5 rounded-lg border border-orange/40 bg-orange/10 hover:bg-orange/20 px-4 py-1.5 text-orange hover:text-orange shadow-sm hover:border-orange/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center"
+        className="group overflow-hidden relative flex items-center gap-x-1.5 rounded-lg border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 px-4 py-1.5 text-[var(--color-primary)] hover:text-[var(--color-primary)] shadow-sm hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center"
         href={externalLinks.calLink}
         target="_blank"
         rel="noopener noreferrer"

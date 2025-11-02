@@ -10,6 +10,14 @@
   --color-purple-light: #5f4d9f;
 }
 
+/* Theme CSS Variables for dynamic theming */
+:root {
+  --color-primary: #e7a11a;
+  --color-primary-hover: #d19115;
+  --color-primary-light: rgba(231, 161, 26, 0.1);
+  --color-primary-border: rgba(231, 161, 26, 0.4);
+}
+
 /* Non-critical styles - loaded after initial render */
 
 main {

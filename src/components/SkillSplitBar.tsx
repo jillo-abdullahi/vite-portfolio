@@ -28,13 +28,13 @@ export default function SkillSplitBar({
       style={{ ["--split" as any]: `${left}%` }}
     >
       <div
-        className="grid overflow-hidden rounded-lg border-2 border-orange/20 shadow-lg transition-all duration-200 group-hover:border-orange/30"
+        className="grid overflow-hidden rounded-lg border-2 border-[var(--color-primary)]/20 shadow-lg transition-all duration-200 group-hover:border-[var(--color-primary)]/30"
         style={{
           gridTemplateColumns: `${left}% ${right}%`,
           height: `${height}px`,
         }}
       >
-        <div className="flex items-center justify-between px-3 bg-orange/20 text-orange relative">
+        <div className="flex items-center justify-between px-3 bg-[var(--color-primary)]/20 text-[var(--color-primary)] relative">
           <span className="hidden md:block font-medium text-sm">
             {leftLabel}
           </span>
@@ -71,7 +71,7 @@ export default function SkillSplitBar({
 
       {/* Simple divider */}
       <div
-        className="pointer-events-none absolute top-1/2 h-[115%] w-px -translate-y-1/2 bg-orange/80 transition-colors duration-300"
+        className="pointer-events-none absolute top-1/2 h-[115%] w-px -translate-y-1/2 bg-[var(--color-primary)]/80 transition-colors duration-300"
         style={{ left: "var(--split)" }}
       />
     </div>

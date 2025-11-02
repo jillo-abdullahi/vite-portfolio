@@ -17,7 +17,7 @@ export const PortfolioCard = ({
   contract,
 }: PortfolioProject) => {
   return (
-    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-orange/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
+    <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-[var(--color-primary)]/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
       {/* Image Container with Device Mockup */}
       <div className="relative p-6 bg-gradient-to-br from-gray-700 to-gray-800">
         {/* MacBook Mockup */}
@@ -69,7 +69,7 @@ export const PortfolioCard = ({
             <TooltipButton
               href={preview}
               tooltipText="Live Demo"
-              className="p-2 rounded-full border border-gray-300 bg-orange/90 hover:bg-orange text-gray-900 transition-colors duration-200 shadow-lg backdrop-blur-sm"
+              className="p-2 rounded-full border border-gray-300 bg-[var(--color-primary)]/90 hover:bg-[var(--color-primary)] text-gray-900 transition-colors duration-200 shadow-lg backdrop-blur-sm"
               ariaLabel="View Live Demo"
             >
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
@@ -103,7 +103,7 @@ export const PortfolioCard = ({
       <div className="flex-1 flex flex-col p-6 space-y-4">
         {/* Title and Description */}
         <div className="space-y-2">
-          <h3 className="text-xl font-bold text-white group-hover:text-orange transition-colors duration-200">
+          <h3 className="text-xl font-bold text-white group-hover:text-[var(--color-primary)] transition-colors duration-200">
             {title}
           </h3>
           <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">
@@ -122,7 +122,7 @@ export const PortfolioCard = ({
                 {stacks.map((stack) => (
                   <span
                     key={stack}
-                    className="px-2.5 py-1 text-xs font-medium bg-orange/10 text-orange border border-orange/20 rounded-md hover:bg-orange/20 transition-colors duration-200"
+                    className="px-2.5 py-1 text-xs font-medium bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 rounded-md hover:bg-[var(--color-primary)]/20 transition-colors duration-200"
                   >
                     {stack}
                   </span>
@@ -139,7 +139,7 @@ export const PortfolioCard = ({
               href={preview}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 bg-orange rounded-lg hover:bg-orange/90 transition-colors duration-200"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 bg-[var(--color-primary)] rounded-lg hover:bg-[var(--color-primary)]/90 transition-colors duration-200"
             >
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
               Live Demo

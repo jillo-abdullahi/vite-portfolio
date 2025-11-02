@@ -109,7 +109,7 @@ export const StatusPill: React.FC<StatusPillProps> = ({
   const displayText = customText || config.text;
 
   const baseClasses =
-    "bg-gray-800/90 border-2 border-orange/60 text-orange/80 rounded-full px-2 py-1 flex items-center backdrop-blur-sm shadow-lg w-fit";
+    "bg-gray-800/90 border-2 border-[var(--color-primary)]/60 text-[var(--color-primary)]/80 rounded-full px-2 py-1 flex items-center backdrop-blur-sm shadow-lg w-fit";
 
   return (
     <div className={`${baseClasses} ${className}`}>

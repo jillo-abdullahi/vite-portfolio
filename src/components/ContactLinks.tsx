@@ -112,14 +112,14 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         rel="noreferrer"
       >
         {/* Subtle hover overlay */}
-        <div className="absolute inset-0 rounded-2xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 rounded-2xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <div className="relative z-10 flex items-center justify-start space-x-3">
           <div className="rounded-lg bg-gray-700/40 border border-gray-700/40 p-2 w-10 h-10 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
               style={{ fontSize: "24px" }}
-              className="text-gray-300 transition-all group-hover:text-orange/90 duration-300"
+              className="text-gray-300 transition-all group-hover:text-[var(--color-primary)]/90 duration-300"
             />
           </div>
           <div className="text-left">
@@ -156,7 +156,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
               <SquareArrowOutUpRightIcon
                 ref={squareArrowRef}
                 size={22}
-                className="text-orange"
+                className="text-[var(--color-primary)]"
               />
             </div>
           </button>
@@ -247,9 +247,9 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
           >
             <FontAwesomeIcon
               icon={icon}
-              className="text-gray-300 group-hover:text-orange transition-colors duration-200 w-3.5 h-3.5"
+              className="text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200 w-3.5 h-3.5"
             />
-            <span className="text-gray-300 group-hover:text-orange font-medium text-xs transition-colors duration-200">
+            <span className="text-gray-300 group-hover:text-[var(--color-primary)] font-medium text-xs transition-colors duration-200">
               {name}
             </span>
           </a>

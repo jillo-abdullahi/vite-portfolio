@@ -44,17 +44,17 @@ export const Breadcrumbs = () => {
         {breadcrumbs.map((item, index) => (
           <div key={item.path} className="flex items-center space-x-1 group">
             {index === 0 ? (
-              <HomeIcon className="w-3.5 h-3.5 group-hover:text-orange transition-colors duration-200" />
+              <HomeIcon className="w-3.5 h-3.5 group-hover:text-[var(--color-primary)] transition-colors duration-200" />
             ) : (
               <IoChevronForward className="w-3 h-3 text-gray-500" />
             )}
 
             {item.isActive ? (
-              <span className="text-orange/80 font-medium">{item.label}</span>
+              <span className="text-[var(--color-primary)]/80 font-medium">{item.label}</span>
             ) : (
               <Link
                 to={item.path}
-                className="hover:text-orange/80 transition-colors duration-200 font-medium"
+                className="hover:text-[var(--color-primary)]/80 transition-colors duration-200 font-medium"
               >
                 {item.label}
               </Link>

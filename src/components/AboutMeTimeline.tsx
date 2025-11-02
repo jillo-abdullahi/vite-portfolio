@@ -27,12 +27,12 @@ export const AboutMeTimeline: FC = () => {
             key={index}
             className={`group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out ${
               isCurrent
-                ? "border-orange/30 shadow-md shadow-orange/5"
+                ? "border-[var(--color-primary)]/30 shadow-md shadow-[var(--color-primary)]/5"
                 : "border-gray-700/40 hover:border-gray-600/60"
             }`}
           >
             {/* Subtle hover overlay */}
-            <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             <div className="relative z-10">
               {/* Work type or education badge */}
@@ -40,16 +40,16 @@ export const AboutMeTimeline: FC = () => {
                 <div className="flex items-center space-x-2 mb-2">
                   <div className="p-1 bg-gray-700/40 rounded-md">
                     {isEducational ? (
-                      <PiGraduationCapDuotone className="text-orange/70 text-sm" />
+                      <PiGraduationCapDuotone className="text-[var(--color-primary)]/70 text-sm" />
                     ) : (
-                      <IoDocumentTextOutline className="text-orange/70 text-sm" />
+                      <IoDocumentTextOutline className="text-[var(--color-primary)]/70 text-sm" />
                     )}
                   </div>
                   <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                     {isEducational ? "Education" : workType}
                   </span>
                   {isCurrent && (
-                    <span className="px-2 py-0.5 bg-orange/15 text-orange/90 text-xs font-medium rounded-md border border-orange/20">
+                    <span className="px-2 py-0.5 bg-[var(--color-primary)]/15 text-[var(--color-primary)]/90 text-xs font-medium rounded-md border border-[var(--color-primary)]/20">
                       Current
                     </span>
                   )}
@@ -59,20 +59,20 @@ export const AboutMeTimeline: FC = () => {
               <div className="space-y-3">
                 {/* Title and company header */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-lg text-orange">{title}</h3>
+                  <h3 className="font-semibold text-lg text-[var(--color-primary)]">{title}</h3>
 
                   <div className="flex items-center space-x-2">
                     <img
                       src={`/experience/${companyLogo}`}
                       alt={`${company} logo`}
-                      className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border border-gray-700"
+                      className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border-2 border-gray-700 group-hover:border-[var(--color-primary)]/60 transition-all duration-300 object-contain"
                     />
                     <div className="flex-1">
                       <a
                         href={companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-200 hover:text-orange/90 transition-colors duration-200 font-medium"
+                        className="text-gray-200 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-medium"
                       >
                         {company}
                       </a>

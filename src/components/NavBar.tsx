@@ -12,6 +12,7 @@ import Timer from "@/components/Timer";
 import { Link, useLocation } from "@tanstack/react-router";
 import ResponsiveImage from "@/components/shared/ResponsiveImage";
 import { ScheduleCallBtn } from "./ScheduleCallBtn";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavigationItem {
   name: string;
@@ -48,7 +49,7 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-10 lg:px-28 xl:px-42 border-t border-b border-gray-700 py-4 ${
+      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-10 lg:px-28 xl:px-42 md:border-t md:border-b md:border-gray-700 py-4 ${
         isScrolled ? "mt-2" : "mt-4"
       }`}
     >
@@ -63,7 +64,10 @@ const NavBar: FC = () => {
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
+                  <div className="mr-3" onClick={() => close()}>
+                    <ThemeToggle />
+                  </div>
+                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -89,7 +93,7 @@ const NavBar: FC = () => {
                       src="/sneakerhead985"
                       alt="Profile picture - Navigate to home"
                       className={`flex-shrink-0 w-9 h-9 rounded-full overflow-hidden shadow-lg cursor-pointer ${
-                        isHome ? "ring-2 ring-orange/80" : ""
+                        isHome ? "ring-2 ring-[var(--color-primary)]/80" : ""
                       }`}
                       width={40}
                       height={40}
@@ -102,9 +106,9 @@ const NavBar: FC = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`text-gray-300 hover:bg-gray-800 hover:text-white rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
+                      className={`text-gray-300 hover:bg-[var(--color-primary)]/10 hover:text-white rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
                         item.isActive
-                          ? "bg-gray-800/60 text-gray-200 border-orange/50"
+                          ? "bg-gray-800/60 text-gray-200 border-[var(--color-primary)]/50"
                           : "border-transparent"
                       }`}
                     >
@@ -114,10 +118,11 @@ const NavBar: FC = () => {
                 </div>
               </div>
               <div className="hidden md:flex items-center space-x-4">
-                <div>
-                  <WorkAvailabilityIndicator available />
-                </div>
+                <WorkAvailabilityIndicator available />
                 <ScheduleCallBtn />
+                <div className="pl-2">
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
           </div>
@@ -135,9 +140,9 @@ const NavBar: FC = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`cursor-pointer text-gray-300 hover:bg-gray-800/90 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center border ${
+                    className={`cursor-pointer text-gray-300 hover:bg-[var(--color-primary)]/10 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center border ${
                       item.isActive
-                        ? "bg-gray-800/60 text-gray-200 border-orange/50"
+                        ? "bg-gray-800/60 text-gray-200 border-[var(--color-primary)]/50"
                         : "border-transparent"
                     }`}
                     onClick={() => {
@@ -152,7 +157,6 @@ const NavBar: FC = () => {
                     <WorkAvailabilityIndicator available />
                     <ScheduleCallBtn />
                   </div>
-
                   <Timer />
                 </div>
               </div>

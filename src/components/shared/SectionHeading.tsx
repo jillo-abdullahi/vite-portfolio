@@ -52,7 +52,7 @@ export const SectionHeading = ({
                   href={linkHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-orange/80 underline hover:text-orange transition-all duration-150"
+                  className="text-[var(--color-primary)]/80 underline hover:text-[var(--color-primary)] transition-all duration-150"
                   {...(isDownload && { download: downloadFileName || true })}
                 >
                   {linkText}

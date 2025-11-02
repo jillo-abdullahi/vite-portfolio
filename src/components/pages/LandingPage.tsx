@@ -26,8 +26,10 @@ import { SwordsIcon, type SwordsIconHandle } from "../ui/SwordsIcon";
 import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
 import { useInView } from "@/hooks/useInView";
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const LandingPage: FC = () => {
+  const { themeColors } = useTheme();
   const swordsRef = useRef<SwordsIconHandle>(null);
   const heartRef = useRef<HeartIconHandle>(null);
   const { ref: swordTitleRef, isInView: isSwordTitleInView } = useInView({
@@ -69,21 +71,21 @@ const LandingPage: FC = () => {
             }}
           >
             {/* Subtle hover overlay */}
-            <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
-              <div className="relative rounded-full border-6 border-orange/40 flex-shrink-0 md:mr-8 group-hover:border-orange/50 transition-all duration-300">
+              <div className="relative rounded-full border-6 border-[var(--color-primary)]/40 flex-shrink-0 md:mr-8 group-hover:border-[var(--color-primary)]/50 transition-all duration-300">
                 {/* Image and flickering grid wrapper with overflow-hidden */}
                 <div className="relative overflow-hidden rounded-full">
                   <img
                     src={"/me.webp"}
                     alt="profile"
-                    className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-[7px] border-orange transition-all duration-300 group-hover:border-6"
+                    className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-[7px] border-[var(--color-primary)] transition-all duration-300 group-hover:border-6"
                   />
                   <FlickeringGrid
                     className="-z-100 absolute inset-0 size-full"
                     squareSize={8}
                     gridGap={6}
-                    color="#d19115"
+                    color={themeColors.primaryHover}
                     maxOpacity={0.3}
                     flickerChance={0.4}
                   />
@@ -103,7 +105,7 @@ const LandingPage: FC = () => {
                   </span>
                 </div>
 
-                <span className="text-2xl md:text-3xl text-orange font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
+                <span className="text-2xl md:text-3xl text-[var(--color-primary)] font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
                   Jillo Woche,
                 </span>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
@@ -117,7 +119,7 @@ const LandingPage: FC = () => {
                   />
                 </span>
                 <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
-                  <LuMapPinHouse className="text-orange/80 h-4 w-4" />
+                  <LuMapPinHouse className="text-[var(--color-primary)]/80 h-4 w-4" />
                   <span className="text-gray-300/70 font-semibold">
                     Nairobi, Kenya
                   </span>
@@ -130,12 +132,12 @@ const LandingPage: FC = () => {
                       <FlipWords
                         words={words}
                         duration={2500}
-                        className="text-orange/80 font-semibold px-0 w-12"
+                        className="text-[var(--color-primary)]/80 font-semibold px-0 w-12"
                       />
                     </span>
                     <br />
                     Backed by{" "}
-                    <span className="text-orange/80 font-semibold">
+                    <span className="text-[var(--color-primary)]/80 font-semibold">
                       6+ years
                     </span>{" "}
                     <span>
@@ -168,14 +170,14 @@ const LandingPage: FC = () => {
             }}
           >
             {/* Subtle hover overlay */}
-            <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             <div className="relative z-10">
               {/* skill split bar  */}
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                 <div className="text-center md:text-left md:flex-shrink-0">
                   <p className="text-lg font-medium text-gray-200">
-                    Focus<sup>*</sup>
+                    Focus<sup className="text-[var(--color-primary)]">*</sup>
                   </p>
                 </div>
                 <div className="flex-1 flex justify-center md:justify-end">
@@ -242,7 +244,7 @@ const LandingPage: FC = () => {
           className="flex items-center justify-start space-x-2"
           ref={swordTitleRef}
         >
-          <SwordsIcon className="text-green-400/60" size={20} ref={swordsRef} />
+          <SwordsIcon className="text-[var(--color-primary)]" size={20} ref={swordsRef} />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
             My tools
           </span>
@@ -262,7 +264,7 @@ const LandingPage: FC = () => {
           className="flex items-center justify-start space-x-2"
           ref={heartTitleRef}
         >
-          <HeartIcon className="text-pink-400" size={20} ref={heartRef} />
+          <HeartIcon className="text-[var(--color-primary)]" size={20} ref={heartRef} />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
             What people say
           </span>
@@ -277,11 +279,13 @@ const LandingPage: FC = () => {
       <MemeText
         // variant="accent"
         text={
-          <>
-            <sub className="font-bold text-base pr-0.5">*</sub>
-            <span>warning</span>: These percentages are based on 'How
-            I feel after a cup of coffee.' Do not use for financial planning.
-          </>
+          <span className="text-[var(--color-primary)]/50">
+            <sub className="font-bold text-sm pr-0.5 text-[var(--color-primary)]">
+              *
+            </sub>
+            <span>warning</span>: These percentages are based on 'How I feel
+            after a cup of coffee.' Do not use for financial planning.
+          </span>
         }
       />
     </PageContainer>
