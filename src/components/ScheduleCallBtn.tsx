@@ -1,15 +1,16 @@
 import { externalLinks } from "@/data";
 import { useRef } from "react";
-import { ContactIcon, type ContactHandle } from "./ui/ContactIcon";
+// import { ContactIcon, type ContactHandle } from "./ui/ContactIcon";
+import { PhoneIcon, type PhoneHandle } from "./ui/PhoneIcon";
 
 export const ScheduleCallBtn = () => {
-  const contactRef = useRef<ContactHandle | null>(null);
+  const phoneRef = useRef<PhoneHandle | null>(null);
 
   return (
     <div
       className="flex-shrink-0"
-      onMouseEnter={() => contactRef.current?.startAnimation()}
-      onMouseLeave={() => contactRef.current?.stopAnimation()}
+      onMouseEnter={() => phoneRef.current?.startAnimation()}
+      onMouseLeave={() => phoneRef.current?.stopAnimation()}
     >
       <a
         type="button"
@@ -18,8 +19,8 @@ export const ScheduleCallBtn = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <ContactIcon
-          ref={contactRef}
+        <PhoneIcon
+          ref={phoneRef}
           className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
           aria-hidden="true"
         />
