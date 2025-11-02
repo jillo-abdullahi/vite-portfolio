@@ -64,7 +64,7 @@ const NavBar: FC = () => {
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <div className="mr-3" onClick={() => close()}>
+                  <div className="mr-4 border-r border-gray-700/60 pr-3" onClick={() => close()}>
                     <ThemeToggle />
                   </div>
                   <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
@@ -120,7 +120,7 @@ const NavBar: FC = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <WorkAvailabilityIndicator available />
                 <ScheduleCallBtn />
-                <div className="pl-2">
+                <div className="pl-3 border-l border-gray-700/60">
                   <ThemeToggle />
                 </div>
               </div>
