@@ -60,7 +60,7 @@ const LandingPage: FC = () => {
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
           <div
-            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden"
+            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -159,7 +159,7 @@ const LandingPage: FC = () => {
       <SlideMeIn marginBottom="mb-3">
         <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
           <div
-            className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full"
+            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",

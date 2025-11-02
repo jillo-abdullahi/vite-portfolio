@@ -23,18 +23,11 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   level,
   quote,
   linkedInUrl,
-  bgImage,
 }) => {
+
+  //TODO: Add bgImage functionality later if needed
   return (
-    <div
-      className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60"
-      style={{
-        backgroundImage: `url('${bgImage}')`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60">
       {/* Subtle hover overlay */}
       <div className="absolute inset-0 rounded-xl bg-orange/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
