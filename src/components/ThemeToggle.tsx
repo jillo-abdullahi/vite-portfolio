@@ -100,7 +100,7 @@ export const ThemeToggle: FC = () => {
           >
             <div className="p-2">
               <p className="text-xs text-gray-400 px-3 py-2 font-medium">
-                Change theme Color
+                Change theme color
               </p>
               <div className="space-y-1">
                 {(Object.keys(THEME_COLORS) as ThemeColor[]).map((colorKey) => {
@@ -114,18 +114,25 @@ export const ThemeToggle: FC = () => {
                         setTheme(colorKey);
                         setIsOpen(false);
                       }}
-                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors duration-150 cursor-pointer"
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-700/60 ${
+                        isActive ? "bg-gray-700/40" : ""
+                      } transition-colors duration-150 cursor-pointer`}
                     >
                       <div className="flex items-center space-x-3">
                         <div
-                          className="w-6 h-6 rounded-full border-2"
+                          className={`rounded-full w-6 h-6 flex items-center justify-center border-2`}
                           style={{
-                            backgroundColor: color.primary,
-                            borderColor: isActive
-                              ? color.primary
-                              : "transparent",
+                            borderColor: color.primary,
                           }}
-                        />
+                        >
+                          <div
+                            className={`rounded-full w-4 h-4`}
+                            style={{
+                              backgroundColor: color.primary,
+                            }}
+                          />
+                        </div>
+
                         <span className="text-sm text-gray-200 font-medium">
                           {color.name}
                         </span>
