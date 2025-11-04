@@ -161,10 +161,10 @@ export interface Testimonial {
   date: string;
   /** Company name */
   company: string;
-  /** Relationship level (e.g., "Directly managed", "Peer", etc.) */
+    /** Relationship level (e.g., "Directly managed", "Peer", etc.) */
   level: string;
-  /** The testimonial quote */
-  quote: string;
+  /** The testimonial quote as an array of paragraphs */
+  quote: string[];
   /** Optional LinkedIn profile URL */
   linkedInUrl?: string;
   /** Optional background image for the testimonial card */

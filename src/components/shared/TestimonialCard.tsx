@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { TextAnimate } from "../ui/text-animate";
 
 interface TestimonialCardProps {
   name: string;
@@ -9,7 +10,7 @@ interface TestimonialCardProps {
   date: string;
   company: string;
   level: string;
-  quote: string;
+  quote: string[];
   linkedInUrl?: string;
   bgImage?: string;
 }
@@ -24,7 +25,6 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   quote,
   linkedInUrl,
 }) => {
-
   //TODO: Add bgImage functionality later if needed
   return (
     <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60">
@@ -62,8 +62,19 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           </div>
         </div>
 
-        <blockquote className="text-gray-300 text-sm leading-relaxed whitespace-pre-line mb-4">
-          "{quote}"
+        <blockquote className="space-y-4 mb-4">
+          {quote.map((paragraph, index) => (
+            <TextAnimate
+              key={index}
+              as="p"
+              by="line"
+              animation="fadeIn"
+              duration={5}
+              className="text-gray-300 text-sm leading-relaxed"
+            >
+              {paragraph}
+            </TextAnimate>
+          ))}
         </blockquote>
 
         <div className="flex justify-end pt-2 border-t border-gray-700/40 mt-2">

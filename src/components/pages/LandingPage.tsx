@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { useEffect, useRef } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
-
+import { TextAnimate } from "../ui/text-animate";
 import WavingHand from "@/components/WavingHand";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { PageContainer } from "../shared/PageContainer";
@@ -105,9 +105,9 @@ const LandingPage: FC = () => {
                   </span>
                 </div>
 
-                <span className="text-2xl md:text-3xl text-[var(--color-primary)] font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
+                <TextAnimate as={'span'} by="character" duration={0.5} className="text-2xl md:text-3xl text-[var(--color-primary)] font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
                   Jillo Woche,
-                </span>
+                </TextAnimate>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
                   <Typewriter
                     phrases={[
