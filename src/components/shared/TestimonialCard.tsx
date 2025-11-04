@@ -42,7 +42,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
             }}
             src={`/experience/${image}`}
             alt={name}
-            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border-2 border-gray-700/80 group-hover:border-[var(--color-primary)]/60 transition-all duration-300 cursor-pointer"
+            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border-2 border-[var(--color-primary)]/40 group-hover:border-[var(--color-primary)]/60 transition-all duration-300 cursor-pointer"
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-1">
