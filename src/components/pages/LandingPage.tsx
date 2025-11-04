@@ -244,7 +244,11 @@ const LandingPage: FC = () => {
           className="flex items-center justify-start space-x-2"
           ref={swordTitleRef}
         >
-          <SwordsIcon className="text-[var(--color-primary)]" size={20} ref={swordsRef} />
+          <SwordsIcon
+            className="text-[var(--color-primary)]"
+            size={20}
+            ref={swordsRef}
+          />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
             My tools
           </span>
@@ -264,7 +268,11 @@ const LandingPage: FC = () => {
           className="flex items-center justify-start space-x-2"
           ref={heartTitleRef}
         >
-          <HeartIcon className="text-[var(--color-primary)]" size={20} ref={heartRef} />
+          <HeartIcon
+            className="text-[var(--color-primary)]"
+            size={20}
+            ref={heartRef}
+          />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
             What people say
           </span>
@@ -277,14 +285,13 @@ const LandingPage: FC = () => {
       </SlideMeIn>
 
       <MemeText
-        // variant="accent"
         text={
           <span className="text-[var(--color-primary)]/50">
             <sub className="font-bold text-sm pr-0.5 text-[var(--color-primary)]">
               *
             </sub>
-            <span>warning</span>: These percentages are based on 'How I feel
-            after a cup of coffee.' Do not use for financial planning.
+            <span>Disclaimer</span>: This bar is an approximation of where I tend
+            to lean, not a certified metric of ability. I like both sides!
           </span>
         }
       />
