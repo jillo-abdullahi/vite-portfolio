@@ -45,12 +45,54 @@ export const THEME_COLORS = {
   },
 } as const;
 
+export const THEME_FONTS = {
+  exo: {
+    name: "Exo",
+    family: "'Exo', sans-serif",
+    googleFont: "Exo:wght@400;500;600;700",
+  },
+  inter: {
+    name: "Inter",
+    family: "Inter, system-ui, sans-serif",
+    googleFont: null, // Already loaded in the project
+  },
+  poppins: {
+    name: "Poppins",
+    family: "'Poppins', sans-serif",
+    googleFont: "Poppins:wght@400;500;600;700",
+  },
+  roboto: {
+    name: "Roboto",
+    family: "'Roboto', sans-serif",
+    googleFont: "Roboto:wght@400;500;700",
+  },
+  montserrat: {
+    name: "Montserrat",
+    family: "'Montserrat', sans-serif",
+    googleFont: "Montserrat:wght@400;500;600;700",
+  },
+  nunito: {
+    name: "Nunito",
+    family: "'Nunito', sans-serif",
+    googleFont: "Nunito:wght@400;600;700",
+  },
+  fredoka: {
+    name: "Fredoka",
+    family: "'Fredoka', sans-serif",
+    googleFont: "Fredoka:wght@400;500;600;700",
+  },
+} as const;
+
 export type ThemeColor = keyof typeof THEME_COLORS;
+export type ThemeFont = keyof typeof THEME_FONTS;
 
 interface ThemeContextType {
   currentTheme: ThemeColor;
   setTheme: (theme: ThemeColor) => void;
   themeColors: typeof THEME_COLORS[ThemeColor];
+  currentFont: ThemeFont;
+  setFont: (font: ThemeFont) => void;
+  themeFont: typeof THEME_FONTS[ThemeFont];
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -73,11 +115,16 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     return (saved as ThemeColor) || "orange";
   });
 
+  const [currentFont, setCurrentFont] = useState<ThemeFont>(() => {
+    const saved = localStorage.getItem("theme-font");
+    return (saved as ThemeFont) || "exo";
+  });
+
   useEffect(() => {
     const root = document.documentElement;
     const colors = THEME_COLORS[currentTheme];
 
-    // Set CSS variables
+    // Set CSS variables for colors
     root.style.setProperty("--color-primary", colors.primary);
     root.style.setProperty("--color-primary-hover", colors.primaryHover);
     root.style.setProperty("--color-primary-light", colors.primaryLight);
@@ -87,8 +134,38 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     localStorage.setItem("theme-color", currentTheme);
   }, [currentTheme]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    const font = THEME_FONTS[currentFont];
+
+    // Load Google Font if needed
+    if (font.googleFont) {
+      const linkId = "theme-font-link";
+      let link = document.getElementById(linkId) as HTMLLinkElement;
+      
+      if (!link) {
+        link = document.createElement("link");
+        link.id = linkId;
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+      }
+      
+      link.href = `https://fonts.googleapis.com/css2?family=${font.googleFont}&display=swap`;
+    }
+
+    // Set CSS variable for font
+    root.style.setProperty("--font-family", font.family);
+
+    // Save to localStorage
+    localStorage.setItem("theme-font", currentFont);
+  }, [currentFont]);
+
   const setTheme = (theme: ThemeColor) => {
     setCurrentTheme(theme);
+  };
+
+  const setFont = (font: ThemeFont) => {
+    setCurrentFont(font);
   };
 
   return (
@@ -97,6 +174,9 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
         currentTheme,
         setTheme,
         themeColors: THEME_COLORS[currentTheme],
+        currentFont,
+        setFont,
+        themeFont: THEME_FONTS[currentFont],
       }}
     >
       {children}

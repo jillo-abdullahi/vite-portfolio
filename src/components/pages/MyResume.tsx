@@ -54,7 +54,7 @@ export const MyResume = () => {
                     className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                     aria-hidden="true"
                   />
-                  <span className="font-bold">download cv</span>
+                  <span className="font-semibold">download cv</span>
                 </a>
               </div>
             }
@@ -69,7 +69,7 @@ export const MyResume = () => {
                 ref={globeRef}
               />
               <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
-                My journey so far
+                my journey so far
               </span>
             </div>
           </SectionHeading>

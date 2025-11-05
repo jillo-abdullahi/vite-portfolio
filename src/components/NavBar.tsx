@@ -30,9 +30,9 @@ const NavBar: FC = () => {
   };
 
   const navigation: NavigationItem[] = [
-    { name: "Projects", href: "/projects", isActive: pathname === "/projects" },
-    { name: "Resumé", href: "/resume", isActive: pathname === "/resume" },
-    { name: "Contact", href: "/contact", isActive: pathname === "/contact" },
+    { name: "projects", href: "/projects", isActive: pathname === "/projects" },
+    { name: "resumé", href: "/resume", isActive: pathname === "/resume" },
+    { name: "contact", href: "/contact", isActive: pathname === "/contact" },
   ];
   const isHome = pathname === "/";
 
@@ -64,10 +64,8 @@ const NavBar: FC = () => {
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <div className="mr-4 border-r border-gray-700/60 pr-3" onClick={() => close()}>
-                    <ThemeToggle />
-                  </div>
-                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
+
+                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent mr-0 md:mr-2 lg:mr-0">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -82,6 +80,12 @@ const NavBar: FC = () => {
                       />
                     )}
                   </DisclosureButton>
+                  <div
+                    className="ml-4 border-l border-gray-700/60 pl-3 md:hidden"
+                    onClick={() => close()}
+                  >
+                    <ThemeToggle />
+                  </div>
                 </div>
                 <Link
                   className="flex flex-shrink-0 items-center cursor-pointer"
@@ -119,7 +123,7 @@ const NavBar: FC = () => {
               </div>
               <div className="hidden md:flex items-center space-x-4">
                 <WorkAvailabilityIndicator available />
-                <ScheduleCallBtn />
+                <ScheduleCallBtn isInNavBar />
                 <div className="pl-3 border-l border-gray-700/60">
                   <ThemeToggle />
                 </div>
@@ -155,7 +159,7 @@ const NavBar: FC = () => {
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
                   <div className="flex flex-col items-center justify-center space-y-2">
                     <WorkAvailabilityIndicator available />
-                    <ScheduleCallBtn />
+                    <ScheduleCallBtn isInNavBar />
                   </div>
                   <Timer />
                 </div>

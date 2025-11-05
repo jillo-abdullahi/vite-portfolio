@@ -20,7 +20,7 @@ export const ViewProjectsBtn = () => {
           className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
           aria-hidden="true"
         />
-        <span className="font-bold text-base md:text-lg">view projects</span>
+        <span className="font-semibold text-base md:text-lg">view projects</span>
       </Link>
     </div>
   );

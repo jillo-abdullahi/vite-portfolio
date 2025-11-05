@@ -101,7 +101,7 @@ const LandingPage: FC = () => {
                 <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-2 sm:pb-4">
                   <WavingHand />
                   <span className="text-xl text-gray-400 font-medium pt-1">
-                    Hello, I am
+                    hello, I am
                   </span>
                 </div>
 
@@ -250,7 +250,7 @@ const LandingPage: FC = () => {
             ref={swordsRef}
           />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
-            My tools
+            my tools
           </span>
         </div>
       </SectionHeading>
@@ -274,7 +274,7 @@ const LandingPage: FC = () => {
             ref={heartRef}
           />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
-            What people say
+            what people say
           </span>
         </div>
       </SectionHeading>

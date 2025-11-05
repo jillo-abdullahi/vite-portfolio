@@ -1,36 +1,16 @@
-import { type FC, useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { type FC } from "react";
+import { Menu, MenuButton, MenuItems, Transition } from "@headlessui/react";
 import {
   useTheme,
   THEME_COLORS,
+  THEME_FONTS,
   type ThemeColor,
+  type ThemeFont,
 } from "@/contexts/ThemeContext";
 import { PencilIcon } from "@heroicons/react/24/outline";
-import { FaCheck } from "react-icons/fa6";
 
 export const ThemeToggle: FC = () => {
-  const { currentTheme, setTheme } = useTheme();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+  const { currentTheme, setTheme, currentFont, setFont } = useTheme();
 
   // Reorder colors for better visual contrast between adjacent segments
   const colorOrder: ThemeColor[] = [
@@ -45,9 +25,8 @@ export const ThemeToggle: FC = () => {
   const segmentAngle = 360 / colors.length;
 
   return (
-    <div className="relative" ref={dropdownRef}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+    <Menu as="div" className="relative">
+      <MenuButton
         className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-gray-500"
         aria-label="Change theme color"
         title="Change theme color"
@@ -83,26 +62,27 @@ export const ThemeToggle: FC = () => {
           })}
         </svg>
 
-        {/* Center circle with edit icon */}
         <div className="relative z-10 w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:bg-gray-700 transition-colors duration-200">
           <PencilIcon className="w-3 h-3 text-gray-300" />
         </div>
-      </button>
+      </MenuButton>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-48 bg-gray-900 border border-gray-700 rounded-xl shadow-xl overflow-hidden z-50"
-          >
-            <div className="p-2">
-              <p className="text-xs text-gray-400 px-3 py-2 font-medium">
-                Change theme color
+      <Transition
+        enter="duration-300 ease-out"
+        enterFrom="h-0 opacity-0 -translate-y-2"
+        enterTo="h-32 opacity-100 translate-y-0"
+        leave="duration-300 ease-out"
+        leaveFrom="h-32 opacity-100 translate-y-0"
+        leaveTo="h-0 opacity-0 -translate-y-2"
+      >
+        <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[320px] bg-gray-900 border border-gray-700 rounded-xl shadow-xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
+          <div className="p-3 space-y-4">
+            {/* Colors Section */}
+            <div>
+              <p className="text-sm text-gray-400 py-2 font-medium">
+                theme color
               </p>
-              <div className="space-y-1">
+              <div className="flex flex-wrap gap-2">
                 {(Object.keys(THEME_COLORS) as ThemeColor[]).map((colorKey) => {
                   const color = THEME_COLORS[colorKey];
                   const isActive = currentTheme === colorKey;
@@ -112,45 +92,63 @@ export const ThemeToggle: FC = () => {
                       key={colorKey}
                       onClick={() => {
                         setTheme(colorKey);
-                        setIsOpen(false);
                       }}
-                      className={`w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-700/60 ${
-                        isActive ? "bg-gray-700/40" : ""
-                      } transition-colors duration-150 cursor-pointer`}
+                      className={`cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
+                        isActive
+                          ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
+                          : "border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-300"
+                      }`}
                     >
-                      <div className="flex items-center space-x-3">
+                      <div
+                        className={`rounded-full w-4 h-4 flex items-center justify-center border-1`}
+                        style={{
+                          borderColor: color.primary,
+                        }}
+                      >
                         <div
-                          className={`rounded-full w-6 h-6 flex items-center justify-center border-2`}
-                          style={{
-                            borderColor: color.primary,
-                          }}
-                        >
-                          <div
-                            className={`rounded-full w-4 h-4`}
-                            style={{
-                              backgroundColor: color.primary,
-                            }}
-                          />
-                        </div>
-
-                        <span className="text-sm text-gray-200 font-medium">
-                          {color.name}
-                        </span>
-                      </div>
-                      {isActive && (
-                        <FaCheck
-                          className="w-4 h-4"
-                          style={{ color: color.primary }}
+                          className="w-2 h-2 rounded-full"
+                          style={{ backgroundColor: color.primary }}
                         />
-                      )}
+                      </div>
+                      <span>{color.name}</span>
                     </button>
                   );
                 })}
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+
+            {/* Fonts Section */}
+            <div>
+              <p className="text-sm text-gray-400 py-2 font-medium">
+                font style
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {(Object.keys(THEME_FONTS) as ThemeFont[]).map((fontKey) => {
+                  const font = THEME_FONTS[fontKey];
+                  const isActive = currentFont === fontKey;
+
+                  return (
+                    <button
+                      key={fontKey}
+                      onClick={() => {
+                        setFont(fontKey);
+                      }}
+                      className={`cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${
+                        isActive
+                          ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
+                          : "border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-300"
+                      }`}
+                      style={{ fontFamily: font.family }}
+                    >
+                      {font.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </MenuItems>
+      </Transition>
+    </Menu>
   );
 };

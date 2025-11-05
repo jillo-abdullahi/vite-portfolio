@@ -52,7 +52,7 @@ export const MyProjects = () => {
                 className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                 aria-hidden="true"
               />
-              <span className="font-bold">view github</span>
+              <span className="font-semibold">view github</span>
             </a>
           </div>
         }
@@ -67,7 +67,7 @@ export const MyProjects = () => {
             ref={blocksRef}
           />
           <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
-            My recent projects{" "}
+            my recent projects{" "}
           </span>
         </div>
       </SectionHeading>
