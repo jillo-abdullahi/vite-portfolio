@@ -19,6 +19,11 @@ export const externalLinks: ExternalLinks = {
   telegram: "https://t.me/shrewdTurtle",
 };
 
+export const currentlyInfo = {
+  exploring: "Next.js 16 and Smart Contracts",
+  availableFor: "Full-time & contract opportunities",
+};
+
 export const experiences: Experience[] = [
   // {
   //   isCurrent: true,
@@ -235,17 +240,6 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Web3",
   },
   {
-    title: "Ethereum dApp for AI insights into any wallet",
-    description:
-      "A comprehensive Ethereum wallet analytics application that provides AI-powered insights into blockchain activity.",
-    image: "blockwise.png",
-    preview: "https://blockwise-ai.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/blockwise-ai",
-    stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "OpenAI", "Viem"],
-    completed: true,
-    category: "Web3",
-  },
-  {
     title: "Ballot app for decentralized voting",
     description:
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
@@ -257,6 +251,18 @@ export const portfolioProjects: PortfolioProject[] = [
     completed: true,
     category: "Web3",
   },
+  {
+    title: "Ethereum dApp for AI insights into any wallet",
+    description:
+      "A comprehensive Ethereum wallet analytics application that provides AI-powered insights into blockchain activity.",
+    image: "blockwise.png",
+    preview: "https://blockwise-ai.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/blockwise-ai",
+    stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "OpenAI", "Viem"],
+    completed: true,
+    category: "Web3",
+  },
+
   {
     title: "A link sharing app for developers",
     description:

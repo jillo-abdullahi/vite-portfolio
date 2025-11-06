@@ -27,6 +27,8 @@ import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
 import { useInView } from "@/hooks/useInView";
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 import { useTheme } from "@/contexts/ThemeContext";
+import { CurrentlySection } from "../CurrentlySection";
+import { currentlyInfo } from "@/data";
 
 const LandingPage: FC = () => {
   const { themeColors } = useTheme();
@@ -93,7 +95,7 @@ const LandingPage: FC = () => {
 
                 {/* Status pill outside overflow context */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
-                  <StatusPill status={StatusType.CRAFTING} />
+                  <StatusPill status={StatusType.LEARNING} />
                 </div>
               </div>
 
@@ -146,6 +148,11 @@ const LandingPage: FC = () => {
                     </span>
                   </p>
                 </div>
+
+                <CurrentlySection
+                  exploring={currentlyInfo.exploring}
+                  availableFor={currentlyInfo.availableFor}
+                />
 
                 <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
