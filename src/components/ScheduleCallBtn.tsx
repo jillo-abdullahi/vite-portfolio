@@ -40,7 +40,7 @@ export const ScheduleCallBtn: FC<ScheduleCallBtnProps> = ({
           <Lottie
             lottieRef={lottieRef}
             animationData={lottieData}
-            className="-ml-0.5 h-6 w-6 group-hover:scale-110 transition-transform duration-200"
+            className="-ml-0.5 w-4 h-4 md:h-6 md:w-6 group-hover:scale-110 transition-transform duration-200"
             autoplay={false}
             loop={false}
           />

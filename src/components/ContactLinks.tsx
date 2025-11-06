@@ -3,7 +3,6 @@ import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
-  faGithub,
   faXTwitter,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
@@ -18,6 +17,9 @@ import {
   SquareArrowOutUpRightIcon,
   type SquareArrowOutUpRightIconHandle,
 } from "./ui/SquareArrowOutUpRightIcon";
+import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
+import { TwitterIcon, type TwitterIconHandle } from "./ui/TwitterIcon";
+import { GithubIcon, type GithubIconHandle } from "./ui/GithubIcon";
 
 interface SocialLink {
   icon: IconDefinition;
@@ -32,13 +34,25 @@ interface ContactLinksProps {
   isContactPage?: boolean;
 }
 
+interface FooterLink {
+  href: string;
+  name?: string;
+  ref:
+    | React.RefObject<GithubIconHandle | null>
+    | React.RefObject<LinkedInIconHandle | null>
+    | React.RefObject<TwitterIconHandle | null>;
+}
+
 const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   const { linkedIn, github, twitter } = externalLinks;
+  const linkedInRef = useRef<LinkedInIconHandle | null>(null);
+  const twitterRef = useRef<TwitterIconHandle | null>(null);
+  const githubRef = useRef<GithubIconHandle | null>(null);
 
-  const socialLinks: SocialLink[] = [
-    { icon: faGithub, href: github, name: "GitHub" },
-    { icon: faLinkedin, href: linkedIn, name: "LinkedIn" },
-    { icon: faXTwitter, href: twitter, name: "Twitter(X)" },
+  const socialLinks: FooterLink[] = [
+    { href: github, name: "GitHub", ref: githubRef },
+    { href: linkedIn, name: "LinkedIn", ref: linkedInRef },
+    { href: twitter, name: "Twitter(X)", ref: twitterRef },
   ];
 
   const contactPageSocialLinks: SocialLink[] = [
@@ -233,10 +247,10 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
     return contactPageLinks;
   }
 
-  // for landing page
+  // for footer section
   return (
     <div className="flex flex-wrap items-center justify-center gap-2">
-      {socialLinks.map(({ icon, href, name }, index) => {
+      {socialLinks.map(({ href, name, ref }, index) => {
         return (
           <a
             key={index}
@@ -244,12 +258,32 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={() => {
+              ref.current?.startAnimation();
+            }}
+            onMouseLeave={() => {
+              ref.current?.stopAnimation();
+            }}
           >
-            <FontAwesomeIcon
-              icon={icon}
-              className="text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200 w-3.5 h-3.5"
-            />
-            <span className="text-gray-300 group-hover:text-[var(--color-primary)] font-medium text-xs transition-colors duration-200">
+            {name === "LinkedIn" && (
+              <LinkedInIcon
+                ref={ref}
+                className="w-3 h-3 text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+              />
+            )}
+            {name === "Twitter(X)" && (
+              <TwitterIcon
+                ref={ref}
+                className="w-3 h-3 text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+              />
+            )}
+            {name === "GitHub" && (
+              <GithubIcon
+                ref={ref}
+                className="w-3 h-3 text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+              />
+            )}
+            <span className="text-gray-300 group-hover:text-[var(--color-primary)] font-medium text-xs transition-all duration-200">
               {name}
             </span>
           </a>
