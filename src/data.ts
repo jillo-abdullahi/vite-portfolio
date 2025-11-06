@@ -232,6 +232,7 @@ export const portfolioProjects: PortfolioProject[] = [
     preview: "https://app.gashawk.io/",
     stacks: ["React", "Vite", "Chakra UI", "TypeScript", "Express.js"],
     completed: true,
+    category: "Web3",
   },
   {
     title: "Ethereum dApp for AI insights into any wallet",
@@ -242,6 +243,7 @@ export const portfolioProjects: PortfolioProject[] = [
     github: "https://github.com/jillo-abdullahi/blockwise-ai",
     stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "OpenAI", "Viem"],
     completed: true,
+    category: "Web3",
   },
   {
     title: "Ballot app for decentralized voting",
@@ -253,6 +255,7 @@ export const portfolioProjects: PortfolioProject[] = [
     contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
     stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
     completed: true,
+    category: "Web3",
   },
   {
     title: "A link sharing app for developers",
@@ -263,6 +266,7 @@ export const portfolioProjects: PortfolioProject[] = [
     github: "https://github.com/jillo-abdullahi/my-links",
     stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
     completed: true,
+    category: "Full Stack",
   },
   {
     title: "Memory Game",
@@ -273,6 +277,7 @@ export const portfolioProjects: PortfolioProject[] = [
     github: "https://github.com/jillo-abdullahi/memory-game",
     stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
+    category: "Frontend",
   },
   {
     title: "Dictionary web app solution",
@@ -283,6 +288,7 @@ export const portfolioProjects: PortfolioProject[] = [
     github: "https://github.com/jillo-abdullahi/dictionary-web-app",
     stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
+    category: "Frontend",
   },
 ];
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { GithubIcon, type GithubIconHandle } from "../ui/GithubIcon";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { portfolioProjects, externalLinks } from "@/data";
@@ -12,10 +12,14 @@ import { SectionHeading } from "../shared/SectionHeading";
 import { MemeText } from "../shared/MemeText";
 import { LayoutGridIcon, type LayoutGridHandle } from "../ui/LayoutGridIcon";
 import { useInView } from "@/hooks/useInView";
+import { ProjectFilter } from "../ProjectFilter";
+import type { ProjectCategory } from "@/types";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const MyProjects = () => {
   const githubRef = useRef<GithubIconHandle>(null);
   const blocksRef = useRef<LayoutGridHandle>(null);
+  const [activeFilter, setActiveFilter] = useState<ProjectCategory | "All">("All");
   usePageTitle("Projects | Jillo Woche");
 
   const { ref: blocksTitleRef, isInView: isBlocksTitleInView } = useInView({
@@ -29,6 +33,35 @@ export const MyProjects = () => {
       blocksRef.current?.stopAnimation();
     }
   }, [isBlocksTitleInView]);
+
+  // Filter projects based on active filter
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === "All") {
+      return portfolioProjects;
+    }
+    return portfolioProjects.filter(
+      (project) => project.category === activeFilter
+    );
+  }, [activeFilter]);
+
+  // Calculate project counts for each category
+  const projectCounts = useMemo(() => {
+    const counts: Record<ProjectCategory | "All", number> = {
+      All: portfolioProjects.length,
+      Web3: 0,
+      "Full Stack": 0,
+      Frontend: 0,
+      Backend: 0,
+    };
+
+    portfolioProjects.forEach((project) => {
+      if (project.category) {
+        counts[project.category]++;
+      }
+    });
+
+    return counts;
+  }, []);
 
   return (
     <PageContainer showBreadcrumbs>
@@ -66,7 +99,7 @@ export const MyProjects = () => {
             size={20}
             ref={blocksRef}
           />
-          <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+          <span className="text-base sm:text-xl lg:text-2xl font-medium text-gray-200">
             my recent projects{" "}
           </span>
         </div>
@@ -81,12 +114,29 @@ export const MyProjects = () => {
       <div className="pt-6">
         <SlideMeIn cascade>
           <SectionContent padding="py-10">
+            {/* Project Filter */}
+            <ProjectFilter
+              activeFilter={activeFilter}
+              onFilterChange={setActiveFilter}
+              projectCounts={projectCounts}
+            />
+
             {/* other projects */}
-            <PortfolioGrid>
-              {portfolioProjects.map((project, index) => (
-                <PortfolioCard {...project} key={index} />
-              ))}
-            </PortfolioGrid>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeFilter}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <PortfolioGrid>
+                  {filteredProjects.map((project) => (
+                    <PortfolioCard {...project} key={project.title} />
+                  ))}
+                </PortfolioGrid>
+              </motion.div>
+            </AnimatePresence>
           </SectionContent>
         </SlideMeIn>
       </div>

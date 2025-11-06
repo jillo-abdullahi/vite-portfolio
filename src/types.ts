@@ -119,7 +119,14 @@ export interface PortfolioProject {
   completed: boolean;
   /** Optional link to smart contracts code if applicable */
   contract?: string;
+  /** Project category for filtering */
+  category?: ProjectCategory;
 }
+
+/**
+ * Project categories for filtering
+ */
+export type ProjectCategory = "Web3" | "Full Stack" | "Frontend" | "Backend";
 
 /**
  * Individual skill entry
