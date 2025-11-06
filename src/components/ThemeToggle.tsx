@@ -76,10 +76,10 @@ export const ThemeToggle: FC = () => {
         leaveTo="h-0 opacity-0 -translate-y-2"
       >
         <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[320px] bg-gray-900 border border-gray-700 rounded-xl shadow-xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
-          <div className="p-3 space-y-4">
+          <div className="p-4 space-y-4">
             {/* Colors Section */}
             <div>
-              <p className="text-sm text-gray-400 py-2 font-medium">
+              <p className="text-sm text-gray-400 pb-2 font-semibold">
                 theme color
               </p>
               <div className="flex flex-wrap gap-2">
@@ -119,7 +119,7 @@ export const ThemeToggle: FC = () => {
 
             {/* Fonts Section */}
             <div>
-              <p className="text-sm text-gray-400 py-2 font-medium">
+              <p className="text-sm text-gray-400 py-2 font-semibold">
                 font style
               </p>
               <div className="flex flex-wrap gap-2">

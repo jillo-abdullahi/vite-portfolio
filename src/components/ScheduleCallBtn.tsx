@@ -1,6 +1,6 @@
 import { externalLinks } from "@/data";
-import { useRef, type FC } from "react";
-import { PhoneIcon, type PhoneHandle } from "./ui/PhoneIcon";
+import { useRef, useState, useEffect, type FC } from "react";
+import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 
 interface ScheduleCallBtnProps {
   isInNavBar?: boolean;
@@ -9,14 +9,24 @@ interface ScheduleCallBtnProps {
 export const ScheduleCallBtn: FC<ScheduleCallBtnProps> = ({
   isInNavBar = false,
 }) => {
-  const phoneRef = useRef<PhoneHandle | null>(null);
+  const [lottieData, setLottieData] = useState<any>(null);
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+  useEffect(() => {
+    fetch("/googleMeet.json")
+      .then((res) => res.json())
+      .then((data) => setLottieData(data));
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (lottieRef.current) {
+      lottieRef.current.goToAndStop(0, true); // Reset to start
+      lottieRef.current.play();
+    }
+  };
 
   return (
-    <div
-      className="flex-shrink-0"
-      onMouseEnter={() => phoneRef.current?.startAnimation()}
-      onMouseLeave={() => phoneRef.current?.stopAnimation()}
-    >
+    <div className="flex-shrink-0" onMouseEnter={handleMouseEnter}>
       <a
         type="button"
         className={`group overflow-hidden relative flex items-center gap-x-1.5 rounded-lg border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 px-4 py-1.5 text-[var(--color-primary)] hover:text-[var(--color-primary)] shadow-sm hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer justify-center ${
@@ -26,12 +36,18 @@ export const ScheduleCallBtn: FC<ScheduleCallBtnProps> = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <PhoneIcon
-          ref={phoneRef}
-          className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
-          aria-hidden="true"
-        />
-        <span className="font-semibold text-base md:text-lg">schedule call</span>
+        {lottieData && (
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={lottieData}
+            className="-ml-0.5 h-6 w-6 group-hover:scale-110 transition-transform duration-200"
+            autoplay={false}
+            loop={false}
+          />
+        )}
+        <span className="font-semibold text-base md:text-lg group-hover:translate-y-[-1px] transition-transform duration-200">
+          schedule call
+        </span>
       </a>
     </div>
   );
