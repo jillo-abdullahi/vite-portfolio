@@ -93,7 +93,7 @@ const LandingPage: FC = () => {
 
                 {/* Status pill outside overflow context */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
-                  <StatusPill status={StatusType.AVAILABLE} />
+                  <StatusPill status={StatusType.CRAFTING} />
                 </div>
               </div>
 

@@ -1,4 +1,3 @@
-
 interface WorkAvailabilityIndicatorProps {
   available?: boolean;
 }
@@ -6,55 +5,49 @@ interface WorkAvailabilityIndicatorProps {
 /**
  * WorkAvailabilityIndicator
  *
- * Presentational React functional component that renders an "Available" status pill:
- * - A small cluster of three overlapping green dots (static, ping and pulse) to convey live availability
- * - A label "Available" styled with Tailwind CSS utility classes
+ * Presentational React functional component that renders an availability status badge
+ * that matches the app's design system with theme-aware colors and subtle animations.
+ *
  * Props
  * @prop available: boolean - Indicates if the user is available for work. Defaults to false.
- *
- * This component is stateless and does not accept any props.
- *
- *
- * Styling
- * - Uses Tailwind CSS classes for layout, spacing, colors and animations. Adjust classes as needed
- *   to match your design system or theme.
  *
  * Example
  * ```tsx
  * <WorkAvailabilityIndicator available />
  * ```
  *
- * @returns {JSX.Element} A stylized availability indicator (status pill) suitable for headers or profile cards.
+ * @returns {JSX.Element} A stylized availability indicator suitable for headers or profile cards.
  */
 const WorkAvailabilityIndicator = ({
-  available,
+  available = false,
 }: WorkAvailabilityIndicatorProps) => {
-  const primaryColor = available ? "bg-green-500" : "bg-red-500";
   return (
     <div
-      className={`flex justify-center items-center space-x-2 flex-shrink-0 px-2 rounded-lg `}
+      className="group flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200"
       role="status"
       aria-live="polite"
     >
-      <div className="relative inline-flex">
-        <div className={`w-3 h-3 ${primaryColor} rounded-full`} />
-        {available ? (
+      <div className="relative flex items-center justify-center">
+        {/* Base dot */}
+        <div
+          className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+            available ? "bg-[var(--color-primary)]" : "bg-gray-500"
+          }`}
+        />
+        {/* Animated ping effect for available state */}
+        {available && (
           <>
-            <div
-              className={`w-3 h-3 ${primaryColor} rounded-full absolute top-0 left-0 animate-ping`}
-            />
-            <div
-              className={`w-3 h-3 ${primaryColor} rounded-full absolute top-0 left-0 animate-pulse`}
-            />
+            <div className="absolute w-3 h-3 bg-[var(--color-primary)] rounded-full animate-ping opacity-75" />
+            <div className="absolute w-3 h-3 bg-[var(--color-primary)] rounded-full animate-pulse" />
           </>
-        ) : null}
+        )}
       </div>
       <span
-        className={`text-lg flex-shrink-0 font-semibold ${
-          available ? "text-gray-200" : "text-red-100"
+        className={`text-base font-medium transition-colors duration-300 ${
+          available ? "text-gray-200" : "text-gray-400"
         }`}
       >
-        {available ? "hire me" : "unavailable"}
+        {available ? "available for hire" : "unavailable"}
       </span>
     </div>
   );
