@@ -27,8 +27,6 @@ import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
 import { useInView } from "@/hooks/useInView";
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 import { useTheme } from "@/contexts/ThemeContext";
-import { CurrentlySection } from "../CurrentlySection";
-import { currentlyInfo } from "@/data";
 
 const LandingPage: FC = () => {
   const { themeColors } = useTheme();
@@ -148,11 +146,11 @@ const LandingPage: FC = () => {
                     </span>
                   </p>
                 </div>
-
-                <CurrentlySection
+                {/* TODO: Re-think the design here */}
+                {/* <CurrentlySection
                   exploring={currentlyInfo.exploring}
                   availableFor={currentlyInfo.availableFor}
-                />
+                /> */}
 
                 <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
