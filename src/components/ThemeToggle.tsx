@@ -7,7 +7,7 @@ import {
   type ThemeColor,
   type ThemeFont,
 } from "@/contexts/ThemeContext";
-import { PencilIcon } from "@heroicons/react/24/outline";
+import { PencilIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export const ThemeToggle: FC = () => {
   const { currentTheme, setTheme, currentFont, setFont } = useTheme();
@@ -26,11 +26,13 @@ export const ThemeToggle: FC = () => {
 
   return (
     <Menu as="div" className="relative">
-      <MenuButton
-        className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-gray-500"
-        aria-label="Change theme color"
-        title="Change theme color"
-      >
+      {({ close }) => (
+        <>
+          <MenuButton
+            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-gray-500"
+            aria-label="Change theme color"
+            title="Change theme color"
+          >
         {/* Segmented color border */}
         <svg
           className="absolute inset-0 w-full h-full -rotate-90"
@@ -76,7 +78,18 @@ export const ThemeToggle: FC = () => {
         leaveTo="h-0 opacity-0 -translate-y-2"
       >
         <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[320px] bg-gray-900 border border-gray-700 rounded-xl shadow-xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
-          <div className="p-4 space-y-4">
+          <div className="p-4">
+            {/* Close Button */}
+            <div className="flex justify-end -mt-1 -mr-1">
+              <button
+                onClick={close}
+                className="cursor-pointer p-1.5 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-gray-800/60 transition-all duration-200"
+                aria-label="Close theme menu"
+              >
+                <XMarkIcon className="w-4 h-4" />
+              </button>
+            </div>
+
             {/* Colors Section */}
             <div>
               <p className="text-sm text-gray-400 pb-2 font-semibold">
@@ -118,7 +131,7 @@ export const ThemeToggle: FC = () => {
             </div>
 
             {/* Fonts Section */}
-            <div>
+            <div className="pt-4">
               <p className="text-sm text-gray-400 py-2 font-semibold">
                 font style
               </p>
@@ -149,6 +162,8 @@ export const ThemeToggle: FC = () => {
           </div>
         </MenuItems>
       </Transition>
+        </>
+      )}
     </Menu>
   );
 };
