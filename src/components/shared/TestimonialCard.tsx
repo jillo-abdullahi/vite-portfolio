@@ -54,12 +54,12 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
             }}
             src={`/experience/${image}`}
             alt={name}
-            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border-2 border-[var(--color-primary)]/40 group-hover:border-[var(--color-primary)]/60 transition-all duration-300 cursor-pointer"
+            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border-2 border-gray-700 group-hover:border-gray-600 transition-all duration-300 cursor-pointer"
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-1">
               <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-                <h3 className="text-[var(--color-primary)]/90 font-semibold text-base truncate">
+                <h3 className="text-[var(--color-primary)]/90 font-semibold text-base truncate hover:underline">
                   {name}
                 </h3>
               </a>
@@ -87,7 +87,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
               {paragraph}
             </TextAnimate>
           ))}
-          
+
           <AnimatePresence>
             {isExpanded && (
               <motion.div
@@ -141,11 +141,13 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         )}
 
         <div className="flex justify-end pt-2 border-t border-gray-700/40 mt-2">
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="w-4 h-4 text-gray-500/60"
-            title="LinkedIn testimonial"
-          />
+          <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="w-6 h-6 text-gray-500/60 group-hover:text-[var(--color-primary)]/80 transition-colors duration-200"
+              title="LinkedIn testimonial"
+            />
+          </a>
         </div>
       </div>
     </div>

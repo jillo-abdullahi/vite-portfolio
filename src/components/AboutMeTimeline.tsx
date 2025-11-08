@@ -68,14 +68,14 @@ export const AboutMeTimeline: FC = () => {
                       <img
                         src={`/experience/${companyLogo}`}
                         alt={`${company} logo`}
-                        className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border-2 border-gray-700 group-hover:border-[var(--color-primary)]/60 transition-all duration-300 object-contain"
+                        className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border-2 border-gray-700 group-hover:border-gray-600 transition-all duration-300 object-contain"
                       />
                       <div className="flex-1">
                         <a
                           href={companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-200 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-medium"
+                          className="text-gray-200 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-medium hover:underline"
                         >
                           {company}
                         </a>
