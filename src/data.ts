@@ -314,7 +314,7 @@ export const skills: Skills = {
     { name: "Vue.js", level: "80%" },
   ],
   "databases/devops": [
-    { name: "Postgres", level: "80%" },
+    { name: "Prisma", level: "80%" },
     { name: "Google Firebase", level: "80%" },
     { name: "Supabase", level: "75%" },
     { name: "Docker", level: "70%" },
