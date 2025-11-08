@@ -20,7 +20,7 @@ export const externalLinks: ExternalLinks = {
 };
 
 export const currentlyInfo = {
-  exploring: "Next.js 16 and Smart Contracts",
+  exploring: "Next.js 16 and what's new with React 19",
   availableFor: "Full-time & contract opportunities",
 };
 

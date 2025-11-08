@@ -26,6 +26,8 @@ import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
 import { useInView } from "@/hooks/useInView";
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 import { useTheme } from "@/contexts/ThemeContext";
+import { CurrentlySection } from "../CurrentlySection";
+import { currentlyInfo } from "@/data";
 
 const LandingPage: FC = () => {
   const { themeColors } = useTheme();
@@ -104,7 +106,12 @@ const LandingPage: FC = () => {
                   </span>
                 </div>
 
-                <TextAnimate as={'span'} by="character" duration={0.5} className="text-2xl md:text-3xl text-[var(--color-primary)] font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float">
+                <TextAnimate
+                  as={"span"}
+                  by="character"
+                  duration={0.5}
+                  className="text-2xl md:text-3xl text-[var(--color-primary)] font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float"
+                >
                   Jillo Woche,
                 </TextAnimate>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
@@ -130,7 +137,7 @@ const LandingPage: FC = () => {
                       I build pixel-perfect, robust web apps that are{" "}
                       <FlipWords
                         words={words}
-                        duration={2500}
+                        duration={500}
                         className="text-[var(--color-primary)]/80 font-semibold px-0 w-12"
                       />
                     </span>
@@ -145,11 +152,6 @@ const LandingPage: FC = () => {
                     </span>
                   </p>
                 </div>
-                {/* TODO: Re-think the design here */}
-                {/* <CurrentlySection
-                  exploring={currentlyInfo.exploring}
-                  availableFor={currentlyInfo.availableFor}
-                /> */}
 
                 <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
                   <ScheduleCallBtn />
@@ -233,6 +235,11 @@ const LandingPage: FC = () => {
               </div>
             </div>
           </div>
+
+          <CurrentlySection
+            exploring={currentlyInfo.exploring}
+            availableFor={currentlyInfo.availableFor}
+          />
         </SectionContent>
       </SlideMeIn>
 
@@ -294,8 +301,8 @@ const LandingPage: FC = () => {
             <sub className="font-bold text-sm pr-0.5 text-[var(--color-primary)]">
               *
             </sub>
-            <span>Disclaimer</span>: This bar is an approximation of where I tend
-            to lean, not a certified metric of ability. I like both sides!
+            <span>Disclaimer</span>: This bar is an approximation of where I
+            tend to lean, not a certified metric of ability. I like both sides!
           </span>
         }
       />
