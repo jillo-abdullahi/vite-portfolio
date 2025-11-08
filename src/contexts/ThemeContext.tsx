@@ -1,4 +1,11 @@
-import { createContext, useContext, useState, useEffect, type FC, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type FC,
+  type ReactNode,
+} from "react";
 
 export const THEME_COLORS = {
   orange: {
@@ -51,35 +58,40 @@ export const THEME_FONTS = {
     family: "'Exo', sans-serif",
     googleFont: "Exo:wght@400;500;600;700",
   },
-  inter: {
-    name: "Inter",
-    family: "Inter, system-ui, sans-serif",
-    googleFont: null, // Already loaded in the project
+  quicksand: {
+    name: "Quicksand",
+    family: "'Quicksand', sans-serif",
+    googleFont: "Quicksand:wght@400;500;600;700",
   },
   poppins: {
     name: "Poppins",
     family: "'Poppins', sans-serif",
     googleFont: "Poppins:wght@400;500;600;700",
   },
-  roboto: {
-    name: "Roboto",
-    family: "'Roboto', sans-serif",
-    googleFont: "Roboto:wght@400;500;700",
-  },
-  montserrat: {
-    name: "Montserrat",
-    family: "'Montserrat', sans-serif",
-    googleFont: "Montserrat:wght@400;500;600;700",
-  },
-  nunito: {
-    name: "Nunito",
-    family: "'Nunito', sans-serif",
-    googleFont: "Nunito:wght@400;600;700",
-  },
   fredoka: {
     name: "Fredoka",
     family: "'Fredoka', sans-serif",
     googleFont: "Fredoka:wght@400;500;600;700",
+  },
+  alice: {
+    name: "Alice",
+    family: "'Alice', serif",
+    googleFont: "Alice",
+  },
+  literata: {
+    name: "Literata",
+    family: "'Literata', serif",
+    googleFont: "Literata:wght@400;500;600;700",
+  },
+  averiaSerifLibre: {
+    name: "Averia Serif Libre",
+    family: "'Averia Serif Libre', serif",
+    googleFont: "Averia+Serif+Libre:wght@400;700",
+  },
+  merriweather: {
+    name: "Merriweather",
+    family: "'Merriweather', serif",
+    googleFont: "Merriweather:wght@400;700;900",
   },
 } as const;
 
@@ -89,10 +101,10 @@ export type ThemeFont = keyof typeof THEME_FONTS;
 interface ThemeContextType {
   currentTheme: ThemeColor;
   setTheme: (theme: ThemeColor) => void;
-  themeColors: typeof THEME_COLORS[ThemeColor];
+  themeColors: (typeof THEME_COLORS)[ThemeColor];
   currentFont: ThemeFont;
   setFont: (font: ThemeFont) => void;
-  themeFont: typeof THEME_FONTS[ThemeFont];
+  themeFont: (typeof THEME_FONTS)[ThemeFont];
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -117,7 +129,11 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   const [currentFont, setCurrentFont] = useState<ThemeFont>(() => {
     const saved = localStorage.getItem("theme-font");
-    return (saved as ThemeFont) || "exo";
+    // Validate that the saved font still exists in THEME_FONTS
+    if (saved && saved in THEME_FONTS) {
+      return saved as ThemeFont;
+    }
+    return "exo";
   });
 
   useEffect(() => {
@@ -142,14 +158,14 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     if (font.googleFont) {
       const linkId = "theme-font-link";
       let link = document.getElementById(linkId) as HTMLLinkElement;
-      
+
       if (!link) {
         link = document.createElement("link");
         link.id = linkId;
         link.rel = "stylesheet";
         document.head.appendChild(link);
       }
-      
+
       link.href = `https://fonts.googleapis.com/css2?family=${font.googleFont}&display=swap`;
     }
 
