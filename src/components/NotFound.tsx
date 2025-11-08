@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { useRef } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useRef, useEffect, useState } from "react";
+import Lottie from "lottie-react";
 import { PageContainer } from "./shared/PageContainer";
 import { SlideMeIn } from "./shared/SlideMeIn";
 import NavigationCard from "./shared/NavigationCard";
@@ -18,18 +18,27 @@ const NotFound: FC = () => {
   const bookRef = useRef<BookOpenTextIconHandle | null>(null);
   const gridRef = useRef<LayoutGridHandle | null>(null);
   const contactRef = useRef<ContactHandle | null>(null);
+  const [animationData, setAnimationData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/notFound.json")
+      .then((response) => response.json())
+      .then((data) => setAnimationData(data))
+      .catch((error) => console.error("Error loading animation:", error));
+  }, []);
 
   return (
     <PageContainer>
       <SlideMeIn marginBottom="mt-8 mb-8">
         <SectionContent padding="bg-blue-300/5 pt-6">
           <div className="flex items-center justify-center">
-            <DotLottieReact
-              src="/notFound.lottie"
-              loop
-              autoplay
-              className="w-[500px]"
-            />
+            {animationData && (
+              <Lottie
+                animationData={animationData}
+                loop
+                className="w-[500px]"
+              />
+            )}
           </div>
         </SectionContent>
       </SlideMeIn>
