@@ -7,8 +7,7 @@ import { SlideMeIn } from "../shared/SlideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
 import { StatusPill, StatusType } from "../shared/StatusPill";
-import { BiLogoTypescript } from "react-icons/bi";
-import { GrGraphQl } from "react-icons/gr";
+import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SectionContent } from "../shared/SectionContent";
@@ -225,9 +224,9 @@ const LandingPage: FC = () => {
                   </div>
 
                   <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
-                    <GrGraphQl className="text-pink-400 h-4.5 w-4.5" />
+                    <BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
-                      GraphQL
+                      PostgreSQL
                     </span>
                   </div>
                 </div>
