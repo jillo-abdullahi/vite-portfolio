@@ -78,7 +78,7 @@ const LandingPage: FC = () => {
                 {/* Image and flickering grid wrapper with overflow-hidden */}
                 <div className="relative overflow-hidden rounded-full">
                   <img
-                    src={"/me.webp"}
+                    src={"/sneakerhead985NoBg.png"}
                     alt="profile"
                     className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-[7px] border-[var(--color-primary)] transition-all duration-300 group-hover:border-6"
                   />

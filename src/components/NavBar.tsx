@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC, useRef } from "react";
 import {
   DisclosureButton,
   Disclosure,
@@ -10,9 +10,9 @@ import { useState, useEffect } from "react";
 import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
 import Timer from "@/components/Timer";
 import { Link, useLocation } from "@tanstack/react-router";
-import ResponsiveImage from "@/components/shared/ResponsiveImage";
 import { ScheduleCallBtn } from "./ScheduleCallBtn";
 import { ThemeToggle } from "./ThemeToggle";
+import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
 
 interface NavigationItem {
   name: string;
@@ -22,6 +22,7 @@ interface NavigationItem {
 
 const NavBar: FC = () => {
   const [scrollOffset, setScrollOffset] = useState<number>(0);
+  const houseRef = useRef<HouseHandle>(null);
 
   const pathname = useLocation().pathname;
   const handleScroll = () => {
@@ -88,22 +89,16 @@ const NavBar: FC = () => {
                   </div>
                 </div>
                 <Link
-                  className="flex flex-shrink-0 items-center cursor-pointer"
+                  className={`flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${isHome ? "bg-gray-800/60" : ""} hover:bg-gray-800/70 transition-colors duration-300`}
                   to="/"
                   onClick={close}
+                  onMouseEnter={() => houseRef.current?.startAnimation()}
+                  onMouseLeave={() => houseRef.current?.stopAnimation()}
                 >
-                  <button className="relative inline-flex items-center justify-center rounded-full p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent">
-                    <ResponsiveImage
-                      src="/sneakerhead985"
-                      alt="Profile picture - Navigate to home"
-                      className={`flex-shrink-0 w-9 h-9 rounded-full overflow-hidden shadow-lg cursor-pointer ${
-                        isHome ? "ring-2 ring-[var(--color-primary)]/80" : ""
-                      }`}
-                      width={40}
-                      height={40}
-                      priority={true}
-                    />
-                  </button>
+                  <HouseIcon
+                    ref={houseRef}
+                    className="text-[var(--color-primary)]/90 rounded-full"
+                  />
                 </Link>
                 <div className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4">
                   {navigation.map((item) => (
