@@ -15,8 +15,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload hero image for LCP optimization -->
-    <link rel="preload" as="image" href="/sneakerhead985NoBg.webp" type="image/webp" fetchpriority="high" />
+    <!-- Preload hero image for LCP optimization - responsive versions -->
+    <link 
+      rel="preload" 
+      as="image" 
+      href="/sneakerhead985NoBg-mobile.webp" 
+      type="image/webp" 
+      media="(max-width: 768px)"
+      fetchpriority="high" 
+    />
+    <link 
+      rel="preload" 
+      as="image" 
+      href="/sneakerhead985NoBg.webp" 
+      type="image/webp" 
+      media="(min-width: 769px)"
+      fetchpriority="high" 
+    />
     
     <link
       rel="preload"

@@ -79,6 +79,8 @@ const LandingPage: FC = () => {
                 <div className="relative overflow-hidden rounded-full">
                   <img
                     src="/sneakerhead985NoBg.webp"
+                    srcSet="/sneakerhead985NoBg-mobile.webp 300w, /sneakerhead985NoBg.webp 512w"
+                    sizes="(max-width: 768px) 224px, 256px"
                     alt="Jillo Woche - Full Stack & Web3 Developer"
                     className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-[7px] border-[var(--color-primary)] transition-all duration-300 group-hover:border-6"
                     width="512"
