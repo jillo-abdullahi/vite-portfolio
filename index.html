@@ -15,11 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload hero image for LCP optimization - responsive versions -->
+    <!-- Preconnect to Cloudinary CDN -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    
+    <!-- Preload hero image for LCP optimization - responsive versions from CDN -->
     <link 
       rel="preload" 
       as="image" 
-      href="/sneakerhead985NoBg-mobile.webp" 
+      href="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_300/v1763295450/sneakerhead985NoBg_wzya7p.webp" 
       type="image/webp" 
       media="(max-width: 768px)"
       fetchpriority="high" 
@@ -27,7 +30,7 @@
     <link 
       rel="preload" 
       as="image" 
-      href="/sneakerhead985NoBg.webp" 
+      href="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp" 
       type="image/webp" 
       media="(min-width: 769px)"
       fetchpriority="high" 
