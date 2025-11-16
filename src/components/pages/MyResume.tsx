@@ -75,7 +75,7 @@ export const MyResume = () => {
           </SectionHeading>
         </div>
 
-        <SlideMeIn cascade>
+        <SlideMeIn>
           <SectionContent padding="py-6 md:py-10">
             <AboutMeTimeline />
           </SectionContent>

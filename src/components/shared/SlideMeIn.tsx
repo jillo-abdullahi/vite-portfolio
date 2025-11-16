@@ -12,7 +12,7 @@ interface SlideMeInProps {
 export const SlideMeIn: FC<SlideMeInProps> = ({
   children,
   cascade = false,
-  duration = 2000,
+  duration = 1000,
   marginBottom,
 }) => {
   return (
