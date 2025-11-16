@@ -1,45 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Basic Meta Tags -->
-    <title>Jillo Woche | Full Stack Engineer & Web3 Developer | Portfolio</title>
-    <meta name="description" content="Jillo Woche - Senior Full Stack Engineer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities." />
-    <meta name="author" content="Jillo Woche" />
-    <meta name="keywords" content="Jillo Woche, Full Stack Engineer, React Developer, TypeScript, Web3, Blockchain, Portfolio, JavaScript, Node.js, Frontend, Backend, Software Engineer, React Engineer, Full Stack Engineer, Next.js, Smart Contracts" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
-    <link rel="canonical" href="https://jillowoche.dev/" />
-    
+
     <!-- DNS prefetch and preconnect for performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="dns-prefetch" href="//vercel.live" />
     <link rel="dns-prefetch" href="//vitals.vercel-analytics.com" />
-    
+
     <!-- Preload critical fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap" /></noscript>
-    
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
+    /></noscript>
+
+    <!-- HTML Meta Tags -->
+    <title>Jillo Woche | Full Stack Engineer & Web3 Developer</title>
+    <meta
+      name="description"
+      content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities."
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://jillowoche.dev" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Jillo Woche | Full Stack Engineer & Web3 Developer"
+    />
+    <meta
+      property="og:description"
+      content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities."
+    />
+    <meta
+      property="og:image"
+      content="https://opengraph.b-cdn.net/production/images/765d9b15-b06d-41b9-a1cb-69bef5f02a66.jpg?token=UliMuvZmVUbNeWtX10YxzpoPXUvZLmIYcvEwdRsxsoU&height=800&width=1200&expires=33299291148"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="jillowoche.dev" />
+    <meta property="twitter:url" content="https://jillowoche.dev" />
+    <meta
+      name="twitter:title"
+      content="Jillo Woche | Full Stack Engineer & Web3 Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities."
+    />
+    <meta
+      name="twitter:image"
+      content="https://opengraph.b-cdn.net/production/images/765d9b15-b06d-41b9-a1cb-69bef5f02a66.jpg?token=UliMuvZmVUbNeWtX10YxzpoPXUvZLmIYcvEwdRsxsoU&height=800&width=1200&expires=33299291148"
+    />
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
     <!-- Inline critical CSS for above-the-fold content -->
     <style>
       /* Critical CSS - inline to prevent render blocking */
       body {
-        font-family: "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family: "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: black;
         margin: 0;
         padding: 0;
       }
-      
+
       /* Critical animations and layout */
       @keyframes slideInFromTop {
         from {
@@ -51,11 +97,11 @@
           transform: translateY(0);
         }
       }
-      
+
       .slideInFromTop {
         animation: slideInFromTop 0.5s;
       }
-      
+
       /* Critical color variables */
       :root {
         --color-orange: #e7a11a;
@@ -63,102 +109,76 @@
         --color-blue-dark: #272f37;
       }
     </style>
-    
+
     <!-- Font loading optimization script -->
     <script>
       // Optimize font loading with font-display: swap fallback
-      (function() {
-        if ('fonts' in document) {
+      (function () {
+        if ("fonts" in document) {
           // Use Font Loading API if available
-          document.fonts.load('400 1em Exo').then(function() {
-            document.documentElement.classList.add('fonts-loaded');
+          document.fonts.load("400 1em Exo").then(function () {
+            document.documentElement.classList.add("fonts-loaded");
           });
         } else {
           // Fallback for older browsers
-          document.documentElement.classList.add('fonts-loaded');
+          document.documentElement.classList.add("fonts-loaded");
         }
       })();
     </script>
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jillowoche.dev/" />
-    <meta property="og:site_name" content="Jillo Woche Portfolio" />
-    <meta property="og:title" content="Jillo Woche | Full Stack Engineer & Web3 Developer" />
-    <meta property="og:description" content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities." />
-    <meta property="og:image" content="https://jillowoche.dev/me.webp" />
-    <meta property="og:image:secure_url" content="https://jillowoche.dev/me.webp" />
-    <meta property="og:image:alt" content="Jillo Woche - Full Stack Developer & Web3 Engineer" />
-    <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="800" />
-    <meta property="og:locale" content="en_US" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://jillowoche.dev/" />
-    <meta name="twitter:title" content="Jillo Woche | Full Stack Engineer & Web3 Developer" />
-    <meta name="twitter:description" content="Senior Full Stack Engineer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts." />
-    <meta name="twitter:image" content="https://jillowoche.dev/me.webp" />
-    <meta name="twitter:image:alt" content="Jillo Woche - Full Stack Engineer & Web3 Developer" />
-    <meta name="twitter:creator" content="@shrewd_turtle" />
-    <meta name="twitter:site" content="@shrewd_turtle" />
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Jillo Woche",
-      "url": "https://jillowoche.dev",
-      "jobTitle": "Full Stack Developer & Web3 Engineer",
-      "description": "Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3 technologies. Currently exploring Next.js 16 and Smart Contracts.",
-      "image": "https://jillowoche.dev/me.webp",
-      "email": "jayloabdullahi@gmail.com",
-      "sameAs": [
-        "https://github.com/jillo-abdullahi",
-        "https://linkedin.com/in/jilloabdullahi/",
-        "https://x.com/shrewd_turtle",
-        "https://stackoverflow.com/users/7300926/jillo-abdullahi",
-        "https://www.instagram.com/jillo_woche/"
-      ],
-      "knowsAbout": [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "JavaScript",
-        "Web3",
-        "Blockchain",
-        "Next.js",
-        "Smart Contracts",
-        "Full Stack Development",
-        "Frontend Development",
-        "Backend Development"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Jomo Kenyatta University of Agriculture and Technology"
-      },
-      "workLocation": {
-        "@type": "Place",
-        "name": "Remote"
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jillo Woche",
+        "url": "https://jillowoche.dev",
+        "jobTitle": "Full Stack Developer & Web3 Engineer",
+        "description": "Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3 technologies. Currently exploring Next.js 16 and Smart Contracts.",
+        "image": "https://jillowoche.dev/me.webp",
+        "email": "jayloabdullahi@gmail.com",
+        "sameAs": [
+          "https://github.com/jillo-abdullahi",
+          "https://linkedin.com/in/jilloabdullahi/",
+          "https://x.com/shrewd_turtle",
+          "https://stackoverflow.com/users/7300926/jillo-abdullahi",
+          "https://www.instagram.com/jillo_woche/"
+        ],
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "JavaScript",
+          "Web3",
+          "Blockchain",
+          "Next.js",
+          "Smart Contracts",
+          "Full Stack Development",
+          "Frontend Development",
+          "Backend Development"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Jomo Kenyatta University of Agriculture and Technology"
+        },
+        "workLocation": {
+          "@type": "Place",
+          "name": "Remote"
+        }
       }
-    }
     </script>
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#e7a11a" />
     <meta name="msapplication-TileColor" content="#e7a11a" />
     <meta name="msapplication-navbutton-color" content="#e7a11a" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    
+
     <!-- Favicon and Manifest -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
-
   </head>
   <body>
     <div id="root"></div>
