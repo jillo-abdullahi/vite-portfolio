@@ -30,7 +30,7 @@ const NotFound: FC = () => {
   return (
     <PageContainer>
       <SlideMeIn marginBottom="mt-8 mb-8">
-        <SectionContent padding="bg-blue-300/5 pt-6">
+        <SectionContent padding="bg-[var(--color-primary)]/3 pt-6">
           <div className="flex items-center justify-center">
             {animationData && (
               <Lottie
@@ -43,7 +43,7 @@ const NotFound: FC = () => {
         </SectionContent>
       </SlideMeIn>
       <SlideMeIn marginBottom="mt-4">
-        <SectionContent>
+        <SectionContent padding="bg-[var(--color-primary)]/3 pt-6">
           <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <p className="text-gray-300 text-lg mb-2">

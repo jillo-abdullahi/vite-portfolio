@@ -18,7 +18,8 @@ export const PageFooter = () => {
         <div
           className={`text-center md:text-right text-sm font-semibold text-gray-400 mt-4 sm:mt-0`}
         >
-          &copy; {new Date().getFullYear()} Jillo Woche
+          <span className="text-[var(--color-primary)]">&copy;</span>{" "}
+          {new Date().getFullYear()} Jillo Woche
         </div>
       </footer>
     </div>
