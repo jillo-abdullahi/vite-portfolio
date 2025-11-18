@@ -42,7 +42,7 @@ const stackItems: StackItemProps[] = [
 
 const Stacks: FC = () => {
   return (
-    <div className="grid grid-cols-12 gap-3">
+    <div className="grid grid-cols-12 gap-4">
       {stackItems.map((item) => (
         <div
           key={item.title}

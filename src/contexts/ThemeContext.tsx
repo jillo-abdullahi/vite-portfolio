@@ -36,19 +36,19 @@ export const THEME_COLORS = {
     primaryLight: "rgba(16, 185, 129, 0.1)",
     primaryBorder: "rgba(16, 185, 129, 0.4)",
   },
-  pink: {
-    name: "Pink",
-    primary: "#ec4899",
-    primaryHover: "#db2777",
-    primaryLight: "rgba(236, 72, 153, 0.1)",
-    primaryBorder: "rgba(236, 72, 153, 0.4)",
+  slate: {
+    name: "Slate",
+    primary: "#64748b",
+    primaryHover: "#475569",
+    primaryLight: "rgba(100, 116, 139, 0.1)",
+    primaryBorder: "rgba(100, 116, 139, 0.4)",
   },
-  red: {
-    name: "Red",
-    primary: "#ef4444",
-    primaryHover: "#dc2626",
-    primaryLight: "rgba(239, 68, 68, 0.1)",
-    primaryBorder: "rgba(239, 68, 68, 0.4)",
+  amber: {
+    name: "Amber",
+    primary: "#d97706",
+    primaryHover: "#b45309",
+    primaryLight: "rgba(217, 119, 6, 0.1)",
+    primaryBorder: "rgba(217, 119, 6, 0.4)",
   },
 } as const;
 

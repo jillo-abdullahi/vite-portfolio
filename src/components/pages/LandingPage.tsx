@@ -61,9 +61,9 @@ const LandingPage: FC = () => {
   return (
     <PageContainer>
       <SlideMeIn>
-        <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
+        <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
           <div
-            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full overflow-hidden"
+            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 w-full overflow-hidden"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -101,7 +101,7 @@ const LandingPage: FC = () => {
 
                 {/* Status pill outside overflow context */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
-                  <StatusPill status={StatusType.LEARNING} />
+                  <StatusPill status={StatusType.CRAFTING} />
                 </div>
               </div>
 
@@ -172,9 +172,9 @@ const LandingPage: FC = () => {
 
       {/* Main stack */}
       <SlideMeIn marginBottom="mb-3">
-        <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
+        <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
           <div
-            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 w-full"
+            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 w-full"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -212,27 +212,27 @@ const LandingPage: FC = () => {
                 </div>
 
                 <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
                     <FaReact className="text-blue-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       React
                     </span>
                   </div>
 
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
                     <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       TypeScript
                     </span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
                     <FaNodeJs className="text-green-400 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       Node.js
                     </span>
                   </div>
 
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200 cursor-pointer border border-transparent group-hover:border-gray-700">
+                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
                     <BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />
                     <span className="text-gray-300 font-medium text-sm">
                       PostgreSQL
@@ -273,7 +273,7 @@ const LandingPage: FC = () => {
         </div>
       </SectionHeading>
       <SlideMeIn>
-        <SectionContent>
+        <SectionContent padding="bg-[var(--color-primary)]/3">
           <section>
             <Stacks />
           </section>
@@ -297,7 +297,7 @@ const LandingPage: FC = () => {
         </div>
       </SectionHeading>
       <SlideMeIn cascade>
-        <SectionContent padding="py-6 md:py-10 bg-blue-300/5">
+        <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
           <Testimonials />
         </SectionContent>
       </SlideMeIn>

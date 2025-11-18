@@ -39,7 +39,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
 
   //TODO: Add bgImage functionality later if needed
   return (
-    <div className="group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60">
+    <div className="group relative border rounded-3xl p-5 bg-gray-900/10 hover:bg-gray-900/20 hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20">
       {/* Subtle hover overlay */}
       <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

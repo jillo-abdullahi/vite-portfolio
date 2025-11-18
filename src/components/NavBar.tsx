@@ -50,15 +50,15 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-10 lg:px-28 xl:px-42 md:border-t md:border-b md:border-gray-700 py-4 ${
+      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-10 lg:px-28 xl:px-42 md:border-t-2 md:border-b-2 md:border-[var(--color-primary)]/10 md:bg-[var(--color-primary)]/3 py-4 ${
         isScrolled ? "mt-2" : "mt-4"
       }`}
     >
       {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
-            className={`mx-auto px-5 relative border border-gray-700/60 rounded-[20px] transition-colors duration-300 ${
-              isScrolled ? "bg-gray-900" : "bg-gray-900/70"
+            className={`mx-auto px-5 relative border-2 border-[var(--color-primary)]/10 rounded-3xl transition-colors duration-300 ${
+              isScrolled ? "bg-gray-900/50 backdrop-blur-sm" : "bg-gray-900/50"
             }`}
           >
             <div className="flex h-18 justify-between">
@@ -66,7 +66,7 @@ const NavBar: FC = () => {
                 <div className="-ml-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
 
-                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-gray-800/80 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent mr-0 md:mr-2 lg:mr-0">
+                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-[var(--color-primary)]/10 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent mr-0 md:mr-2 lg:mr-0">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -134,7 +134,7 @@ const NavBar: FC = () => {
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
             <DisclosurePanel className="lg:hidden">
-              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900 border border-gray-700 rounded-[20px]">
+              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900/70 backdrop-blur-lg border-2 border-[var(--color-primary)]/15 rounded-3xl">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}

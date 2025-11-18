@@ -29,10 +29,11 @@ const rootRoute = createRootRoute({
             {Array.from({ length: 2 }).map((_, idx) => (
               <div
                 key={idx}
-                className="w-2 md:w-6 lg:w-20 xl:w-30 h-full border border-gray-700/40"
+                className="w-2 md:w-6 lg:w-20 xl:w-30 h-full border border-[var(--color-primary)]"
                 style={{
                   backgroundImage:
-                    `repeating-linear-gradient(${idx === 0 ? "145deg" : "-145deg"}, rgba(192,192,192,0.2) 0, rgba(192,192,192,0.2) 2px, transparent 2px, transparent 7px)`,
+                    `repeating-linear-gradient(${idx === 0 ? "145deg" : "-145deg"}, var(--color-primary-light) 0, var(--color-primary) 2px, transparent 2px, transparent 5px)`,
+                  opacity: 0.15,
                 }}
               />
             ))}

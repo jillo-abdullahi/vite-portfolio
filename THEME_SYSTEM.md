@@ -8,8 +8,8 @@ The site now has a dynamic theme color system that allows users to select their 
 - 🔵 **Blue**
 - 🟣 **Purple**
 - 🟢 **Green**
-- 🌸 **Pink**
-- 🔴 **Red**
+- 🔘 **Slate**
+- 🟡 **Amber**
 
 ## How It Works
 

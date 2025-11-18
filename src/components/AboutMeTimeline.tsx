@@ -25,10 +25,10 @@ export const AboutMeTimeline: FC = () => {
         return (
           <div
             key={`${company}-${title}-${date}`}
-            className={`group relative border rounded-3xl p-5 bg-gray-900/70 hover:bg-gray-900/80 hover:-translate-y-0.5 transition-all duration-300 ease-out ${
+            className={`group relative border rounded-3xl p-5 bg-gray-900/10 hover:bg-gray-900/20 hover:-translate-y-0.5 transition-all duration-300 ease-out ${
               isCurrent
                 ? "border-[var(--color-primary)]/30 shadow-md shadow-[var(--color-primary)]/5"
-                : "border-gray-700/40 hover:border-gray-600/60"
+                : "border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20"
             }`}
           >
             {/* Subtle hover overlay */}

@@ -76,7 +76,7 @@ export const MyResume = () => {
         </div>
 
         <SlideMeIn>
-          <SectionContent padding="py-6 md:py-10">
+          <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
             <AboutMeTimeline />
           </SectionContent>
         </SlideMeIn>

@@ -24,7 +24,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
     <div 
       ref={cardRef}
-      className="group relative h-auto my-5 p-6 rounded-2xl border border-gray-700/80 bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--color-primary)]/10 transition-all duration-500 ease-out">
+      className="group relative h-auto my-5 p-6 rounded-3xl border border-[var(--color-primary)]/15 bg-gray-900/90 backdrop-blur-sm hover:border-[var(--color-primary)]/20 hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--color-primary)]/10 transition-all duration-500 ease-out">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 

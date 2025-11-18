@@ -26,7 +26,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch">
         {exploring && (
           <div
-            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 flex-1"
+            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 flex-1"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -59,7 +59,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
 
         {availableFor && (
           <div
-            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-gray-700/80 hover:border-gray-600/60 flex-1"
+            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 flex-1"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",

@@ -106,14 +106,14 @@ export const MyProjects = () => {
       </SectionHeading>
       {/* Featured Project Section - Presig */}
       <SlideMeIn marginBottom="mb-0">
-        <SectionContent padding="py-10 bg-blue-300/5">
+        <SectionContent padding="py-10 bg-[var(--color-primary)]/3">
           <FeaturedPresigProject />
         </SectionContent>
       </SlideMeIn>
 
       <div className="pt-6">
         <SlideMeIn cascade>
-          <SectionContent padding="py-10">
+          <SectionContent padding="py-10 bg-[var(--color-primary)]/3">
             {/* Project Filter */}
             <ProjectFilter
               activeFilter={activeFilter}
