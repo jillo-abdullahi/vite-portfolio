@@ -124,7 +124,11 @@ interface ThemeProviderProps {
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeColor>(() => {
     const saved = localStorage.getItem("theme-color");
-    return (saved as ThemeColor) || "orange";
+    // Validate that the saved color still exists in THEME_COLORS
+    if (saved && saved in THEME_COLORS) {
+      return saved as ThemeColor;
+    }
+    return "orange";
   });
 
   const [currentFont, setCurrentFont] = useState<ThemeFont>(() => {
