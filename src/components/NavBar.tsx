@@ -89,7 +89,7 @@ const NavBar: FC = () => {
                   </div>
                 </div>
                 <Link
-                  className={`flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${isHome ? "bg-gray-800/60" : ""} hover:bg-gray-800/70 transition-colors duration-300`}
+                  className={`group flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${isHome ? "bg-gray-800/60" : ""} hover:bg-gray-800/70 transition-colors duration-300`}
                   to="/"
                   onClick={close}
                   onMouseEnter={() => houseRef.current?.startAnimation()}
@@ -97,7 +97,8 @@ const NavBar: FC = () => {
                 >
                   <HouseIcon
                     ref={houseRef}
-                    className="text-[var(--color-primary)]/90 rounded-full"
+                    size={24}
+                    className="text-[var(--color-primary)]/90 rounded-full group-hover:scale-115 transition-transform duration-200"
                   />
                 </Link>
                 <div className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4">

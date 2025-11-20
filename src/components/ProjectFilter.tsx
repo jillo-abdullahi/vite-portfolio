@@ -60,7 +60,7 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
                 <span
                   className={`inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-xs font-semibold transition-colors duration-300 ${
                     isActive
-                      ? "bg-[var(--color-primary)]/30 text-[var(--color-primary)]"
+                      ? "bg-[var(--color-primary)]/20 text-[var(--color-primary)]"
                       : "bg-gray-700/60 text-gray-400 group-hover:bg-gray-700/80"
                   }`}
                 >
@@ -74,7 +74,7 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
 
       {/* Active filter indicator line */}
       <motion.div
-        className="h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary)]/50 to-transparent mt-6"
+        className="h-0.5 bg-[var(--color-primary)]/20 mt-6"
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
