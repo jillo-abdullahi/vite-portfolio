@@ -15,7 +15,6 @@ import { ScrollToTop } from "./components/shared/ScrollToTop";
 import { PageFooter } from "./components/PageFooter";
 import { BackToTopBtn } from "./components/shared/BackToTopBtn";
 
-// root route that just provides the layout
 const rootRoute = createRootRoute({
   component: () => {
     return (
@@ -31,8 +30,9 @@ const rootRoute = createRootRoute({
                 key={idx}
                 className="w-2 md:w-6 lg:w-20 xl:w-30 h-full border border-[var(--color-primary)]"
                 style={{
-                  backgroundImage:
-                    `repeating-linear-gradient(${idx === 0 ? "145deg" : "-145deg"}, var(--color-primary-light) 0, var(--color-primary) 2px, transparent 2px, transparent 5px)`,
+                  backgroundImage: `repeating-linear-gradient(${
+                    idx === 0 ? "145deg" : "-145deg"
+                  }, var(--color-primary) 0, var(--color-primary) 2px, transparent 2px, transparent 6px)`,
                   opacity: 0.15,
                 }}
               />

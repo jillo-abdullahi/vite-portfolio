@@ -9,6 +9,7 @@ import { LiaEthereum } from "react-icons/lia";
 import { skills } from "../data";
 import { StackCard } from "./shared/StackCard";
 import type { Skill } from "../types";
+import { SlideMeIn } from "./shared/SlideMeIn";
 
 interface StackItemProps {
   icon: ReactElement;
@@ -18,7 +19,9 @@ interface StackItemProps {
 
 const stackItems: StackItemProps[] = [
   {
-    icon: <ComputerDesktopIcon className="text-[var(--color-primary)] w-6 h-6" />,
+    icon: (
+      <ComputerDesktopIcon className="text-[var(--color-primary)] w-6 h-6" />
+    ),
     title: "frontend",
     skills: skills.frontend,
   },
@@ -42,14 +45,17 @@ const stackItems: StackItemProps[] = [
 
 const Stacks: FC = () => {
   return (
-    <div className="grid grid-cols-12 gap-4">
-      {stackItems.map((item) => (
-        <div
-          key={item.title}
-          className="col-span-12 md:col-span-6 lg:col-span-3"
-        >
-          <StackCard icon={item.icon} title={item.title} skills={item.skills} />
-        </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {stackItems.map((item, index) => (
+        <SlideMeIn useBorderedContent={false} delay={0.2 * index} key={item.title}>
+          <div className="h-full">
+            <StackCard
+              icon={item.icon}
+              title={item.title}
+              skills={item.skills}
+            />
+          </div>
+        </SlideMeIn>
       ))}
     </div>
   );

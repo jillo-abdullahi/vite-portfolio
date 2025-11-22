@@ -1,14 +1,48 @@
-import { useRef, type FC } from "react";
+import { useRef, type FC, type ReactNode, type RefObject } from "react";
 import { motion } from "framer-motion";
 import { ZapIcon, type ZapHandle } from "./ui/ZapIcon";
 import {
   UserRoundCheckIcon,
   type UserRoundCheckHandle,
 } from "./ui/UserRoundCheckIcon";
+
 interface CurrentlySectionProps {
   exploring?: string;
   availableFor?: string;
 }
+
+interface InfoCardProps {
+  icon: ReactNode;
+  label: string;
+  value: string;
+  iconRef: RefObject<{ startAnimation: () => void; stopAnimation: () => void } | null>;
+}
+
+const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
+  return (
+    <div
+      className="group relative rounded-3xl p-6 bg-gray-900/40 backdrop-blur-sm border border-[var(--color-primary)]/10 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
+      onMouseEnter={() => iconRef.current?.startAnimation()}
+      onMouseLeave={() => iconRef.current?.stopAnimation()}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+      <div className="relative z-10 flex items-center gap-4">
+        <div className="flex-shrink-0 p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 group-hover:border-[var(--color-primary)]/30 transition-colors duration-300 flex items-center justify-center">
+          {icon}
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">
+            {label}
+          </p>
+          <p className="text-base text-white font-semibold truncate">
+            {value}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const CurrentlySection: FC<CurrentlySectionProps> = ({
   exploring,
@@ -16,79 +50,31 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
 }) => {
   const zapRef = useRef<ZapHandle | null>(null);
   const userRoundCheckRef = useRef<UserRoundCheckHandle | null>(null);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="w-full pt-4"
+      className="w-full"
     >
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {exploring && (
-          <div
-            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 flex-1"
-            style={{
-              backgroundImage: "url('/icon-bg.svg')",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            onMouseEnter={() => zapRef.current?.startAnimation()}
-            onMouseLeave={() => zapRef.current?.stopAnimation()}
-          >
-            <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-            <div className="relative z-10 flex items-start gap-2">
-              <div className="flex-shrink-0 mt-0.5">
-                <ZapIcon
-                  ref={zapRef}
-                  className="w-4 h-4 md:w-5 md:h-5 text-[var(--color-primary)]"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs md:text-sm text-gray-400 font-medium mb-1">
-                  currently exploring
-                </p>
-                <p className="text-sm md:text-base text-gray-200 font-semibold">
-                  {exploring}
-                </p>
-              </div>
-            </div>
-          </div>
+          <InfoCard
+            icon={<ZapIcon ref={zapRef} className="w-5 h-5 text-[var(--color-primary)]" />}
+            label="Currently Exploring"
+            value={exploring}
+            iconRef={zapRef}
+          />
         )}
 
         {availableFor && (
-          <div
-            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 flex-1"
-            style={{
-              backgroundImage: "url('/icon-bg.svg')",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            onMouseEnter={() => userRoundCheckRef.current?.startAnimation()}
-            onMouseLeave={() => userRoundCheckRef.current?.stopAnimation()}
-          >
-            {/* Subtle hover overlay */}
-            <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-            <div className="relative z-10 flex items-start gap-2">
-              <div className="flex-shrink-0 mt-0.5">
-                <UserRoundCheckIcon
-                  ref={userRoundCheckRef}
-                  className="w-4 h-4 md:w-5 md:h-5 text-[var(--color-primary)]"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs md:text-sm text-gray-400 font-medium mb-0.5">
-                  available for
-                </p>
-                <p className="text-sm md:text-base text-gray-200 font-semibold">
-                  {availableFor}
-                </p>
-              </div>
-            </div>
-          </div>
+          <InfoCard
+            icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="w-5 h-5 text-[var(--color-primary)]" />}
+            label="Available For"
+            value={availableFor}
+            iconRef={userRoundCheckRef}
+          />
         )}
       </div>
     </motion.div>

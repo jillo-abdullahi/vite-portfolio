@@ -10,52 +10,49 @@ interface StackCardProps {
 
 export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  
-  // Track scroll progress of this card
-  // Offset: start animating when card enters viewport, finish when centered
+
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start 0.9", "start 0.4"]
   });
 
-  // Scale animation for the icon
   const iconScale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
 
   return (
-    <div 
+    <div
       ref={cardRef}
-      className="group relative h-auto my-5 p-6 rounded-3xl border border-[var(--color-primary)]/15 bg-gray-900/90 backdrop-blur-sm hover:border-[var(--color-primary)]/20 hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--color-primary)]/10 transition-all duration-500 ease-out">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      className="group relative h-full p-6 rounded-3xl border border-[var(--color-primary)]/10 bg-gray-900/40 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
 
-      <div className="relative z-10">
-        {/* Header with icon and title */}
-        <div className="flex items-center space-x-2 mb-6">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+      {/* Decorative circle */}
+      <div className="absolute -top-10 -right-10 w-32 h-32 bg-[var(--color-primary)]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-6">
           <div className="relative">
-            <motion.div 
-              className="p-2 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg transition-all duration-300 group-hover:scale-110"
+            <motion.div
+              className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/50 group-hover:border-[var(--color-primary)]/30 transition-colors duration-300"
               style={{ scale: iconScale }}
             >
-              <div className="text-[var(--color-primary)]/90 group-hover:text-[var(--color-primary)] transition-colors duration-300">
+              <div className="text-[var(--color-primary)]">
                 {icon}
               </div>
             </motion.div>
-            {/* Glow effect */}
-            <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/20 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
           </div>
           <div>
-            <h3 className="text-gray-100 font-semibold text-lg tracking-wide">
+            <h3 className="text-white font-bold text-lg capitalize tracking-wide">
               {title}
             </h3>
-            <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/50 mt-1 transition-all duration-300 group-hover:w-16"></div>
+            <div className="h-0.5 w-8 bg-[var(--color-primary)]/50 mt-1 rounded-full group-hover:w-full transition-all duration-500 ease-out"></div>
           </div>
         </div>
 
-        {/* Skills section */}
-        <div className="space-y-4">
+        {/* Skills List */}
+        <div className="space-y-4 flex-grow">
           {skills.map(({ name, level }, index) => {
-            // Transform scroll progress to width for this specific skill bar
-            // Each bar animates at a slightly different scroll range for stagger effect
             const startProgress = 0.1 + (index * 0.05);
             const endProgress = 0.8 + (index * 0.05);
             const width = useTransform(
@@ -65,22 +62,17 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
             );
 
             return (
-              <div className="space-y-2" key={name}>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-200 font-medium text-sm">
+              <div className="space-y-1.5" key={name}>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-300 font-medium group-hover:text-white transition-colors duration-300">
                     {name}
                   </span>
                 </div>
-                <div className="relative h-1 bg-gray-700/60 rounded-full overflow-hidden">
+                <div className="relative h-1.5 bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
-                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/80 rounded-full"
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/60 rounded-full"
                     style={{ width }}
                   ></motion.div>
-                  {/* Shimmer effect */}
-                  <div
-                    className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"
-                    style={{ transitionDelay: `${index * 50}ms` }}
-                  ></div>
                 </div>
               </div>
             );

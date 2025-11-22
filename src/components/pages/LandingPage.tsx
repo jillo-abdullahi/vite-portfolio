@@ -6,7 +6,6 @@ import WavingHand from "@/components/WavingHand";
 import { SlideMeIn } from "../shared/SlideMeIn";
 import { PageContainer } from "../shared/PageContainer";
 import SkillSplitBar from "../SkillSplitBar";
-import { StatusPill, StatusType } from "../shared/StatusPill";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 
 import { FaReact, FaNodeJs } from "react-icons/fa";
@@ -18,19 +17,16 @@ import { ViewProjectsBtn } from "../ViewProjectsBtn";
 import { SectionHeading } from "../shared/SectionHeading";
 import Testimonials from "../Testimonials";
 import Stacks from "../Stacks";
-import { FlipWords } from "../ui/shadcn-io/flip-words";
 import Timer from "../Timer";
 import { MemeText } from "../shared/MemeText";
 import { SwordsIcon, type SwordsIconHandle } from "../ui/SwordsIcon";
 import { HeartIcon, type HeartIconHandle } from "../ui/HeartIcon";
 import { useInView } from "@/hooks/useInView";
-import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
-import { useTheme } from "@/contexts/ThemeContext";
 import { CurrentlySection } from "../CurrentlySection";
 import { currentlyInfo } from "@/data";
+import { Fade } from "react-awesome-reveal";
 
 const LandingPage: FC = () => {
-  const { themeColors } = useTheme();
   const swordsRef = useRef<SwordsIconHandle>(null);
   const heartRef = useRef<HeartIconHandle>(null);
   const { ref: swordTitleRef, isInView: isSwordTitleInView } = useInView({
@@ -56,8 +52,6 @@ const LandingPage: FC = () => {
     }
   }, [isHeartTitleInView]);
 
-  // words for role description
-  const words = ["scalable.", "fast.", "modern."];
   return (
     <PageContainer>
       <SlideMeIn>
@@ -73,47 +67,62 @@ const LandingPage: FC = () => {
           >
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center">
-              <div className="relative rounded-full border-6 border-[var(--color-primary)]/40 flex-shrink-0 md:mr-8 group-hover:border-[var(--color-primary)]/50 transition-all duration-300">
-                {/* Image and flickering grid wrapper with overflow-hidden */}
-                <div className="relative overflow-hidden rounded-full">
-                  <img
-                    src="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp"
-                    srcSet="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_300/v1763295450/sneakerhead985NoBg_wzya7p.webp 300w,
-                            https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp 512w"
-                    sizes="(max-width: 768px) 224px, 256px"
-                    alt="Jillo Woche - Full Stack & Web3 Developer"
-                    className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-[7px] border-[var(--color-primary)] transition-all duration-300 group-hover:border-6"
-                    width="512"
-                    height="512"
-                    loading="eager"
-                    fetchPriority="high"
-                  />
-                  <FlickeringGrid
-                    className="-z-100 absolute inset-0 size-full"
-                    squareSize={8}
-                    gridGap={6}
-                    color={themeColors.primaryHover}
-                    maxOpacity={0.3}
-                    flickerChance={0.4}
-                  />
-                </div>
+            <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-16 items-center justify-center px-0 md:px-6">
+              {/* Hero Image / Visual */}
+              <div className="flex-1 relative w-full max-w-[500px] md:max-w-none flex justify-center z-10 p-6 md:p-0">
+                <Fade
+                  cascade={true}
+                  damping={0.1}
+                  duration={1000}
+                  delay={0.2 * 1000}
+                  triggerOnce
+                >
+                  <div className="relative w-56 h-56 md:w-64 md:h-64 group">
+                    {/* Decorative rings */}
+                    <div className="absolute inset-0 rounded-full border border-[var(--color-primary)]/20 scale-110 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
+                    <div className="absolute inset-0 rounded-full border border-dashed border-[var(--color-primary)]/20 scale-125 group-hover:scale-110 transition-transform duration-700 ease-out animate-spin-slow"></div>
 
-                {/* Status pill outside overflow context */}
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 md:-bottom-2 md:left-1/2 md:transform md:-translate-x-1/2">
-                  <StatusPill status={StatusType.CRAFTING} />
-                </div>
+                    {/* Main Image Container */}
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[var(--color-primary)]/10 backdrop-blur-sm bg-gray-900/50 shadow-2xl shadow-[var(--color-primary)]/20 group-hover:shadow-[var(--color-primary)]/40 transition-all duration-500">
+                      <img
+                        src="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp"
+                        alt="Jillo Woche"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      />
+                      {/* Overlay Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/20 to-transparent opacity-50 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    </div>
+
+                    {/* Floating Badges */}
+                    <div className="absolute -top-0 -right-0 bg-gray-900/90 backdrop-blur-md border border-gray-800 p-2 rounded-xl shadow-xl animate-bounce-slow">
+                      <FaReact className="text-[#61DAFB] text-xl" />
+                    </div>
+                    <div className="absolute bottom-8 -left-8 bg-gray-900/90 backdrop-blur-md border border-gray-800 p-2 rounded-xl shadow-xl animate-bounce-slow delay-700">
+                      <BiLogoTypescript className="text-[#3178C6] text-xl" />
+                    </div>
+                    <div className="absolute -bottom-4 right-12 bg-gray-900/90 backdrop-blur-md border border-gray-800 p-2 rounded-xl shadow-xl animate-bounce-slow delay-1000">
+                      <FaNodeJs className="text-[#339933] text-xl" />
+                    </div>
+                  </div>
+                </Fade>
               </div>
 
-              <div className="flex flex-col items-start justify-start border-0 md:border-l md:border-t-0 border-[var(--color-primary)]/15 pl-0 md:pl-8 pt-4 md:pt-0">
-                <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-2 sm:pb-4">
-                  <WavingHand />
-                  <span className="text-xl text-gray-400 font-medium pt-1">
-                    hello, I am
-                  </span>
-                </div>
+              <div className="flex flex-col items-start justify-start  pl-0 md:pl-8 pt-4 md:pt-0 border-0 md:border-l border-[var(--color-primary)]/15">
+                <SlideMeIn
+                  delay={0.2}
+                  useBorderedContent={false}
+                  className="w-full"
+                >
+                  <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-2 sm:pb-4">
+                    <WavingHand />
+                    <span className="text-xl text-gray-400 font-medium pt-1">
+                      hello, I am
+                    </span>
+                  </div>
+                </SlideMeIn>
 
                 <TextAnimate
+                  delay={0.3}
                   as={"span"}
                   by="character"
                   duration={0.5}
@@ -121,48 +130,66 @@ const LandingPage: FC = () => {
                 >
                   Jillo Woche,
                 </TextAnimate>
-                <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 w-full text-center md:text-left">
-                  <Typewriter
-                    phrases={[
-                      "Full Stack Engineer.",
-                      "Frontend Engineer.",
-                      "Web3 Developer.",
-                    ]}
-                    speed={40}
-                  />
-                </span>
-                <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
-                  <LuMapPinHouse className="text-[var(--color-primary)]/80 h-4 w-4" />
-                  <span className="text-gray-300/70 font-semibold">
-                    Nairobi, Kenya
+                <SlideMeIn
+                  delay={0.4}
+                  useBorderedContent={false}
+                  className="w-full text-center md:text-left w-full"
+                >
+                  <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-300 ">
+                    <Typewriter
+                      phrases={[
+                        "Full Stack Engineer.",
+                        "Frontend Engineer.",
+                        "Web3 Developer.",
+                      ]}
+                      speed={40}
+                    />
                   </span>
-                </div>
-
-                <div className="w-full max-w-3xl pt-6">
-                  <p className="text-gray-400 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.3] font-medium">
-                    <span>
-                      I build pixel-perfect, robust web apps that are{" "}
-                      <FlipWords
-                        words={words}
-                        duration={500}
-                        className="text-[var(--color-primary)]/80 font-semibold px-0 w-12"
-                      />
+                </SlideMeIn>
+                <SlideMeIn
+                  delay={0.5}
+                  useBorderedContent={false}
+                  className="w-full"
+                >
+                  <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
+                    <LuMapPinHouse className="text-[var(--color-primary)]/80 h-4 w-4" />
+                    <span className="text-gray-300/70 font-semibold">
+                      Nairobi, Kenya
                     </span>
-                    <br />
-                    Backed by{" "}
-                    <span className="text-[var(--color-primary)]/80 font-semibold">
-                      6+ years
-                    </span>{" "}
-                    <span>
-                      of experience driving user growth and conversion across
-                      the evolving Web2 and Web3 spaces.
-                    </span>
-                  </p>
-                </div>
+                  </div>
+                </SlideMeIn>
+                <SlideMeIn delay={0.6} useBorderedContent={false}>
+                  <div className="w-full pt-6">
+                    <p className="text-gray-400 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.3] font-medium">
+                      <span>
+                        I build pixel-perfect, robust web apps that are{" "}
+                        <span className="text-[var(--color-primary)]">
+                          fast, reliable
+                        </span>{" "}
+                        and{" "}
+                        <span className="text-[var(--color-primary)]">
+                          modern.
+                        </span>{" "}
+                      </span>
+                      Backed by{" "}
+                      <span className="text-[var(--color-primary)]/80 font-semibold">
+                        6+ years
+                      </span>{" "}
+                      <span>
+                        of experience driving user growth and conversion across
+                        the evolving Web2 and Web3 spaces.
+                      </span>
+                    </p>
+                  </div>
+                </SlideMeIn>
 
                 <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
-                  <ScheduleCallBtn />
-                  <ViewProjectsBtn />
+                  <SlideMeIn delay={0.7} useBorderedContent={false}>
+                    <ScheduleCallBtn />
+                  </SlideMeIn>
+                  <SlideMeIn delay={0.8} useBorderedContent={false}>
+                    <ViewProjectsBtn />
+                  </SlideMeIn>
                 </div>
               </div>
             </div>
@@ -174,7 +201,7 @@ const LandingPage: FC = () => {
       <SlideMeIn marginBottom="mb-3">
         <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
           <div
-            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 w-full"
+            className="group relative border rounded-3xl p-5 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 w-full mb-6"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -185,68 +212,71 @@ const LandingPage: FC = () => {
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            <div className="relative z-10">
-              {/* skill split bar  */}
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <div className="text-center md:text-left md:flex-shrink-0">
-                  <p className="text-lg font-medium text-gray-200">
-                    Focus<sup className="text-[var(--color-primary)]">*</sup>
-                  </p>
+            <SlideMeIn delay={0.5} useBorderedContent={false}>
+              <div className="relative z-10">
+                {/* skill split bar  */}
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+                  <div className="text-center md:text-left md:flex-shrink-0">
+                    <p className="text-lg font-medium text-gray-200">
+                      Focus<sup className="text-[var(--color-primary)]">*</sup>
+                    </p>
+                  </div>
+                  <div className="flex-1 flex justify-center md:justify-end">
+                    <SkillSplitBar
+                      leftLabel="Frontend"
+                      rightLabel="Backend"
+                      leftPercent={70}
+                      height={35}
+                    />
+                  </div>
                 </div>
-                <div className="flex-1 flex justify-center md:justify-end">
-                  <SkillSplitBar
-                    leftLabel="Frontend"
-                    rightLabel="Backend"
-                    leftPercent={70}
-                    height={35}
-                  />
+
+                {/* Main stack  */}
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
+                  <div className="text-center md:text-left">
+                    <p className="text-lg font-medium text-gray-200">
+                      Main stack
+                    </p>
+                  </div>
+
+                  <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
+                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
+                      <FaReact className="text-blue-400 h-4.5 w-4.5" />
+                      <span className="text-gray-300 font-medium text-sm">
+                        React
+                      </span>
+                    </div>
+
+                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
+                      <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
+                      <span className="text-gray-300 font-medium text-sm">
+                        TypeScript
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
+                      <FaNodeJs className="text-green-400 h-4.5 w-4.5" />
+                      <span className="text-gray-300 font-medium text-sm">
+                        Node.js
+                      </span>
+                    </div>
+
+                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
+                      <BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />
+                      <span className="text-gray-300 font-medium text-sm">
+                        PostgreSQL
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              {/* Main stack  */}
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
-                <div className="text-center md:text-left">
-                  <p className="text-lg font-medium text-gray-200">
-                    Main stack
-                  </p>
-                </div>
-
-                <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                    <FaReact className="text-blue-400 h-4.5 w-4.5" />
-                    <span className="text-gray-300 font-medium text-sm">
-                      React
-                    </span>
-                  </div>
-
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                    <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
-                    <span className="text-gray-300 font-medium text-sm">
-                      TypeScript
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                    <FaNodeJs className="text-green-400 h-4.5 w-4.5" />
-                    <span className="text-gray-300 font-medium text-sm">
-                      Node.js
-                    </span>
-                  </div>
-
-                  <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                    <BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />
-                    <span className="text-gray-300 font-medium text-sm">
-                      PostgreSQL
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </SlideMeIn>
           </div>
-
-          <CurrentlySection
-            exploring={currentlyInfo.exploring}
-            availableFor={currentlyInfo.availableFor}
-          />
+          <SlideMeIn delay={0.2} useBorderedContent={false}>
+            <CurrentlySection
+              exploring={currentlyInfo.exploring}
+              availableFor={currentlyInfo.availableFor}
+            />
+          </SlideMeIn>
         </SectionContent>
       </SlideMeIn>
 
@@ -273,7 +303,7 @@ const LandingPage: FC = () => {
         </div>
       </SectionHeading>
       <SlideMeIn>
-        <SectionContent padding="bg-[var(--color-primary)]/3">
+        <SectionContent padding="bg-[var(--color-primary)]/3 py-6 md:py-10">
           <section>
             <Stacks />
           </section>

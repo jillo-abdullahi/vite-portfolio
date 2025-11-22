@@ -20,6 +20,7 @@ import {
 import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
 import { TwitterIcon, type TwitterIconHandle } from "./ui/TwitterIcon";
 import { GithubIcon, type GithubIconHandle } from "./ui/GithubIcon";
+import { SlideMeIn } from "./shared/SlideMeIn";
 
 interface SocialLink {
   icon: IconDefinition;
@@ -229,15 +230,16 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
           null
         );
         return (
-          <FooterLinkBox
-            icon={icon}
-            href={href}
-            name={name}
-            key={index}
-            clipboardRef={clipboardRef}
-            checkIconRef={checkIconRef}
-            squareArrowRef={squareArrowRef}
-          />
+          <SlideMeIn useBorderedContent={false} key={index} delay={index * 0.2}>
+            <FooterLinkBox
+              icon={icon}
+              href={href}
+              name={name}
+              clipboardRef={clipboardRef}
+              checkIconRef={checkIconRef}
+              squareArrowRef={squareArrowRef}
+            />
+          </SlideMeIn>
         );
       })}
     </div>

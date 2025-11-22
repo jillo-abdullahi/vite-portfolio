@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { TextAnimate } from "../ui/text-animate";
 import {
   ChevronDownIcon,
   type ChevronDownIconHandle,
@@ -28,7 +27,6 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   image,
   date,
   company,
-  level,
   quote,
   linkedInUrl,
 }) => {
@@ -37,118 +35,125 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const shouldShowToggle = quote.length > 2;
 
-  //TODO: Add bgImage functionality later if needed
   return (
-    <div className="group relative border rounded-3xl p-5 bg-gray-900/10 hover:bg-gray-900/20 hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20">
-      {/* Subtle hover overlay */}
-      <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div className="group relative h-full rounded-3xl border border-[var(--color-primary)]/10 bg-gray-900/40 backdrop-blur-sm p-6 md:p-8 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <div className="relative z-10">
-        <div className="group flex items-center space-x-3 mb-4">
-          <img
-            role="button"
-            onClick={() => {
-              if (linkedInUrl) {
-                window.open(linkedInUrl, "_blank", "noopener,noreferrer");
-              }
-            }}
-            src={`/experience/${image}`}
-            alt={name}
-            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border-2 border-gray-700 group-hover:border-gray-600 transition-all duration-300 cursor-pointer"
-          />
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between mb-1">
-              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-                <h3 className="text-[var(--color-primary)]/90 font-semibold text-base truncate hover:underline">
-                  {name}
-                </h3>
-              </a>
-              <span className="text-gray-400 text-xs whitespace-nowrap ml-2">
-                {date}
-              </span>
+      {/* Decorative quote mark */}
+      <div className="absolute top-4 right-6 text-6xl font-serif text-[var(--color-primary)]/10 font-black select-none pointer-events-none">
+        "
+      </div>
+
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="flex items-start space-x-4 mb-6">
+          <div className="relative flex-shrink-0">
+            <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-gray-700/50 group-hover:border-[var(--color-primary)]/50 transition-colors duration-500">
+              <img
+                role="button"
+                onClick={() => {
+                  if (linkedInUrl) {
+                    window.open(linkedInUrl, "_blank", "noopener,noreferrer");
+                  }
+                }}
+                src={`/experience/${image}`}
+                alt={name}
+                className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-500"
+              />
             </div>
-            <p className="text-gray-200 text-sm font-medium">
-              {role} at {company}
-            </p>
-            <p className="text-gray-400 text-xs">{level}</p>
+            {/* Status dot */}
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 flex items-center justify-center">
+              <a
+                href={linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0077b5] hover:text-[#0077b5]/80 transition-colors bg-gray-900 rounded-xs flex items-center justify-center w-4 h-4 border-2 border-gray-900 hover:border-gray-800 cursor-pointer p-2"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+          <div className="flex-1 min-w-0 pt-1">
+            <div className="flex flex-col justify-center">
+              <>
+                <a
+                  href={linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/name inline-flex items-center w-fit"
+                >
+                  <h3 className="text-white font-semibold text-lg truncate group-hover/name:text-[var(--color-primary)] transition-colors duration-300">
+                    {name}
+                  </h3>
+                  <div className="h-px w-0 bg-[var(--color-primary)] group-hover/name:w-full transition-all duration-300"></div>
+                </a>
+                <p className="text-[var(--color-primary)] font-medium text-sm mt-0.5">
+                  {role}
+                </p>
+              </>
+              <div className="flex items-center gap-2 text-xs text-gray-500">
+                <span className="font-semibold text-gray-400">{company}</span>
+                <span className="w-1 h-1 rounded-full bg-gray-600"></span>
+                <span className="font-semibold">{date}</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <blockquote className="space-y-4 mb-4">
-          {quote.slice(0, 2).map((paragraph, index) => (
-            <TextAnimate
-              key={index}
-              as="p"
-              by="line"
-              animation="fadeIn"
-              duration={5}
-              className="text-gray-300 text-sm leading-relaxed"
-            >
-              {paragraph}
-            </TextAnimate>
-          ))}
+        <blockquote className="flex-grow relative">
+          <div className="space-y-4 text-gray-300 leading-relaxed text-[15px]">
+            {quote.slice(0, 2).map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
 
-          <AnimatePresence>
-            {isExpanded && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="space-y-4 overflow-hidden"
-              >
-                {quote.slice(2).map((paragraph, index) => (
-                  <TextAnimate
-                    key={index + 2}
-                    as="p"
-                    by="line"
-                    animation="fadeIn"
-                    duration={5}
-                    className="text-gray-300 text-sm leading-relaxed"
-                  >
-                    {paragraph}
-                  </TextAnimate>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <AnimatePresence>
+              {isExpanded && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="space-y-4 overflow-hidden"
+                >
+                  {quote.slice(2).map((paragraph, index) => (
+                    <p key={index + 2}>{paragraph}</p>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </blockquote>
 
         {shouldShowToggle && (
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            onMouseEnter={() =>
-              isExpanded
-                ? chevronUpRef.current?.startAnimation()
-                : chevronDownRef.current?.startAnimation()
-            }
-            onMouseLeave={() =>
-              isExpanded
-                ? chevronUpRef.current?.stopAnimation()
-                : chevronDownRef.current?.stopAnimation()
-            }
-            className="cursor-pointer text-[var(--color-primary)] hover:text-[var(--color-primary)]/80 text-sm font-medium transition-colors duration-200 mb-4 flex items-center gap-1"
-          >
-            <span className="flex items-center justify-center space-x-1">
-              <span>{isExpanded ? "Read less" : "Read more"}</span>
-              {isExpanded ? (
-                <ChevronUpIcon ref={chevronUpRef} className="w-5 h-5" />
-              ) : (
-                <ChevronDownIcon ref={chevronDownRef} className="w-5 h-5" />
-              )}
-            </span>
-          </button>
+          <div className="mt-4 pt-4 border-t border-gray-800/50">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              onMouseEnter={() =>
+                isExpanded
+                  ? chevronUpRef.current?.startAnimation()
+                  : chevronDownRef.current?.startAnimation()
+              }
+              onMouseLeave={() =>
+                isExpanded
+                  ? chevronUpRef.current?.stopAnimation()
+                  : chevronDownRef.current?.stopAnimation()
+              }
+              className="group/btn flex items-center gap-2 font-medium text-gray-400 hover:text-[var(--color-primary)] transition-colors duration-300 w-full justify-center py-2 rounded-xl hover:bg-[var(--color-primary)]/5 cursor-pointer"
+            >
+              <span className="text-[var(--color-primary)]">
+                {isExpanded ? "Read less" : "Read full testimonial"}
+              </span>
+              <span className="text-[var(--color-primary)] flex items-center justify-center">
+                {isExpanded ? (
+                  <ChevronUpIcon ref={chevronUpRef} className="w-6 h-6" />
+                ) : (
+                  <ChevronDownIcon ref={chevronDownRef} className="w-6 h-6" />
+                )}
+              </span>
+            </button>
+          </div>
         )}
-
-        <div className="flex justify-end pt-2 border-t border-gray-700/40 mt-2">
-          <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="w-6 h-6 text-gray-500/60 group-hover:text-[var(--color-primary)]/80 transition-colors duration-200"
-              title="LinkedIn testimonial"
-            />
-          </a>
-        </div>
       </div>
     </div>
   );

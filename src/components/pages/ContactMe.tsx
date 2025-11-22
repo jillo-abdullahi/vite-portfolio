@@ -12,16 +12,18 @@ export const ContactMe = () => {
   return (
     <PageContainer showBreadcrumbs>
       <section>
-        <div className="w-full pb-4">
-          <SectionHeading
-            linkText="say hi!"
-            linkHref="mailto:jayloabdullahi@gmail.com"
-            isContactPage={true}
-          >
-            I'd love to build something
-            <br /> great with you,
-          </SectionHeading>
-        </div>
+        <SlideMeIn useBorderedContent={false} delay={0.1}>
+          <div className="w-full pb-4">
+            <SectionHeading
+              linkText="say hi!"
+              linkHref="mailto:jayloabdullahi@gmail.com"
+              isContactPage={true}
+            >
+              I'd love to build something
+              <br /> great with you,
+            </SectionHeading>
+          </div>
+        </SlideMeIn>
 
         <SlideMeIn>
           <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
