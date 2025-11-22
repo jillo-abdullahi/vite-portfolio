@@ -23,7 +23,7 @@ const WorkAvailabilityIndicator = ({
 }: WorkAvailabilityIndicatorProps) => {
   return (
     <div
-      className="group flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/60 hover:bg-gray-800/80 hover:border-gray-600/60 transition-all duration-200"
+      className="group flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gray-800/50 hover:bg-gray-800/70 hover:border-gray-600/60 transition-all duration-200"
       role="status"
       aria-live="polite"
     >

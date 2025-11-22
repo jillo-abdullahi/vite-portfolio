@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 import { useEffect, useRef } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
 import { TextAnimate } from "../ui/text-animate";
@@ -25,6 +25,22 @@ import { useInView } from "@/hooks/useInView";
 import { CurrentlySection } from "../CurrentlySection";
 import { currentlyInfo } from "@/data";
 import { Fade } from "react-awesome-reveal";
+
+interface TechBadgeProps {
+  icon: ReactNode;
+  label: string;
+}
+
+const TechBadge: FC<TechBadgeProps> = ({ icon, label }) => {
+  return (
+    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/40 backdrop-blur-md group-hover:bg-gray-900/60 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-gray-700/40">
+      {icon}
+      <span className="text-gray-300 font-medium text-sm">
+        {label}
+      </span>
+    </div>
+  );
+};
 
 const LandingPage: FC = () => {
   const swordsRef = useRef<SwordsIconHandle>(null);
@@ -240,32 +256,22 @@ const LandingPage: FC = () => {
                   </div>
 
                   <div className="flex-1 flex flex-wrap justify-center md:justify-end items-center gap-2">
-                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                      <FaReact className="text-blue-400 h-4.5 w-4.5" />
-                      <span className="text-gray-300 font-medium text-sm">
-                        React
-                      </span>
-                    </div>
-
-                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                      <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
-                      <span className="text-gray-300 font-medium text-sm">
-                        TypeScript
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                      <FaNodeJs className="text-green-400 h-4.5 w-4.5" />
-                      <span className="text-gray-300 font-medium text-sm">
-                        Node.js
-                      </span>
-                    </div>
-
-                    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/10 backdrop-blur-md group-hover:bg-gray-900/20 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-transparent">
-                      <BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />
-                      <span className="text-gray-300 font-medium text-sm">
-                        PostgreSQL
-                      </span>
-                    </div>
+                    <TechBadge
+                      icon={<FaReact className="text-blue-400 h-4.5 w-4.5" />}
+                      label="React"
+                    />
+                    <TechBadge
+                      icon={<BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />}
+                      label="TypeScript"
+                    />
+                    <TechBadge
+                      icon={<FaNodeJs className="text-green-400 h-4.5 w-4.5" />}
+                      label="Node.js"
+                    />
+                    <TechBadge
+                      icon={<BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />}
+                      label="PostgreSQL"
+                    />
                   </div>
                 </div>
               </div>

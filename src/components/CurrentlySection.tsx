@@ -21,11 +21,11 @@ interface InfoCardProps {
 const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
   return (
     <div
-      className="group relative rounded-3xl p-6 bg-gray-900/40 backdrop-blur-sm border border-[var(--color-primary)]/10 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
+      className="group relative rounded-3xl p-6 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
       onMouseEnter={() => iconRef.current?.startAnimation()}
       onMouseLeave={() => iconRef.current?.stopAnimation()}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/2 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       <div className="relative z-10 flex items-center gap-4">
         <div className="flex-shrink-0 p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 group-hover:border-[var(--color-primary)]/30 transition-colors duration-300 flex items-center justify-center">

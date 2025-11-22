@@ -12,7 +12,7 @@ export const ViewProjectsBtn = () => {
     >
       <Link
         type="button"
-        className="group relative flex items-center gap-x-1.5 rounded-lg border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20 px-4 py-1.5 text-gray-300 hover:text-gray-200 shadow-sm hover:border-gray-700/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center"
+        className="group relative flex items-center gap-x-1.5 rounded-xl border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20 px-4 py-2 text-gray-300 hover:text-gray-200 shadow-sm hover:border-gray-700/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center"
         to={"/projects"}
       >
         <LayoutGridIcon
@@ -20,7 +20,7 @@ export const ViewProjectsBtn = () => {
           className="-ml-0.5 h-5 w-5 group-hover:scale-110 transition-transform duration-200"
           aria-hidden="true"
         />
-        <span className="font-semibold text-lg">view projects</span>
+        <span className="font-semibold text-lg group-hover:translate-y-[-1px] transition-transform duration-200">view projects</span>
       </Link>
     </div>
   );

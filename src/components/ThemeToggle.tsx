@@ -7,7 +7,7 @@ import {
   type ThemeColor,
   type ThemeFont,
 } from "@/contexts/ThemeContext";
-import { PencilIcon } from "@heroicons/react/24/outline";
+import { LuPaintbrush } from "react-icons/lu";
 import { XIcon, type XIconHandle } from "./ui/XIcon";
 
 export const ThemeToggle: FC = () => {
@@ -31,7 +31,7 @@ export const ThemeToggle: FC = () => {
       {({ close }) => (
         <>
           <MenuButton
-            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-[var(--color-primary)]/70"
+            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-[var(--color-primary)]/70 focus:border-[var(--color-primary)]/30 focus:outline-none"
             aria-label="Change theme color"
             title="Change theme color"
           >
@@ -67,7 +67,7 @@ export const ThemeToggle: FC = () => {
             </svg>
 
             <div className="relative z-10 w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:bg-gray-700 transition-colors duration-200">
-              <PencilIcon className="w-3 h-3 text-gray-300" />
+              <LuPaintbrush className="w-3 h-3 text-gray-300" />
             </div>
           </MenuButton>
 
@@ -79,7 +79,7 @@ export const ThemeToggle: FC = () => {
             leaveFrom="h-32 opacity-100 translate-y-0"
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
-            <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[360px] bg-gray-900 border-2 border-[var(--color-primary)]/15 rounded-3xl shadow-xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
+            <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[360px] bg-gray-900 border-2 border-[var(--color-primary)]/30 rounded-3xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
               <div className="p-4">
                 {/* Close Button */}
                 <div className="flex justify-end -mt-1 -mr-1">
@@ -111,10 +111,10 @@ export const ThemeToggle: FC = () => {
                             onClick={() => {
                               setTheme(colorKey);
                             }}
-                            className={`cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
+                            className={`cursor-pointer px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
                               isActive
                                 ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
-                                : "border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-300"
+                                : "border-gray-800 text-gray-400 hover:border-gray-700 hover:text-gray-300"
                             }`}
                           >
                             <div
@@ -153,10 +153,10 @@ export const ThemeToggle: FC = () => {
                             onClick={() => {
                               setFont(fontKey);
                             }}
-                            className={`cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${
+                            className={`cursor-pointer px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 border ${
                               isActive
                                 ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
-                                : "border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-300"
+                                : "border-gray-800 text-gray-400 hover:border-gray-700 hover:text-gray-300"
                             }`}
                             style={{ fontFamily: font.family }}
                           >

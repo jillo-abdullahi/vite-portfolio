@@ -135,7 +135,7 @@ const NavBar: FC = () => {
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
             <DisclosurePanel className="lg:hidden">
-              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900/70 backdrop-blur-lg border-2 border-[var(--color-primary)]/15 rounded-3xl">
+              <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-900 border-2 border-[var(--color-primary)]/30 rounded-3xl">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -153,7 +153,7 @@ const NavBar: FC = () => {
                   </Link>
                 ))}
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
-                  <div className="flex flex-col items-center justify-center space-y-2">
+                  <div className="flex flex-col items-center justify-center space-y-4">
                     <WorkAvailabilityIndicator available />
                     <ScheduleCallBtn isInNavBar />
                   </div>
