@@ -20,7 +20,7 @@ export const ThemeToggle: FC = () => {
     "blue",
     "slate",
     "green",
-    "amber",
+    "rouge",
     "purple",
   ];
   const colors = colorOrder.map((key) => THEME_COLORS[key]);
@@ -31,7 +31,7 @@ export const ThemeToggle: FC = () => {
       {({ close }) => (
         <>
           <MenuButton
-            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-gray-500"
+            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-[var(--color-primary)]/70"
             aria-label="Change theme color"
             title="Change theme color"
           >

@@ -184,10 +184,10 @@ const LandingPage: FC = () => {
                 </SlideMeIn>
 
                 <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
-                  <SlideMeIn delay={0.7} useBorderedContent={false}>
+                  <SlideMeIn delay={0.5} useBorderedContent={false}>
                     <ScheduleCallBtn />
                   </SlideMeIn>
-                  <SlideMeIn delay={0.8} useBorderedContent={false}>
+                  <SlideMeIn delay={0.6} useBorderedContent={false}>
                     <ViewProjectsBtn />
                   </SlideMeIn>
                 </div>

@@ -43,12 +43,12 @@ export const THEME_COLORS = {
     primaryLight: "rgba(100, 116, 139, 0.1)",
     primaryBorder: "rgba(100, 116, 139, 0.4)",
   },
-  amber: {
-    name: "Amber",
-    primary: "#d97706",
-    primaryHover: "#b45309",
-    primaryLight: "rgba(217, 119, 6, 0.1)",
-    primaryBorder: "rgba(217, 119, 6, 0.4)",
+  rouge: {
+    name: "Rouge",
+    primary: "#A33A6D",
+    primaryHover: "#862e57",
+    primaryLight: "rgba(163, 58, 109, 0.1)",
+    primaryBorder: "rgba(163, 58, 109, 0.4)",
   },
 } as const;
 

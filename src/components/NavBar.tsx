@@ -82,7 +82,7 @@ const NavBar: FC = () => {
                     )}
                   </DisclosureButton>
                   <div
-                    className="ml-4 border-l border-gray-700/60 pl-3 md:hidden"
+                    className="ml-4 border-l border-[var(--color-primary)]/15 pl-3 md:hidden"
                     onClick={() => close()}
                   >
                     <ThemeToggle />
@@ -120,7 +120,7 @@ const NavBar: FC = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <WorkAvailabilityIndicator available />
                 <ScheduleCallBtn isInNavBar />
-                <div className="pl-3 border-l border-gray-700/60">
+                <div className="pl-3 border-l border-[var(--color-primary)]/15">
                   <ThemeToggle />
                 </div>
               </div>
