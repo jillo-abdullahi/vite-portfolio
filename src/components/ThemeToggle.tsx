@@ -20,7 +20,7 @@ export const ThemeToggle: FC = () => {
     "blue",
     "slate",
     "green",
-    "rouge",
+    "pesto",
     "purple",
   ];
   const colors = colorOrder.map((key) => THEME_COLORS[key]);

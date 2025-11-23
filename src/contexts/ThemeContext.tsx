@@ -43,12 +43,12 @@ export const THEME_COLORS = {
     primaryLight: "rgba(100, 116, 139, 0.1)",
     primaryBorder: "rgba(100, 116, 139, 0.4)",
   },
-  rouge: {
-    name: "Rouge",
-    primary: "#A33A6D",
-    primaryHover: "#862e57",
-    primaryLight: "rgba(163, 58, 109, 0.1)",
-    primaryBorder: "rgba(163, 58, 109, 0.4)",
+  pesto: {
+    name: "Pesto",
+    primary: "#A89A04",
+    primaryHover: "#8a7e03",
+    primaryLight: "rgba(168, 154, 4, 0.1)",
+    primaryBorder: "rgba(168, 154, 4, 0.4)",
   },
 } as const;
 
