@@ -107,10 +107,10 @@ export const PortfolioCard = ({
         <div className="flex-1 flex flex-col p-6 space-y-4">
           {/* Title and Description */}
           <div className="space-y-2">
-            <h3 className="text-xl font-bold text-white group-hover:text-[var(--color-primary)] transition-colors duration-200">
+            <h3 className="text-xl font-semibold text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200">
               {title}
             </h3>
-            <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">
+            <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
               {description}
             </p>
           </div>
@@ -119,7 +119,7 @@ export const PortfolioCard = ({
           <div className="flex-1">
             {stacks && stacks.length > 0 && (
               <div className="space-y-2">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <p className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
                   Tech Stack
                 </p>
                 <div className="flex flex-wrap gap-2">

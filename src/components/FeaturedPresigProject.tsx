@@ -35,7 +35,7 @@ export const FeaturedPresigProject = () => {
             {/* Content Section */}
             <div className="flex-1 space-y-4">
               <div className="space-y-4">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white group-hover:text-[var(--color-primary)] transition-colors duration-300">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-300">
                   Presig
                 </h2>
                 <p className="text-xl text-[var(--color-primary)] font-semibold">
@@ -128,7 +128,7 @@ export const FeaturedPresigProject = () => {
                   href="https://github.com/jillo-abdullahi/presig"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-gray-100 bg-gray-700/80 border border-gray-600 rounded-xl hover:bg-gray-600 transition-all duration-200 hover:scale-105 shadow-lg"
+                  className="group/btn flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-gray-300 bg-gray-700/80 border border-gray-600 rounded-xl hover:bg-gray-600 transition-all duration-200 hover:scale-105 shadow-lg"
                   onMouseEnter={() => codeIconRef.current?.startAnimation()}
                   onMouseLeave={() => codeIconRef.current?.stopAnimation()}
                 >

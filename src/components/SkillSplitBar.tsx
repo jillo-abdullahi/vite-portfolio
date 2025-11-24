@@ -51,7 +51,7 @@ export default function SkillSplitBar({
           </span>
         </div>
 
-        <div className="flex items-center justify-between px-3 bg-gray-800/80 text-gray-300 relative">
+        <div className="flex items-center justify-between px-3 bg-gray-800/80 text-gray-400 relative">
           <span className="font-bold text-sm">
             {
               <CountingNumber

@@ -45,7 +45,7 @@ export const SectionHeading = ({
       <SectionContent padding={isContactPage ? "py-6 md:py-10 bg-[var(--color-primary)]/3" : "py-4 bg-[var(--color-primary)]/3"}>
         <div className="w-full ">
           <div className="flex space-x-4 items-center justify-between">
-            <p className={`${fontSizeClass} text-gray-300 text-left space-x-2`}>
+            <p className={`${fontSizeClass} text-gray-400 text-left space-x-2`}>
               <span>{children}</span>
               {linkHref ? (
                 <a

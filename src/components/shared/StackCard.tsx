@@ -43,7 +43,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
             </motion.div>
           </div>
           <div>
-            <h3 className="text-white font-bold text-lg capitalize tracking-wide">
+            <h3 className="text-gray-400 group-hover:text-gray-300 font-bold text-lg capitalize tracking-wide">
               {title}
             </h3>
             <div className="h-0.5 w-8 bg-[var(--color-primary)]/50 mt-1 rounded-full group-hover:w-full transition-all duration-500 ease-out"></div>
@@ -64,7 +64,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
             return (
               <div className="space-y-1.5" key={name}>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-300 font-medium group-hover:text-white transition-colors duration-300">
+                  <span className="text-gray-400 font-medium group-hover:text-gray-300 transition-colors duration-300">
                     {name}
                   </span>
                 </div>

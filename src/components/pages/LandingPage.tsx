@@ -35,7 +35,7 @@ const TechBadge: FC<TechBadgeProps> = ({ icon, label }) => {
   return (
     <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/40 backdrop-blur-md group-hover:bg-gray-900/60 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-gray-700/40">
       {icon}
-      <span className="text-gray-300 font-medium text-sm">
+      <span className="text-gray-400 font-medium text-sm">
         {label}
       </span>
     </div>
@@ -73,7 +73,7 @@ const LandingPage: FC = () => {
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
           <div
-            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 w-full overflow-hidden"
+            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 w-full overflow-hidden"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -233,7 +233,7 @@ const LandingPage: FC = () => {
                 {/* skill split bar  */}
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                   <div className="text-center md:text-left md:flex-shrink-0">
-                    <p className="text-lg font-medium text-gray-200">
+                    <p className="text-lg font-medium text-gray-400">
                       Focus<sup className="text-[var(--color-primary)]">*</sup>
                     </p>
                   </div>
@@ -250,7 +250,7 @@ const LandingPage: FC = () => {
                 {/* Main stack  */}
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6">
                   <div className="text-center md:text-left">
-                    <p className="text-lg font-medium text-gray-200">
+                    <p className="text-lg font-medium text-gray-400">
                       Main stack
                     </p>
                   </div>
@@ -303,7 +303,7 @@ const LandingPage: FC = () => {
             size={20}
             ref={swordsRef}
           />
-          <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+          <span className="text-lg md:text-xl lg:text-2xl font-medium">
             my tools
           </span>
         </div>
@@ -327,7 +327,7 @@ const LandingPage: FC = () => {
             size={20}
             ref={heartRef}
           />
-          <span className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
+          <span className="text-lg md:text-xl lg:text-2xl font-medium">
             what people say
           </span>
         </div>

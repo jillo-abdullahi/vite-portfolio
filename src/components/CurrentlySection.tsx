@@ -32,10 +32,10 @@ const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
           {icon}
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">
+          <p className="text-xs text-[var(--color-primary)] font-semibold uppercase tracking-wider mb-1">
             {label}
           </p>
-          <p className="text-base text-white font-semibold truncate">
+          <p className="text-base text-gray-400 font-semibold truncate">
             {value}
           </p>
         </div>

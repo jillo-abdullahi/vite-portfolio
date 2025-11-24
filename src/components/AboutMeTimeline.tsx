@@ -24,10 +24,15 @@ export const AboutMeTimeline: FC = () => {
         } = experience;
 
         return (
-          <SlideMeIn useBorderedContent={false} key={`${company}-${title}-${date}`} delay={0.3} cascade>
+          <SlideMeIn
+            useBorderedContent={false}
+            key={`${company}-${title}-${date}`}
+            delay={0.3}
+            cascade
+          >
             <div
               key={`${company}-${title}-${date}`}
-              className={`group relative border rounded-3xl p-5 bg-gray-900/10 hover:bg-gray-900/20 hover:-translate-y-0.5 transition-all duration-300 ease-out ${
+              className={`group relative border rounded-3xl p-5 bg-gray-900/10 hover:-translate-y-0.5 transition-all duration-300 ease-out ${
                 isCurrent
                   ? "border-[var(--color-primary)]/30 shadow-md shadow-[var(--color-primary)]/5"
                   : "border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20"
@@ -66,17 +71,19 @@ export const AboutMeTimeline: FC = () => {
                     </h3>
 
                     <div className="flex items-center space-x-2">
-                      <img
-                        src={`/experience/${companyLogo}`}
-                        alt={`${company} logo`}
-                        className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border-2 border-gray-700 group-hover:border-gray-600 transition-all duration-300 object-contain"
-                      />
+                      <a href={companyUrl} target="_blank" rel="noopener noreferrer">
+                        <img
+                          src={`/experience/${companyLogo}`}
+                          alt={`${company} logo`}
+                          className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border border-gray-700 group-hover:border-[var(--color-primary)]/50 transition-all duration-300 object-contain"
+                        />
+                      </a>
                       <div className="flex-1">
                         <a
                           href={companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-200 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-medium hover:underline"
+                          className="text-gray-300 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-medium hover:underline"
                         >
                           {company}
                         </a>

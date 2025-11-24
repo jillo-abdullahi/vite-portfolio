@@ -36,7 +36,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   const shouldShowToggle = quote.length > 2;
 
   return (
-    <div className="group relative h-full rounded-3xl border border-[var(--color-primary)]/10 bg-gray-900/40 backdrop-blur-sm p-6 md:p-8 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
+    <div className="group relative h-full rounded-3xl border border-[var(--color-primary)]/10 bg-gray-900/20 backdrop-blur-sm p-6 md:p-8 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -83,7 +83,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
                   rel="noopener noreferrer"
                   className="group/name inline-flex items-center w-fit"
                 >
-                  <h3 className="text-white font-semibold text-lg truncate group-hover/name:text-[var(--color-primary)] transition-colors duration-300">
+                  <h3 className="text-gray-400 font-semibold text-lg truncate group-hover/name:text-[var(--color-primary)] transition-colors duration-300">
                     {name}
                   </h3>
                   <div className="h-px w-0 bg-[var(--color-primary)] group-hover/name:w-full transition-all duration-300"></div>
@@ -102,7 +102,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         </div>
 
         <blockquote className="flex-grow relative">
-          <div className="space-y-4 text-gray-300 leading-relaxed text-[15px]">
+          <div className="space-y-4 text-gray-400 leading-relaxed text-[15px]">
             {quote.slice(0, 2).map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}

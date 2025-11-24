@@ -99,7 +99,7 @@ export const MyProjects = () => {
             size={20}
             ref={blocksRef}
           />
-          <span className="text-base sm:text-xl lg:text-2xl font-medium text-gray-200">
+          <span className="text-base sm:text-xl lg:text-2xl font-medium">
             my recent projects{" "}
           </span>
         </div>

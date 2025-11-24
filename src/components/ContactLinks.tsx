@@ -138,7 +138,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             />
           </div>
           <div className="text-left">
-            <div className="text-gray-100 font-medium">{name}</div>
+            <div className="text-gray-300 font-semibold">{name}</div>
             <div className="flex items-center space-x-1">
               <span className="text-sm text-gray-400 hidden sm:inline">
                 {displayHref}
@@ -210,7 +210,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
                 <ClipboardIcon
                   ref={clipboardRef}
                   size={22}
-                  className="text-gray-300"
+                  className="text-gray-400"
                 />
               </div>
             )}
@@ -270,22 +270,22 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             {name === "LinkedIn" && (
               <LinkedInIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="w-3 h-3 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
             {name === "Twitter(X)" && (
               <TwitterIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="w-3 h-3 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
             {name === "GitHub" && (
               <GithubIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="w-3 h-3 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
-            <span className="text-gray-300 group-hover:text-[var(--color-primary)] font-medium text-xs transition-all duration-200">
+            <span className="text-gray-400 group-hover:text-[var(--color-primary)] font-medium text-xs transition-all duration-200">
               {name}
             </span>
           </a>

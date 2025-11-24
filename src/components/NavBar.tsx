@@ -106,10 +106,10 @@ const NavBar: FC = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`text-gray-300 hover:bg-[var(--color-primary)]/10 hover:text-white rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
+                      className={`hover:bg-[var(--color-primary)]/10 hover:text-gray-300 rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
                         item.isActive
-                          ? "bg-gray-800/60 text-gray-200 border-[var(--color-primary)]/50"
-                          : "border-transparent"
+                          ? "bg-gray-800/60 text-gray-300 border-[var(--color-primary)]/50"
+                          : "border-transparent text-gray-400"
                       }`}
                     >
                       {item.name}
@@ -140,10 +140,10 @@ const NavBar: FC = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`cursor-pointer text-gray-300 hover:bg-[var(--color-primary)]/10 hover:text-white block rounded-lg px-3 py-2 text-base font-medium text-center border ${
+                    className={`cursor-pointer  hover:bg-[var(--color-primary)]/10 hover:text-gray-300 block rounded-lg px-3 py-2 text-base font-medium text-center border ${
                       item.isActive
-                        ? "bg-gray-800/60 text-gray-200 border-[var(--color-primary)]/50"
-                        : "border-transparent"
+                        ? "bg-gray-800/60 text-gray-300 border-[var(--color-primary)]/50"
+                        : "border-transparent text-gray-400"
                     }`}
                     onClick={() => {
                       close();

@@ -68,7 +68,7 @@ export const MyResume = () => {
                 size={20}
                 ref={globeRef}
               />
-              <span className="text-base sm:text-xl lg:text-2xl font-medium text-gray-200">
+              <span className="text-base sm:text-xl lg:text-2xl font-medium">
                 my journey so far
               </span>
             </div>

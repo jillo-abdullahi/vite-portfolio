@@ -12,7 +12,7 @@ export const ViewProjectsBtn = () => {
     >
       <Link
         type="button"
-        className="group relative flex items-center gap-x-1.5 rounded-xl border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20 px-4 py-2 text-gray-300 hover:text-gray-200 shadow-sm hover:border-gray-700/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center"
+        className="group relative flex items-center gap-x-1.5 rounded-xl border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20 px-4 py-2 text-gray-400 hover:text-gray-200 shadow-sm hover:border-gray-700/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center"
         to={"/projects"}
       >
         <LayoutGridIcon

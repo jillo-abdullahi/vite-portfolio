@@ -44,7 +44,7 @@ const WorkAvailabilityIndicator = ({
       </div>
       <span
         className={`text-base font-medium transition-colors duration-300 ${
-          available ? "text-gray-200" : "text-gray-400"
+          available ? "text-gray-300" : "text-gray-400"
         }`}
       >
         {available ? "available for hire" : "unavailable"}
