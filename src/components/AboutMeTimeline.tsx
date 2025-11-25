@@ -32,14 +32,14 @@ export const AboutMeTimeline: FC = () => {
           >
             <div
               key={`${company}-${title}-${date}`}
-              className={`group relative border rounded-3xl p-5 bg-gray-900/10 hover:-translate-y-0.5 transition-all duration-300 ease-out ${
+              className={`group relative border rounded-3xl p-6 bg-gray-900/10 hover:-translate-y-0.5 transition-all duration-300 ease-in ${
                 isCurrent
                   ? "border-[var(--color-primary)]/30 shadow-md shadow-[var(--color-primary)]/5"
                   : "border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20"
               }`}
             >
               {/* Subtle hover overlay */}
-              <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               <div className="relative z-10">
                 {/* Work type or education badge */}
@@ -71,23 +71,25 @@ export const AboutMeTimeline: FC = () => {
                     </h3>
 
                     <div className="flex items-center space-x-2">
-                      <a href={companyUrl} target="_blank" rel="noopener noreferrer">
-                        <img
-                          src={`/experience/${companyLogo}`}
-                          alt={`${company} logo`}
-                          className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg border border-gray-700 group-hover:border-[var(--color-primary)]/50 transition-all duration-300 object-contain"
-                        />
+                      <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="block">
+                        <div className="p-1 rounded-lg border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 transition-all duration-300 bg-[var(--color-primary)]/10">
+                          <img
+                            src={`/experience/${companyLogo}`}
+                            alt={`${company} logo`}
+                            className="w-7 sm:w-9 h-7 sm:h-9 object-contain transition-transform duration-300 hover:scale-103 rounded-sm"
+                          />
+                        </div>
                       </a>
                       <div className="flex-1">
                         <a
                           href={companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-300 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-medium hover:underline"
+                          className="text-gray-300 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-semibold hover:underline"
                         >
                           {company}
                         </a>
-                        <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-400 sm:mt-0.5">
+                        <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-400 sm:mt-0.5 font-medium">
                           <span>{date}</span>
                           <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
                           <span>{location}</span>

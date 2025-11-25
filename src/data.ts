@@ -20,26 +20,26 @@ export const externalLinks: ExternalLinks = {
 };
 
 export const currentlyInfo = {
-  exploring: "Next.js 16 and what's new with React 19",
+  exploring: "Coding with AntiGravity and Gemini 3 Pro",
   availableFor: "Full-time & contract opportunities",
 };
 
 export const experiences: Experience[] = [
-  {
-    isCurrent: true,
-    type: "work",
-    workType: "Full-time",
-    title: "Senior Frontend Engineer (React)",
-    company: "Rainforest Alliance",
-    companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
-    companyLogo: "rainforestLogo.jpg",
-    location: "Nairobi, Kenya - Hybrid",
-    date: "Oct 2025 - present",
-    description: [
-      "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
-    ],
-    technologies: ["React", "TypeScript", "TailwindCSS"],
-  },
+  // {
+  //   isCurrent: true,
+  //   type: "work",
+  //   workType: "Full-time",
+  //   title: "Senior Frontend Engineer (React)",
+  //   company: "Rainforest Alliance",
+  //   companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
+  //   companyLogo: "rainforestLogo.jpg",
+  //   location: "Nairobi, Kenya - Hybrid",
+  //   date: "Oct 2025 - present",
+  //   description: [
+  //     "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
+  //   ],
+  //   technologies: ["React", "TypeScript", "TailwindCSS"],
+  // },
   {
     isCurrent: false,
     type: "work",

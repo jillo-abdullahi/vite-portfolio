@@ -110,13 +110,13 @@ const LandingPage: FC = () => {
                     </div>
 
                     {/* Floating Badges */}
-                    <div className="absolute -top-0 -right-0 bg-gray-900/90 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow">
+                    <div className="absolute -top-0 -right-0 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow">
                       <FaReact className="text-[#61DAFB] text-xl" />
                     </div>
-                    <div className="absolute bottom-8 -left-8 bg-gray-900/90 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow delay-700">
+                    <div className="absolute bottom-8 -left-8 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow delay-700">
                       <BiLogoTypescript className="text-[#3178C6] text-xl" />
                     </div>
-                    <div className="absolute -bottom-4 right-12 bg-gray-900/90 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow delay-1000">
+                    <div className="absolute -bottom-4 right-12 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow delay-1000">
                       <FaNodeJs className="text-[#339933] text-xl" />
                     </div>
                   </div>

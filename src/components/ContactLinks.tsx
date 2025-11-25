@@ -121,7 +121,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
 
     return (
       <a
-        className="group relative w-full rounded-2xl border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 hover:bg-gray-900/20 bg-gray-900/20 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-out hover:-translate-y-0.5"
+        className="group relative w-full rounded-2xl border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 hover:bg-gray-900/20 bg-gray-900/10 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-in hover:-translate-y-0.5"
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -256,7 +256,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         return (
           <a
             key={index}
-            className="group flex items-center space-x-1.5 border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20 rounded-xl px-2.5 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 transition-all duration-200 cursor-pointer"
+            className="group flex items-center space-x-1.5 border-2 border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 rounded-xl px-2.5 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 transition-all duration-200 cursor-pointer"
             href={href}
             target="_blank"
             rel="noopener noreferrer"

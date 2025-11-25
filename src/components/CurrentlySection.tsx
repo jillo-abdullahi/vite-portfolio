@@ -21,12 +21,11 @@ interface InfoCardProps {
 const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
   return (
     <div
-      className="group relative rounded-3xl p-6 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
+      className="group relative rounded-3xl p-6 bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
       onMouseEnter={() => iconRef.current?.startAnimation()}
       onMouseLeave={() => iconRef.current?.stopAnimation()}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/2 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/2 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="relative z-10 flex items-center gap-4">
         <div className="flex-shrink-0 p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 group-hover:border-[var(--color-primary)]/30 transition-colors duration-300 flex items-center justify-center">
           {icon}
@@ -61,7 +60,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {exploring && (
           <InfoCard
-            icon={<ZapIcon ref={zapRef} className="w-5 h-5 text-[var(--color-primary)]" />}
+            icon={<ZapIcon ref={zapRef} className="text-[var(--color-primary)]" />}
             label="Currently Exploring"
             value={exploring}
             iconRef={zapRef}
@@ -70,7 +69,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
 
         {availableFor && (
           <InfoCard
-            icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="w-5 h-5 text-[var(--color-primary)]" />}
+            icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="text-[var(--color-primary)]" />}
             label="Available For"
             value={availableFor}
             iconRef={userRoundCheckRef}
