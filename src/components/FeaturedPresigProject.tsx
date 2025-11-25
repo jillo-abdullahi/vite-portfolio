@@ -12,16 +12,10 @@ import {
 import { CodeXmlIcon, type CodeXmlIconHandle } from "./ui/CodeIcon";
 
 export const FeaturedPresigProject = () => {
-
   const codeIconRef = useRef<CodeXmlIconHandle>(null);
   return (
     <section>
-      <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--color-primary)]/10 via-gray-800/80 to-gray-900/80 backdrop-blur-sm border-2 border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/60 transition-all duration-500 hover:scale-[1.01]">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(231,161,26,0.1)_50%,transparent_75%)] bg-[length:60px_60px]"></div>
-        </div>
-
+      <div className="group relative overflow-hidden rounded-3xl bg-transparent backdrop-blur-sm border-2 border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/60 transition-all duration-500 hover:scale-[1.01]">
         <div className="relative z-10 p-8 lg:p-10">
           {/* Work in Progress Badge - Now in normal flow */}
           <div className="flex justify-start mb-6">
@@ -50,7 +44,7 @@ export const FeaturedPresigProject = () => {
                 </p>
               </div>
 
-              <hr className="border-t border-gray-700/40" />
+              <hr className="border-t-2 border-[var(--color-primary)]/20" />
 
               {/* Features */}
               <div className="flex flex-col gap-3">
@@ -86,7 +80,7 @@ export const FeaturedPresigProject = () => {
                 </div>
               </div>
 
-              <hr className="border-t border-gray-700/40" />
+              <hr className="border-t-2 border-[var(--color-primary)]/20" />
 
               {/* Tech Stack */}
               <div className="space-y-3">
@@ -132,7 +126,10 @@ export const FeaturedPresigProject = () => {
                   onMouseEnter={() => codeIconRef.current?.startAnimation()}
                   onMouseLeave={() => codeIconRef.current?.stopAnimation()}
                 >
-                  <CodeXmlIcon ref={codeIconRef} className="h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:scale-110 transition-transform duration-200" />
+                  <CodeXmlIcon
+                    ref={codeIconRef}
+                    className="h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:scale-110 transition-transform duration-200"
+                  />
                   <span className="whitespace-nowrap">View Source</span>
                 </a>
               </div>
@@ -185,7 +182,9 @@ export const FeaturedPresigProject = () => {
 
                     <div className="ml-4">
                       <span className="text-white">chainId:</span>
-                      <span className="text-[var(--color-primary)] ml-1">1</span>
+                      <span className="text-[var(--color-primary)] ml-1">
+                        1
+                      </span>
                       <span className="text-white">,</span>
                     </div>
 
