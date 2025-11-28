@@ -71,7 +71,7 @@ const LandingPage: FC = () => {
       <SlideMeIn>
         <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
           <div
-            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/15 w-full overflow-hidden"
+            className="group relative border rounded-3xl p-6 pt-8 md:p-8 bg-transparent hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30 w-full overflow-hidden"
             style={{
               backgroundImage: "url('/icon-bg.svg')",
               backgroundRepeat: "no-repeat",
@@ -121,7 +121,7 @@ const LandingPage: FC = () => {
                 </Fade>
               </div>
 
-              <div className="flex flex-col items-start justify-start  pl-0 md:pl-8 pt-4 md:pt-0 border-0 md:border-l border-[var(--color-primary)]/15">
+              <div className="flex flex-col items-start justify-start  pl-0 md:pl-8 pt-4 md:pt-0 border-0 md:border-l border-[var(--color-primary)]/20 group-hover:border-[var(--color-primary)]/30">
                 <SlideMeIn
                   delay={0.2}
                   useBorderedContent={false}
