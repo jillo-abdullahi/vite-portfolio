@@ -7,12 +7,14 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
-import WorkAvailabilityIndicator from "@/components/WorkAvailabilityIndicator";
 import Timer from "@/components/Timer";
 import { Link, useLocation } from "@tanstack/react-router";
 import { ScheduleCallBtn } from "./ScheduleCallBtn";
 import { ThemeToggle } from "./ThemeToggle";
 import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
+import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
+import { GithubIcon, type GithubIconHandle } from "./ui/GithubIcon";
+import { externalLinks } from "@/data";
 
 interface NavigationItem {
   name: string;
@@ -23,6 +25,8 @@ interface NavigationItem {
 const NavBar: FC = () => {
   const [scrollOffset, setScrollOffset] = useState<number>(0);
   const houseRef = useRef<HouseHandle>(null);
+  const linkedInRef = useRef<LinkedInIconHandle>(null);
+  const githubRef = useRef<GithubIconHandle>(null);
 
   const pathname = useLocation().pathname;
   const handleScroll = () => {
@@ -47,6 +51,33 @@ const NavBar: FC = () => {
 
   const isScrolled = scrollOffset > 0;
 
+  const SocialLinks = () => (
+    <div className="flex items-center space-x-2 h-full">
+      <a
+        href={externalLinks.github}
+        onMouseEnter={() => githubRef.current?.startAnimation()}
+        onMouseLeave={() => githubRef.current?.stopAnimation()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center bg-gray-900 w-11 h-11 rounded-xl text-gray-400 hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
+        aria-label="GitHub Profile"
+      >
+        <GithubIcon ref={githubRef} className="w-5 h-5" />
+      </a>
+      <a
+        href={externalLinks.linkedIn}
+        onMouseEnter={() => linkedInRef.current?.startAnimation()}
+        onMouseLeave={() => linkedInRef.current?.stopAnimation()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center bg-gray-900 w-11 h-11 rounded-xl text-gray-400 hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
+        aria-label="LinkedIn Profile"
+      >
+        <LinkedInIcon ref={linkedInRef} className="w-5 h-5" />
+      </a>
+    </div>
+  );
+
   return (
     <Disclosure
       as="nav"
@@ -65,8 +96,7 @@ const NavBar: FC = () => {
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-
-                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-[var(--color-primary)]/10 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent mr-0 md:mr-2 lg:mr-0">
+                  <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 bg-[var(--color-primary)]/10 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-transparent mr-0 md:mr-3 lg:mr-0">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -120,8 +150,11 @@ const NavBar: FC = () => {
                 </div>
               </div>
               <div className="hidden md:flex items-center space-x-4">
-                <WorkAvailabilityIndicator available />
-                <ScheduleCallBtn isInNavBar />
+                <div className="flex items-center space-x-3">
+                  <ScheduleCallBtn isInNavBar />
+                  <SocialLinks />
+                </div>
+
                 <div className="pl-3 border-l border-[var(--color-primary)]/15">
                   <ThemeToggle />
                 </div>
@@ -156,8 +189,10 @@ const NavBar: FC = () => {
                 ))}
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
                   <div className="flex flex-col items-center justify-center space-y-4">
-                    <WorkAvailabilityIndicator available />
-                    <ScheduleCallBtn isInNavBar />
+                    <div className="flex items-center space-x-3">
+                      <ScheduleCallBtn isInNavBar />
+                      <SocialLinks />
+                    </div>
                   </div>
                   <Timer />
                 </div>

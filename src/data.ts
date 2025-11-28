@@ -20,7 +20,7 @@ export const externalLinks: ExternalLinks = {
 };
 
 export const currentlyInfo = {
-  exploring: "Coding with AntiGravity and Gemini 3 Pro",
+  exploring: "Tanstack Start compared to Next.js",
   availableFor: "Full-time & contract opportunities",
 };
 

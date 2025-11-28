@@ -1,4 +1,4 @@
-import { type FC, useRef } from "react";
+import { type FC, useRef, useState } from "react";
 import { Menu, MenuButton, MenuItems, Transition } from "@headlessui/react";
 import {
   useTheme,
@@ -7,12 +7,13 @@ import {
   type ThemeColor,
   type ThemeFont,
 } from "@/contexts/ThemeContext";
-import { LuPaintbrush } from "react-icons/lu";
 import { XIcon, type XIconHandle } from "./ui/XIcon";
+import { BrushCleaning } from "./animate-ui/icons/brush-cleaning";
 
 export const ThemeToggle: FC = () => {
   const { currentTheme, setTheme, currentFont, setFont } = useTheme();
   const xIconRef = useRef<XIconHandle | null>(null);
+  const [isBrushHovered, setIsBrushHovered] = useState(false);
 
   // Reorder colors for better visual contrast between adjacent segments
   const colorOrder: ThemeColor[] = [
@@ -34,6 +35,8 @@ export const ThemeToggle: FC = () => {
             className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-[var(--color-primary)]/70 focus:border-[var(--color-primary)]/30 focus:outline-none"
             aria-label="Change theme color"
             title="Change theme color"
+            onMouseEnter={() => setIsBrushHovered(true)}
+            onMouseLeave={() => setIsBrushHovered(false)}
           >
             {/* Segmented color border */}
             <svg
@@ -67,7 +70,12 @@ export const ThemeToggle: FC = () => {
             </svg>
 
             <div className="relative z-10 w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:bg-gray-700 transition-colors duration-200">
-              <LuPaintbrush className="w-3 h-3 text-gray-300" />
+              <div className="rotate-45">
+                <BrushCleaning
+                  animate={isBrushHovered}
+                  className="w-3 h-3 text-gray-300"
+                />
+              </div>
             </div>
           </MenuButton>
 

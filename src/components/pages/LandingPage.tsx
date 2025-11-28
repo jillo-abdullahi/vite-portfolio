@@ -35,9 +35,7 @@ const TechBadge: FC<TechBadgeProps> = ({ icon, label }) => {
   return (
     <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/40 backdrop-blur-md group-hover:bg-gray-900/60 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-gray-700/40">
       {icon}
-      <span className="text-gray-400 font-medium text-sm">
-        {label}
-      </span>
+      <span className="text-gray-400 font-medium text-sm">{label}</span>
     </div>
   );
 };
@@ -261,7 +259,9 @@ const LandingPage: FC = () => {
                       label="React"
                     />
                     <TechBadge
-                      icon={<BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />}
+                      icon={
+                        <BiLogoTypescript className="text-blue-400 h-4.5 w-4.5" />
+                      }
                       label="TypeScript"
                     />
                     <TechBadge
@@ -269,7 +269,9 @@ const LandingPage: FC = () => {
                       label="Node.js"
                     />
                     <TechBadge
-                      icon={<BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />}
+                      icon={
+                        <BiLogoPostgresql className="text-blue-300 h-4.5 w-4.5" />
+                      }
                       label="PostgreSQL"
                     />
                   </div>

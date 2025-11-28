@@ -29,7 +29,7 @@ export const ScheduleCallBtn: FC<ScheduleCallBtnProps> = ({
     <div className="flex-shrink-0" onMouseEnter={handleMouseEnter}>
       <a
         type="button"
-        className={`group overflow-hidden relative flex items-center gap-x-1.5 rounded-xl border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 px-4 py-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] shadow-sm hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer justify-center ${
+        className={`group/btn overflow-hidden relative flex items-center gap-x-1.5 rounded-xl border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 px-4 py-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] shadow-sm hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer justify-center ${
           isInNavBar ? "w-fit" : "w-64 lg:w-fit"
         }`}
         href={externalLinks.calLink}
@@ -40,12 +40,12 @@ export const ScheduleCallBtn: FC<ScheduleCallBtnProps> = ({
           <Lottie
             lottieRef={lottieRef}
             animationData={lottieData}
-            className="-ml-0.5 h-6 w-6 group-hover:scale-110 transition-transform duration-200"
+            className="-ml-0.5 h-6 w-6 group-hover/btn:scale-110 transition-transform duration-200"
             autoplay={false}
             loop={false}
           />
         )}
-        <span className="font-semibold text-lg group-hover:translate-y-[-1px] transition-transform duration-200">
+        <span className="font-semibold text-lg group-hover/btn:translate-y-[-1px] transition-transform duration-200">
           schedule call
         </span>
       </a>
