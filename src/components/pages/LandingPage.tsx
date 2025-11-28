@@ -177,16 +177,16 @@ const LandingPage: FC = () => {
                     <p className="text-gray-400 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.3] font-medium">
                       <span>
                         I build pixel-perfect, robust web apps that are{" "}
-                        <span className="text-[var(--color-primary)]">
+                        <span className="text-[var(--color-primary)]/90">
                           fast, reliable
                         </span>{" "}
                         and{" "}
-                        <span className="text-[var(--color-primary)]">
+                        <span className="text-[var(--color-primary)]/90">
                           modern.
                         </span>{" "}
                       </span>
                       Backed by{" "}
-                      <span className="text-[var(--color-primary)]/80 font-semibold">
+                      <span className="text-[var(--color-primary)]/90">
                         6+ years
                       </span>{" "}
                       <span>
