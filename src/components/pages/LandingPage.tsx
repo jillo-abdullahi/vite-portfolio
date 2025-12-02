@@ -108,13 +108,13 @@ const LandingPage: FC = () => {
                     </div>
 
                     {/* Floating Badges */}
-                    <div className="absolute -top-0 -right-0 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow">
+                    <div className="absolute -top-0 -right-0 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float" style={{ animationDelay: "0s" }}>
                       <FaReact className="text-[#61DAFB] text-xl" />
                     </div>
-                    <div className="absolute bottom-8 -left-8 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow delay-700">
+                    <div className="absolute bottom-8 -left-8 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float" style={{ animationDelay: "-2s" }}>
                       <BiLogoTypescript className="text-[#3178C6] text-xl" />
                     </div>
-                    <div className="absolute -bottom-4 right-12 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-bounce-slow delay-1000">
+                    <div className="absolute -bottom-4 right-12 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float" style={{ animationDelay: "-4s" }}>
                       <FaNodeJs className="text-[#339933] text-xl" />
                     </div>
                   </div>
@@ -140,6 +140,7 @@ const LandingPage: FC = () => {
                   as={"span"}
                   by="character"
                   duration={0.5}
+                  animation="scaleUp"
                   className="text-2xl md:text-3xl text-[var(--color-primary)] font-bold flex-shrink-0 text-center md:text-left pt-1 w-full uppercase idle-float"
                 >
                   Jillo Woche,
