@@ -36,7 +36,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   const shouldShowToggle = quote.length > 2;
 
   return (
-    <div className="group relative h-full rounded-3xl border border-[var(--color-primary)]/15 bg-gradient-to-b from-[var(--color-primary)]/2 via-transparent to-transparent p-6 md:p-8 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
+    <div className="group relative h-full rounded-3xl border border-[var(--color-primary)]/30 bg-gradient-to-b from-[var(--color-primary)]/2 via-transparent to-transparent p-6 md:p-8 hover:border-[var(--color-primary)]/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
       {/* Decorative quote mark */}
       <div className="absolute top-4 right-6 text-6xl font-serif text-[var(--color-primary)]/20 font-black select-none pointer-events-none">
         "
@@ -45,7 +45,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
       <div className="relative z-10 flex flex-col h-full">
         <div className="flex items-start space-x-4 mb-6">
           <div className="relative flex-shrink-0">
-            <div className="w-16 h-16 rounded-xl p-1 overflow-hidden border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 transition-colors duration-500 bg-[var(--color-primary)]/10">
+            <div className="w-16 h-16 rounded-xl p-1 overflow-hidden border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 transition-colors duration-500 bg-[var(--color-primary)]/10">
               <img
                 role="button"
                 onClick={() => {
@@ -123,7 +123,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         </blockquote>
 
         {shouldShowToggle && (
-          <div className="mt-4 pt-4 border-t border-gray-800/50">
+          <div className="mt-4 pt-6 border-t border-[var(--color-primary)]/20">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               onMouseEnter={() =>
@@ -136,7 +136,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
                   ? chevronUpRef.current?.stopAnimation()
                   : chevronDownRef.current?.stopAnimation()
               }
-              className="group/btn flex items-center gap-2 font-medium text-gray-400 hover:text-[var(--color-primary)] transition-colors duration-300 w-full justify-center py-2 rounded-xl hover:bg-[var(--color-primary)]/5 cursor-pointer"
+              className="group/btn flex items-center gap-2 font-medium text-gray-400 hover:text-[var(--color-primary)] transition-colors duration-300 w-full justify-center py-2 rounded-xl hover:bg-[var(--color-primary)]/5 cursor-pointer border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30"
             >
               <span className="text-[var(--color-primary)]">
                 {isExpanded ? "read less" : "read full testimonial"}

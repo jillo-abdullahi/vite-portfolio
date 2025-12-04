@@ -34,8 +34,8 @@ export const AboutMeTimeline: FC = () => {
               key={`${company}-${title}-${date}`}
               className={`group relative border rounded-3xl p-6 bg-gray-900/10 hover:-translate-y-0.5 transition-all duration-300 ease-in ${
                 isCurrent
-                  ? "border-[var(--color-primary)]/30 shadow-md shadow-[var(--color-primary)]/5"
-                  : "border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/20"
+                  ? "border-[var(--color-primary)]/50 shadow-md shadow-[var(--color-primary)]/5"
+                  : "border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40"
               }`}
             >
               {/* Subtle hover overlay */}
@@ -72,7 +72,7 @@ export const AboutMeTimeline: FC = () => {
 
                     <div className="flex items-center space-x-2">
                       <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="block">
-                        <div className="p-1 rounded-lg border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30 transition-all duration-300 bg-[var(--color-primary)]/10">
+                        <div className="p-1 rounded-lg border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 transition-all duration-300 bg-[var(--color-primary)]/10">
                           <img
                             src={`/experience/${companyLogo}`}
                             alt={`${company} logo`}
@@ -126,7 +126,7 @@ export const AboutMeTimeline: FC = () => {
 
                   {/* Technologies */}
                   {technologies.length > 0 && (
-                    <div className="pt-3 border-t border-gray-700/50 mt-2">
+                    <div className="pt-3 border-t border-[var(--color-primary)]/20 mt-2">
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
                         Technologies
                       </p>
