@@ -28,7 +28,7 @@ const rootRoute = createRootRoute({
             {Array.from({ length: 2 }).map((_, idx) => (
               <div
                 key={idx}
-                className="w-2 md:w-6 lg:w-20 xl:w-30 h-full border border-[var(--color-primary)]"
+                className="w-2 md:w-10 h-full border border-[var(--color-primary)]"
                 style={{
                   backgroundImage: `repeating-linear-gradient(${
                     idx === 0 ? "145deg" : "-145deg"

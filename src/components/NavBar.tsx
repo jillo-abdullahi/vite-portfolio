@@ -9,7 +9,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import Timer from "@/components/Timer";
 import { Link, useLocation } from "@tanstack/react-router";
-import { ScheduleCallBtn } from "./ScheduleCallBtn";
+import { DownloadResumeBtn } from "./DownloadResumeBtn";
 import { ThemeToggle } from "./ThemeToggle";
 import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
 import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
@@ -81,7 +81,7 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-10 lg:px-28 xl:px-42 md:border-t-2 md:border-b-2 md:border-[var(--color-primary)]/10 md:bg-[var(--color-primary)]/3 py-4 ${
+      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-14 lg:px-26 md:border-t-2 md:border-b-2 md:border-[var(--color-primary)]/10 md:bg-[var(--color-primary)]/3 py-4 ${
         isScrolled ? "mt-2" : "mt-4"
       }`}
     >
@@ -151,7 +151,7 @@ const NavBar: FC = () => {
               </div>
               <div className="hidden md:flex items-center space-x-4">
                 <div className="flex items-center space-x-3">
-                  <ScheduleCallBtn isInNavBar />
+                  <DownloadResumeBtn isInNavBar />
                   <SocialLinks />
                 </div>
 
@@ -190,7 +190,7 @@ const NavBar: FC = () => {
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
                   <div className="flex flex-col items-center justify-center space-y-4">
                     <div className="flex items-center space-x-3">
-                      <ScheduleCallBtn isInNavBar />
+                      <DownloadResumeBtn isInNavBar />
                       <SocialLinks />
                     </div>
                   </div>

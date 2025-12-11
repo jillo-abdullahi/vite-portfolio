@@ -8,7 +8,7 @@ export const SectionContent = ({
   padding = "py-4",
 }: SectionContentProps) => {
   return (
-    <div className={`px-5 md:px-10 lg:px-28 xl:px-48 ${padding}`}>
+    <div className={`px-5 md:px-16 lg:px-28 ${padding}`}>
       {children}
     </div>
   );

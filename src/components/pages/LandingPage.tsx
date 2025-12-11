@@ -81,7 +81,7 @@ const LandingPage: FC = () => {
           >
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-16 items-center justify-center px-0 md:px-6">
+            <div className="relative z-10 flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-14 lg:space-x-18 items-center justify-center px-0 md:px-10">
               {/* Hero Image / Visual */}
               <div className="flex-1 relative w-full max-w-[500px] md:max-w-none flex justify-center z-10 p-6 md:p-0">
                 <Fade
@@ -121,7 +121,7 @@ const LandingPage: FC = () => {
                 </Fade>
               </div>
 
-              <div className="flex flex-col items-start justify-start  pl-0 md:pl-8 pt-4 md:pt-0 border-0 md:border-l border-[var(--color-primary)]/30 group-hover:border-[var(--color-primary)]/40">
+              <div className="flex flex-col items-start justify-start pl-0 md:pl-6 lg:pl-10 pt-4 md:pt-0 border-0 md:border-l border-[var(--color-primary)]/30 group-hover:border-[var(--color-primary)]/40">
                 <SlideMeIn
                   delay={0.2}
                   useBorderedContent={false}

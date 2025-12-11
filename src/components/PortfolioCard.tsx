@@ -19,7 +19,7 @@ export const PortfolioCard = ({
 }: PortfolioProject) => {
   return (
     <Fade cascade damping={0.1} duration={3000}>
-      <div className="group relative h-auto lg:h-[580px] 2xl:h-auto flex flex-col rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-[var(--color-primary)]/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
+      <div className="group relative h-auto lg:h-[640px] 2xl:h-auto flex flex-col rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-[var(--color-primary)]/80 hover:border-2 transition-all duration-300 hover:scale-[1.02]">
         <div className="absolute inset-0 rounded-xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         {/* Image Container with Device Mockup */}
@@ -116,7 +116,7 @@ export const PortfolioCard = ({
           </div>
 
           {/* Tech Stack */}
-          <div className="flex-1">
+          <div className="flex-1 border-t border-gray-700 pt-4">
             {stacks && stacks.length > 0 && (
               <div className="space-y-2">
                 <p className="text-xs font-semibold text-gray-300 uppercase tracking-wider">

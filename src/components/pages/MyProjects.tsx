@@ -85,7 +85,7 @@ export const MyProjects = () => {
                 className="-ml-0.5 h-4 w-4 group-hover:scale-110 transition-transform duration-200"
                 aria-hidden="true"
               />
-              <span className="font-semibold">view github</span>
+              <span className="font-semibold">github</span>
             </a>
           </div>
         }
