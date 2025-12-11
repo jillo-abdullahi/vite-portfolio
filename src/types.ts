@@ -107,6 +107,8 @@ export interface PortfolioProject {
   title: string;
   /** Detailed project description */
   description: string;
+  /** Optional deeper dive into how the app works */
+  moreDetails?: string;
   /** Project preview image file name */
   image: string;
   /** Live demo URL */
