@@ -135,7 +135,9 @@ export const PortfolioCard = ({
               >
                 <EyeIcon ref={eyeIconRef} className="h-4 w-4" />
                 <span className="group-hover/btn:translate-y-[-1px] transition-transform duration-200">
-                  view demo
+                  {description.toLowerCase().includes("gashawk")
+                    ? "save on gas"
+                    : "view demo"}
                 </span>
               </a>
             )}
