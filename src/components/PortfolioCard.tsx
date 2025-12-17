@@ -31,7 +31,7 @@ export const PortfolioCard = ({
         {/* <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
 
         {/* Image Container with Device Mockups */}
-        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-gray-800/70">
+        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-gray-800/70 flex items-center justify-center">
           {/* Status Badge */}
           {!completed && (
             <div className="absolute top-6 right-6 z-20">
