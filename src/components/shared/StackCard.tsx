@@ -21,7 +21,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
     <div
       ref={cardRef}
-      className="group relative h-full p-6 rounded-3xl border-2 border-[var(--color-primary)]/30 bg-gray-900/20 backdrop-blur-sm hover:border-[var(--color-primary)]/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
+      className="group relative h-full p-6 rounded-3xl border-2 border-[var(--color-primary)]/20 bg-gray-900/20 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
 
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

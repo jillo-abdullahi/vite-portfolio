@@ -36,7 +36,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   const shouldShowToggle = quote.length > 2;
 
   return (
-    <div className="group relative h-full rounded-3xl border-2 border-[var(--color-primary)]/30 bg-gradient-to-b from-[var(--color-primary)]/2 via-transparent to-transparent p-6 md:p-8 hover:border-[var(--color-primary)]/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
+    <div className="group relative h-full rounded-3xl border-2 border-[var(--color-primary)]/20 bg-gradient-to-b from-[var(--color-primary)]/2 via-transparent to-transparent p-6 md:p-8 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
       {/* Decorative quote mark */}
       <div className="absolute top-4 right-6 text-6xl font-serif text-[var(--color-primary)]/20 font-black select-none pointer-events-none">
         "
