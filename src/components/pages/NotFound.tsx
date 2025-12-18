@@ -1,17 +1,17 @@
 import type { FC } from "react";
 import { useRef, useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import { PageContainer } from "./shared/PageContainer";
-import { SlideMeIn } from "./shared/SlideMeIn";
-import NavigationCard from "./shared/NavigationCard";
-import { SectionContent } from "./shared/SectionContent";
-import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
+import { PageContainer } from "../shared/PageContainer";
+import { SlideMeIn } from "../shared/SlideMeIn";
+import NavigationCard from "../shared/NavigationCard";
+import { SectionContent } from "../shared/SectionContent";
+import { HouseIcon, type HouseHandle } from "../ui/HouseIcon";
 import {
   BookOpenTextIcon,
   type BookOpenTextIconHandle,
-} from "./ui/BookOpenTextIcon";
-import { LayoutGridIcon, type LayoutGridHandle } from "./ui/LayoutGridIcon";
-import { ContactIcon, type ContactHandle } from "./ui/ContactIcon";
+} from "../ui/BookOpenTextIcon";
+import { LayoutGridIcon, type LayoutGridHandle } from "../ui/LayoutGridIcon";
+import { ContactIcon, type ContactHandle } from "../ui/ContactIcon";
 
 const NotFound: FC = () => {
   const houseRef = useRef<HouseHandle | null>(null);

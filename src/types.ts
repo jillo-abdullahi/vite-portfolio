@@ -55,7 +55,6 @@ export type TechStack =
   | "Tanstack Query"
   | "Tanstack Router";
 
-
 /**
  * External social and professional links
  */
@@ -95,7 +94,12 @@ export interface Experience {
   /** List of achievements or responsibilities */
   description: string[];
   /** Nature of the work (if applicable) */
-  workType?: "Full-time" | "Part-time" | "Contract" | "Internship" | "Consultancy";
+  workType?:
+    | "Full-time"
+    | "Part-time"
+    | "Contract"
+    | "Internship"
+    | "Consultancy";
   /** List of technologies used */
   technologies?: TechStack[];
   /** Whether the experience is educational */
@@ -173,7 +177,7 @@ export interface Testimonial {
   date: string;
   /** Company name */
   company: string;
-    /** Relationship level (e.g., "Directly managed", "Peer", etc.) */
+  /** Relationship level (e.g., "Directly managed", "Peer", etc.) */
   level: string;
   /** The testimonial quote as an array of paragraphs */
   quote: string[];
@@ -181,4 +185,10 @@ export interface Testimonial {
   linkedInUrl?: string;
   /** Optional background image for the testimonial card */
   bgImage?: string;
+}
+
+export interface NavigationItem {
+  name: string;
+  href: string;
+  isActive: boolean;
 }

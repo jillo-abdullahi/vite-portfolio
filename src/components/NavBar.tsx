@@ -12,15 +12,11 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { DownloadResumeBtn } from "./DownloadResumeBtn";
 import { ThemeToggle } from "./ThemeToggle";
 import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
-import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
-import { GithubIcon, type GithubIconHandle } from "./ui/GithubIcon";
+import { type LinkedInIconHandle } from "./ui/LinkedinIcon";
+import { type GithubIconHandle } from "./ui/GithubIcon";
 import { externalLinks } from "@/data";
-
-interface NavigationItem {
-  name: string;
-  href: string;
-  isActive: boolean;
-}
+import { NavSocialLinks } from "./shared/NavSocialLinks";
+import type { NavigationItem } from "@/types";
 
 const NavBar: FC = () => {
   const [scrollOffset, setScrollOffset] = useState<number>(0);
@@ -50,33 +46,6 @@ const NavBar: FC = () => {
   }, []);
 
   const isScrolled = scrollOffset > 0;
-
-  const SocialLinks = () => (
-    <div className="flex items-center space-x-2 h-full">
-      <a
-        href={externalLinks.github}
-        onMouseEnter={() => githubRef.current?.startAnimation()}
-        onMouseLeave={() => githubRef.current?.stopAnimation()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center bg-gray-900 w-11 h-11 rounded-xl text-gray-400 hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
-        aria-label="GitHub Profile"
-      >
-        <GithubIcon ref={githubRef} className="w-5 h-5" />
-      </a>
-      <a
-        href={externalLinks.linkedIn}
-        onMouseEnter={() => linkedInRef.current?.startAnimation()}
-        onMouseLeave={() => linkedInRef.current?.stopAnimation()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center bg-gray-900 w-11 h-11 rounded-xl text-gray-400 hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
-        aria-label="LinkedIn Profile"
-      >
-        <LinkedInIcon ref={linkedInRef} className="w-5 h-5" />
-      </a>
-    </div>
-  );
 
   return (
     <Disclosure
@@ -152,7 +121,11 @@ const NavBar: FC = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <div className="flex items-center space-x-3">
                   <DownloadResumeBtn isInNavBar />
-                  <SocialLinks />
+                  <NavSocialLinks
+                    externalLinks={externalLinks}
+                    githubRef={githubRef}
+                    linkedInRef={linkedInRef}
+                  />
                 </div>
 
                 <div className="pl-3 border-l border-[var(--color-primary)]/15">
@@ -191,7 +164,11 @@ const NavBar: FC = () => {
                   <div className="flex flex-col items-center justify-center space-y-4">
                     <div className="flex items-center space-x-3">
                       <DownloadResumeBtn isInNavBar />
-                      <SocialLinks />
+                      <NavSocialLinks
+                        externalLinks={externalLinks}
+                        githubRef={githubRef}
+                        linkedInRef={linkedInRef}
+                      />
                     </div>
                   </div>
                   <Timer />

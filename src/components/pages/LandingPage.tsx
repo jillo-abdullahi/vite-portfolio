@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import type { FC } from "react";
 import { useEffect, useRef } from "react";
 import { LuMapPinHouse } from "react-icons/lu";
 import { TextAnimate } from "../ui/text-animate";
@@ -25,20 +25,7 @@ import { useInView } from "@/hooks/useInView";
 import { CurrentlySection } from "../CurrentlySection";
 import { currentlyInfo } from "@/data";
 import { Fade } from "react-awesome-reveal";
-
-interface TechBadgeProps {
-  icon: ReactNode;
-  label: string;
-}
-
-const TechBadge: FC<TechBadgeProps> = ({ icon, label }) => {
-  return (
-    <div className="flex items-center space-x-2 rounded-lg px-3 py-1.5 bg-gray-900/40 backdrop-blur-md group-hover:bg-gray-900/60 group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border border-gray-700/40">
-      {icon}
-      <span className="text-gray-400 font-medium text-sm">{label}</span>
-    </div>
-  );
-};
+import { TechBadge } from "../shared/TechBadge";
 
 const LandingPage: FC = () => {
   const swordsRef = useRef<SwordsIconHandle>(null);
@@ -108,13 +95,22 @@ const LandingPage: FC = () => {
                     </div>
 
                     {/* Floating Badges */}
-                    <div className="absolute -top-0 -right-0 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float" style={{ animationDelay: "0s" }}>
+                    <div
+                      className="absolute -top-0 -right-0 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float"
+                      style={{ animationDelay: "0s" }}
+                    >
                       <FaReact className="text-[#61DAFB] text-xl" />
                     </div>
-                    <div className="absolute bottom-8 -left-8 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float" style={{ animationDelay: "-2s" }}>
+                    <div
+                      className="absolute bottom-8 -left-8 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float"
+                      style={{ animationDelay: "-2s" }}
+                    >
                       <BiLogoTypescript className="text-[#3178C6] text-xl" />
                     </div>
-                    <div className="absolute -bottom-4 right-12 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float" style={{ animationDelay: "-4s" }}>
+                    <div
+                      className="absolute -bottom-4 right-12 bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/15 p-2 rounded-xl shadow-xl animate-float"
+                      style={{ animationDelay: "-4s" }}
+                    >
                       <FaNodeJs className="text-[#339933] text-xl" />
                     </div>
                   </div>

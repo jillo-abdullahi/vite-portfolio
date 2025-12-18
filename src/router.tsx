@@ -5,7 +5,7 @@ import {
   Outlet,
   redirect,
 } from "@tanstack/react-router";
-import NotFound from "@/components/NotFound";
+import NotFound from "@/components/pages/NotFound";
 import LandingPage from "@/components/pages/LandingPage";
 import NavBar from "@/components/NavBar";
 import { MyResume } from "./components/pages/MyResume";
