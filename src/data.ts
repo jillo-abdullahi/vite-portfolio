@@ -33,17 +33,17 @@ export const experiences: Experience[] = [
     company: "Rainforest Alliance",
     companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
     companyLogo: "rainforestLogo.jpg",
-    location: "Nairobi, Kenya - Hybrid",
+    location: "Hybrid",
     date: "Oct 2025 - present",
     description: [
       "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
     ],
-    technologies: ["React", "TypeScript", "TailwindCSS"],
+    technologies: ["React", "TypeScript", "TailwindCSS", "Tanstack Query", "Tanstack Router"],
   },
   {
     isCurrent: false,
     type: "work",
-    workType: "Contract",
+    workType: "Consultancy",
     title: "Full Stack Software Engineer",
     company: "GasHawk",
     companyUrl: "https://www.linkedin.com/company/gashawk/",
@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
-    workType: "Contract",
+    workType: "Consultancy",
     title: "Full Stack Software Engineer",
     company: "IOTA",
     companyUrl: "https://www.linkedin.com/company/iotafoundation/",
@@ -87,7 +87,7 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     type: "work",
-    workType: "Contract",
+    workType: "Consultancy",
     title: "Full Stack Software Engineer",
     company: "Syndicate",
     companyUrl: "https://www.linkedin.com/company/syndicate-protocol/",

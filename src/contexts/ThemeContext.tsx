@@ -68,10 +68,10 @@ export const THEME_FONTS = {
     family: "'Poppins', sans-serif",
     googleFont: "Poppins:wght@400;500;600;700",
   },
-  fredoka: {
-    name: "Fredoka",
-    family: "'Fredoka', sans-serif",
-    googleFont: "Fredoka:wght@400;500;600;700",
+  spaceGrotesk: {
+    name: "Space Grotesk",
+    family: "'Space Grotesk', sans-serif",
+    googleFont: "Space+Grotesk:wght@400;500;600;700",
   },
   alice: {
     name: "Alice",

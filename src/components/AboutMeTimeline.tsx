@@ -6,6 +6,20 @@ import { experiences } from "@/data";
 import { SlideMeIn } from "./shared/SlideMeIn";
 
 export const AboutMeTimeline: FC = () => {
+  const DateAndLocation = ({
+    date,
+    location,
+  }: {
+    date: string;
+    location: string;
+  }) => (
+    <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500 sm:mt-0.5 sm:font-medium">
+      <span>{date}</span>
+      <span className="w-1 h-1 bg-[var(--color-primary)]/40 rounded-full" />
+      <span>{location}</span>
+    </div>
+  );
+
   return (
     <div className="flex flex-col space-y-6">
       {experiences.map((experience: Experience) => {
@@ -32,10 +46,10 @@ export const AboutMeTimeline: FC = () => {
           >
             <div
               key={`${company}-${title}-${date}`}
-              className={`group relative border rounded-3xl p-6 bg-gray-900/10 hover:-translate-y-0.5 transition-all duration-300 ease-in ${
+              className={`group relative border-2 rounded-3xl p-4 sm:p-6 py-6 hover:-translate-y-0.5 transition-all duration-300 ease-in ${
                 isCurrent
-                  ? "border-[var(--color-primary)]/50 shadow-md shadow-[var(--color-primary)]/5"
-                  : "border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40"
+                  ? "border-[var(--color-primary)]/50 shadow-md shadow-[var(--color-primary)]/5 bg-[var(--color-primary)]/8"
+                  : "border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gradient-to-b from-gray-900/20 via-gray-900/10 to-gray-800/10"
               }`}
             >
               {/* Subtle hover overlay */}
@@ -44,55 +58,61 @@ export const AboutMeTimeline: FC = () => {
               <div className="relative z-10">
                 {/* Work type or education badge */}
                 {(workType || isEducational) && (
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="p-1 bg-gray-700/40 rounded-md">
-                      {isEducational ? (
-                        <PiGraduationCapDuotone className="text-[var(--color-primary)]/70 text-sm" />
-                      ) : (
-                        <IoDocumentTextOutline className="text-[var(--color-primary)]/70 text-sm" />
-                      )}
-                    </div>
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-                      {isEducational ? "Education" : workType}
-                    </span>
-                    {isCurrent && (
-                      <span className="px-2 py-0.5 bg-[var(--color-primary)]/15 text-[var(--color-primary)]/90 text-xs font-medium rounded-md border border-[var(--color-primary)]/20">
-                        Current
+                  <div className="flex w-full items-start justify-between border-b border-[var(--color-primary)]/10 pb-1 mb-4">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="p-1 bg-gray-700/40 rounded-md">
+                        {isEducational ? (
+                          <PiGraduationCapDuotone className="text-[var(--color-primary)]/70 text-sm" />
+                        ) : (
+                          <IoDocumentTextOutline className="text-[var(--color-primary)]/70 text-sm" />
+                        )}
+                      </div>
+                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                        {isEducational ? "Education" : workType}
                       </span>
-                    )}
+                    </div>
+                    <div className="hidden sm:block">
+                      <DateAndLocation date={date} location={location} />
+                    </div>
                   </div>
                 )}
 
                 <div className="space-y-3">
                   {/* Title and company header */}
                   <div className="space-y-2">
-                    <h3 className="font-semibold text-lg text-[var(--color-primary)]">
+                    <h3 className="block sm:hidden font-semibold text-lg text-[var(--color-primary)]">
                       {title}
                     </h3>
 
-                    <div className="flex items-center space-x-2">
-                      <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="block">
+                    <div className="flex items-center space-x-2 pt-2">
+                      <a
+                        href={companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
                         <div className="p-1 rounded-lg border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 transition-all duration-300 bg-[var(--color-primary)]/10">
                           <img
                             src={`/experience/${companyLogo}`}
                             alt={`${company} logo`}
-                            className="w-7 sm:w-9 h-7 sm:h-9 object-contain transition-transform duration-300 hover:scale-103 rounded-sm"
+                            className="w-7 sm:w-10 h-7 sm:h-10 object-contain transition-transform duration-300 hover:scale-103 rounded-sm"
                           />
                         </div>
                       </a>
                       <div className="flex-1">
+                        <h3 className="hidden sm:block font-semibold text-lg text-[var(--color-primary)]">
+                          {title}
+                        </h3>
                         <a
                           href={companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-300 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-semibold hover:underline"
+                          className="text-gray-300 sm:text-gray-400 hover:text-[var(--color-primary)]/90 transition-colors duration-200 font-semibold sm:font-medium hover:underline"
                         >
                           {company}
                         </a>
-                        <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-400 sm:mt-0.5 font-medium">
-                          <span>{date}</span>
-                          <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
-                          <span>{location}</span>
+                        <div className="block sm:hidden">
+                          <DateAndLocation date={date} location={location} />
                         </div>
                       </div>
                     </div>
@@ -126,15 +146,19 @@ export const AboutMeTimeline: FC = () => {
 
                   {/* Technologies */}
                   {technologies.length > 0 && (
-                    <div className="pt-3 border-t border-[var(--color-primary)]/20 mt-2">
-                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-                        Technologies
+                    <div className="pt-3 mt-2">
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
+                        Tech Stack
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {technologies.map((tech: TechStack, idx: number) => (
                           <span
                             key={idx}
-                            className="bg-gray-800/60 text-gray-300 rounded-lg px-2 py-1 text-xs border border-gray-700/40"
+                            className={`text-gray-300 rounded-md px-2 py-1 text-xs border border-[var(--color-primary)]/20 ${
+                              isCurrent
+                                ? "bg-[var(--color-primary)]/10"
+                                : "bg-[var(--color-primary)]/5"
+                            }`}
                           >
                             {tech}
                           </span>

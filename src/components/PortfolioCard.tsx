@@ -27,11 +27,9 @@ export const PortfolioCard = ({
 
   return (
     <Fade cascade damping={0.1} duration={3000}>
-      <div className="group relative flex flex-col md:flex-row rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-[var(--color-primary)]/80 hover:border-2 transition-all duration-300 hover:scale-[1.01] shadow-lg shadow-[var(--color-primary)]/5">
-        {/* <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
-
+      <div className="group relative flex flex-col md:flex-row rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/80 border-2 transition-all duration-300 hover:scale-[1.01] shadow-lg shadow-[var(--color-primary)]/5">
         {/* Image Container with Device Mockups */}
-        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-gray-800/70 flex items-center justify-center">
+        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-[var(--color-primary)]/20 flex items-center justify-center">
           {/* Status Badge */}
           {!completed && (
             <div className="absolute top-6 right-6 z-20">
@@ -81,7 +79,7 @@ export const PortfolioCard = ({
         </div>
 
         {/* Content Section */}
-        <div className="flex-1 flex flex-col p-6 md:p-8 space-y-4 bg-gray-950/40 md:border-l md:border-gray-800/70">
+        <div className="flex-1 flex flex-col p-6 md:p-8 space-y-4 bg-gray-950/40 md:border-l md:border-[var(--color-primary)]/20">
           {/* Title and Description */}
           <div className="space-y-2">
             <h3 className="text-xl font-semibold text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200">

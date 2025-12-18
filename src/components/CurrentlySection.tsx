@@ -21,7 +21,7 @@ interface InfoCardProps {
 const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
   return (
     <div
-      className="group relative rounded-3xl p-4 bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
+      className="group relative rounded-3xl p-4 bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent border-2 border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden"
       onMouseEnter={() => iconRef.current?.startAnimation()}
       onMouseLeave={() => iconRef.current?.stopAnimation()}
     >

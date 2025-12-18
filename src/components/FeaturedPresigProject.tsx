@@ -122,7 +122,7 @@ export const FeaturedPresigProject = () => {
                   href="https://github.com/jillo-abdullahi/presig"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-gray-300 bg-gray-700/80 border border-gray-600 rounded-xl hover:bg-gray-600 transition-all duration-200 hover:scale-105 shadow-lg"
+                  className="group/btn flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-gray-300 bg-gray-900/80 border border-gray-600 rounded-xl hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
                   onMouseEnter={() => codeIconRef.current?.startAnimation()}
                   onMouseLeave={() => codeIconRef.current?.stopAnimation()}
                 >

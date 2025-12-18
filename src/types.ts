@@ -51,7 +51,10 @@ export type TechStack =
   | "Framer"
   | "Ms Excel"
   | "Viem"
-  | "OpenAI";
+  | "OpenAI"
+  | "Tanstack Query"
+  | "Tanstack Router";
+
 
 /**
  * External social and professional links
@@ -92,7 +95,7 @@ export interface Experience {
   /** List of achievements or responsibilities */
   description: string[];
   /** Nature of the work (if applicable) */
-  workType?: "Full-time" | "Part-time" | "Contract" | "Internship";
+  workType?: "Full-time" | "Part-time" | "Contract" | "Internship" | "Consultancy";
   /** List of technologies used */
   technologies?: TechStack[];
   /** Whether the experience is educational */

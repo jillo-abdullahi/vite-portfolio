@@ -121,7 +121,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
 
     return (
       <a
-        className="group relative w-full rounded-2xl border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 hover:bg-gray-900/20 bg-gray-900/10 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-in hover:-translate-y-0.5"
+        className="group relative w-full rounded-2xl border-2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 hover:bg-gray-900/20 bg-gray-900/10 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-in hover:-translate-y-0.5"
         href={href}
         target="_blank"
         rel="noreferrer"
