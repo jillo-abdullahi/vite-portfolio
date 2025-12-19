@@ -13,9 +13,9 @@ export const AboutMeTimeline: FC = () => {
     date: string;
     location: string;
   }) => (
-    <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500 sm:mt-0.5 sm:font-medium">
+    <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-400 sm:mt-0.5 sm:font-medium">
       <span>{date}</span>
-      <span className="w-1 h-1 bg-[var(--color-primary)]/40 rounded-full" />
+      <span className="w-1 h-1 bg-[var(--color-primary)]/30 rounded-full" />
       <span>{location}</span>
     </div>
   );
@@ -58,7 +58,7 @@ export const AboutMeTimeline: FC = () => {
               <div className="relative z-10">
                 {/* Work type or education badge */}
                 {(workType || isEducational) && (
-                  <div className="flex w-full items-start justify-between border-b border-[var(--color-primary)]/10 pb-1 mb-4">
+                  <div className="flex w-full items-start justify-between border-b border-[var(--color-primary)]/20 pb-1 mb-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <div className="p-1 bg-gray-700/40 rounded-md">
                         {isEducational ? (
