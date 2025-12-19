@@ -107,10 +107,10 @@ const NavBar: FC = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`hover:bg-[var(--color-primary)]/10 hover:text-gray-300 rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
+                      className={`rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
                         item.isActive
-                          ? "bg-gray-800/60 text-gray-300 border-[var(--color-primary)]/50"
-                          : "border-transparent text-gray-400"
+                          ? "bg-[var(--color-primary)]/10 text-gray-300 border-[var(--color-primary)]/50 backdrop-blur-sm cursor-default"
+                          : "border-transparent text-gray-400 hover:bg-[var(--color-primary)]/10 hover:text-gray-300 "
                       }`}
                     >
                       {item.name}

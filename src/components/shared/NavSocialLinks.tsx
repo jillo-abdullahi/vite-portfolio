@@ -19,7 +19,7 @@ export const NavSocialLinks = ({
       onMouseLeave={() => githubRef.current?.stopAnimation()}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center bg-gray-900 w-11 h-11 rounded-xl text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
+      className="flex items-center justify-center bg-gray-900/10 w-11 h-11 rounded-xl text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
       aria-label="GitHub Profile"
     >
       <GithubIcon ref={githubRef} className="w-5 h-5" />
@@ -30,7 +30,7 @@ export const NavSocialLinks = ({
       onMouseLeave={() => linkedInRef.current?.stopAnimation()}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center bg-gray-900 w-11 h-11 rounded-xl text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
+      className="flex items-center justify-center bg-gray-900/10 w-11 h-11 rounded-xl text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20"
       aria-label="LinkedIn Profile"
     >
       <LinkedInIcon ref={linkedInRef} className="w-5 h-5" />
