@@ -78,12 +78,11 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
                   href={linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/name inline-flex items-center w-fit"
+                  className="group/name inline-flex items-center"
                 >
-                  <h3 className="text-gray-400 font-semibold text-lg truncate group-hover/name:text-[var(--color-primary)] transition-colors duration-300">
+                  <h3 className="text-gray-400 font-semibold text-lg truncate hover:text-[var(--color-primary)] transition-colors duration-300">
                     {name}
                   </h3>
-                  <div className="h-px w-0 bg-[var(--color-primary)] group-hover/name:w-full transition-all duration-300"></div>
                 </a>
                 <p className="text-[var(--color-primary)] font-medium text-sm mt-0.5">
                   {role}

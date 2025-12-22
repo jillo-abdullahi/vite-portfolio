@@ -37,6 +37,7 @@ export const experiences: Experience[] = [
     date: "Oct 2025 - present",
     description: [
       "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
+      "Collaborating with cross-functional teams to design and implement new features that enhance the user experience and drive impact.",
     ],
     technologies: ["React", "TypeScript", "TailwindCSS", "Tanstack Query", "Tanstack Router"],
   },
@@ -318,8 +319,8 @@ export const skills: Skills = {
     { name: "Flask", level: "50%" },
   ],
   frontend: [
-    { name: "Vite", level: "90%" },
-    { name: "Next.js", level: "90%" },
+    { name: "Vite/Next.js", level: "90%" },
+    { name: "Tanstack Query/Router", level: "90%" },
     { name: "Redux/Zustand", level: "90%" },
     { name: "Tailwind/ChakraUI", level: "90%" },
     { name: "Vue.js", level: "80%" },

@@ -42,10 +42,18 @@ export const SectionHeading = ({
     : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
     <SlideMeIn marginBottom="mb-6">
-      <SectionContent padding={isContactPage ? "py-6 md:py-10 bg-[var(--color-primary)]/3" : "py-4 bg-[var(--color-primary)]/3"}>
+      <SectionContent
+        padding={
+          isContactPage
+            ? "py-6 md:py-10 bg-[var(--color-primary)]/3"
+            : "py-4 bg-[var(--color-primary)]/3"
+        }
+      >
         <div className="w-full ">
           <div className="flex space-x-4 items-center justify-between">
-            <p className={`${fontSizeClass} text-gray-400 text-left space-x-2`}>
+            <div
+              className={`${fontSizeClass} text-gray-400 text-left space-x-2`}
+            >
               <span>{children}</span>
               {linkHref ? (
                 <a
@@ -63,8 +71,10 @@ export const SectionHeading = ({
                   ) : null}
                 </a>
               ) : null}
-            </p>
-            {rightLink ? <div className="inline-block md:hidden">{rightLink}</div> : null}
+            </div>
+            {rightLink ? (
+              <div className="inline-block md:hidden">{rightLink}</div>
+            ) : null}
           </div>
         </div>
       </SectionContent>

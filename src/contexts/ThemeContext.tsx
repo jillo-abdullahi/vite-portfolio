@@ -137,7 +137,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     if (saved && saved in THEME_FONTS) {
       return saved as ThemeFont;
     }
-    return "exo";
+    return "spaceGrotesk";
   });
 
   useEffect(() => {

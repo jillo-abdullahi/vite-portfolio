@@ -43,7 +43,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
             </motion.div>
           </div>
           <div>
-            <h3 className="text-gray-400 group-hover:text-gray-300 font-bold text-lg capitalize tracking-wide">
+            <h3 className="text-gray-400 group-hover:text-gray-300 font-bold text-lg tracking-wide">
               {title}
             </h3>
             <div className="h-0.5 w-8 bg-[var(--color-primary)]/50 mt-1 rounded-full group-hover:w-full transition-all duration-500 ease-out"></div>

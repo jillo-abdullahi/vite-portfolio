@@ -38,24 +38,27 @@ export const Breadcrumbs = () => {
   return (
     <SectionContent>
       <nav
-        className={`flex items-center space-x-1 text-sm text-gray-400 ${isHomePage ? "mb-6" : "mb-1"}`}
+        className={`flex items-center space-x-1 text-sm text-gray-400 ${
+          isHomePage ? "mb-6" : "mb-1"
+        }`}
         aria-label="Breadcrumb"
       >
         {breadcrumbs.map((item, index) => (
           <div key={item.path} className="flex items-center space-x-1 group">
-            {index === 0 ? (
-              <HomeIcon className="w-3.5 h-3.5 group-hover:text-[var(--color-primary)] transition-colors duration-200" />
-            ) : (
+            {index === 0 ? null : (
               <IoChevronForward className="w-3 h-3 text-gray-500" />
             )}
 
             {item.isActive ? (
-              <span className="text-[var(--color-primary)]/80 font-medium">{item.label}</span>
+              <span className="text-[var(--color-primary)]/80 font-medium">
+                {item.label}
+              </span>
             ) : (
               <Link
                 to={item.path}
-                className="hover:text-[var(--color-primary)]/80 transition-colors duration-200 font-medium"
+                className="flex items-center space-x-2 hover:text-[var(--color-primary)]/80 transition-colors duration-200 font-medium hover:underline"
               >
+                <HomeIcon className="w-3.5 h-3.5 group-hover:text-[var(--color-primary)] transition-colors duration-200 mr-1" />
                 {item.label}
               </Link>
             )}
