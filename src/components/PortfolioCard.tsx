@@ -85,15 +85,15 @@ export const PortfolioCard = ({
             <h3 className="text-xl font-semibold text-gray-300 group-hover:text-[var(--color-primary)] transition-colors duration-200">
               {title}
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
+            <p className="text-gray-400 text-sm leading-relaxed">
               {description}
             </p>
             {moreDetails && (
-              <div className="hidden md:block text-gray-400 text-sm leading-relaxed pt-4 space-y-2 mb-4">
+              <div className="text-gray-400 text-sm pt-4 space-y-2 mb-4">
                 <p className="text-xs font-semibold uppercase tracking-wider text-gray-300">
                   How it works
                 </p>
-                <p>{moreDetails}</p>
+                <p className="leading-relaxed">{moreDetails}</p>
               </div>
             )}
           </div>

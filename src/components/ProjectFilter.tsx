@@ -55,7 +55,7 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
               )}
 
               {/* Content */}
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center gap-2 lowercase">
                 {filter}
                 <span
                   className={`inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-xs font-semibold transition-colors duration-300 ${

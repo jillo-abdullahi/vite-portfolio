@@ -5,6 +5,7 @@ import ContactLinks from "../ContactLinks";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { SectionContent } from "../shared/SectionContent";
 import { MemeText } from "../shared/MemeText";
+import { externalLinks } from "@/data";
 
 export const ContactMe = () => {
   usePageTitle("Contact | Jillo Woche");
@@ -16,7 +17,7 @@ export const ContactMe = () => {
           <div className="w-full pb-4">
             <SectionHeading
               linkText="say hi!"
-              linkHref="mailto:jayloabdullahi@gmail.com"
+              linkHref={`mailto:${externalLinks.email}`}
               isContactPage={true}
             >
               I'd love to build something

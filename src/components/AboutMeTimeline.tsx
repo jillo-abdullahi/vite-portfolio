@@ -120,7 +120,7 @@ export const AboutMeTimeline: FC = () => {
 
                   {/* Description */}
                   {!isEducational && (
-                    <div className="pl-4">
+                    <div className="pl-2 pt-2">
                       <ul className="space-y-2 ml-4 list-disc">
                         {description.map((desc: string, idx: number) => (
                           <li
@@ -135,7 +135,7 @@ export const AboutMeTimeline: FC = () => {
                   )}
 
                   {isEducational && (
-                    <div className="space-y-2">
+                    <div className="space-y-2 pt-2">
                       {description.map((desc: string, idx: number) => (
                         <p key={idx} className="text-gray-300 leading-relaxed">
                           {desc}
