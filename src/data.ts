@@ -77,7 +77,7 @@ export const experiences: Experience[] = [
     company: "IOTA",
     companyUrl: "https://www.linkedin.com/company/iotafoundation/",
     companyLogo: "iotaLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "Hybrid",
     date: "Nov 2023 - Mar 2024",
     description: [
       "Built backend systems to automate the exchange of SPS documents between IOTA and partners, reducing manual steps and improving process reliability.",
@@ -122,7 +122,7 @@ export const experiences: Experience[] = [
     company: "Cellulant",
     companyUrl: "https://www.linkedin.com/company/cellulant/",
     companyLogo: "cellulantLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "On-site",
     date: "Nov 2019 - Mar 2021",
     description: [
       "Improved accessibility and usability of payment apps by redesigning flows in React/Next.js.",
@@ -138,7 +138,7 @@ export const experiences: Experience[] = [
     company: "Andela",
     companyUrl: "https://www.linkedin.com/company/andela/",
     companyLogo: "andelaLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "On-site",
     date: "Nov 2018 - Sep 2019",
     description: [
       "Delivered multiple front-end applications with ReactJS on tight sprint cycles, enabling faster product iterations and improving user experience.",
@@ -154,7 +154,7 @@ export const experiences: Experience[] = [
     company: "Sama",
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "On-site",
     date: "Jun 2016 - Nov 2018",
     description: [
       "Led a 22-person team in executing a large-scale web crawling project for Glassdoor.",
@@ -176,7 +176,7 @@ export const experiences: Experience[] = [
     company: "Sama",
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "On-site",
     date: "Nov 2015 - May 2016",
     description: [
       "Improved quality across multiple work streams by analyzing compliance gaps and recommending corrective actions.",
@@ -199,7 +199,7 @@ export const experiences: Experience[] = [
     company: "Sama",
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "On-site",
     date: "July 2015 - Nov 2015",
     description: [
       "Optimized and maintained client job feeds using HTML, CSS, XPaths, and regular expressions, ensuring accurate integrations and reliable updates.",
@@ -221,7 +221,7 @@ export const experiences: Experience[] = [
     company: "Jomo Kenyatta University of Agriculture and Technology",
     companyUrl: "https://www.linkedin.com/school/jkuat/",
     companyLogo: "jkuatLogo.jpeg",
-    location: "Nairobi, Kenya",
+    location: "On-site",
     date: "Jan 2012 - Jan 2015",
     description: ["Graduated with First Class Honors."],
     isEducational: true,
