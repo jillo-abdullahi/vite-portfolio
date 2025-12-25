@@ -154,6 +154,7 @@ const LandingPage: FC = () => {
                         "Web3 Developer.",
                       ]}
                       speed={40}
+                      className="text-2xl"
                     />
                   </span>
                 </SlideMeIn>
@@ -169,26 +170,29 @@ const LandingPage: FC = () => {
                     </span>
                   </div>
                 </SlideMeIn>
+
+                <hr className="md:hidden border-t border-[var(--color-primary)]/30 mt-4 w-[80%] mx-auto" />
                 <SlideMeIn delay={0.6} useBorderedContent={false}>
                   <div className="w-full pt-6">
-                    <p className="text-gray-400 text-center md:text-left text-lg md:text-xl tracking-wide leading-[1.3] font-medium">
+                    <p className="text-gray-400 text-center md:text-left text-xl md:text-xl tracking-wide leading-[1.3] font-medium">
                       <span>
-                        I build pixel-perfect, robust web apps that are{" "}
+                        I build{" "}
                         <span className="text-[var(--color-primary)]/90">
-                          fast, reliable
-                        </span>{" "}
-                        and{" "}
+                          high-performance
+                        </span>
+                        ,{" "}
                         <span className="text-[var(--color-primary)]/90">
-                          modern.
+                          polished
                         </span>{" "}
+                        web applications that drive user growth and conversion.{" "}
                       </span>
                       Backed by{" "}
                       <span className="text-[var(--color-primary)]/90">
                         6+ years
                       </span>{" "}
                       <span>
-                        of experience driving user growth and conversion across
-                        the evolving Web2 and Web3 spaces.
+                        of experience shipping modern products across Web2 and
+                        Web3.
                       </span>
                     </p>
                   </div>

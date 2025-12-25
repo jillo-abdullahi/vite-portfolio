@@ -122,7 +122,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         </blockquote>
 
         {shouldShowToggle && (
-          <div className="mt-4 pt-6 border-t border-[var(--color-primary)]/20">
+          <div className="mt-4 pt-6 border-t border-[var(--color-primary)]/20 w-full flex justify-end">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               onMouseEnter={() =>
@@ -135,7 +135,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
                   ? chevronUpRef.current?.stopAnimation()
                   : chevronDownRef.current?.stopAnimation()
               }
-              className="group/btn flex items-center gap-2 font-medium text-gray-400 hover:text-[var(--color-primary)] transition-colors duration-300 w-full justify-center py-2 rounded-lg bg-[var(--color-primary)]/5 hover:bg-[var(--color-primary)]/10 cursor-pointer border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30"
+              className="group/btn flex items-center gap-2 font-medium text-gray-400 hover:text-[var(--color-primary)] transition-colors duration-300 w-full md:max-w-[300px] justify-center py-2 rounded-lg bg-[var(--color-primary)]/5 hover:bg-[var(--color-primary)]/10 cursor-pointer border border-[var(--color-primary)]/15 hover:border-[var(--color-primary)]/30"
             >
               <span className="text-[var(--color-primary)]">
                 {isExpanded ? "read less" : "read full testimonial"}
