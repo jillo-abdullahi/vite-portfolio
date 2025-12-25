@@ -58,35 +58,10 @@ export const THEME_FONTS = {
     family: "'Exo', sans-serif",
     googleFont: "Exo:wght@400;500;600;700",
   },
-  quicksand: {
-    name: "Quicksand",
-    family: "'Quicksand', sans-serif",
-    googleFont: "Quicksand:wght@400;500;600;700",
-  },
-  poppins: {
-    name: "Poppins",
-    family: "'Poppins', sans-serif",
-    googleFont: "Poppins:wght@400;500;600;700",
-  },
   spaceGrotesk: {
     name: "Space Grotesk",
     family: "'Space Grotesk', sans-serif",
     googleFont: "Space+Grotesk:wght@400;500;600;700",
-  },
-  alice: {
-    name: "Alice",
-    family: "'Alice', serif",
-    googleFont: "Alice",
-  },
-  literata: {
-    name: "Literata",
-    family: "'Literata', serif",
-    googleFont: "Literata:wght@400;500;600;700",
-  },
-  averiaSerifLibre: {
-    name: "Averia Serif Libre",
-    family: "'Averia Serif Libre', serif",
-    googleFont: "Averia+Serif+Libre:wght@400;700",
   },
   merriweather: {
     name: "Merriweather",

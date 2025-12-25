@@ -88,12 +88,12 @@ export const ThemeToggle: FC = () => {
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
             <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[360px] bg-gray-900 border-2 border-[var(--color-primary)]/30 rounded-3xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
-              <div className="p-4">
+              <div className="p-4 md:p-5 relative">
                 {/* Close Button */}
-                <div className="flex justify-end -mt-1 -mr-1">
+                <div className="flex justify-end -mt-1 -mr-1 absolute top-3 right-3">
                   <button
                     onClick={close}
-                    className="cursor-pointer p-1.5 rounded-xl text-gray-400 hover:text-gray-200 hover:bg-[var(--color-primary)]/10 transition-all duration-200 w-10 h-10 flex items-center justify-center"
+                    className="cursor-pointer p-1 rounded-xl text-gray-400 hover:text-gray-200 hover:bg-[var(--color-primary)]/10 transition-all duration-200 w-10 h-10 flex items-center justify-center"
                     aria-label="Close theme menu"
                     onMouseEnter={() => xIconRef.current?.startAnimation()}
                     onMouseLeave={() => xIconRef.current?.stopAnimation()}
@@ -119,7 +119,7 @@ export const ThemeToggle: FC = () => {
                             onClick={() => {
                               setTheme(colorKey);
                             }}
-                            className={`cursor-pointer px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
+                            className={`cursor-pointer px-3 py-1.5 rounded-[11px] text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
                               isActive
                                 ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
                                 : "border-gray-800 text-gray-400 hover:border-gray-700 hover:text-gray-300"
@@ -149,7 +149,7 @@ export const ThemeToggle: FC = () => {
                   <p className="text-sm text-gray-400 py-2 font-semibold">
                     font style
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-col gap-2.5">
                     {(Object.keys(THEME_FONTS) as ThemeFont[]).map(
                       (fontKey) => {
                         const font = THEME_FONTS[fontKey];
@@ -161,14 +161,21 @@ export const ThemeToggle: FC = () => {
                             onClick={() => {
                               setFont(fontKey);
                             }}
-                            className={`cursor-pointer px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 border ${
+                            className={`cursor-pointer px-3 py-2 rounded-[11px] transition-all duration-200 border flex items-center justify-between gap-3 ${
                               isActive
                                 ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
                                 : "border-gray-800 text-gray-400 hover:border-gray-700 hover:text-gray-300"
                             }`}
-                            style={{ fontFamily: font.family }}
                           >
-                            {font.name}
+                            <span className="text-left text-sm font-medium" style={{ fontFamily: font.family }}>
+                              {font.name}
+                            </span>
+                            <span
+                              className="text-gray-500 text-sm italic flex-shrink-0"
+                              style={{ fontFamily: font.family }}
+                            >
+                              Mischief managed
+                            </span>
                           </button>
                         );
                       }
