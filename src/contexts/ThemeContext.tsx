@@ -8,12 +8,12 @@ import {
 } from "react";
 
 export const THEME_COLORS = {
-  orange: {
-    name: "Orange",
-    primary: "#e7a11a",
-    primaryHover: "#d19115",
-    primaryLight: "rgba(231, 161, 26, 0.1)",
-    primaryBorder: "rgba(231, 161, 26, 0.4)",
+  coral: {
+    name: "Coral",
+    primary: "#ff6f3c",
+    primaryHover: "#ff5722",
+    primaryLight: "rgba(255, 111, 60, 0.1)",
+    primaryBorder: "rgba(255, 111, 60, 0.4)",
   },
   blue: {
     name: "Blue",
@@ -29,12 +29,12 @@ export const THEME_COLORS = {
     primaryLight: "rgba(168, 85, 247, 0.1)",
     primaryBorder: "rgba(168, 85, 247, 0.4)",
   },
-  green: {
-    name: "Green",
-    primary: "#10b981",
-    primaryHover: "#059669",
-    primaryLight: "rgba(16, 185, 129, 0.1)",
-    primaryBorder: "rgba(16, 185, 129, 0.4)",
+  emerald: {
+    name: "Emerald",
+    primary: "#2ecc40",
+    primaryHover: "#27ae60",
+    primaryLight: "rgba(46, 204, 64, 0.1)",
+    primaryBorder: "rgba(46, 204, 64, 0.4)",
   },
   slate: {
     name: "Slate",
@@ -72,6 +72,7 @@ export const THEME_FONTS = {
 
 export type ThemeColor = keyof typeof THEME_COLORS;
 export type ThemeFont = keyof typeof THEME_FONTS;
+export type ThemeMode = "dark" | "light";
 
 interface ThemeContextType {
   currentTheme: ThemeColor;
@@ -80,6 +81,8 @@ interface ThemeContextType {
   currentFont: ThemeFont;
   setFont: (font: ThemeFont) => void;
   themeFont: (typeof THEME_FONTS)[ThemeFont];
+  themeMode: ThemeMode;
+  setThemeMode: (mode: ThemeMode) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -103,7 +106,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     if (saved && saved in THEME_COLORS) {
       return saved as ThemeColor;
     }
-    return "orange";
+    return "blue";
   });
 
   const [currentFont, setCurrentFont] = useState<ThemeFont>(() => {
@@ -113,6 +116,23 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
       return saved as ThemeFont;
     }
     return "spaceGrotesk";
+  });
+
+  const [themeMode, setThemeModeState] = useState<ThemeMode>(() => {
+    const saved = localStorage.getItem("theme-mode");
+    if (saved === "light" || saved === "dark") {
+      // Apply the saved theme immediately during initialization
+      const root = document.documentElement;
+      if (saved === "dark") {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+      return saved;
+    }
+    // Default to dark mode
+    document.documentElement.classList.add("dark");
+    return "dark";
   });
 
   useEffect(() => {
@@ -163,6 +183,22 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     setCurrentFont(font);
   };
 
+  const setThemeMode = (mode: ThemeMode) => {
+    // Apply the class immediately before state update to prevent flicker
+    const root = document.documentElement;
+    if (mode === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    
+    // Save to localStorage immediately
+    localStorage.setItem("theme-mode", mode);
+    
+    // Then update state
+    setThemeModeState(mode);
+  };
+
   return (
     <ThemeContext.Provider
       value={{
@@ -172,6 +208,8 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
         currentFont,
         setFont,
         themeFont: THEME_FONTS[currentFont],
+        themeMode,
+        setThemeMode,
       }}
     >
       {children}

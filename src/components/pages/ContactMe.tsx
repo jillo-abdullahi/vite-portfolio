@@ -29,7 +29,9 @@ export const ContactMe = () => {
         <SlideMeIn>
           <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <p className="text-gray-300 text-2xl">Let's connect</p>
+              <p className="text-gray-600 dark:text-gray-300 text-2xl font-medium dark:font-normal">
+                Let's connect
+              </p>
               <div className="md:col-span-2">
                 <ContactLinks isContactPage />
               </div>

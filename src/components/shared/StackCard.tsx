@@ -21,10 +21,10 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
     <div
       ref={cardRef}
-      className="group relative h-full p-6 rounded-3xl border-2 border-[var(--color-primary)]/20 bg-gray-900/20 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-primary)]/5 transition-all duration-500 ease-out overflow-hidden">
+      className="group relative h-full p-6 rounded-3xl border-2 border-[var(--color-primary)]/20 bg-gray-100 dark:bg-gray-900/20 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 transition-all duration-500 ease-out overflow-hidden">
 
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       {/* Decorative circle */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-[var(--color-primary)]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
@@ -34,7 +34,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
         <div className="flex items-center gap-4 mb-6">
           <div className="relative">
             <motion.div
-              className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/50 group-hover:border-[var(--color-primary)]/30 transition-colors duration-300"
+              className="p-3 bg-gray-200 dark:bg-gray-800/50 rounded-xl border border-[var(--color-primary)]/20 group-hover:border-[var(--color-primary)]/30 transition-colors duration-300"
               style={{ scale: iconScale }}
             >
               <div className="text-[var(--color-primary)]">
@@ -43,7 +43,7 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
             </motion.div>
           </div>
           <div>
-            <h3 className="text-gray-400 group-hover:text-gray-300 font-bold text-lg tracking-wide">
+            <h3 className="text-gray-700 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-300 font-bold text-lg tracking-wide">
               {title}
             </h3>
             <div className="h-0.5 w-8 bg-[var(--color-primary)]/50 mt-1 rounded-full group-hover:w-full transition-all duration-500 ease-out"></div>
@@ -64,11 +64,11 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
             return (
               <div className="space-y-1.5" key={name}>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-400 font-medium group-hover:text-gray-300 transition-colors duration-300">
+                  <span className="text-gray-700 dark:text-gray-400 font-medium group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors duration-300">
                     {name}
                   </span>
                 </div>
-                <div className="relative h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                <div className="relative h-1.5 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
                     className="absolute top-0 left-0 h-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/60 rounded-full"
                     style={{ width }}

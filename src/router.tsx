@@ -6,10 +6,10 @@ import {
   redirect,
 } from "@tanstack/react-router";
 import NotFound from "@/components/pages/NotFound";
-import LandingPage from "@/components/pages/LandingPage";
+import LandingPage from "@/components/pages/LandingPage/LandingPage";
 import NavBar from "@/components/NavBar";
 import { MyResume } from "./components/pages/MyResume";
-import { MyProjects } from "./components/pages/MyProjects";
+import { MyProjects } from "./components/pages/ProjectsPage/MyProjects";
 import { ContactMe } from "./components/pages/ContactMe";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
 import { PageFooter } from "./components/PageFooter";
@@ -24,16 +24,15 @@ const rootRoute = createRootRoute({
         </div>
         <ScrollToTop />
         <div className="w-full min-h-screen relative">
-          <div className="absolute fixed flex justify-between w-screen h-full top-0 left-0 w-full h-full -z-10 bg-gradient-to-b from-gray-900/20  to-gray-900/80">
+          <div className="absolute fixed flex justify-between w-screen h-full top-0 left-0 w-full h-full -z-10 bg-gradient-to-b from-gray-100/20 to-gray-100/80 dark:from-gray-900/20 dark:to-gray-900/80">
             {Array.from({ length: 2 }).map((_, idx) => (
               <div
                 key={idx}
-                className="w-2 md:w-10 h-full border border-[var(--color-primary)]"
+                className="w-2 md:w-10 h-full border border-[var(--color-primary)] opacity-40 dark:opacity-20"
                 style={{
                   backgroundImage: `repeating-linear-gradient(${
                     idx === 0 ? "145deg" : "-145deg"
-                  }, var(--color-primary) 0, var(--color-primary) 2px, transparent 2px, transparent 6px)`,
-                  opacity: 0.15,
+                  }, var(--color-primary) 0, var(--color-primary) 2px, transparent 2px, transparent 6px)`
                 }}
               />
             ))}
@@ -45,7 +44,6 @@ const rootRoute = createRootRoute({
       </>
     );
   },
-
   notFoundComponent: () => <NotFound />,
 });
 

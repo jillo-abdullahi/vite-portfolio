@@ -7,7 +7,7 @@ export const ViewProjectsBtn = () => {
   return (
     <Link
       type="button"
-      className="group/btn relative flex items-center gap-x-1.5 rounded-xl border border-gray-700/40 bg-gray-700/10 hover:bg-gray-700/20 px-4 py-2 text-gray-400 hover:text-[var(--color-primary)] hover:border-gray-700/60 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center flex-shrink-0"
+      className="group/btn relative flex items-center gap-x-1.5 rounded-xl border border-[var(--color-primary)]/20 bg-gray-700/10 hover:bg-gray-700/15 px-4 py-2 text-[var(--color-primary)] dark:text-gray-400 dark:hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/30 transition-all duration-200 cursor-pointer w-64 lg:w-fit justify-center flex-shrink-0"
       to={"/projects"}
       onMouseEnter={() => dashboardRef.current?.startAnimation()}
       onMouseLeave={() => dashboardRef.current?.stopAnimation()}

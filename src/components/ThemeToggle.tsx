@@ -9,21 +9,40 @@ import {
 } from "@/contexts/ThemeContext";
 import { XIcon, type XIconHandle } from "./ui/XIcon";
 import { BrushCleaning } from "./animate-ui/icons/brush-cleaning";
+import { SunIcon, type SunIconHandle } from "./ui/SunIcon";
+import { MoonIcon, type MoonIconHandle } from "./ui/MoonIcon";
 
 export const ThemeToggle: FC = () => {
-  const { currentTheme, setTheme, currentFont, setFont } = useTheme();
+  const {
+    currentTheme,
+    setTheme,
+    currentFont,
+    setFont,
+    themeMode,
+    setThemeMode,
+  } = useTheme();
+  const moonRef = useRef<MoonIconHandle | null>(null);
+  const sunRef = useRef<SunIconHandle | null>(null);
+
+  // When switching to light mode, if the current theme is not allowed, set to default
+  const prevThemeModeRef = useRef<string>(themeMode);
+  if (prevThemeModeRef.current !== themeMode) {
+    prevThemeModeRef.current = themeMode;
+    if (themeMode === "light") {
+      const allowed = ["coral", "blue", "purple"];
+      if (!allowed.includes(currentTheme)) {
+        setTheme("coral");
+      }
+    }
+  }
   const xIconRef = useRef<XIconHandle | null>(null);
   const [isBrushHovered, setIsBrushHovered] = useState(false);
 
-  // Reorder colors for better visual contrast between adjacent segments
-  const colorOrder: ThemeColor[] = [
-    "orange",
-    "blue",
-    "slate",
-    "green",
-    "pesto",
-    "purple",
-  ];
+  // Show only coral, blue, purple in light mode; all colors in dark mode
+  const colorOrder: ThemeColor[] =
+    themeMode === "light"
+      ? ["coral", "blue", "purple"]
+      : ["coral", "blue", "slate", "emerald", "pesto", "purple"];
   const colors = colorOrder.map((key) => THEME_COLORS[key]);
   const segmentAngle = 360 / colors.length;
 
@@ -32,7 +51,7 @@ export const ThemeToggle: FC = () => {
       {({ close }) => (
         <>
           <MenuButton
-            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-gray-700/50 hover:border-[var(--color-primary)]/70 focus:border-[var(--color-primary)]/30 focus:outline-none"
+            className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-[var(--color-primary)]/70 hover:border-[var(--color-primary)]/70 focus:border-[var(--color-primary)]/60 focus:outline-none"
             aria-label="Change theme color"
             title="Change theme color"
             onMouseEnter={() => setIsBrushHovered(true)}
@@ -69,11 +88,11 @@ export const ThemeToggle: FC = () => {
               })}
             </svg>
 
-            <div className="relative z-10 w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:bg-gray-700 transition-colors duration-200">
+            <div className="relative z-10 w-6 h-6 rounded-full bg-gray-100 dark:bg-gray-800 border-2 border-[var(--color-primary)]/50 flex items-center justify-center group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors duration-200">
               <div className="rotate-45">
                 <BrushCleaning
                   animate={isBrushHovered}
-                  className="w-3 h-3 text-gray-300"
+                  className="w-3 h-3 text-gray-600 dark:text-gray-300"
                 />
               </div>
             </div>
@@ -87,13 +106,13 @@ export const ThemeToggle: FC = () => {
             leaveFrom="h-32 opacity-100 translate-y-0"
             leaveTo="h-0 opacity-0 -translate-y-2"
           >
-            <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[360px] bg-gray-900 border-2 border-[var(--color-primary)]/30 rounded-3xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none">
-              <div className="p-4 md:p-5 relative">
+            <MenuItems className="absolute -right-4.5 top-14 mt-2 w-[90vw] sm:max-w-[360px] bg-gray-100 dark:bg-gray-900 border-2 border-[var(--color-primary)]/30 rounded-3xl overflow-hidden z-50 h-fit overflow-y-auto focus:outline-none shadow-xl">
+              <div className="p-4 pt-8 md:p-5 md:pt-8 relative">
                 {/* Close Button */}
                 <div className="flex justify-end -mt-1 -mr-1 absolute top-3 right-3">
                   <button
                     onClick={close}
-                    className="cursor-pointer p-1 rounded-xl text-gray-400 hover:text-gray-200 hover:bg-[var(--color-primary)]/10 transition-all duration-200 w-10 h-10 flex items-center justify-center"
+                    className="cursor-pointer p-1 rounded-xl text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-[var(--color-primary)]/10 transition-all duration-200 w-10 h-10 flex items-center justify-center"
                     aria-label="Close theme menu"
                     onMouseEnter={() => xIconRef.current?.startAnimation()}
                     onMouseLeave={() => xIconRef.current?.stopAnimation()}
@@ -102,51 +121,84 @@ export const ThemeToggle: FC = () => {
                   </button>
                 </div>
 
+                {/* Theme Mode Toggle */}
+                <div className="mb-5">
+                  <p className="text-sm pb-2 font-semibold text-gray-600 dark:text-gray-400">
+                    appearance
+                  </p>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setThemeMode("light")}
+                      onMouseEnter={() => sunRef.current?.startAnimation()}
+                      onMouseLeave={() => sunRef.current?.stopAnimation()}
+                      className={`flex-1 cursor-pointer px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center justify-center gap-2 ${
+                        themeMode === "light"
+                          ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                          : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                      }`}
+                    >
+                      <SunIcon className="w-5 h-5" ref={sunRef} />
+                      <span>Light</span>
+                    </button>
+                    <button
+                      onClick={() => setThemeMode("dark")}
+                      onMouseEnter={() => moonRef.current?.startAnimation()}
+                      onMouseLeave={() => moonRef.current?.stopAnimation()}
+                      className={`flex-1 cursor-pointer px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center justify-center gap-2 ${
+                        themeMode === "dark"
+                          ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                          : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                      }`}
+                    >
+                      <MoonIcon className="w-5 h-5" ref={moonRef} />
+                      <span>Dark</span>
+                    </button>
+                  </div>
+                </div>
+
                 {/* Colors Section */}
                 <div>
-                  <p className="text-sm text-gray-400 pb-2 font-semibold">
+                  <p className="text-sm pb-2 font-semibold text-gray-600 dark:text-gray-400">
                     theme color
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {(Object.keys(THEME_COLORS) as ThemeColor[]).map(
-                      (colorKey) => {
-                        const color = THEME_COLORS[colorKey];
-                        const isActive = currentTheme === colorKey;
+                    {colorOrder.map((colorKey) => {
+                      const color = THEME_COLORS[colorKey];
+                      const isActive = currentTheme === colorKey;
 
-                        return (
-                          <button
-                            key={colorKey}
-                            onClick={() => {
-                              setTheme(colorKey);
+                      return (
+                        <button
+                          key={colorKey}
+                          onClick={() => {
+                            setTheme(colorKey);
+                          }}
+                          className={`cursor-pointer px-3 py-1.5 rounded-[11px] text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
+                            isActive
+                              ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                              : "bg-gray-200 dark:dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                          }`}
+                        >
+                          <div
+                            className={`rounded-full w-4 h-4 flex items-center justify-center border-1`}
+                            style={{
+                              borderColor: color.primary,
                             }}
-                            className={`cursor-pointer px-3 py-1.5 rounded-[11px] text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
-                              isActive
-                                ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
-                                : "border-gray-800 text-gray-400 hover:border-gray-700 hover:text-gray-300"
-                            }`}
                           >
                             <div
-                              className={`rounded-full w-4 h-4 flex items-center justify-center border-1`}
-                              style={{
-                                borderColor: color.primary,
-                              }}
-                            >
-                              <div
-                                className="w-2 h-2 rounded-full"
-                                style={{ backgroundColor: color.primary }}
-                              />
-                            </div>
-                            <span>{color.name}</span>
-                          </button>
-                        );
-                      }
-                    )}
+                              className="w-2 h-2 rounded-full"
+                              style={{ backgroundColor: color.primary }}
+                            />
+                          </div>
+                          <span>{color.name}</span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
                 {/* Fonts Section */}
                 <div className="pt-4">
-                  <p className="text-sm text-gray-400 py-2 font-semibold">
+                  <p className="text-sm py-2 font-semibold text-gray-600 dark:text-gray-400">
                     font style
                   </p>
                   <div className="flex flex-col gap-2.5">
@@ -163,15 +215,18 @@ export const ThemeToggle: FC = () => {
                             }}
                             className={`cursor-pointer px-3 py-2 rounded-[11px] transition-all duration-200 border flex items-center justify-between gap-3 ${
                               isActive
-                                ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-200"
-                                : "border-gray-800 text-gray-400 hover:border-gray-700 hover:text-gray-300"
+                                ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                                : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
                             }`}
                           >
-                            <span className="text-left text-sm font-medium" style={{ fontFamily: font.family }}>
+                            <span
+                              className="text-left text-sm font-medium"
+                              style={{ fontFamily: font.family }}
+                            >
                               {font.name}
                             </span>
                             <span
-                              className="text-gray-500 text-sm italic flex-shrink-0"
+                              className="text-sm italic flex-shrink-0 opacity-60"
                               style={{ fontFamily: font.family }}
                             >
                               Mischief managed

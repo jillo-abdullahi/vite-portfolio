@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant light (&:is(.light *));
 
 @theme {
   --color-orange: #e7a11a;
@@ -19,17 +20,30 @@
   --font-family: 'Exo', sans-serif;
 }
 
+/* Default to dark theme */
 body {
   font-family: var(--font-family);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  @apply bg-[#0f0f0f] text-gray-100;
 }
 
-/* Non-critical styles - loaded after initial render */
+/* Light theme overrides */
+html:not(.dark) body {
+  @apply bg-gray-50 text-gray-900;
+}
 
 main {
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+  @apply bg-[#0f0f0f];
 }
+
+html:not(.dark) main {
+  @apply bg-gray-50;
+}
+
+/* Non-critical styles - loaded after initial render */
 
 /*==========Landing section============= */
 

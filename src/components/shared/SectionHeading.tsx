@@ -52,7 +52,7 @@ export const SectionHeading = ({
         <div className="w-full ">
           <div className="flex space-x-4 items-center justify-between">
             <div
-              className={`${fontSizeClass} text-gray-400 text-left space-x-2`}
+              className={`${fontSizeClass} text-gray-600 dark:text-gray-400 text-left space-x-2`}
             >
               <span>{children}</span>
               {linkHref ? (

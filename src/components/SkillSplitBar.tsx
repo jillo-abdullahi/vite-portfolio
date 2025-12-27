@@ -28,7 +28,7 @@ export default function SkillSplitBar({
       style={{ ["--split" as any]: `${left}%` }}
     >
       <div
-        className="grid overflow-hidden rounded-lg border-2 border-[var(--color-primary)]/20 shadow-lg transition-all duration-200 group-hover:border-[var(--color-primary)]/30"
+        className="grid overflow-hidden rounded-lg border border-[var(--color-primary)]/30 transition-all duration-200 group-hover:border-[var(--color-primary)]/30"
         style={{
           gridTemplateColumns: `${left}% ${right}%`,
           height: `${height}px`,
@@ -51,7 +51,7 @@ export default function SkillSplitBar({
           </span>
         </div>
 
-        <div className="flex items-center justify-between px-3 bg-gray-800/80 text-gray-400 relative">
+        <div className="flex items-center justify-between px-3 bg-gray-100 text-gray-700 dark:bg-gray-800/80 dark:text-gray-400 relative">
           <span className="font-bold text-sm">
             {
               <CountingNumber

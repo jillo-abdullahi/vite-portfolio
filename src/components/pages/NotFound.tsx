@@ -49,11 +49,11 @@ const NotFound: FC = () => {
           <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
             <SlideMeIn useBorderedContent={false} delay={0.1}>
               <div className="text-center mb-8">
-                <p className="text-gray-300 text-lg mb-2">
+                <p className="text-gray-600 dark:text-gray-300 text-xl mb-2 font-semibold dark:font-medium">
                   The page you're looking for seems to have wandered off into
                   the digital void.
                 </p>
-                <p className="text-gray-400 text-base">
+                <p className="text-gray-500 dark:text-gray-400 text-lg">
                   Don't worry though - let's get you back on track!
                 </p>
               </div>
@@ -62,7 +62,7 @@ const NotFound: FC = () => {
             {/* Navigation Suggestions */}
             <div className="w-full mb-8">
               <SlideMeIn useBorderedContent={false} delay={0.1}>
-                <h2 className="text-white text-xl font-semibold mb-4 text-center">
+                <h2 className="text-gray-500 dark:text-white text-xl font-semibold mb-4 text-center">
                   Where would you like to go?
                 </h2>
               </SlideMeIn>

@@ -121,7 +121,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
 
     return (
       <a
-        className="group relative w-full rounded-2xl border-2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 hover:bg-gray-900/20 bg-gray-900/10 flex items-center justify-between cursor-pointer p-3 transition-all duration-300 ease-in hover:-translate-y-0.5"
+        className="group relative w-full rounded-2xl border-2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gray-100 dark:bg-gray-900/10 hover:bg-gray-200/40 dark:hover:bg-gray-900/20 flex items-center justify-between cursor-pointer p-3 transition-all duration-100 ease-in hover:-translate-y-0.5"
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -130,20 +130,20 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         <div className="absolute inset-0 rounded-2xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <div className="relative z-10 flex items-center justify-start space-x-3">
-          <div className="rounded-lg bg-gray-700/40 border border-gray-700/40 p-2 w-10 h-10 flex items-center justify-center">
+          <div className="rounded-md bg-gray-100 dark:bg-gray-700/40 border border-gray-300 dark:border-gray-700/40 p-1 w-12 h-12 flex items-center justify-center">
             <FontAwesomeIcon
               icon={icon}
-              style={{ fontSize: "24px" }}
-              className="text-gray-300 transition-all group-hover:text-[var(--color-primary)]/90 duration-300"
+              style={{ fontSize: "28px" }}
+              className="text-gray-600 dark:text-gray-300 transition-all group-hover:text-[var(--color-primary)]/90 dark:group-hover:text-[var(--color-primary)]/90 duration-300"
             />
           </div>
           <div className="text-left">
-            <div className="text-gray-300 font-semibold">{name}</div>
+            <div className="text-gray-700 dark:text-gray-300 font-semibold">{name}</div>
             <div className="flex items-center space-x-1">
-              <span className="text-sm text-gray-400 hidden sm:inline">
+              <span className="text-sm text-gray-500 dark:text-gray-400 hidden sm:inline font-medium dark:font-normal">
                 {displayHref}
               </span>
-              <span className="text-sm text-gray-400 sm:hidden">
+              <span className="text-sm text-gray-500 dark:text-gray-400 sm:hidden">
                 {getMobileDisplay(href)}
               </span>
             </div>
@@ -156,11 +156,11 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
               e.preventDefault();
               window.open(href, "_blank", "noopener,noreferrer");
             }}
-            className="transform group-hover:scale-105 transition-all duration-200 cursor-pointer"
+            className="transform group-hover:scale-105 transition-all duration-200 cursor-pointer border border-gray-300 dark:border-gray-700/40 rounded-md"
             aria-label={`Open ${name}`}
           >
             <div
-              className="flex rounded-md bg-gray-800/60 items-center justify-center h-10 w-10"
+              className="flex rounded-md bg-gray-100 dark:bg-gray-800/60 items-center justify-center h-10 w-10"
               onMouseEnter={() =>
                 squareArrowRef && squareArrowRef.current?.startAnimation()
               }
@@ -178,12 +178,12 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
           {/* Copy Link Button */}
           <button
             onClick={handleCopy}
-            className={`transform group-hover:scale-105 transition-all duration-200 cursor-pointer`}
+            className={`transform group-hover:scale-105 transition-all duration-200 cursor-pointer border border-gray-300 dark:border-gray-700/40 rounded-md`}
             aria-label="Copy link"
           >
             {isCopied ? (
               <div
-                className="flex items-center justify-center p-2 rounded-md bg-gray-800/60 h-10 w-10"
+                className="flex items-center justify-center p-2 rounded-md bg-gray-100 dark:bg-gray-800/60 h-10 w-10"
                 onMouseEnter={() =>
                   checkIconRef && checkIconRef.current?.startAnimation()
                 }
@@ -199,7 +199,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
               </div>
             ) : (
               <div
-                className="flex items-center justify-center p-2 rounded-md bg-gray-800/60 h-10 w-10"
+                className="flex items-center justify-center p-2 rounded-md bg-gray-100 dark:bg-gray-800/60 h-10 w-10"
                 onMouseEnter={() =>
                   clipboardRef && clipboardRef.current?.startAnimation()
                 }
@@ -256,7 +256,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         return (
           <a
             key={index}
-            className="group flex items-center space-x-1.5 border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 rounded-xl px-2.5 py-1.5 bg-gray-800/60 hover:bg-gray-800/80 transition-all duration-200 cursor-pointer"
+            className="group flex items-center space-x-1.5 border border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/40 rounded-xl px-2.5 py-1.5 bg-gray-100/60 dark:bg-gray-800/60 hover:bg-gray-200/80 dark:hover:bg-gray-800/80 transition-all duration-200 cursor-pointer"
             href={href}
             target="_blank"
             rel="noopener noreferrer"
@@ -270,22 +270,22 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             {name === "LinkedIn" && (
               <LinkedInIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="w-3 h-3 text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
             {name === "Twitter(X)" && (
               <TwitterIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="w-3 h-3 text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
             {name === "GitHub" && (
               <GithubIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="w-3 h-3 text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
-            <span className="text-gray-400 group-hover:text-[var(--color-primary)] font-medium text-xs transition-all duration-200">
+            <span className="text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] font-medium text-xs transition-all duration-200">
               {name}
             </span>
           </a>
