@@ -21,10 +21,10 @@ export const StackCard: FC<StackCardProps> = ({ title, icon, skills }) => {
   return (
     <div
       ref={cardRef}
-      className="group relative h-full p-6 rounded-3xl border-2 border-[var(--color-primary)]/20 bg-gray-100 dark:bg-gray-900/20 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 transition-all duration-500 ease-out overflow-hidden">
+      className="group relative h-full p-6 rounded-3xl border-2 border-[var(--color-primary)]/20 bg-[var(--color-primary)]/3 dark:bg-gray-900/20 backdrop-blur-sm hover:border-[var(--color-primary)]/30 hover:-translate-y-1 transition-all duration-500 ease-out overflow-hidden">
 
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/15 dark:from-[var(--color-primary)]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       {/* Decorative circle */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-[var(--color-primary)]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>

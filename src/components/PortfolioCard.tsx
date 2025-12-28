@@ -27,9 +27,9 @@ export const PortfolioCard = ({
 
   return (
     <Fade cascade damping={0.1} duration={2000}>
-      <div className="group relative flex flex-col md:flex-row rounded-3xl overflow-hidden bg-gray-100 dark:bg-transparent dark:bg-gradient-to-br dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/80 border-2 transition-all duration-300 hover:scale-[1.01]">
+      <div className="group relative flex flex-col md:flex-row rounded-3xl overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/80 border-2 transition-all duration-300 hover:scale-[1.01]">
         {/* Image Container with Device Mockups */}
-        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-gray-100 dark:bg-transparent dark:bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-[var(--color-primary)]/20 flex items-center justify-center">
+        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-[var(--color-primary)]/20 flex items-center justify-center">
           {/* Status Badge */}
           {!completed && (
             <div className="absolute top-6 right-6 z-20">

@@ -8,7 +8,12 @@ interface ProjectFilterProps {
   projectCounts: Record<ProjectCategory | "All", number>;
 }
 
-const filters: (ProjectCategory | "All")[] = ["All", "Web3", "Full Stack", "Frontend"];
+const filters: (ProjectCategory | "All")[] = [
+  "All",
+  "Web3",
+  "Full Stack",
+  "Frontend",
+];
 
 export const ProjectFilter: FC<ProjectFilterProps> = ({
   activeFilter,
@@ -31,7 +36,7 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
                   ? "text-gray-100 dark:text-gray-100 text-gray-900"
                   : "text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
               }`}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
             >
               {/* Background with border */}
@@ -39,7 +44,7 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
                 className={`absolute inset-0 rounded-xl border transition-all duration-300 ${
                   isActive
                     ? "bg-[var(--color-primary)]/15 border-[var(--color-primary)]/50"
-                    : "bg-gray-200 dark:bg-gray-800/40 border-gray-300 dark:border-gray-700/40 group-hover:border-gray-400 dark:group-hover:border-gray-600/60 group-hover:bg-gray-100 dark:group-hover:bg-gray-800/60"
+                    : "bg-gray-200/50 dark:bg-gray-800/40 border-gray-300 dark:border-gray-700/40 group-hover:border-gray-400 dark:group-hover:border-gray-600/60 group-hover:bg-gray-100 dark:group-hover:bg-gray-800/60"
                 }`}
               />
 
