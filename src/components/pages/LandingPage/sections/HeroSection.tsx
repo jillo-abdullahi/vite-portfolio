@@ -73,7 +73,7 @@ const HeroSection: FC = () => {
               <hr className="md:hidden border-t border-[var(--color-primary)]/30 mt-4 w-[80%] mx-auto" />
               <SlideMeIn delay={0.6} useBorderedContent={false}>
                 <div className="w-full pt-6">
-                  <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-xl md:text-xl leading-[1.3] font-semibold dark:font-medium">
+                  <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-xl md:text-xl leading-[1.3] font-semibold dark:font-medium leading-relaxed">
                     <span>
                       I build{" "}
                       <span className="text-[var(--color-primary)]/90">
