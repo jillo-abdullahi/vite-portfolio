@@ -69,6 +69,7 @@ export interface ExternalLinks {
   calLink: string;
   email: string;
   telegram: string;
+  sneakerHeadImage: string;
 }
 
 /**

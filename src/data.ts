@@ -17,6 +17,8 @@ export const externalLinks: ExternalLinks = {
   calLink: "https://calendar.app.google/UjK3FBKSAaX6jXvK6",
   email: "jayloabdullahi@gmail.com",
   telegram: "https://t.me/shrewdTurtle",
+  sneakerHeadImage:
+    "https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp",
 };
 
 export const currentlyInfo = {
@@ -39,7 +41,13 @@ export const experiences: Experience[] = [
       "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
       "Collaborating with cross-functional teams to design and implement new features that enhance the user experience and drive impact.",
     ],
-    technologies: ["React", "TypeScript", "TailwindCSS", "Tanstack Query", "Tanstack Router"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Tanstack Query",
+      "Tanstack Router",
+    ],
   },
   {
     isCurrent: false,
