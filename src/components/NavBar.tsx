@@ -57,9 +57,9 @@ const NavBar: FC = () => {
       {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
-            className={`mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-all duration-300 ${
+            className={`mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-300 backdrop-blur-sm ${
               isScrolled
-                ? "bg-gray-100 dark:bg-gray-900/50 backdrop-blur-sm"
+                ? "bg-gray-100 dark:bg-gray-900/50"
                 : "bg-gray-100 dark:bg-gray-900/50"
             }`}
           >
