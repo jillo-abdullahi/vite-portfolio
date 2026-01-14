@@ -90,7 +90,7 @@ export const PortfolioCard = ({
             </p>
             {moreDetails && (
               <div className="text-gray-500 dark:text-gray-400 text-sm pt-4 space-y-2 mb-4">
-                <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-300 font-bold dark:font-normal">
+                <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-300 font-bold">
                   How it works
                 </p>
                 <p className="font-medium dark:font-normal">{moreDetails}</p>
@@ -169,7 +169,7 @@ export const PortfolioCard = ({
                       className="flex items-center gap-2 px-4 py-2 text-md text-gray-600 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-800/90 transition-colors"
                     >
                       <CodeBracketIcon className="h-5 w-5" />
-                      <span>view source</span>
+                      <span>Frontend</span>
                     </a>
                     <div className="h-px bg-gray-400 dark:bg-gray-400/30" />
                     <a
@@ -179,7 +179,7 @@ export const PortfolioCard = ({
                       className="flex items-center gap-2 px-4 py-2 text-md text-gray-600 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-purple-900/50 transition-colors"
                     >
                       <CodeBracketSquareIcon className="h-5 w-5" />
-                      <span>view contract</span>
+                      <span>Backend</span>
                     </a>
                   </div>
                 )}

@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { portfolioProjects } from "@/data";
 import { PageContainer } from "../../shared/PageContainer";
 import ProjectsHeader from "./sections/ProjectsHeader";
-import FeaturedProjectSection from "./sections/FeaturedProjectSection";
 import { MemeText } from "../../shared/MemeText";
 import ProjectFilterGridSection from "./sections/ProjectFilterGridSection";
 import type { ProjectCategory } from "@/types";
@@ -44,7 +43,7 @@ export const MyProjects = () => {
   return (
     <PageContainer showBreadcrumbs>
       <ProjectsHeader />
-      <FeaturedProjectSection />
+      {/* <FeaturedProjectSection /> */}
 
       <ProjectFilterGridSection
         activeFilter={activeFilter}

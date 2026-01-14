@@ -238,6 +238,29 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    title: "Poker planning app for remote teams and agile squads",
+    description:
+      "A collaborative poker planning application designed to help remote teams and agile squads estimate project tasks effectively.",
+    moreDetails:
+      "Teams create rooms, invite members, and use virtual cards to estimate tasks in real-time. The app supports various estimation techniques and provides analytics to track team performance over time.",
+    image: "votedeck.png",
+    preview: "https://votedeck.vercel.app",
+    stacks: [
+      "Fastify",
+      "Socket.io",
+      "Redis",
+      "Postgres",
+      "React",
+      "Vite",
+      "TailwindCSS",
+      "TypeScript",
+    ],
+    completed: true,
+    github: "https://github.com/jillo-abdullahi/votedeck",
+    contract: "https://github.com/jillo-abdullahi/votedeck-api",
+    category: "Full Stack",
+  },
+  {
     title: "Ethereum dApp for managing GasHawk transactions",
     description:
       "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
@@ -245,7 +268,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Users connect their wallet, choose network, and GasHawk routes transactions through its relay to minimize gas. The dashboard shows queued, mined, and failed txs with live status updates.",
     image: "gashawk.png",
     preview: "https://app.gashawk.io/",
-    stacks: ["React", "Vite", "Chakra UI", "TypeScript", "Express.js"],
+    stacks: ["Express.js", "React", "Vite", "Chakra UI", "TypeScript", "Postgres"],
     completed: true,
     category: "Web3",
   },
@@ -299,7 +322,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "memory.png",
     preview: "https://memory-game-green-nine.vercel.app/",
     github: "https://github.com/jillo-abdullahi/memory-game",
-    stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
+    stacks: ["TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
     category: "Frontend",
   },
@@ -312,7 +335,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "dictionary.png",
     preview: "https://dictionary-web-app-ashy.vercel.app/",
     github: "https://github.com/jillo-abdullahi/dictionary-web-app",
-    stacks: ["React", "TypeScript", "Next.js", "TailwindCSS"],
+    stacks: ["TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
     category: "Frontend",
   },

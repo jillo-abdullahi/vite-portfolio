@@ -53,7 +53,20 @@ export type TechStack =
   | "Viem"
   | "OpenAI"
   | "Tanstack Query"
-  | "Tanstack Router";
+  | "Tanstack Router"
+  | "Supabase"
+  | "Redis"
+  | "Apollo Client"
+  | "Apollo Server"
+  | "Sass"
+  | "Styled Components"
+  | "Ethers.js"
+  | "Hardhat"
+  | "Foundry"
+  | "The Graph"
+  | "IPFS"
+  | "Socket.io"
+  | "Fastify";
 
 /**
  * External social and professional links
