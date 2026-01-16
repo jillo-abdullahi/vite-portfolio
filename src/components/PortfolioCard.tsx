@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { type PortfolioProject } from "@/types";
 import { Fade } from "react-awesome-reveal";
 import {
@@ -24,6 +24,14 @@ export const PortfolioCard = ({
   const [codeMenuOpen, setCodeMenuOpen] = useState(false);
   const eyeIconRef = useRef<ExternalLinkIconHandle>(null);
   const codeIconRef = useRef<CodeXmlIconHandle>(null);
+
+  // Animation state for image fade-in
+  const [imgVisible, setImgVisible] = useState(false);
+  useEffect(() => {
+    // Delay to allow card to mount before animating image
+    const timeout = setTimeout(() => setImgVisible(true), 120);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <Fade cascade damping={0.1} duration={2000}>
@@ -62,7 +70,7 @@ export const PortfolioCard = ({
                       alt={title}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover rounded-lg overflow-hidden border border-[var(--color-primary)]/5"
+                      className={`h-full w-full object-cover rounded-lg overflow-hidden border border-[var(--color-primary)]/5 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${imgVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
                     />
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
