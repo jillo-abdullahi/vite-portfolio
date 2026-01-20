@@ -103,17 +103,19 @@ export interface Experience {
   companyLogo: string;
   /** Location of the experience */
   location: string;
-  /** Time period of the experience */
-  date: string;
+  /** Start date of the experience */
+  startDate: string;
+  /** End date of the experience (optional if current) */
+  endDate?: string;
   /** List of achievements or responsibilities */
   description: string[];
   /** Nature of the work (if applicable) */
   workType?:
-    | "Full-time"
-    | "Part-time"
-    | "Contract"
-    | "Internship"
-    | "Consultancy";
+  | "Full-time"
+  | "Part-time"
+  | "Contract"
+  | "Internship"
+  | "Consultancy";
   /** List of technologies used */
   technologies?: TechStack[];
   /** Whether the experience is educational */

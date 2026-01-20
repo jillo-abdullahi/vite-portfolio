@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/rainforest-alliance",
     companyLogo: "rainforestLogo.jpg",
     location: "Hybrid",
-    date: "Oct 2025 - present",
+    startDate: "Oct 2025",
     description: [
       "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
       "Collaborating with cross-functional teams to design and implement new features that enhance the user experience and drive impact.",
@@ -58,7 +58,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/gashawk/",
     companyLogo: "gashawkLogo.jpeg",
     location: "Remote",
-    date: "Apr 2024 - Aug 2025",
+    startDate: "Apr 2024",
+    endDate: "Aug 2025",
     description: [
       "Rebuilt and redesigned the core web application (React, TypeScript), improving reliability and reducing load times for a smoother user experience.",
       "Implemented a secure authentication system and optimized REST APIs, cutting latency and eliminating recurring timeout errors.",
@@ -86,7 +87,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/iotafoundation/",
     companyLogo: "iotaLogo.jpeg",
     location: "Hybrid",
-    date: "Nov 2023 - Mar 2024",
+    startDate: "Nov 2023",
+    endDate: "Apr 2024",
     description: [
       "Built backend systems to automate the exchange of SPS documents between IOTA and partners, reducing manual steps and improving process reliability.",
       "Revamped the TLIP web app frontend with React and TypeScript, enhancing usability and delivering a smoother, more responsive user experience.",
@@ -102,7 +104,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/syndicate-protocol/",
     companyLogo: "syndicateLogo.jpeg",
     location: "Remote",
-    date: "Apr 2021 - Mar 2023",
+    startDate: "Apr 2021",
+    endDate: "Mar 2023",
     description: [
       "Built and deployed a production-ready Web3 dApp in under 3 months (TypeScript, React, Ethereum/Polygon), accelerating Syndicate's go-to-market timeline.",
       "Launched Collectives, enabling NFT-based communities to organize around generative art and driving early engagement among creators and collectors.",
@@ -131,7 +134,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/cellulant/",
     companyLogo: "cellulantLogo.jpeg",
     location: "On-site",
-    date: "Nov 2019 - Mar 2021",
+    startDate: "Nov 2019",
+    endDate: "Apr 2021",
     description: [
       "Improved accessibility and usability of payment apps by redesigning flows in React/Next.js.",
       "Optimized checkout UX across 6+ payment options, leading to smoother transaction completion.",
@@ -147,7 +151,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/andela/",
     companyLogo: "andelaLogo.jpeg",
     location: "On-site",
-    date: "Nov 2018 - Sep 2019",
+    startDate: "Nov 2018",
+    endDate: "Nov 2019",
     description: [
       "Delivered multiple front-end applications with ReactJS on tight sprint cycles, enabling faster product iterations and improving user experience.",
       "Developed and deployed a REST API with Python/Django that supported scalable data handling and reduced backend response times under production load.",
@@ -163,7 +168,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
     location: "On-site",
-    date: "Jun 2016 - Nov 2018",
+    startDate: "Jun 2016",
+    endDate: "Nov 2018",
     description: [
       "Led a 22-person team in executing a large-scale web crawling project for Glassdoor.",
       "Coordinated workflows, evaluated team performance, and delivered constructive feedback that improved accuracy and efficiency.",
@@ -185,7 +191,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
     location: "On-site",
-    date: "Nov 2015 - May 2016",
+    startDate: "Nov 2015",
+    endDate: "May 2016",
     description: [
       "Improved quality across multiple work streams by analyzing compliance gaps and recommending corrective actions.",
       "Boosted agent performance by assessing transactions, giving feedback, and driving measurable quality gains.",
@@ -208,7 +215,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/sama-ai/",
     companyLogo: "samaLogo.jpeg",
     location: "On-site",
-    date: "July 2015 - Nov 2015",
+    startDate: "July 2015",
+    endDate: "Nov 2015",
     description: [
       "Optimized and maintained client job feeds using HTML, CSS, XPaths, and regular expressions, ensuring accurate integrations and reliable updates.",
       "Streamlined error resolution processes by reviewing feed issues, escalating complex cases, and recommending improvements that enhanced data quality and detection.",
@@ -230,7 +238,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/school/jkuat/",
     companyLogo: "jkuatLogo.jpeg",
     location: "On-site",
-    date: "Jan 2012 - Jan 2015",
+    startDate: "Jan 2012",
+    endDate: "Jan 2015",
     description: ["Graduated with First Class Honors."],
     isEducational: true,
   },

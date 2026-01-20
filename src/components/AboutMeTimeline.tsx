@@ -3,22 +3,59 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { PiGraduationCapDuotone } from "react-icons/pi";
 import type { Experience, TechStack } from "@/types";
 import { experiences } from "@/data";
+
+import { formatDateRange, getDuration } from "@/utils/date";
 import { SlideMeIn } from "./shared/SlideMeIn";
 
 export const AboutMeTimeline: FC = () => {
   const DateAndLocation = ({
-    date,
+    startDate,
+    endDate,
+    isCurrent,
     location,
   }: {
-    date: string;
+    startDate: string;
+    endDate?: string;
+    isCurrent: boolean;
     location: string;
-  }) => (
-    <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 sm:mt-0.5 sm:font-medium">
-      <span>{date}</span>
-      <span className="w-1 h-1 bg-[var(--color-primary)]/30 rounded-full" />
-      <span>{location}</span>
-    </div>
-  );
+  }) => {
+    const duration = getDuration(startDate, endDate);
+
+    return (
+      <div className="flex flex-col sm:flex-row sm:items-center text-xs sm:text-sm text-gray-500 dark:text-gray-400 sm:mt-0.5 sm:font-medium">
+        {/* Mobile View */}
+        <div className="sm:hidden flex flex-col">
+          <span>{formatDateRange(startDate, endDate, isCurrent)}</span>
+          <div className="flex items-center mt-1">
+            {duration && (
+              <>
+                <span className="font-semibold text-[var(--color-primary)]/80">
+                  {duration}
+                </span>
+                <span className="w-1 h-1 bg-[var(--color-primary)]/30 rounded-full mx-2" />
+              </>
+            )}
+            <span>{location}</span>
+          </div>
+        </div>
+
+        {/* Desktop View */}
+        <div className="hidden sm:flex items-center space-x-2">
+          <span>{formatDateRange(startDate, endDate, isCurrent)}</span>
+          {duration && (
+            <>
+              <span className="w-1 h-1 bg-[var(--color-primary)]/30 rounded-full" />
+              <span className="font-semibold text-[var(--color-primary)]/80">
+                {duration}
+              </span>
+            </>
+          )}
+          <span className="mx-2 text-gray-300 dark:text-gray-600">|</span>
+          <span>{location}</span>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="flex flex-col space-y-6">
@@ -28,7 +65,8 @@ export const AboutMeTimeline: FC = () => {
           company,
           companyUrl,
           companyLogo,
-          date,
+          startDate,
+          endDate,
           location,
           description,
           isCurrent,
@@ -40,17 +78,16 @@ export const AboutMeTimeline: FC = () => {
         return (
           <SlideMeIn
             useBorderedContent={false}
-            key={`${company}-${title}-${date}`}
+            key={`${company}-${title}-${startDate}`}
             delay={0.1}
             cascade
           >
             <div
-              key={`${company}-${title}-${date}`}
+              key={`${company}-${title}-${startDate}`}
               className={`group relative border-2 rounded-3xl p-4 sm:p-6 py-6 hover:-translate-y-0.5 transition-all duration-300 ease-in
-                ${
-                  isCurrent
-                    ? "border-[var(--color-primary)]/50 bg-[var(--color-primary)]/8 dark:bg-[var(--color-primary)]/8"
-                    : "border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gradient-to-b from-gray-100/80 via-gray-100/60 to-gray-50/60 dark:from-gray-900/20 dark:via-gray-900/10 dark:to-gray-800/10"
+                ${isCurrent
+                  ? "border-[var(--color-primary)]/50 bg-[var(--color-primary)]/8 dark:bg-[var(--color-primary)]/8"
+                  : "border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gradient-to-b from-gray-100/80 via-gray-100/60 to-gray-50/60 dark:from-gray-900/20 dark:via-gray-900/10 dark:to-gray-800/10"
                 }
               `}
             >
@@ -74,7 +111,12 @@ export const AboutMeTimeline: FC = () => {
                       </span>
                     </div>
                     <div className="hidden sm:block">
-                      <DateAndLocation date={date} location={location} />
+                      <DateAndLocation
+                        startDate={startDate}
+                        endDate={endDate}
+                        isCurrent={isCurrent}
+                        location={location}
+                      />
                     </div>
                   </div>
                 )}
@@ -97,7 +139,7 @@ export const AboutMeTimeline: FC = () => {
                           <img
                             src={`/experience/${companyLogo}`}
                             alt={`${company} logo`}
-                            className="w-7 sm:w-10 h-7 sm:h-10 object-contain transition-transform duration-300 hover:scale-103 rounded-sm"
+                            className="w-14 sm:w-10 h-14 sm:h-10 object-contain transition-transform duration-300 hover:scale-103 rounded-sm"
                           />
                         </div>
                       </a>
@@ -114,7 +156,12 @@ export const AboutMeTimeline: FC = () => {
                           {company}
                         </a>
                         <div className="block sm:hidden">
-                          <DateAndLocation date={date} location={location} />
+                          <DateAndLocation
+                            startDate={startDate}
+                            endDate={endDate}
+                            isCurrent={isCurrent}
+                            location={location}
+                          />
                         </div>
                       </div>
                     </div>
@@ -159,11 +206,10 @@ export const AboutMeTimeline: FC = () => {
                         {technologies.map((tech: TechStack, idx: number) => (
                           <span
                             key={idx}
-                            className={`text-gray-700 dark:text-gray-300 rounded-md px-2 py-1 text-xs border border-[var(--color-primary)]/20 ${
-                              isCurrent
-                                ? "bg-[var(--color-primary)]/10 dark:bg-[var(--color-primary)]/10"
-                                : "bg-[var(--color-primary)]/5 dark:bg-[var(--color-primary)]/5"
-                            }`}
+                            className={`text-gray-700 dark:text-gray-300 rounded-md px-2 py-1 text-xs border border-[var(--color-primary)]/20 ${isCurrent
+                              ? "bg-[var(--color-primary)]/10 dark:bg-[var(--color-primary)]/10"
+                              : "bg-[var(--color-primary)]/5 dark:bg-[var(--color-primary)]/5"
+                              }`}
                           >
                             {tech}
                           </span>
