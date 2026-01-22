@@ -252,7 +252,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A collaborative poker planning application designed to help remote teams and agile squads estimate project tasks effectively.",
     moreDetails:
       "Teams create rooms, invite members, and use virtual cards to estimate tasks in real-time. The app supports various estimation techniques and provides analytics to track team performance over time.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/votedeck_dxf9cu.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077140/portfolioImages/votedeck_qc55sh.png",
     preview: "https://votedeck.vercel.app",
     stacks: [
       "Fastify",
@@ -275,7 +275,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
     moreDetails:
       "Users connect their wallet, choose network, and GasHawk routes transactions through its relay to minimize gas. The dashboard shows queued, mined, and failed txs with live status updates.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1769075456/portfolioImages/gashawk_hwzbtk.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077537/portfolioImages/gasHawk_qkug8r.png",
     preview: "https://app.gashawk.io/",
     stacks: ["Express.js", "React", "Vite", "Chakra UI", "TypeScript", "Postgres"],
     completed: true,
