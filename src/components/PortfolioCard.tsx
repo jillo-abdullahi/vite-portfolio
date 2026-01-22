@@ -45,9 +45,9 @@ export const PortfolioCard = ({
 
   return (
     <Fade cascade damping={0.1} duration={2000}>
-      <div className="group relative flex flex-col md:flex-row rounded-3xl overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/80 border-2 transition-all duration-300 hover:scale-[1.01]">
+      <div className="group relative flex flex-col lg:flex-row rounded-3xl overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/80 border-2 transition-all duration-300 hover:scale-[1.01]">
         {/* Image Container with Device Mockups */}
-        <div className="relative w-full md:w-[46%] p-6 md:p-7 overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b md:border-b-0 md:border-r border-[var(--color-primary)]/20 flex items-center justify-center">
+        <div className="relative w-full lg:w-[46%] p-6 md:p-12 lg:p-7 overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-black/80 border-b lg:border-b-0 lg:border-r border-[var(--color-primary)]/20 flex items-center justify-center">
           {/* Status Badge */}
           {!completed && (
             <div className="absolute top-6 right-6 z-20">
@@ -97,7 +97,7 @@ export const PortfolioCard = ({
         </div>
 
         {/* Content Section */}
-        <div className="flex-1 flex flex-col p-6 md:p-8 space-y-4 dark:bg-gray-950/40 md:border-l md:border-[var(--color-primary)]/20">
+        <div className="flex-1 flex flex-col p-6 md:p-12 lg:p-8 space-y-4 dark:bg-gray-950/40 border-t lg:border-l lg:border-t-0 border-[var(--color-primary)]/20">
           {/* Title and Description */}
           <div className="space-y-2">
             <h3 className="text-xl font-semibold text-[var(--color-primary)]">
