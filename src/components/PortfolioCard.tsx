@@ -33,6 +33,16 @@ export const PortfolioCard = ({
     return () => clearTimeout(timeout);
   }, []);
 
+  const resolveImageSource = (imgInfo: string | undefined): string | undefined => {
+    if (!imgInfo) return undefined;
+    if (imgInfo.startsWith('http') || imgInfo.startsWith('https')) {
+      return imgInfo;
+    }
+    return `/portfolio/${imgInfo}`;
+  };
+
+  const imageSrc = resolveImageSource(image);
+
   return (
     <Fade cascade damping={0.1} duration={2000}>
       <div className="group relative flex flex-col md:flex-row rounded-3xl overflow-hidden bg-[var(--color-primary)]/3 dark:bg-transparent dark:bg-gradient-to-br dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/80 border-2 transition-all duration-300 hover:scale-[1.01]">
@@ -64,9 +74,9 @@ export const PortfolioCard = ({
               {/* Simple screen card */}
               <div className="relative mt-3 overflow-hidden rounded-xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 p-1">
                 <div className="relative aspect-[16/10] rounded-lg overflow-hidden">
-                  {image ? (
+                  {imageSrc ? (
                     <img
-                      src={`/portfolio/${image}`}
+                      src={imageSrc}
                       alt={title}
                       loading="lazy"
                       decoding="async"

@@ -252,7 +252,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A collaborative poker planning application designed to help remote teams and agile squads estimate project tasks effectively.",
     moreDetails:
       "Teams create rooms, invite members, and use virtual cards to estimate tasks in real-time. The app supports various estimation techniques and provides analytics to track team performance over time.",
-    image: "votedeck.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/votedeck_dxf9cu.png",
     preview: "https://votedeck.vercel.app",
     stacks: [
       "Fastify",
@@ -275,7 +275,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
     moreDetails:
       "Users connect their wallet, choose network, and GasHawk routes transactions through its relay to minimize gas. The dashboard shows queued, mined, and failed txs with live status updates.",
-    image: "gashawk.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1769075456/portfolioImages/gashawk_hwzbtk.png",
     preview: "https://app.gashawk.io/",
     stacks: ["Express.js", "React", "Vite", "Chakra UI", "TypeScript", "Postgres"],
     completed: true,
@@ -287,7 +287,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
     moreDetails:
       "Proposers connect their wallet and open proposals. Voters connect wallets to cast on-chain votes; the UI watches contract events to show tallies and closes automatically when the voting period ends.",
-    image: "ballot.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
     preview: "https://ballot-box-green.vercel.app/",
     github: "https://github.com/jillo-abdullahi/ballotBox",
     contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
@@ -315,7 +315,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
     moreDetails:
       "Users authenticate, add platform handles and custom links, and the app generates a single public profile URL. Visitors see a responsive card grid with the option to copy links or visit external sites.",
-    image: "devlinks.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
     preview: "https://my-links-amber.vercel.app/",
     github: "https://github.com/jillo-abdullahi/my-links",
     stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
@@ -328,7 +328,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A fun memory game where players try to match pairs against each other or against the CPU.",
     moreDetails:
       "Players choose board size and mode (solo, vs CPU, or head-to-head). Cards flip, turns alternate, and scores update in real time until all pairs are matched, then a results modal invites a rematch.",
-    image: "memory.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/memory_gbwjvc.png",
     preview: "https://memory-game-green-nine.vercel.app/",
     github: "https://github.com/jillo-abdullahi/memory-game",
     stacks: ["TypeScript", "Next.js", "TailwindCSS"],
@@ -341,7 +341,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A dictionary web app built with TailwindCSS and Next.js. It uses a free Dictionary API to fetch data for the searched word. It also uses the Web Speech API to play the audio file for the searched word.",
     moreDetails:
       "Users search a term, the app fetches multiple definitions, phonetics, and examples from the API, and provides a one-click audio pronunciation via the Web Speech API. Theme toggles and responsive layout keep it readable everywhere.",
-    image: "dictionary.png",
+    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/dictionary_prq9mn.png",
     preview: "https://dictionary-web-app-ashy.vercel.app/",
     github: "https://github.com/jillo-abdullahi/dictionary-web-app",
     stacks: ["TypeScript", "Next.js", "TailwindCSS"],
