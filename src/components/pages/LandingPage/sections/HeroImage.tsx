@@ -3,8 +3,15 @@ import { Fade } from "react-awesome-reveal";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import { externalLinks } from "@/data";
+import { getResponsiveImageProps } from "@/utils/image";
 
 const HeroImage: FC = () => {
+  const { src: imageSrc, srcSet: imageSrcSet } = getResponsiveImageProps(
+    externalLinks.sneakerHeadImage,
+    512, // default/fallback width
+    [300, 512] // sizes for srcSet
+  );
+
   return (
     <div className="flex-1 relative w-full max-w-[500px] md:max-w-none flex justify-center z-10 p-6 md:p-0">
       <Fade
@@ -22,8 +29,12 @@ const HeroImage: FC = () => {
           {/* Main Image Container */}
           <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[var(--color-primary)]/20 backdrop-blur-sm bg-gray-200/50 dark:bg-gray-900/50 transition-colors duration-300">
             <img
-              src={externalLinks.sneakerHeadImage}
+              src={imageSrc}
+              srcSet={imageSrcSet}
+              sizes="(max-width: 768px) 300px, 512px"
               alt="Jillo Woche"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
             {/* Overlay Gradient */}

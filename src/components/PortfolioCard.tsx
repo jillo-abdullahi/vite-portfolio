@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { EyeIcon, type ExternalLinkIconHandle } from "./ui/EyeIcon";
 import { CodeXmlIcon, type CodeXmlIconHandle } from "./ui/CodeIcon";
+import { getResponsiveImageProps } from "@/utils/image";
 
 export const PortfolioCard = ({
   title,
@@ -33,15 +34,7 @@ export const PortfolioCard = ({
     return () => clearTimeout(timeout);
   }, []);
 
-  const resolveImageSource = (imgInfo: string | undefined): string | undefined => {
-    if (!imgInfo) return undefined;
-    if (imgInfo.startsWith('http') || imgInfo.startsWith('https')) {
-      return imgInfo;
-    }
-    return `/portfolio/${imgInfo}`;
-  };
-
-  const imageSrc = resolveImageSource(image);
+  const { src: imageSrc, srcSet: imageSrcSet } = getResponsiveImageProps(image);
 
   return (
     <Fade cascade damping={0.1} duration={2000}>
@@ -77,6 +70,8 @@ export const PortfolioCard = ({
                   {imageSrc ? (
                     <img
                       src={imageSrc}
+                      srcSet={imageSrcSet}
+                      sizes="(max-width: 768px) 90vw, 45vw"
                       alt={title}
                       loading="lazy"
                       decoding="async"
