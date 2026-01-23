@@ -51,7 +51,7 @@ export const PortfolioCard = ({
           )}
 
           {/* MacBook Mockup */}
-          <div className="relative max-w-3xl mx-auto">
+          <div className="relative w-full lg:max-w-3xl mx-auto">
             <div className="relative bg-gray-100 dark:bg-transparent dark:bg-gradient-to-b from-gray-900 to-black rounded-[22px] p-3 border border-gray-700/20 dark:border-gray-700/50">
               {/* Top bar */}
               <div className="flex items-center justify-between h-9 px-4 rounded-[12px] bg-gray-300 dark:bg-gray-900/80 border border-gray-700/20 dark:border-gray-700/60">
