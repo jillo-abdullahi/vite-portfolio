@@ -146,6 +146,10 @@ export interface PortfolioProject {
   contract?: string;
   /** Project category for filtering */
   category?: ProjectCategory;
+  /** Optional custom text for the demo button */
+  demoButtonText?: string;
+  /** Optional custom icon for the demo button */
+  demoButtonIcon?: React.ElementType;
 }
 
 /**

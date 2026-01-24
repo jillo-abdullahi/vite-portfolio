@@ -21,6 +21,8 @@ export const PortfolioCard = ({
   stacks,
   completed,
   contract,
+  demoButtonText,
+  demoButtonIcon: DemoIcon,
 }: PortfolioProject) => {
   const [codeMenuOpen, setCodeMenuOpen] = useState(false);
   const eyeIconRef = useRef<ExternalLinkIconHandle>(null);
@@ -139,16 +141,18 @@ export const PortfolioCard = ({
                 href={preview}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-primary)] bg-[var(--color-primary)]/60 hover:bg-[var(--color-primary)]/70 text-gray-900 text-md font-semibold transition-colors duration-200 backdrop-blur-sm"
+                className="group/btn flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-primary)] bg-[var(--color-primary)]/60 hover:bg-[var(--color-primary)]/70 text-gray-900 dark:text-slate-300 text-md font-semibold transition-colors duration-200 backdrop-blur-sm"
                 aria-label="View Live Demo"
-                onMouseEnter={() => eyeIconRef.current?.startAnimation()}
-                onMouseLeave={() => eyeIconRef.current?.stopAnimation()}
+                onMouseEnter={() => !DemoIcon && eyeIconRef.current?.startAnimation()}
+                onMouseLeave={() => !DemoIcon && eyeIconRef.current?.stopAnimation()}
               >
-                <EyeIcon ref={eyeIconRef} className="h-5 w-5" />
+                {DemoIcon ? (
+                  <DemoIcon className="h-5 w-5 group-hover/btn:scale-110 group-hover/btn:rotate-3 transition-all duration-300" />
+                ) : (
+                  <EyeIcon ref={eyeIconRef} className="h-5 w-5" />
+                )}
                 <span className="group-hover/btn:translate-y-[-1px] transition-transform duration-200">
-                  {description.toLowerCase().includes("gashawk")
-                    ? "save on gas"
-                    : "view demo"}
+                  {demoButtonText || "view demo"}
                 </span>
               </a>
             )}
@@ -220,28 +224,70 @@ export const PortfolioCard = ({
           </div>
 
           {/* Action Links - Mobile Fallback */}
-          <div className="flex gap-3 pt-2 md:hidden">
+          <div className="flex flex-col gap-3 pt-2 md:hidden">
             {preview && (
               <a
                 href={preview}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 bg-[var(--color-primary)]/60 dark:bg-[var(--color-primary)]/90 rounded-lg hover:bg-[var(--color-primary)]/70 dark:hover:bg-[var(--color-primary)] transition-colors duration-200 border border-[var(--color-primary)]"
+                className="flex w-full justify-center items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 bg-[var(--color-primary)]/60 dark:bg-[var(--color-primary)]/90 rounded-lg hover:bg-[var(--color-primary)]/70 dark:hover:bg-[var(--color-primary)] transition-colors duration-200 border border-[var(--color-primary)]"
               >
-                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                view demo
+                {DemoIcon ? <DemoIcon className="h-4 w-4" /> : <ArrowTopRightOnSquareIcon className="h-4 w-4" />}
+                {demoButtonText || 'view demo'}
               </a>
             )}
-            {github && (
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 border border-gray-300 dark:border-gray-600"
-              >
-                <CodeBracketIcon className="h-4 w-4" />
-                code
-              </a>
+            {github && contract ? (
+              <div className="relative w-full">
+                <button
+                  type="button"
+                  onClick={() => setCodeMenuOpen((open) => !open)}
+                  className="flex w-full justify-center items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 rounded-lg transition-colors duration-200 border border-gray-400 dark:border-gray-400/40 bg-gray-200 dark:bg-gray-900/80 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-100"
+                  aria-expanded={codeMenuOpen}
+                >
+                  <CodeXmlIcon className="h-4 w-4" />
+                  code
+                  <ChevronDownIcon
+                    className={`h-3 w-3 transition-transform duration-200 ${
+                      codeMenuOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </button>
+                {codeMenuOpen && (
+                  <div className="absolute z-30 bottom-full left-0 mb-2 w-full rounded-lg overflow-hidden border border-gray-400 dark:border-gray-700 bg-gray-200 dark:bg-gray-900/95 backdrop-blur-sm shadow-xl">
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-800/90 transition-colors"
+                    >
+                      <CodeBracketIcon className="h-4 w-4" />
+                      <span>Frontend</span>
+                    </a>
+                    <div className="h-px bg-gray-400 dark:bg-gray-400/30" />
+                    <a
+                      href={contract}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-purple-900/50 transition-colors"
+                    >
+                      <CodeBracketSquareIcon className="h-4 w-4" />
+                      <span>Backend</span>
+                    </a>
+                  </div>
+                )}
+              </div>
+            ) : (
+              github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full justify-center items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 rounded-lg transition-colors duration-200 border border-gray-400 dark:border-gray-400/40 bg-gray-200 dark:bg-gray-900/80 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-100"
+                >
+                  <CodeXmlIcon className="h-4 w-4" />
+                  view source
+                </a>
+              )
             )}
           </div>
         </div>

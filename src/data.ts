@@ -5,6 +5,7 @@ import type {
   Skills,
   Testimonial,
 } from "./types";
+import { Spade, Fuel, Vote, Share2, Brain, BookOpen } from "lucide-react";
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
@@ -252,7 +253,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "A collaborative poker planning application designed to help remote teams and agile squads estimate project tasks effectively.",
     moreDetails:
       "Teams create rooms, invite members, and use virtual cards to estimate tasks in real-time. The app supports various estimation techniques and provides analytics to track team performance over time.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077140/portfolioImages/votedeck_qc55sh.png",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077140/portfolioImages/votedeck_qc55sh.png",
     preview: "https://votedeck.vercel.app",
     stacks: [
       "Fastify",
@@ -268,6 +270,8 @@ export const portfolioProjects: PortfolioProject[] = [
     github: "https://github.com/jillo-abdullahi/votedeck",
     contract: "https://github.com/jillo-abdullahi/votedeck-api",
     category: "Full Stack",
+    demoButtonText: "Start Planning",
+    demoButtonIcon: Spade,
   },
   {
     title: "Ethereum dApp for managing GasHawk transactions",
@@ -275,11 +279,21 @@ export const portfolioProjects: PortfolioProject[] = [
       "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
     moreDetails:
       "Users connect their wallet, choose network, and GasHawk routes transactions through its relay to minimize gas. The dashboard shows queued, mined, and failed txs with live status updates.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077537/portfolioImages/gasHawk_qkug8r.png",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077537/portfolioImages/gasHawk_qkug8r.png",
     preview: "https://app.gashawk.io/",
-    stacks: ["Express.js", "React", "Vite", "Chakra UI", "TypeScript", "Postgres"],
+    stacks: [
+      "Express.js",
+      "React",
+      "Vite",
+      "Chakra UI",
+      "TypeScript",
+      "Postgres",
+    ],
     completed: true,
     category: "Web3",
+    demoButtonText: "Use GasHawk",
+    demoButtonIcon: Fuel,
   },
   {
     title: "Ballot app for decentralized voting",
@@ -287,40 +301,32 @@ export const portfolioProjects: PortfolioProject[] = [
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
     moreDetails:
       "Proposers connect their wallet and open proposals. Voters connect wallets to cast on-chain votes; the UI watches contract events to show tallies and closes automatically when the voting period ends.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
     preview: "https://ballot-box-green.vercel.app/",
     github: "https://github.com/jillo-abdullahi/ballotBox",
     contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
     stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
     completed: true,
     category: "Web3",
+    demoButtonText: "Use Ballot",
+    demoButtonIcon: Vote,
   },
-  // {
-  //   title: "Ethereum dApp for AI insights into any wallet",
-  //   description:
-  //     "A comprehensive Ethereum wallet analytics application that provides AI-powered insights into blockchain activity.",
-  //   moreDetails:
-  //     "Enter or connect a wallet, the app indexes recent transactions, categorizes tokens and counterparties, then sends a structured summary to an LLM to surface patterns, anomalies, and recommendations with quick links to drill deeper.",
-  //   image: "blockwise.png",
-  //   preview: "https://blockwise-ai.vercel.app/",
-  //   github: "https://github.com/jillo-abdullahi/blockwise-ai",
-  //   stacks: ["React", "Vite", "TailwindCSS", "TypeScript", "OpenAI", "Viem"],
-  //   completed: true,
-  //   category: "Web3",
-  // },
-
   {
     title: "A link sharing app for developers",
     description:
       "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
     moreDetails:
       "Users authenticate, add platform handles and custom links, and the app generates a single public profile URL. Visitors see a responsive card grid with the option to copy links or visit external sites.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
     preview: "https://my-links-amber.vercel.app/",
     github: "https://github.com/jillo-abdullahi/my-links",
     stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
     completed: true,
     category: "Full Stack",
+    demoButtonText: "Use DevLinks",
+    demoButtonIcon: Share2,
   },
   {
     title: "Memory Game",
@@ -328,12 +334,15 @@ export const portfolioProjects: PortfolioProject[] = [
       "A fun memory game where players try to match pairs against each other or against the CPU.",
     moreDetails:
       "Players choose board size and mode (solo, vs CPU, or head-to-head). Cards flip, turns alternate, and scores update in real time until all pairs are matched, then a results modal invites a rematch.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/memory_gbwjvc.png",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/memory_gbwjvc.png",
     preview: "https://memory-game-green-nine.vercel.app/",
     github: "https://github.com/jillo-abdullahi/memory-game",
     stacks: ["TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
     category: "Frontend",
+    demoButtonIcon: Brain,
+    demoButtonText: "Play Memory Game",
   },
   {
     title: "Dictionary web app solution",
@@ -341,12 +350,15 @@ export const portfolioProjects: PortfolioProject[] = [
       "A dictionary web app built with TailwindCSS and Next.js. It uses a free Dictionary API to fetch data for the searched word. It also uses the Web Speech API to play the audio file for the searched word.",
     moreDetails:
       "Users search a term, the app fetches multiple definitions, phonetics, and examples from the API, and provides a one-click audio pronunciation via the Web Speech API. Theme toggles and responsive layout keep it readable everywhere.",
-    image: "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/dictionary_prq9mn.png",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/dictionary_prq9mn.png",
     preview: "https://dictionary-web-app-ashy.vercel.app/",
     github: "https://github.com/jillo-abdullahi/dictionary-web-app",
     stacks: ["TypeScript", "Next.js", "TailwindCSS"],
     completed: true,
     category: "Frontend",
+    demoButtonIcon: BookOpen,
+    demoButtonText: "Use Dictionary",
   },
 ];
 
