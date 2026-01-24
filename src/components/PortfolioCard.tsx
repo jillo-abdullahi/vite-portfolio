@@ -52,41 +52,44 @@ export const PortfolioCard = ({
             </div>
           )}
 
-          {/* MacBook Mockup */}
-          <div className="relative w-full lg:max-w-3xl mx-auto">
-            <div className="relative bg-gray-100 dark:bg-transparent dark:bg-gradient-to-b from-gray-900 to-black rounded-[22px] p-3 border border-gray-700/20 dark:border-gray-700/50">
-              {/* Top bar */}
-              <div className="flex items-center justify-between h-9 px-4 rounded-[12px] bg-gray-300 dark:bg-gray-900/80 border border-gray-700/20 dark:border-gray-700/60">
-                <div className="flex gap-1.5">
-                  <span className="h-3 w-3 rounded-full bg-[#ff5f57] border border-[#e0443e]" />
-                  <span className="h-3 w-3 rounded-full bg-[#febb2e] border border-[#dea123]" />
-                  <span className="h-3 w-3 rounded-full bg-[#28c840] border border-[#1aab29]" />
-                </div>
-
-                <div className="h-2 w-10 rounded-full bg-gray-700/80" />
-              </div>
-
-              {/* Simple screen card */}
-              <div className="relative mt-3 overflow-hidden rounded-xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 p-1">
-                <div className="relative aspect-[16/10] rounded-lg overflow-hidden">
-                  {imageSrc ? (
-                    <img
-                      src={imageSrc}
-                      srcSet={imageSrcSet}
-                      sizes="(max-width: 768px) 90vw, 45vw"
-                      alt={title}
-                      loading="lazy"
-                      decoding="async"
-                      className={`h-full w-full object-cover rounded-lg overflow-hidden border border-[var(--color-primary)]/5 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${imgVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-                    />
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                      <span className="text-gray-400 text-sm font-medium">
-                        No Image Available
-                      </span>
+          {/* Modern MacBook Mockup */}
+          <div className="relative w-full mx-auto">
+            <div className="relative transform transition-all duration-500 ease-out">
+              {/* Lid / Screen Housing */}
+              <div className="relative rounded-[14px] bg-gray-400 dark:bg-gray-900 p-[6px] overflow-hidden">
+                {/* Screen Bezel */}
+                <div className="relative rounded-[8px] overflow-hidden bg-black">
+                  {/* Top Bar / Menu Bar */}
+                  <div className="h-6 bg-gray-300 dark:bg-gray-800/50 flex items-center px-3 border-none relative rounded-t-[8px]">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57] shadow-inner" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e] shadow-inner" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#28c840] shadow-inner" />
                     </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-25 pointer-events-none" />
+                  </div>
+
+                  {/* Screen Content */}
+                  <div className="relative aspect-[16/10] transition-all duration-500">
+                    {imageSrc ? (
+                      <img
+                        src={imageSrc}
+                        srcSet={imageSrcSet}
+                        sizes="(max-width: 768px) 90vw, 45vw"
+                        alt={title}
+                        loading="lazy"
+                        decoding="async"
+                        className={`h-full w-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+                          imgVisible ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                        }`}
+                      />
+                    ) : (
+                      <div className="h-full w-full flex items-center justify-center bg-gray-900">
+                        <span className="text-gray-500 text-sm font-medium">
+                          No Preview
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
