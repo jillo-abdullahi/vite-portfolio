@@ -1,4 +1,4 @@
-import { type FC, useRef, useState } from "react";
+import { type FC, useRef, useState, useEffect } from "react";
 import { Menu, MenuButton, MenuItems, Transition } from "@headlessui/react";
 import {
   useTheme,
@@ -8,9 +8,38 @@ import {
   type ThemeFont,
 } from "@/contexts/ThemeContext";
 import { XIcon, type XIconHandle } from "./ui/XIcon";
+import { CheckIcon } from "./ui/CheckIcon";
 import { BrushCleaning } from "./animate-ui/icons/brush-cleaning";
 import { SunIcon, type SunIconHandle } from "./ui/SunIcon";
 import { MoonIcon, type MoonIconHandle } from "./ui/MoonIcon";
+
+const MenuClickOutside = ({
+  children,
+  close,
+}: {
+  children: React.ReactNode;
+  close: () => void;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        close();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [close]);
+
+  return <div ref={containerRef}>{children}</div>;
+};
 
 export const ThemeToggle: FC = () => {
   const {
@@ -49,7 +78,7 @@ export const ThemeToggle: FC = () => {
   return (
     <Menu as="div" className="relative">
       {({ close }) => (
-        <>
+        <MenuClickOutside close={close}>
           <MenuButton
             className="relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 group cursor-pointer border-2 border-[var(--color-primary)]/70 hover:border-[var(--color-primary)]/70 focus:border-[var(--color-primary)]/60 focus:outline-none"
             aria-label="Change theme color"
@@ -198,10 +227,10 @@ export const ThemeToggle: FC = () => {
 
                 {/* Fonts Section */}
                 <div className="pt-4">
-                  <p className="text-sm py-2 font-semibold text-gray-600 dark:text-gray-400">
+                  <p className="text-sm pb-2 font-semibold text-gray-600 dark:text-gray-400">
                     font style
                   </p>
-                  <div className="flex flex-col gap-2.5">
+                  <div className="flex flex-col gap-2">
                     {(Object.keys(THEME_FONTS) as ThemeFont[]).map(
                       (fontKey) => {
                         const font = THEME_FONTS[fontKey];
@@ -213,24 +242,38 @@ export const ThemeToggle: FC = () => {
                             onClick={() => {
                               setFont(fontKey);
                             }}
-                            className={`cursor-pointer px-3 py-2 rounded-[11px] transition-all duration-200 border flex items-center justify-between gap-3 ${
+                            className={`w-full group relative flex items-center justify-between px-2 py-2 rounded-xl transition-all duration-200 border cursor-pointer ${
                               isActive
-                                ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
-                                : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                                ? "border-[var(--color-primary)] bg-[var(--color-primary)]/5"
+                                : "bg-gray-200 dark:dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
                             }`}
                           >
-                            <span
-                              className="text-left text-sm font-medium"
-                              style={{ fontFamily: font.family }}
-                            >
-                              {font.name}
-                            </span>
-                            <span
-                              className="text-sm italic flex-shrink-0 opacity-60"
-                              style={{ fontFamily: font.family }}
-                            >
-                              Mischief managed
-                            </span>
+                            <div className="flex items-center gap-3">
+                              <div
+                                className={`w-8 h-8 rounded-md flex items-center justify-center text-lg bg-gray-200 dark:bg-gray-700/50 ${
+                                  isActive
+                                    ? "text-[var(--color-primary)] border border-[var(--color-primary)]/40"
+                                    : "text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600"
+                                }`}
+                                style={{ fontFamily: font.family }}
+                              >
+                                Aa
+                              </div>
+                              <span
+                                className={`text-sm font-medium ${
+                                  isActive
+                                    ? "text-[var(--color-primary)]"
+                                    : "text-gray-700 dark:text-gray-300"
+                                }`}
+                                style={{ fontFamily: font.family }}
+                              >
+                                {font.name}
+                              </span>
+                            </div>
+
+                            {isActive && (
+                              <CheckIcon className="w-5 h-5 text-[var(--color-primary)]" />
+                            )}
                           </button>
                         );
                       }
@@ -240,7 +283,7 @@ export const ThemeToggle: FC = () => {
               </div>
             </MenuItems>
           </Transition>
-        </>
+        </MenuClickOutside>
       )}
     </Menu>
   );

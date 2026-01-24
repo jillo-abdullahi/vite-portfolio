@@ -74,11 +74,11 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
 
                 <span className="relative z-10 flex items-center gap-1.5 md:gap-2">
                   <Icon className="w-4 h-4 md:hidden" />
-                  <span className="hidden md:block">{filter}</span>
+                  <span className="hidden md:block lowercase">{filter}</span>
                   <span
                     className={`inline-flex items-center justify-center min-w-[16px] md:min-w-[20px] h-4 md:h-5 px-1 md:px-1.5 rounded-full text-[9px] md:text-[10px] font-bold transition-all duration-300 ${
                       isActive
-                        ? "bg-[var(--color-primary)] text-white"
+                        ? "bg-[var(--color-primary)]/80 text-white"
                         : "bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
                     }`}
                   >
