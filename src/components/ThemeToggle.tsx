@@ -58,19 +58,19 @@ export const ThemeToggle: FC = () => {
   if (prevThemeModeRef.current !== themeMode) {
     prevThemeModeRef.current = themeMode;
     if (themeMode === "light") {
-      const allowed = ["coral", "blue", "purple"];
+      const allowed = ["orange", "blue", "purple"];
       if (!allowed.includes(currentTheme)) {
-        setTheme("coral");
+        setTheme("orange");
       }
     }
   }
   const xIconRef = useRef<XIconHandle | null>(null);
   const [isBrushHovered, setIsBrushHovered] = useState(false);
 
-  // Show only coral, blue, purple in light mode; all colors in dark mode
+  // Show only orange, blue, purple in light mode; all colors in dark mode
   const colorOrder: ThemeColor[] =
     themeMode === "light"
-      ? ["coral", "blue", "purple"]
+      ? ["orange", "blue", "purple"]
       : ["coral", "blue", "slate", "emerald", "pesto", "purple"];
   const colors = colorOrder.map((key) => THEME_COLORS[key]);
   const segmentAngle = 360 / colors.length;
@@ -160,11 +160,10 @@ export const ThemeToggle: FC = () => {
                       onClick={() => setThemeMode("light")}
                       onMouseEnter={() => sunRef.current?.startAnimation()}
                       onMouseLeave={() => sunRef.current?.stopAnimation()}
-                      className={`flex-1 cursor-pointer px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center justify-center gap-2 ${
-                        themeMode === "light"
-                          ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
-                          : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
-                      }`}
+                      className={`flex-1 cursor-pointer px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center justify-center gap-2 ${themeMode === "light"
+                        ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                        : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                        }`}
                     >
                       <SunIcon className="w-5 h-5" ref={sunRef} />
                       <span>Light</span>
@@ -173,11 +172,10 @@ export const ThemeToggle: FC = () => {
                       onClick={() => setThemeMode("dark")}
                       onMouseEnter={() => moonRef.current?.startAnimation()}
                       onMouseLeave={() => moonRef.current?.stopAnimation()}
-                      className={`flex-1 cursor-pointer px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center justify-center gap-2 ${
-                        themeMode === "dark"
-                          ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
-                          : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
-                      }`}
+                      className={`flex-1 cursor-pointer px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border flex items-center justify-center gap-2 ${themeMode === "dark"
+                        ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                        : "bg-gray-200 dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                        }`}
                     >
                       <MoonIcon className="w-5 h-5" ref={moonRef} />
                       <span>Dark</span>
@@ -201,11 +199,10 @@ export const ThemeToggle: FC = () => {
                           onClick={() => {
                             setTheme(colorKey);
                           }}
-                          className={`cursor-pointer px-3 py-1.5 rounded-[11px] text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${
-                            isActive
-                              ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
-                              : "bg-gray-200 dark:dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
-                          }`}
+                          className={`cursor-pointer px-3 py-1.5 rounded-[11px] text-sm font-medium transition-all duration-200 border flex items-center gap-1.5 ${isActive
+                            ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-200"
+                            : "bg-gray-200 dark:dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                            }`}
                         >
                           <div
                             className={`rounded-full w-4 h-4 flex items-center justify-center border-1`}
@@ -242,29 +239,26 @@ export const ThemeToggle: FC = () => {
                             onClick={() => {
                               setFont(fontKey);
                             }}
-                            className={`w-full group relative flex items-center justify-between px-2 py-2 rounded-xl transition-all duration-200 border cursor-pointer ${
-                              isActive
-                                ? "border-[var(--color-primary)] bg-[var(--color-primary)]/5"
-                                : "bg-gray-200 dark:dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
-                            }`}
+                            className={`w-full group relative flex items-center justify-between px-2 py-2 rounded-xl transition-all duration-200 border cursor-pointer ${isActive
+                              ? "border-[var(--color-primary)] bg-[var(--color-primary)]/5"
+                              : "bg-gray-200 dark:dark:bg-gray-800/30 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600"
+                              }`}
                           >
                             <div className="flex items-center gap-3">
                               <div
-                                className={`w-8 h-8 rounded-md flex items-center justify-center text-lg bg-gray-200 dark:bg-gray-700/50 ${
-                                  isActive
-                                    ? "text-[var(--color-primary)] border border-[var(--color-primary)]/40"
-                                    : "text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600"
-                                }`}
+                                className={`w-8 h-8 rounded-md flex items-center justify-center text-lg bg-gray-200 dark:bg-gray-700/50 ${isActive
+                                  ? "text-[var(--color-primary)] border border-[var(--color-primary)]/40"
+                                  : "text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600"
+                                  }`}
                                 style={{ fontFamily: font.family }}
                               >
                                 Aa
                               </div>
                               <span
-                                className={`text-sm font-medium ${
-                                  isActive
-                                    ? "text-[var(--color-primary)]"
-                                    : "text-gray-700 dark:text-gray-300"
-                                }`}
+                                className={`text-sm font-medium ${isActive
+                                  ? "text-[var(--color-primary)]"
+                                  : "text-gray-700 dark:text-gray-300"
+                                  }`}
                                 style={{ fontFamily: font.family }}
                               >
                                 {font.name}

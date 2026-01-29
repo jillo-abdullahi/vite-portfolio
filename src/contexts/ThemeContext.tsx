@@ -15,6 +15,13 @@ export const THEME_COLORS = {
     primaryLight: "rgba(255, 111, 60, 0.1)",
     primaryBorder: "rgba(255, 111, 60, 0.4)",
   },
+  orange: {
+    name: "Orange",
+    primary: "#c2410c",
+    primaryHover: "#9a3412",
+    primaryLight: "rgba(194, 65, 12, 0.1)",
+    primaryBorder: "rgba(194, 65, 12, 0.4)",
+  },
   blue: {
     name: "Blue",
     primary: "#3b82f6",
@@ -191,10 +198,10 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     } else {
       root.classList.remove("dark");
     }
-    
+
     // Save to localStorage immediately
     localStorage.setItem("theme-mode", mode);
-    
+
     // Then update state
     setThemeModeState(mode);
   };
