@@ -56,7 +56,7 @@ const NavBar: FC = () => {
       {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
-            className="mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-100 ease-in-out dark:backdrop-blur-sm bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent dark:bg-gray-900/50"
+            className="mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-100 ease-in-out backdrop-blur-sm bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent dark:bg-gray-900/50"
           >
             <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
@@ -88,7 +88,7 @@ const NavBar: FC = () => {
                   className={`group flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${isHome
                     ? "bg-gray-200 dark:bg-gray-100 dark:bg-gray-800/60 border border-[var(--color-primary)]/30"
                     : "border-transparent"
-                    } hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors duration-300 border-2 hover:border-[var(--color-primary)]/30`}
+                    } hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors duration-300 hover:border-[var(--color-primary)]/30`}
                   to="/"
                   onClick={close}
                   onMouseEnter={() => houseRef.current?.startAnimation()}
