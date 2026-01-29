@@ -53,14 +53,20 @@ export const ThemeToggle: FC = () => {
   const moonRef = useRef<MoonIconHandle | null>(null);
   const sunRef = useRef<SunIconHandle | null>(null);
 
-  // When switching to light mode, if the current theme is not allowed, set to default
+  // When switching modes, if the current theme is not allowed in the new mode, set to default
   const prevThemeModeRef = useRef<string>(themeMode);
   if (prevThemeModeRef.current !== themeMode) {
     prevThemeModeRef.current = themeMode;
     if (themeMode === "light") {
-      const allowed = ["orange", "blue", "purple"];
+      const allowed = ["orange", "blue", "purple", "teal"];
       if (!allowed.includes(currentTheme)) {
         setTheme("orange");
+      }
+    } else {
+      // Dark mode
+      const allowed = ["coral", "blue", "slate", "emerald", "pesto", "purple"];
+      if (!allowed.includes(currentTheme)) {
+        setTheme("blue");
       }
     }
   }
@@ -70,7 +76,7 @@ export const ThemeToggle: FC = () => {
   // Show only orange, blue, purple in light mode; all colors in dark mode
   const colorOrder: ThemeColor[] =
     themeMode === "light"
-      ? ["orange", "blue", "purple"]
+      ? ["orange", "blue", "purple", "teal"]
       : ["coral", "blue", "slate", "emerald", "pesto", "purple"];
   const colors = colorOrder.map((key) => THEME_COLORS[key]);
   const segmentAngle = 360 / colors.length;

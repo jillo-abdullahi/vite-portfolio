@@ -57,6 +57,13 @@ export const THEME_COLORS = {
     primaryLight: "rgba(168, 154, 4, 0.1)",
     primaryBorder: "rgba(168, 154, 4, 0.4)",
   },
+  teal: {
+    name: "Teal",
+    primary: "#0d9488",
+    primaryHover: "#0f766e",
+    primaryLight: "rgba(13, 148, 136, 0.1)",
+    primaryBorder: "rgba(13, 148, 136, 0.4)",
+  },
 } as const;
 
 export const THEME_FONTS = {

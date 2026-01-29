@@ -56,10 +56,7 @@ const NavBar: FC = () => {
       {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
-            className={`mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-300 backdrop-blur-sm ${isScrolled
-              ? "bg-gray-100 dark:bg-gray-900/50"
-              : "bg-gray-100 dark:bg-gray-900/50"
-              }`}
+            className="mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-100 ease-in-out dark:backdrop-blur-sm bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent dark:bg-gray-900/50"
           >
             <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
