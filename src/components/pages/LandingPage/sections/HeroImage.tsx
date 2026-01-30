@@ -43,19 +43,19 @@ const HeroImage: FC = () => {
 
           {/* Floating Badges */}
           <div
-            className="absolute -top-0 -right-0 bg-gray-100/50 dark:bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/25 dark:border-[var(--color-primary)]/15 p-2 rounded-[12px] animate-float"
+            className="absolute -top-0 -right-0 bg-gray-100/50 dark:bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/40 p-2 rounded-[12px] animate-float"
             style={{ animationDelay: "0s" }}
           >
             <FaReact className="text-[#61DAFB] text-2xl" />
           </div>
           <div
-            className="absolute bottom-8 -left-8 bg-gray-100/50 dark:bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/25 dark:border-[var(--color-primary)]/15 p-2 rounded-[12px] animate-float"
+            className="absolute bottom-8 -left-8 bg-gray-100/50 dark:bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/40 p-2 rounded-[12px] animate-float"
             style={{ animationDelay: "-2s" }}
           >
             <BiLogoTypescript className="text-[#3178C6] text-2xl" />
           </div>
           <div
-            className="absolute -bottom-4 right-12 bg-gray-100/50 dark:bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/25 dark:border-[var(--color-primary)]/15 p-2 rounded-[12px] animate-float"
+            className="absolute -bottom-4 right-12 bg-gray-100/50 dark:bg-gray-900/60 backdrop-blur-md border border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/40 p-2 rounded-[12px] animate-float"
             style={{ animationDelay: "-4s" }}
           >
             <FaNodeJs className="text-[#339933] text-2xl" />

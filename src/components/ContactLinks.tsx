@@ -1,14 +1,5 @@
 import type { FC } from "react";
 import { useState, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedin,
-  faXTwitter,
-  faTelegram,
-} from "@fortawesome/free-brands-svg-icons";
-
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { externalLinks } from "../data";
 
 import { ClipboardIcon, type ClipboardIconHandle } from "./ui/ClipboardIcon";
@@ -20,12 +11,19 @@ import {
 import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
 import { TwitterIcon, type TwitterIconHandle } from "./ui/TwitterIcon";
 import { GithubIcon, type GithubIconHandle } from "./ui/GithubIcon";
+import { SendIcon, type SendIconHandle } from "./ui/SendIcon";
+import { MailIcon, type MailIconHandle } from "./ui/MailIcon";
 import { SlideMeIn } from "./shared/SlideMeIn";
 
 interface SocialLink {
-  icon: IconDefinition;
+  icon: typeof MailIcon;
   href: string;
   name?: string;
+  iconRef?:
+  | React.RefObject<LinkedInIconHandle | null>
+  | React.RefObject<TwitterIconHandle | null>
+  | React.RefObject<SendIconHandle | null>
+  | React.RefObject<MailIconHandle | null>
   clipboardRef?: React.RefObject<ClipboardIconHandle | null>;
   checkIconRef?: React.RefObject<CheckIconHandle | null>;
   squareArrowRef?: React.RefObject<SquareArrowOutUpRightIconHandle | null>;
@@ -39,9 +37,9 @@ interface FooterLink {
   href: string;
   name?: string;
   ref:
-    | React.RefObject<GithubIconHandle | null>
-    | React.RefObject<LinkedInIconHandle | null>
-    | React.RefObject<TwitterIconHandle | null>;
+  | React.RefObject<GithubIconHandle | null>
+  | React.RefObject<LinkedInIconHandle | null>
+  | React.RefObject<TwitterIconHandle | null>;
 }
 
 const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
@@ -49,7 +47,8 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   const linkedInRef = useRef<LinkedInIconHandle | null>(null);
   const twitterRef = useRef<TwitterIconHandle | null>(null);
   const githubRef = useRef<GithubIconHandle | null>(null);
-
+  const mailRef = useRef<MailIconHandle | null>(null);
+  const sendRef = useRef<SendIconHandle | null>(null);
   const socialLinks: FooterLink[] = [
     { href: github, name: "GitHub", ref: githubRef },
     { href: linkedIn, name: "LinkedIn", ref: linkedInRef },
@@ -58,24 +57,28 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
 
   const contactPageSocialLinks: SocialLink[] = [
     {
-      icon: faEnvelope,
+      icon: MailIcon,
       href: `mailto:${externalLinks.email}`,
       name: "Email",
+      iconRef: mailRef,
     },
     {
-      icon: faTelegram,
+      icon: SendIcon,
       href: externalLinks.telegram,
       name: "Telegram",
+      iconRef: sendRef,
     },
     {
-      icon: faXTwitter,
+      icon: TwitterIcon,
       href: twitter,
       name: "Twitter(X)",
+      iconRef: twitterRef,
     },
     {
-      icon: faLinkedin,
+      icon: LinkedInIcon,
       href: linkedIn,
       name: "LinkedIn",
+      iconRef: linkedInRef,
     },
   ];
 
@@ -84,6 +87,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
     icon,
     href,
     name,
+    iconRef,
     checkIconRef,
     clipboardRef,
     squareArrowRef,
@@ -125,17 +129,24 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         href={href}
         target="_blank"
         rel="noreferrer"
+        onMouseEnter={() => iconRef?.current?.startAnimation()}
+        onMouseLeave={() => iconRef?.current?.stopAnimation()}
       >
         {/* Subtle hover overlay */}
         <div className="absolute inset-0 rounded-2xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <div className="relative z-10 flex items-center justify-start space-x-3">
           <div className="rounded-md bg-gray-100 dark:bg-gray-700/40 border border-gray-300 dark:border-gray-700/40 p-1 w-12 h-12 flex items-center justify-center">
-            <FontAwesomeIcon
-              icon={icon}
-              style={{ fontSize: "28px" }}
-              className="text-gray-600 dark:text-gray-300 transition-all group-hover:text-[var(--color-primary)]/90 dark:group-hover:text-[var(--color-primary)]/90 duration-300"
-            />
+            {(() => {
+              const Icon = icon;
+              return (
+                <Icon
+                  ref={iconRef}
+                  size={28}
+                  className="text-gray-600 dark:text-gray-300 transition-all group-hover:text-[var(--color-primary)]/90 dark:group-hover:text-[var(--color-primary)]/90 duration-300"
+                />
+              );
+            })()}
           </div>
           <div className="text-left">
             <div className="text-gray-700 dark:text-gray-300 font-semibold">{name}</div>
@@ -223,7 +234,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   // for contact page
   const contactPageLinks = (
     <div className="flex flex-col space-y-2 w-full divider-y divider-gray-800">
-      {contactPageSocialLinks.map(({ icon, href, name }, index) => {
+      {contactPageSocialLinks.map(({ icon, href, name, iconRef }, index) => {
         const clipboardRef = useRef<ClipboardIconHandle | null>(null);
         const checkIconRef = useRef<CheckIconHandle | null>(null);
         const squareArrowRef = useRef<SquareArrowOutUpRightIconHandle | null>(
@@ -232,6 +243,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         return (
           <SlideMeIn useBorderedContent={false} key={index} delay={index * 0.2}>
             <FooterLinkBox
+              iconRef={iconRef}
               icon={icon}
               href={href}
               name={name}

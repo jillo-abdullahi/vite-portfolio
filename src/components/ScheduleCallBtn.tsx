@@ -29,9 +29,8 @@ export const ScheduleCallBtn: FC<ScheduleCallBtnProps> = ({
     <div className="flex-shrink-0" onMouseEnter={handleMouseEnter}>
       <a
         type="button"
-        className={`group/btn overflow-hidden relative flex items-center gap-x-1.5 rounded-xl border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 px-4 py-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer justify-center ${
-          isInNavBar ? "w-fit" : "w-64 lg:w-fit"
-        }`}
+        className={`group/btn overflow-hidden relative flex items-center gap-x-1.5 rounded-xl border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/15 hover:bg-[var(--color-primary)]/20 px-4 py-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/60 transition-all duration-200 cursor-pointer justify-center ${isInNavBar ? "w-fit" : "w-64 lg:w-fit"
+          }`}
         href={externalLinks.calLink}
         target="_blank"
         rel="noopener noreferrer"

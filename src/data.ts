@@ -364,7 +364,7 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const skills: Skills = {
   backend: [
-    { name: "Express.js", level: "90%" },
+    { name: "Express.js/Fastify", level: "90%" },
     { name: "Apollo GraphQL", level: "80%" },
     { name: "Nest.js", level: "70%" },
     { name: "Django", level: "60%" },
@@ -378,7 +378,7 @@ export const skills: Skills = {
     { name: "Vue.js", level: "80%" },
   ],
   "databases/devops": [
-    { name: "Prisma", level: "80%" },
+    { name: "Prisma ORM", level: "80%" },
     { name: "Google Firebase", level: "80%" },
     { name: "Supabase", level: "75%" },
     { name: "Docker", level: "70%" },
