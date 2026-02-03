@@ -66,7 +66,7 @@ const HeroSection: FC = () => {
                 <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
                   <LuMapPinHouse className="text-[var(--color-primary)]/80 h-4 w-4" />
                   <span className="text-gray-700/80 dark:text-gray-300/70 font-semibold">
-                    Nairobi, Kenya
+                    Nairobi, Kenya <span className="text-[var(--color-primary)]/80 text-xs">(UTC+3)</span>
                   </span>
                 </div>
               </SlideMeIn>

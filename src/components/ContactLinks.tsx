@@ -125,7 +125,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
 
     return (
       <a
-        className="group relative w-full rounded-2xl border-2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gray-100 dark:bg-gray-900/10 hover:bg-gray-200/40 dark:hover:bg-gray-900/20 flex items-center justify-between cursor-pointer p-3 transition-all duration-100 ease-in hover:-translate-y-0.5"
+        className="group relative w-full rounded-2xl border-2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-[var(--color-primary)]/5 dark:bg-[var(--color-primary)]/3 flex items-center justify-between cursor-pointer p-3 transition-all duration-100 ease-in hover:-translate-y-0.5"
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -133,7 +133,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         onMouseLeave={() => iconRef?.current?.stopAnimation()}
       >
         {/* Subtle hover overlay */}
-        <div className="absolute inset-0 rounded-2xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 rounded-2xl bg-[var(--color-primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <div className="relative z-10 flex items-center justify-start space-x-3">
           <div className="rounded-md bg-gray-100 dark:bg-gray-700/40 border border-gray-300 dark:border-gray-700/40 p-1 w-12 h-12 flex items-center justify-center">

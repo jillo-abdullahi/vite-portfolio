@@ -158,11 +158,41 @@ export interface PortfolioProject {
 export type ProjectCategory = "Web3" | "Full Stack" | "Frontend" | "Backend";
 
 /**
+ * Valid skill names used in the portfolio
+ * Update this type when adding new skills to data.ts
+ */
+export type SkillName =
+  // Backend
+  | "Express.js/Fastify"
+  | "Apollo GraphQL"
+  | "Nest.js"
+  | "Django"
+  | "Flask"
+  // Frontend
+  | "Vite/Next.js"
+  | "Tanstack Query/Router"
+  | "Redux/Zustand"
+  | "Tailwind/ChakraUI"
+  | "Vue.js"
+  // Databases/DevOps
+  | "Prisma ORM"
+  | "Google Firebase"
+  | "Supabase"
+  | "Docker"
+  | "Github Actions"
+  // Web3
+  | "Wagmi"
+  | "ethers.js"
+  | "Viem"
+  | "WalletConnect"
+  | "Foundry";
+
+/**
  * Individual skill entry
  */
 export interface Skill {
   /** Name of the technology or skill */
-  name: string;
+  name: SkillName;
   /** Proficiency level as a percentage */
   level: Percentage;
 }

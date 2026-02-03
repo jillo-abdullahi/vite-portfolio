@@ -8,14 +8,17 @@ interface TechBadgeProps {
 export const TechBadge: FC<TechBadgeProps> = ({ icon, label }) => {
   return (
     <div
-      className="flex items-center space-x-2 rounded-[11px] px-3 py-1.5 
-      bg-gray-700/5 border-[var(--color-primary)]/15 text-gray-700 
-      dark:bg-gray-900/40 hover:border-[var(--color-primary)]/30 dark:text-gray-400 
-      backdrop-blur-md group-hover:bg-gray-700/10 dark:group-hover:bg-gray-900/50 
-      group-hover:border-[var(--color-primary)]/20 transition-all duration-200 cursor-pointer border"
+      className="flex items-center gap-2 rounded-xl px-4 py-2
+        bg-gray-100 dark:bg-white/5
+        border border-[var(--color-primary)]/40 dark:border-white/10
+        text-gray-700 dark:text-gray-200
+        hover:bg-white dark:hover:bg-white/10
+        hover:border-[var(--color-primary)]/40 dark:hover:border-[var(--color-primary)]/50
+        hover:-translate-y-0.5
+        transition-all duration-200 ease-out cursor-default"
     >
-      {icon}
-      <span className="font-medium text-sm">{label}</span>
+      <span className="flex-shrink-0">{icon}</span>
+      <span className="font-medium text-sm whitespace-nowrap">{label}</span>
     </div>
   );
 };
