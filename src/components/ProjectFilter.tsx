@@ -42,7 +42,7 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-1 md:gap-2 p-1 md:p-1.5 rounded-xl sm:rounded-2xl dark:bg-gray-800/30 border-2 border-[var(--color-primary)]/20 inline-flex max-w-full"
+          className="flex flex-wrap items-center justify-center gap-1 md:gap-2 p-1 md:p-1.5 rounded-2xl sm:rounded-3xl dark:bg-gray-800/30 border-2 border-[var(--color-primary)]/20 inline-flex max-w-full"
         >
           {filters.map((filter) => {
             const isActive = activeFilter === filter;
@@ -53,17 +53,16 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
               <button
                 key={filter}
                 onClick={() => onFilterChange(filter)}
-                className={`cursor-pointer relative px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-sm font-medium transition-colors duration-300 z-10 whitespace-nowrap rounded-md lg:rounded-lg ${
-                  isActive
-                    ? "text-gray-900 dark:text-white"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200/50 dark:hover:bg-gray-700/50"
-                }`}
+                className={`cursor-pointer relative px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-sm font-medium transition-colors duration-300 z-10 whitespace-nowrap rounded-lg sm:rounded-2xl ${isActive
+                  ? "text-gray-900 dark:text-white"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200/50 dark:hover:bg-gray-700/50"
+                  }`}
                 aria-label={`Filter projects by ${filter}`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeFilter"
-                    className="absolute inset-0 bg-[var(--color-primary)]/20 dark:bg-[var(--color-primary)]/30 border border-[var(--color-primary)]/40 rounded-md lg:rounded-lg"
+                    className="absolute inset-0 bg-[var(--color-primary)]/20 dark:bg-[var(--color-primary)]/30 border border-[var(--color-primary)]/40 rounded-lg sm:rounded-2xl"
                     transition={{
                       type: "spring",
                       stiffness: 280,
@@ -76,11 +75,10 @@ export const ProjectFilter: FC<ProjectFilterProps> = ({
                   <Icon className="w-4 h-4 md:hidden" />
                   <span className="hidden md:block lowercase">{filter}</span>
                   <span
-                    className={`inline-flex items-center justify-center min-w-[16px] md:min-w-[20px] h-4 md:h-5 px-1 md:px-1.5 rounded-full text-[9px] md:text-[10px] font-bold transition-all duration-300 ${
-                      isActive
-                        ? "bg-[var(--color-primary)]/80 text-white"
-                        : "bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
-                    }`}
+                    className={`inline-flex items-center justify-center min-w-[16px] md:min-w-[20px] h-4 md:h-5 px-1 md:px-1.5 rounded-full text-[9px] md:text-[10px] font-bold transition-all duration-300 ${isActive
+                      ? "bg-[var(--color-primary)]/60 text-white"
+                      : "bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                      }`}
                   >
                     {count}
                   </span>

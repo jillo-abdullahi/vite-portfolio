@@ -120,7 +120,7 @@ export const PortfolioCard = ({
           <div className="relative w-full mx-auto">
             <div className="relative transform transition-all duration-500 ease-out">
               {/* Lid / Screen Housing */}
-              <div className="relative rounded-[14px] bg-gray-400 dark:bg-gray-800 p-[6px] overflow-hidden">
+              <div className="relative rounded-[14px] bg-gray-400 dark:bg-gray-800 p-[6px] overflow-hidden border-2 border-[var(--color-primary)]/20">
                 {/* Screen Bezel */}
                 <div className="relative rounded-[8px] overflow-hidden bg-black">
                   {/* Top Bar / Menu Bar */}
