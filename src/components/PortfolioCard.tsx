@@ -171,8 +171,8 @@ export const PortfolioCard = ({
             </p>
             {moreDetails && (
               <div className="text-gray-500 dark:text-gray-400 text-sm pt-4 space-y-2 mb-4">
-                <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-300 font-bold">
-                  How it works
+                <p className="lowercase tracking-wide text-gray-600 dark:text-gray-300 font-semibold text-lg">
+                  how it works
                 </p>
                 <p className="font-medium dark:font-normal tracking-wide leading-relaxed">{moreDetails}</p>
               </div>
@@ -183,7 +183,7 @@ export const PortfolioCard = ({
           <div className="flex-1 border-t border-gray-400 dark:border-gray-700 pt-4">
             {stacks && stacks.length > 0 && (
               <div className="space-y-2">
-                <p className="text-xs font-bold dark:font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider pb-1">
+                <p className="text-lg lowercase font-semibold dark:font-semibold text-gray-600 dark:text-gray-300 tracking-wide pb-1">
                   Tech Stack
                 </p>
                 <div className="flex flex-wrap gap-2">

@@ -248,7 +248,7 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    title: "Poker planning app for remote teams and agile squads",
+    title: "poker planning app for remote teams and agile squads",
     description:
       "A collaborative poker planning application designed to help remote teams and agile squads estimate project tasks effectively.",
     moreDetails:
@@ -270,11 +270,11 @@ export const portfolioProjects: PortfolioProject[] = [
     github: "https://github.com/jillo-abdullahi/votedeck",
     contract: "https://github.com/jillo-abdullahi/votedeck-api",
     category: "Full Stack",
-    demoButtonText: "Start Planning",
+    demoButtonText: "start planning",
     demoButtonIcon: Spade,
   },
   {
-    title: "Ethereum dApp for managing GasHawk transactions",
+    title: "ethereum dApp for managing gashawk transactions",
     description:
       "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
     moreDetails:
@@ -292,11 +292,11 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     completed: true,
     category: "Web3",
-    demoButtonText: "Use GasHawk",
+    demoButtonText: "use gashawk",
     demoButtonIcon: Fuel,
   },
   {
-    title: "Ballot app for decentralized voting",
+    title: "ballot app for decentralized voting",
     description:
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
     moreDetails:
@@ -309,11 +309,11 @@ export const portfolioProjects: PortfolioProject[] = [
     stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
     completed: true,
     category: "Web3",
-    demoButtonText: "Use Ballot",
+    demoButtonText: "use ballot",
     demoButtonIcon: Vote,
   },
   {
-    title: "A link sharing app for developers",
+    title: "a link sharing app for developers",
     description:
       "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
     moreDetails:
@@ -325,11 +325,11 @@ export const portfolioProjects: PortfolioProject[] = [
     stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
     completed: true,
     category: "Full Stack",
-    demoButtonText: "Use DevLinks",
+    demoButtonText: "use devlinks",
     demoButtonIcon: Share2,
   },
   {
-    title: "Memory Game",
+    title: "memory game",
     description:
       "A fun memory game where players try to match pairs against each other or against the CPU.",
     moreDetails:
@@ -342,10 +342,10 @@ export const portfolioProjects: PortfolioProject[] = [
     completed: true,
     category: "Frontend",
     demoButtonIcon: Brain,
-    demoButtonText: "Play Memory Game",
+    demoButtonText: "play memory game",
   },
   {
-    title: "Dictionary web app solution",
+    title: "dictionary web app solution",
     description:
       "A dictionary web app built with TailwindCSS and Next.js. It uses a free Dictionary API to fetch data for the searched word. It also uses the Web Speech API to play the audio file for the searched word.",
     moreDetails:
@@ -358,7 +358,7 @@ export const portfolioProjects: PortfolioProject[] = [
     completed: true,
     category: "Frontend",
     demoButtonIcon: BookOpen,
-    demoButtonText: "Use Dictionary",
+    demoButtonText: "use dictionary",
   },
 ];
 

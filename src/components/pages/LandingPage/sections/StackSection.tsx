@@ -15,7 +15,7 @@ import { currentlyInfo } from "@/data";
 const FrontendGraphic: FC = () => (
   <div className="relative w-full h-full flex items-center justify-center p-4">
     {/* Abstract browser window */}
-    <div className="relative w-full aspect-[16/9]">
+    <div className="relative w-full aspect-[16/9] lg:aspect-[21/9]">
       {/* Browser frame */}
       <div className="absolute inset-0 rounded-2xl border-2 border-[var(--color-primary)]/30 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent backdrop-blur-sm overflow-hidden flex flex-col">
         {/* Browser header bar */}
@@ -53,7 +53,7 @@ const BackendGraphic: FC = () => (
     <div className="relative w-full max-w-[300px]">
       {/* Server rack */}
       <div className="space-y-2">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <div
             key={i}
             className="h-10 rounded-lg border-2 border-[var(--color-primary)]/25 bg-gradient-to-r from-[var(--color-primary)]/8 to-transparent flex items-center px-3 gap-2"
@@ -85,7 +85,7 @@ const StackSection: FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* Frontend Card - Large, spans 2 rows on desktop */}
             <div
-              className="group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-1 transition-all bg-gradient-to-br from-[var(--color-primary)]/8 to-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/50 lg:row-span-2 "
+              className="flex items-center justify-center group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-1 transition-all bg-gradient-to-br from-[var(--color-primary)]/8 to-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/50 lg:row-span-2 "
             >
               {/* Subtle hover overlay */}
               <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -98,7 +98,7 @@ const StackSection: FC = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg md:text-2xl font-semibold text-[var(--color-primary)] mb-2 px-3">
+                  <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-primary)] mb-2 px-3">
                     frontend-focused
                   </h3>
 
@@ -110,7 +110,7 @@ const StackSection: FC = () => {
 
             {/* Backend Card - Top Right */}
             <div
-              className="group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-0.5 transition-all bg-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30"
+              className="group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-0.5 transition-all bg-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30 flex items-center justify-center"
             >
               {/* Subtle hover overlay */}
               <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -126,10 +126,10 @@ const StackSection: FC = () => {
 
                   {/* Content */}
                   <div className="flex-1 text-left">
-                    <h3 className="text-lg md:text-xl font-semibold text-[var(--color-primary)] mb-2 px-3">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-600 dark:text-gray-200 mb-2 px-3">
                       backend support
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed font-medium px-3">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-medium px-3">
                       I design robust APIs, manage databases, and build scalable server architectures with a focus on security and performance.
                     </p>
                   </div>
@@ -139,7 +139,7 @@ const StackSection: FC = () => {
 
             {/* My Stack Card - Bottom Right */}
             <div
-              className="group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-0.5 transition-all bg-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30"
+              className="flex items-center justify-center group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-0.5 transition-all bg-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30"
             >
               {/* Subtle hover overlay */}
               <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
