@@ -61,7 +61,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {exploring && (
-          <SlideMeIn delay={0.2}>
+          <SlideMeIn>
             <InfoCard
               icon={<ZapIcon ref={zapRef} className="text-[var(--color-primary)]" />}
               label="Currently Exploring"
@@ -72,7 +72,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
         )}
 
         {availableFor && (
-          <SlideMeIn delay={0.4}>
+          <SlideMeIn>
             <InfoCard
               icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="text-[var(--color-primary)]" />}
               label="Available For"

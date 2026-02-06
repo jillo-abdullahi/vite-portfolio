@@ -49,7 +49,7 @@ const HeroSection: FC = () => {
               >
                 Jillo Woche,
               </TextAnimate>
-              <SlideMeIn delay={0.4} className="w-full text-center md:text-left w-full" useFade>
+              <SlideMeIn delay={0.2} className="w-full text-center md:text-left w-full" useFade>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-800 dark:text-gray-300 ">
                   <Typewriter
                     phrases={[
@@ -62,7 +62,7 @@ const HeroSection: FC = () => {
                   />
                 </span>
               </SlideMeIn>
-              <SlideMeIn delay={0.5} className="w-full" useFade>
+              <SlideMeIn delay={0.3} className="w-full" useFade>
                 <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
                   <LuMapPinHouse className="text-[var(--color-primary)]/80 h-4 w-4" />
                   <span className="text-gray-700/80 dark:text-gray-300/70 font-semibold">
@@ -71,7 +71,7 @@ const HeroSection: FC = () => {
                 </div>
               </SlideMeIn>
               <hr className="md:hidden border-t border-[var(--color-primary)]/30 mt-4 w-[80%] mx-auto" />
-              <SlideMeIn delay={0.6} useFade>
+              <SlideMeIn delay={0.4} useFade>
                 <div className="w-full pt-6">
                   <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-xl md:text-xl leading-[1.3] font-semibold dark:font-medium leading-relaxed">
                     <span>
@@ -97,10 +97,10 @@ const HeroSection: FC = () => {
                 </div>
               </SlideMeIn>
               <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
-                <SlideMeIn delay={0.5} useFade>
+                <SlideMeIn delay={0.2} useFade>
                   <ScheduleCallBtn />
                 </SlideMeIn>
-                <SlideMeIn delay={0.6} useFade>
+                <SlideMeIn delay={0.3} useFade>
                   <ViewProjectsBtn />
                 </SlideMeIn>
               </div>
