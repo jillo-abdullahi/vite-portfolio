@@ -13,8 +13,8 @@ import HeroImage from "./HeroImage";
 const HeroSection: FC = () => {
   const { currentTheme } = useTheme();
   return (
-    <SlideMeIn>
-      <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
+    <SlideMeIn useFade className="mt-4">
+      <SectionContent className="py-6 md:py-10 bg-[var(--color-primary)]/3">
         <div
           className="group relative border-2 rounded-3xl p-6 pt-8 md:p-8 bg-[var(--color-primary)]/3 dark:bg-[var(--color-primary)]/3 hover:-translate-y-0.5 transition-all duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30 w-full overflow-hidden"
           style={{
@@ -31,7 +31,7 @@ const HeroSection: FC = () => {
             <HeroImage />
             {/* Hero Text */}
             <div className="flex flex-col items-start justify-start pl-0 md:pl-6 lg:pl-10 pt-4 md:pt-0 border-0 md:border-l border-[var(--color-primary)]/30 group-hover:border-[var(--color-primary)]/40">
-              <SlideMeIn delay={0.2} useBorderedContent={false} className="w-full">
+              <SlideMeIn delay={0.2} className="w-full" useFade>
                 <div className="flex items-center space-x-1 w-full justify-center md:justify-start pb-2 sm:pb-4">
                   <WavingHand />
                   <span className="text-xl text-gray-600 dark:text-gray-400 font-semibold dark:font-medium pt-1">
@@ -49,7 +49,7 @@ const HeroSection: FC = () => {
               >
                 Jillo Woche,
               </TextAnimate>
-              <SlideMeIn delay={0.4} useBorderedContent={false} className="w-full text-center md:text-left w-full">
+              <SlideMeIn delay={0.4} className="w-full text-center md:text-left w-full" useFade>
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-800 dark:text-gray-300 ">
                   <Typewriter
                     phrases={[
@@ -62,7 +62,7 @@ const HeroSection: FC = () => {
                   />
                 </span>
               </SlideMeIn>
-              <SlideMeIn delay={0.5} useBorderedContent={false} className="w-full">
+              <SlideMeIn delay={0.5} className="w-full" useFade>
                 <div className="flex items-center justify-center md:justify-start space-x-1 pt-1 w-full">
                   <LuMapPinHouse className="text-[var(--color-primary)]/80 h-4 w-4" />
                   <span className="text-gray-700/80 dark:text-gray-300/70 font-semibold">
@@ -71,7 +71,7 @@ const HeroSection: FC = () => {
                 </div>
               </SlideMeIn>
               <hr className="md:hidden border-t border-[var(--color-primary)]/30 mt-4 w-[80%] mx-auto" />
-              <SlideMeIn delay={0.6} useBorderedContent={false}>
+              <SlideMeIn delay={0.6} useFade>
                 <div className="w-full pt-6">
                   <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-xl md:text-xl leading-[1.3] font-semibold dark:font-medium leading-relaxed">
                     <span>
@@ -97,10 +97,10 @@ const HeroSection: FC = () => {
                 </div>
               </SlideMeIn>
               <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row items-center md:items-start justify-center lg:justify-start space-x-0 lg:space-x-3 pt-8 w-full">
-                <SlideMeIn delay={0.5} useBorderedContent={false}>
+                <SlideMeIn delay={0.5} useFade>
                   <ScheduleCallBtn />
                 </SlideMeIn>
-                <SlideMeIn delay={0.6} useBorderedContent={false}>
+                <SlideMeIn delay={0.6} useFade>
                   <ViewProjectsBtn />
                 </SlideMeIn>
               </div>

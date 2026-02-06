@@ -9,8 +9,7 @@ const Testimonials: FC = () => {
       <div className="grid grid-cols-1 gap-6 md:gap-8">
         {testimonials.map((testimonial, index) => (
           <SlideMeIn
-            useBorderedContent={false}
-            delay={0.2 * index}
+            cascade
             key={`${testimonial.name}-${index}`}
           >
             <div className="h-full">

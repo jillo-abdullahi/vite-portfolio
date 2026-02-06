@@ -34,7 +34,9 @@ export const PageContainer = ({
   return (
     <div className={`mx-auto ${isHomePage ? "pt-32 pb-38 pb-40 md:pb-38 md:pt-38" : "pt-28 pb-40 md:pb-38 md:pt-32"}  min-h-screen`}>
       {showBreadcrumbs && <Breadcrumbs />}
-      {children}
+      <div className="flex flex-col gap-6">
+        {children}
+      </div>
     </div>
   );
 };

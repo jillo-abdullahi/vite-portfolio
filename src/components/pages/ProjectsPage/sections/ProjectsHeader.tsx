@@ -6,7 +6,7 @@ import { LayoutGridIcon, type LayoutGridHandle } from "../../../ui/LayoutGridIco
 import { externalLinks } from "@/data";
 import { useInView } from "@/hooks/useInView";
 
-interface ProjectsHeaderProps {}
+interface ProjectsHeaderProps { }
 
 const ProjectsHeader: FC<ProjectsHeaderProps> = () => {
   const githubRef = useRef<GithubIconHandle>(null);
@@ -23,6 +23,7 @@ const ProjectsHeader: FC<ProjectsHeaderProps> = () => {
 
   return (
     <SectionHeading
+
       rightLink={
         <div
           className="flex-shrink-0"

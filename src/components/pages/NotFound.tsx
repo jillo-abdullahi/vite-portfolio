@@ -29,9 +29,9 @@ const NotFound: FC = () => {
 
   return (
     <PageContainer>
-      <SlideMeIn marginBottom="mt-8 mb-8">
-        <SectionContent padding="bg-[var(--color-primary)]/3 pt-6">
-          <SlideMeIn useBorderedContent={false} delay={0.2}>
+      <div className="mt-8 flex flex-col gap-2">
+        <SectionContent className="bg-[var(--color-primary)]/3 pt-6">
+          <SlideMeIn delay={0.4} useFade>
             <div className="flex items-center justify-center">
               {animationData && (
                 <Lottie
@@ -43,11 +43,9 @@ const NotFound: FC = () => {
             </div>
           </SlideMeIn>
         </SectionContent>
-      </SlideMeIn>
-      <SlideMeIn marginBottom="mt-4">
-        <SectionContent padding="bg-[var(--color-primary)]/3 pt-6">
+        <SectionContent className="bg-[var(--color-primary)]/3 pt-6">
           <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
-            <SlideMeIn useBorderedContent={false} delay={0.1}>
+            <SlideMeIn delay={0.1} useFade>
               <div className="text-center mb-8">
                 <p className="text-gray-600 dark:text-gray-300 text-xl mb-2 font-semibold dark:font-medium">
                   The page you're looking for seems to have wandered off into
@@ -61,13 +59,13 @@ const NotFound: FC = () => {
 
             {/* Navigation Suggestions */}
             <div className="w-full mb-8">
-              <SlideMeIn useBorderedContent={false} delay={0.1}>
+              <SlideMeIn delay={0.1}>
                 <h2 className="text-gray-500 dark:text-white text-xl font-semibold mb-4 text-center">
                   Where would you like to go?
                 </h2>
               </SlideMeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <SlideMeIn useBorderedContent={false} delay={0.1}>
+                <SlideMeIn cascade>
                   <NavigationCard
                     href="/"
                     icon={HouseIcon}
@@ -75,9 +73,6 @@ const NotFound: FC = () => {
                     description="Start your journey"
                     iconRef={houseRef}
                   />
-                </SlideMeIn>
-
-                <SlideMeIn useBorderedContent={false} delay={0.2}>
                   <NavigationCard
                     href="/resume"
                     icon={BookOpenTextIcon}
@@ -85,8 +80,6 @@ const NotFound: FC = () => {
                     title="Resumé"
                     description="My experience"
                   />
-                </SlideMeIn>
-                <SlideMeIn useBorderedContent={false} delay={0.3}>
                   <NavigationCard
                     href="/projects"
                     icon={LayoutGridIcon}
@@ -94,8 +87,6 @@ const NotFound: FC = () => {
                     title="Projects"
                     description="See my work"
                   />
-                </SlideMeIn>
-                <SlideMeIn useBorderedContent={false} delay={0.4}>
                   <NavigationCard
                     href="/contact"
                     icon={ContactIcon}
@@ -108,8 +99,8 @@ const NotFound: FC = () => {
             </div>
           </div>
         </SectionContent>
-      </SlideMeIn>
-    </PageContainer>
+      </div>
+    </PageContainer >
   );
 };
 

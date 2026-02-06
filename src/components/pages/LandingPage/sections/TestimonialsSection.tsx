@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { SectionHeading } from "../../../shared/SectionHeading";
 import { HeartIcon } from "../../../ui/HeartIcon";
 import type { HeartIconHandle } from "../../../ui/HeartIcon";
-import { SlideMeIn } from "../../../shared/SlideMeIn";
 import { SectionContent } from "../../../shared/SectionContent";
 import Testimonials from "../../../Testimonials";
 import { useInView } from "@/hooks/useInView";
@@ -35,11 +34,9 @@ const TestimonialsSection: FC = () => {
           </span>
         </div>
       </SectionHeading>
-      <SlideMeIn cascade>
-        <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
-          <Testimonials />
-        </SectionContent>
-      </SlideMeIn>
+      <SectionContent className="py-6 md:py-10 bg-[var(--color-primary)]/3">
+        <Testimonials />
+      </SectionContent>
     </>
   );
 };

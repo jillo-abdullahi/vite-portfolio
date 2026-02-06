@@ -2,6 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { IoChevronForward } from "react-icons/io5";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { SectionContent } from "./SectionContent";
+import { SlideMeIn } from "./SlideMeIn";
 
 interface BreadcrumbItem {
   label: string;
@@ -36,35 +37,35 @@ export const Breadcrumbs = () => {
   const breadcrumbs = generateBreadcrumbs();
 
   return (
-    <SectionContent>
-      <nav
-        className={`flex items-center space-x-1 text-sm text-gray-400 ${
-          isHomePage ? "mb-6" : "mb-1"
-        }`}
-        aria-label="Breadcrumb"
-      >
-        {breadcrumbs.map((item, index) => (
-          <div key={item.path} className="flex items-center space-x-1 group">
-            {index === 0 ? null : (
-              <IoChevronForward className="w-3 h-3 text-gray-500" />
-            )}
+    <SectionContent className="mt-7 md:mt-4 mb-3 md:mb-4" useBorderedContent={false}>
+      <SlideMeIn useFade delay={0.1} duration={500}>
+        <nav
+          className="flex items-center space-x-1 text-sm text-gray-400"
+          aria-label="Breadcrumb"
+        >
+          {breadcrumbs.map((item, index) => (
+            <div key={item.path} className="flex items-center space-x-1 group">
+              {index === 0 ? null : (
+                <IoChevronForward className="w-3 h-3 text-gray-500" />
+              )}
 
-            {item.isActive ? (
-              <span className="text-[var(--color-primary)]/80 font-medium">
-                {item.label}
-              </span>
-            ) : (
-              <Link
-                to={item.path}
-                className="flex items-center space-x-2 hover:text-[var(--color-primary)]/80 transition-colors duration-200 font-medium hover:underline"
-              >
-                <HomeIcon className="w-3.5 h-3.5 group-hover:text-[var(--color-primary)] transition-colors duration-200 mr-1" />
-                {item.label}
-              </Link>
-            )}
-          </div>
-        ))}
-      </nav>
+              {item.isActive ? (
+                <span className="text-[var(--color-primary)]/80 font-medium">
+                  {item.label}
+                </span>
+              ) : (
+                <Link
+                  to={item.path}
+                  className="flex items-center space-x-2 hover:text-[var(--color-primary)]/80 transition-colors duration-200 font-medium hover:underline"
+                >
+                  <HomeIcon className="w-3.5 h-3.5 group-hover:text-[var(--color-primary)] transition-colors duration-200 mr-1" />
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+        </nav>
+      </SlideMeIn>
     </SectionContent>
   );
 };

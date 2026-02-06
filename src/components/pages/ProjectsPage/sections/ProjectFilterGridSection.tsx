@@ -20,32 +20,34 @@ const ProjectFilterGridSection: FC<ProjectFilterGridSectionProps> = ({
   projectCounts,
   filteredProjects,
 }) => (
-  <SlideMeIn cascade>
-    <SectionContent padding="py-10 bg-[var(--color-primary)]/3">
-      {/* Project Filter */}
+  <SectionContent className="py-10 bg-[var(--color-primary)]/3">
+    {/* Project Filter */}
+    <SlideMeIn delay={0.4} useFade>
       <ProjectFilter
         activeFilter={activeFilter}
         onFilterChange={onFilterChange}
         projectCounts={projectCounts}
       />
-      {/* other projects */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeFilter}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          <PortfolioGrid>
-            {filteredProjects.map((project) => (
+    </SlideMeIn>
+    {/* other projects */}
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={activeFilter}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.3 }}
+      >
+        <PortfolioGrid>
+          {filteredProjects.map((project) => (
+            <SlideMeIn cascade>
               <PortfolioCard {...project} key={project.title} />
-            ))}
-          </PortfolioGrid>
-        </motion.div>
-      </AnimatePresence>
-    </SectionContent>
-  </SlideMeIn>
+            </SlideMeIn>
+          ))}
+        </PortfolioGrid>
+      </motion.div>
+    </AnimatePresence>
+  </SectionContent>
 );
 
 export default ProjectFilterGridSection;

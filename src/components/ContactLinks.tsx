@@ -241,7 +241,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
           null
         );
         return (
-          <SlideMeIn useBorderedContent={false} key={index} delay={index * 0.2}>
+          <SlideMeIn key={index} cascade>
             <FooterLinkBox
               iconRef={iconRef}
               icon={icon}

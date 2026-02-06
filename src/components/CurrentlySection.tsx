@@ -5,6 +5,7 @@ import {
   UserRoundCheckIcon,
   type UserRoundCheckHandle,
 } from "./ui/UserRoundCheckIcon";
+import { SlideMeIn } from "./shared/SlideMeIn";
 
 interface CurrentlySectionProps {
   exploring?: string;
@@ -51,6 +52,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
   const userRoundCheckRef = useRef<UserRoundCheckHandle | null>(null);
 
   return (
+
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
@@ -59,21 +61,25 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {exploring && (
-          <InfoCard
-            icon={<ZapIcon ref={zapRef} className="text-[var(--color-primary)]" />}
-            label="Currently Exploring"
-            value={exploring}
-            iconRef={zapRef}
-          />
+          <SlideMeIn delay={0.2}>
+            <InfoCard
+              icon={<ZapIcon ref={zapRef} className="text-[var(--color-primary)]" />}
+              label="Currently Exploring"
+              value={exploring}
+              iconRef={zapRef}
+            />
+          </SlideMeIn>
         )}
 
         {availableFor && (
-          <InfoCard
-            icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="text-[var(--color-primary)]" />}
-            label="Available For"
-            value={availableFor}
-            iconRef={userRoundCheckRef}
-          />
+          <SlideMeIn delay={0.4}>
+            <InfoCard
+              icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="text-[var(--color-primary)]" />}
+              label="Available For"
+              value={availableFor}
+              iconRef={userRoundCheckRef}
+            />
+          </SlideMeIn>
         )}
       </div>
     </motion.div>

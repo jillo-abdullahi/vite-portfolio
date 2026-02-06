@@ -35,7 +35,7 @@ const ToolsSection: FC = () => {
         </div>
       </SectionHeading>
       <SlideMeIn>
-        <SectionContent padding="bg-[var(--color-primary)]/3 py-6 md:py-10">
+        <SectionContent className="bg-[var(--color-primary)]/3 py-6 md:py-10">
           <section>
             <Stacks />
           </section>

@@ -50,7 +50,7 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-14 lg:px-26 md:border-t-2 md:border-b-2 border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/10 bg-transparent md:bg-[var(--color-primary)]/3 py-4 ${isScrolled ? "mt-2" : "mt-4"
+      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-14 lg:px-26 border-t-2 border-b-2 border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/10 bg-transparent md:bg-[var(--color-primary)]/3 py-4 ${isScrolled ? "mt-2" : "mt-4"
         }`}
     >
       {({ open, close }: { open: boolean; close: () => void }) => (

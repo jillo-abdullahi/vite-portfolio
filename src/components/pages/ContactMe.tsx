@@ -12,33 +12,27 @@ export const ContactMe = () => {
 
   return (
     <PageContainer showBreadcrumbs>
-      <section>
-        <SlideMeIn useBorderedContent={false} delay={0.1}>
-          <div className="w-full pb-4">
-            <SectionHeading
-              linkText="say hi!"
-              linkHref={`mailto:${externalLinks.email}`}
-              isContactPage={true}
-            >
-              I'd love to build something
-              <br /> great with you,
-            </SectionHeading>
-          </div>
-        </SlideMeIn>
+      <SectionHeading
+        linkText="say hi!"
+        linkHref={`mailto:${externalLinks.email}`}
+        isContactPage={true}
+      >
+        I'd love to build something
+        <br /> great with you,
+      </SectionHeading>
 
-        <SlideMeIn>
-          <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <p className="text-gray-600 dark:text-gray-300 text-2xl font-medium dark:font-normal">
-                Let's connect
-              </p>
-              <div className="md:col-span-2">
-                <ContactLinks isContactPage />
-              </div>
-            </div>
-          </SectionContent>
-        </SlideMeIn>
-      </section>
+      <SectionContent className="py-6 md:py-10 bg-[var(--color-primary)]/3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <SlideMeIn delay={0.2} useFade>
+            <p className="text-gray-600 dark:text-gray-300 text-2xl font-medium dark:font-normal">
+              Let's connect
+            </p>
+          </SlideMeIn>
+          <div className="md:col-span-2">
+            <ContactLinks isContactPage />
+          </div>
+        </div>
+      </SectionContent>
       <MemeText
         text={
           "I will stop the war in a minute. First I must pick 47 flowers and pet this fox."

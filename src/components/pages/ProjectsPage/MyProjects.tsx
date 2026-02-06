@@ -43,7 +43,6 @@ export const MyProjects = () => {
   return (
     <PageContainer showBreadcrumbs>
       <ProjectsHeader />
-      {/* <FeaturedProjectSection /> */}
 
       <ProjectFilterGridSection
         activeFilter={activeFilter}

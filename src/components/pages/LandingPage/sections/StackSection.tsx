@@ -79,119 +79,115 @@ const StackSection: FC = () => {
 
   return (
     <>
-      <SlideMeIn marginBottom="mb-4" delay={0.2}>
-        <SectionContent padding="py-6 md:py-10 bg-[var(--color-primary)]/3">
-          {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {/* Frontend Card - Large, spans 2 rows on desktop */}
+      <SectionContent className="py-6 md:py-10 bg-[var(--color-primary)]/3">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {/* Frontend Card - Large, spans 2 rows on desktop */}
+          <SlideMeIn delay={0.2} className="lg:row-span-2">
             <div
-              className="flex items-center justify-center group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-1 transition-all bg-gradient-to-br from-[var(--color-primary)]/8 to-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/50 lg:row-span-2 "
+              className="h-full flex items-center justify-center group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-1 transition-all bg-gradient-to-br from-[var(--color-primary)]/8 to-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/30 hover:border-[var(--color-primary)]/50"
             >
               {/* Subtle hover overlay */}
               <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <SlideMeIn delay={0.3} useBorderedContent={false}>
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Frontend Graphic - Top */}
-                  <div className="w-full mb-6">
-                    <FrontendGraphic />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-primary)] mb-2 px-3">
-                    frontend-focused
-                  </h3>
-
-                  <p className="text-sm md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed flex-1 px-3 font-medium">
-                    I build performant, accessible React applications using modern patterns, responsive design, and API-driven interfaces.                </p>
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Frontend Graphic - Top */}
+                <div className="w-full mb-6">
+                  <FrontendGraphic />
                 </div>
-              </SlideMeIn>
-            </div>
 
-            {/* Backend Card - Top Right */}
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-primary)] mb-2 px-3">
+                  frontend-focused
+                </h3>
+
+                <p className="text-sm md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed flex-1 px-3 font-medium">
+                  I build performant, accessible React applications using modern patterns, responsive design, and API-driven interfaces.                </p>
+              </div>
+            </div>
+          </SlideMeIn>
+
+          {/* Backend Card - Top Right */}
+          <SlideMeIn delay={0.4}>
             <div
               className="group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-0.5 transition-all bg-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30 flex items-center justify-center"
             >
               {/* Subtle hover overlay */}
               <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <SlideMeIn delay={0.4} useBorderedContent={false}>
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-4">
-                  {/* Backend Graphic */}
-                  <div className="w-full md:w-full md:max-w-[300px] md:flex-shrink-0">
-                    <div className="max-w-[400px] mx-auto md:mx-0">
-                      <BackendGraphic />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 text-left">
-                    <h3 className="text-lg md:text-xl font-semibold text-gray-600 dark:text-gray-200 mb-2 px-3">
-                      backend support
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-medium px-3">
-                      I design robust APIs, manage databases, and build scalable server architectures with a focus on security and performance.
-                    </p>
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-4">
+                {/* Backend Graphic */}
+                <div className="w-full md:w-full md:max-w-[300px] md:flex-shrink-0">
+                  <div className="max-w-[400px] mx-auto md:mx-0">
+                    <BackendGraphic />
                   </div>
                 </div>
-              </SlideMeIn>
-            </div>
 
-            {/* My Stack Card - Bottom Right */}
+                {/* Content */}
+                <div className="flex-1 text-left">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-600 dark:text-gray-200 mb-2 px-3">
+                    backend support
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-medium px-3">
+                    I design robust APIs, manage databases, and build scalable server architectures with a focus on security and performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SlideMeIn>
+
+          {/* My Stack Card - Bottom Right */}
+          <SlideMeIn>
             <div
               className="flex items-center justify-center group relative border-2 rounded-3xl p-5 md:p-6 hover:-translate-y-0.5 transition-all bg-[var(--color-primary)]/3 duration-300 ease-out border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30"
             >
               {/* Subtle hover overlay */}
               <div className="absolute inset-0 rounded-3xl bg-[var(--color-primary)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <SlideMeIn useBorderedContent={false}>
-                <div className="relative z-10">
-                  {/* Label */}
-                  <h3 className="text-lg md:text-xl font-semibold text-[var(--color-primary)] mb-4 px-3">
-                    main stack
-                  </h3>
+              <div className="relative z-10">
+                {/* Label */}
+                <h3 className="text-lg md:text-xl font-semibold text-[var(--color-primary)] mb-4 px-3">
+                  main stack
+                </h3>
 
-                  {/* Tech badges - All stacks combined */}
-                  <div className="flex flex-wrap gap-2 px-3">
-                    {/* Frontend */}
-                    <TechBadge
-                      icon={<FaReact className="text-blue-400 h-4 w-4" />}
-                      label="React"
-                    />
-                    <TechBadge
-                      icon={<BiLogoTypescript className="text-blue-400 h-4 w-4" />}
-                      label="TypeScript"
-                    />
-                    <TechBadge
-                      icon={<BiLogoTailwindCss className="text-cyan-400 h-4 w-4" />}
-                      label="TailwindCSS"
-                    />
-                    {/* Backend */}
-                    <TechBadge
-                      icon={<FaNodeJs className="text-green-400 h-4 w-4" />}
-                      label="Node.js"
-                    />
-                    <TechBadge
-                      icon={<BiLogoPostgresql className="text-blue-300 h-4 w-4" />}
-                      label="PostgreSQL"
-                    />
-                  </div>
+                {/* Tech badges - All stacks combined */}
+                <div className="flex flex-wrap gap-2 px-3">
+                  {/* Frontend */}
+                  <TechBadge
+                    icon={<FaReact className="text-blue-400 h-4 w-4" />}
+                    label="React"
+                  />
+                  <TechBadge
+                    icon={<BiLogoTypescript className="text-blue-400 h-4 w-4" />}
+                    label="TypeScript"
+                  />
+                  <TechBadge
+                    icon={<BiLogoTailwindCss className="text-cyan-400 h-4 w-4" />}
+                    label="TailwindCSS"
+                  />
+                  {/* Backend */}
+                  <TechBadge
+                    icon={<FaNodeJs className="text-green-400 h-4 w-4" />}
+                    label="Node.js"
+                  />
+                  <TechBadge
+                    icon={<BiLogoPostgresql className="text-blue-300 h-4 w-4" />}
+                    label="PostgreSQL"
+                  />
                 </div>
-              </SlideMeIn>
+              </div>
             </div>
-          </div>
-        </SectionContent>
-      </SlideMeIn>
+          </SlideMeIn>
+        </div>
+      </SectionContent>
 
       {/* Currently Section */}
-      <SlideMeIn delay={0.3} useBorderedContent={false}>
-        <SectionContent padding="py-4 md:py-6 mb-3">
-          <CurrentlySection
-            exploring={currentlyInfo.exploring}
-            availableFor={currentlyInfo.availableFor}
-          />
-        </SectionContent>
-      </SlideMeIn>
+      <SectionContent className="py-4 md:py-6 mb-3">
+        <CurrentlySection
+          exploring={currentlyInfo.exploring}
+          availableFor={currentlyInfo.availableFor}
+        />
+      </SectionContent>
     </>
   );
 };

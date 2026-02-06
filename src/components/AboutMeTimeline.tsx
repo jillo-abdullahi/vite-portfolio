@@ -77,9 +77,7 @@ export const AboutMeTimeline: FC = () => {
 
         return (
           <SlideMeIn
-            useBorderedContent={false}
             key={`${company}-${title}-${startDate}`}
-            delay={0.1}
             cascade
           >
             <div

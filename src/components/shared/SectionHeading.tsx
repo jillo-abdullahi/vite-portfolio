@@ -41,15 +41,16 @@ export const SectionHeading = ({
     ? "text-4xl md:text-5xl lg:text-6xl"
     : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
-    <SlideMeIn marginBottom="mb-6">
+    <SlideMeIn useFade>
       <SectionContent
-        padding={
+        margins="mb-0"
+        className={
           isContactPage
             ? "py-6 md:py-10 bg-[var(--color-primary)]/3"
             : "py-4 bg-[var(--color-primary)]/3"
         }
       >
-        <div className="w-full ">
+        <SlideMeIn>
           <div className="flex space-x-4 items-center justify-between">
             <div
               className={`${fontSizeClass} text-gray-600 dark:text-gray-400 text-left space-x-2`}
@@ -76,7 +77,7 @@ export const SectionHeading = ({
               <div className="inline-block md:hidden">{rightLink}</div>
             ) : null}
           </div>
-        </div>
+        </SlideMeIn>
       </SectionContent>
     </SlideMeIn>
   );

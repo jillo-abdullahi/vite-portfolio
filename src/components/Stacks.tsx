@@ -46,8 +46,8 @@ const stackItems: StackItemProps[] = [
 const Stacks: FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {stackItems.map((item, index) => (
-        <SlideMeIn useBorderedContent={false} delay={0.2 * index} key={item.title}>
+      {stackItems.map((item) => (
+        <SlideMeIn cascade key={item.title}>
           <div className="h-full">
             <StackCard
               icon={item.icon}

@@ -16,7 +16,7 @@ export const MemeText: FC<Props> = ({
   const colorClass = variant === "accent" ? "text-orange/80" : "text-gray-700";
 
   return (
-    <SectionContent padding="py-0 hidden md:block">
+    <SectionContent className="py-0 hidden md:block" useBorderedContent={false}>
       <div
         className={`uppercase font-bold text-[8px] pl-2 pb-1 ${colorClass} ${className}`}
       >

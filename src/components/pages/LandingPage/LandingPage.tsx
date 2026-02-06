@@ -4,7 +4,6 @@ import HeroSection from "./sections/HeroSection";
 import StackSection from "./sections/StackSection";
 import ToolsSection from "./sections/ToolsSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
-import LandingDisclaimer from "./sections/LandingDisclaimer";
 
 const LandingPage: FC = () => {
   return (
@@ -13,7 +12,6 @@ const LandingPage: FC = () => {
       <StackSection />
       <ToolsSection />
       <TestimonialsSection />
-      <LandingDisclaimer />
     </PageContainer>
   );
 };
