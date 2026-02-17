@@ -40,7 +40,7 @@ export const Breadcrumbs = () => {
     <SectionContent className="mt-7 md:mt-4 mb-3 md:mb-4" useBorderedContent={false}>
       <SlideMeIn useFade delay={0.1} duration={500}>
         <nav
-          className="flex items-center space-x-1 text-sm text-gray-400"
+          className="flex items-center space-x-1 text-sm text-gray-500"
           aria-label="Breadcrumb"
         >
           {breadcrumbs.map((item, index) => (
