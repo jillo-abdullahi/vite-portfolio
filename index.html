@@ -1,155 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- DNS prefetch and preconnect for performance -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="//vercel.live" />
-    <link rel="dns-prefetch" href="//vitals.vercel-analytics.com" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Preload critical fonts for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Preconnect to Cloudinary CDN -->
-    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-    
-    <!-- Preload hero image for LCP optimization - responsive versions from CDN -->
-    <link 
-      rel="preload" 
-      as="image" 
-      href="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_300/v1763295450/sneakerhead985NoBg_wzya7p.webp" 
-      type="image/webp" 
-      media="(max-width: 768px)"
-      fetchpriority="high" 
-    />
-    <link 
-      rel="preload" 
-      as="image" 
-      href="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp" 
-      type="image/webp" 
-      media="(min-width: 769px)"
-      fetchpriority="high" 
-    />
-    
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
-    /></noscript>
+  <!-- DNS prefetch and preconnect for performance -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//vercel.live" />
+  <link rel="dns-prefetch" href="//vitals.vercel-analytics.com" />
 
-    <!-- HTML Meta Tags -->
-    <title>Jillo Woche | Full Stack Engineer & Web3 Developer</title>
-    <meta
-      name="description"
-      content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities."
-    />
+  <!-- Preload critical fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://jillowoche.dev" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Jillo Woche | Full Stack Engineer & Web3 Developer"
-    />
-    <meta
-      property="og:description"
-      content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities."
-    />
-    <meta
-      property="og:image"
-      content="https://opengraph.b-cdn.net/production/images/765d9b15-b06d-41b9-a1cb-69bef5f02a66.jpg?token=UliMuvZmVUbNeWtX10YxzpoPXUvZLmIYcvEwdRsxsoU&height=800&width=1200&expires=33299291148"
-    />
+  <!-- Preconnect to Cloudinary CDN -->
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="jillowoche.dev" />
-    <meta property="twitter:url" content="https://jillowoche.dev" />
-    <meta
-      name="twitter:title"
-      content="Jillo Woche | Full Stack Engineer & Web3 Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities."
-    />
-    <meta
-      name="twitter:image"
-      content="https://opengraph.b-cdn.net/production/images/765d9b15-b06d-41b9-a1cb-69bef5f02a66.jpg?token=UliMuvZmVUbNeWtX10YxzpoPXUvZLmIYcvEwdRsxsoU&height=800&width=1200&expires=33299291148"
-    />
+  <!-- Preload hero image for LCP optimization - responsive versions from CDN -->
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_300/v1763295450/sneakerhead985NoBg_wzya7p.webp"
+    type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp"
+    type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
 
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600&display=swap" />
+  </noscript>
 
-    <!-- Inline critical CSS for above-the-fold content -->
-    <style>
-      /* Critical CSS - inline to prevent render blocking */
-      body {
-        font-family: "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, "Helvetica Neue", Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: black;
-        margin: 0;
-        padding: 0;
+  <!-- HTML Meta Tags -->
+  <title>Jillo Woche | Full Stack Engineer & Web3 Developer</title>
+  <meta name="description"
+    content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities." />
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://jillowoche.dev" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jillo Woche | Full Stack Engineer & Web3 Developer" />
+  <meta property="og:description"
+    content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities." />
+  <meta property="og:image"
+    content="https://opengraph.b-cdn.net/production/images/765d9b15-b06d-41b9-a1cb-69bef5f02a66.jpg?token=UliMuvZmVUbNeWtX10YxzpoPXUvZLmIYcvEwdRsxsoU&height=800&width=1200&expires=33299291148" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="jillowoche.dev" />
+  <meta property="twitter:url" content="https://jillowoche.dev" />
+  <meta name="twitter:title" content="Jillo Woche | Full Stack Engineer & Web3 Developer" />
+  <meta name="twitter:description"
+    content="Senior Full Stack Developer specializing in React, TypeScript, Node.js, and Web3. Currently exploring Next.js 16 and Smart Contracts. Available for full-time & contract opportunities." />
+  <meta name="twitter:image"
+    content="https://opengraph.b-cdn.net/production/images/765d9b15-b06d-41b9-a1cb-69bef5f02a66.jpg?token=UliMuvZmVUbNeWtX10YxzpoPXUvZLmIYcvEwdRsxsoU&height=800&width=1200&expires=33299291148" />
+
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+  <!-- Inline critical CSS for above-the-fold content -->
+  <style>
+    /* Critical CSS - inline to prevent render blocking */
+    body {
+      font-family: "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Critical animations and layout */
+    @keyframes slideInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
       }
 
-      /* Critical animations and layout */
-      @keyframes slideInFromTop {
-        from {
-          opacity: 0;
-          transform: translateY(-100%);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .slideInFromTop {
-        animation: slideInFromTop 0.5s;
-      }
+    .slideInFromTop {
+      animation: slideInFromTop 0.5s;
+    }
 
-      /* Critical color variables */
-      :root {
-        --color-orange: #e7a11a;
-        --color-orange-dark: #d19115;
-        --color-blue-dark: #272f37;
-      }
-    </style>
+    /* Critical color variables */
+    :root {
+      --color-orange: #e7a11a;
+      --color-orange-dark: #d19115;
+      --color-blue-dark: #272f37;
+    }
+  </style>
 
-    <!-- Font loading optimization script -->
-    <script>
-      // Optimize font loading with font-display: swap fallback
-      (function () {
-        if ("fonts" in document) {
-          // Use Font Loading API if available
-          document.fonts.load("400 1em Exo").then(function () {
-            document.documentElement.classList.add("fonts-loaded");
-          });
-        } else {
-          // Fallback for older browsers
+  <!-- Font loading optimization script -->
+  <script>
+    // Optimize font loading with font-display: swap fallback
+    (function () {
+      if ("fonts" in document) {
+        // Use Font Loading API if available
+        document.fonts.load("400 1em Exo").then(function () {
           document.documentElement.classList.add("fonts-loaded");
-        }
-      })();
-    </script>
+        });
+      } else {
+        // Fallback for older browsers
+        document.documentElement.classList.add("fonts-loaded");
+      }
+    })();
+  </script>
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -190,20 +158,62 @@
       }
     </script>
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#e7a11a" />
-    <meta name="msapplication-TileColor" content="#e7a11a" />
-    <meta name="msapplication-navbutton-color" content="#e7a11a" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#e7a11a" />
+  <meta name="msapplication-TileColor" content="#e7a11a" />
+  <meta name="msapplication-navbutton-color" content="#e7a11a" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- Favicon and Manifest -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Theme initialization script to prevent flicker -->
+  <script>
+    (function () {
+      try {
+        var THEME_COLORS = {
+          coral: { primary: "#ff6f3c", primaryHover: "#ff5722", primaryLight: "rgba(255, 111, 60, 0.1)", primaryBorder: "rgba(255, 111, 60, 0.4)" },
+          orange: { primary: "#c2410c", primaryHover: "#9a3412", primaryLight: "rgba(194, 65, 12, 0.1)", primaryBorder: "rgba(194, 65, 12, 0.4)" },
+          blue: { primary: "#3b82f6", primaryHover: "#2563eb", primaryLight: "rgba(59, 130, 246, 0.1)", primaryBorder: "rgba(59, 130, 246, 0.4)" },
+          purple: { primary: "#a855f7", primaryHover: "#9333ea", primaryLight: "rgba(168, 85, 247, 0.1)", primaryBorder: "rgba(168, 85, 247, 0.4)" },
+          emerald: { primary: "#2ecc40", primaryHover: "#27ae60", primaryLight: "rgba(46, 204, 64, 0.1)", primaryBorder: "rgba(46, 204, 64, 0.4)" },
+          slate: { primary: "#64748b", primaryHover: "#475569", primaryLight: "rgba(100, 116, 139, 0.1)", primaryBorder: "rgba(100, 116, 139, 0.4)" },
+          pesto: { primary: "#A89A04", primaryHover: "#8a7e03", primaryLight: "rgba(168, 154, 4, 0.1)", primaryBorder: "rgba(168, 154, 4, 0.4)" },
+          teal: { primary: "#0d9488", primaryHover: "#0f766e", primaryLight: "rgba(13, 148, 136, 0.1)", primaryBorder: "rgba(13, 148, 136, 0.4)" }
+        };
+        var root = document.documentElement;
+        var themeColor = localStorage.getItem("theme-color") || "blue";
+        var colors = THEME_COLORS[themeColor] || THEME_COLORS.blue;
+
+        root.style.setProperty("--color-primary", colors.primary);
+        root.style.setProperty("--color-primary-hover", colors.primaryHover);
+        root.style.setProperty("--color-primary-light", colors.primaryLight);
+        root.style.setProperty("--color-primary-border", colors.primaryBorder);
+
+        var metaTheme = document.querySelector('meta[name="theme-color"]');
+        var metaTile = document.querySelector('meta[name="msapplication-TileColor"]');
+        var metaNav = document.querySelector('meta[name="msapplication-navbutton-color"]');
+        if (metaTheme) metaTheme.setAttribute("content", colors.primary);
+        if (metaTile) metaTile.setAttribute("content", colors.primary);
+        if (metaNav) metaNav.setAttribute("content", colors.primary);
+
+        var themeMode = localStorage.getItem("theme-mode");
+        if (themeMode === "light") {
+          root.classList.remove("dark");
+        } else if (themeMode === "dark" || !themeMode) {
+          root.classList.add("dark");
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Favicon and Manifest -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
