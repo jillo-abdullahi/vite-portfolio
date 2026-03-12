@@ -5,7 +5,7 @@ import type {
   Skills,
   Testimonial,
 } from "./types";
-import { Spade, Fuel, Vote, Share2, Brain, BookOpen } from "lucide-react";
+import { Spade, Vote, Share2, Brain, BookOpen } from "lucide-react";
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
@@ -273,28 +273,28 @@ export const portfolioProjects: PortfolioProject[] = [
     demoButtonText: "start planning",
     demoButtonIcon: Spade,
   },
-  {
-    title: "ethereum dApp for managing gashawk transactions",
-    description:
-      "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
-    moreDetails:
-      "Users connect their wallet, choose network, and GasHawk routes transactions through its relay to minimize gas. The dashboard shows queued, mined, and failed txs with live status updates.",
-    image:
-      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077537/portfolioImages/gasHawk_qkug8r.png",
-    preview: "https://app.gashawk.io/",
-    stacks: [
-      "Express.js",
-      "React",
-      "Vite",
-      "Chakra UI",
-      "TypeScript",
-      "Postgres",
-    ],
-    completed: true,
-    category: "Web3",
-    demoButtonText: "use gashawk",
-    demoButtonIcon: Fuel,
-  },
+  // {
+  //   title: "ethereum dApp for managing gashawk transactions",
+  //   description:
+  //     "GasHawk is saving retails and institutions up to 95% on transaction gas fees on Ethereum, Optimism, and Base.",
+  //   moreDetails:
+  //     "Users connect their wallet, choose network, and GasHawk routes transactions through its relay to minimize gas. The dashboard shows queued, mined, and failed txs with live status updates.",
+  //   image:
+  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077537/portfolioImages/gasHawk_qkug8r.png",
+  //   preview: "https://app.gashawk.io/",
+  //   stacks: [
+  //     "Express.js",
+  //     "React",
+  //     "Vite",
+  //     "Chakra UI",
+  //     "TypeScript",
+  //     "Postgres",
+  //   ],
+  //   completed: true,
+  //   category: "Web3",
+  //   demoButtonText: "use gashawk",
+  //   demoButtonIcon: Fuel,
+  // },
   {
     title: "ballot app for decentralized voting",
     description:
