@@ -144,8 +144,7 @@ const currentPath = Astro.url.pathname;
     <!-- Critical inline CSS -->
     <style>
       body {
-        font-family: "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family: var(--font-family, "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #0f0f0f;
@@ -271,6 +270,32 @@ const currentPath = Astro.url.pathname;
             root.classList.remove("dark");
           } else {
             root.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Font anti-flicker: apply saved font-family before first paint -->
+    <script is:inline>
+      (function () {
+        try {
+          var THEME_FONTS = {
+            exo: { family: "'Exo', sans-serif", googleFont: "Exo:wght@400;500;600;700" },
+            spaceGrotesk: { family: "'Space Grotesk', sans-serif", googleFont: "Space+Grotesk:wght@400;500;600;700" },
+            merriweather: { family: "'Merriweather', serif", googleFont: "Merriweather:wght@400;700;900" },
+          };
+          var savedFont = localStorage.getItem("theme-font") || "spaceGrotesk";
+          var font = THEME_FONTS[savedFont] || THEME_FONTS.spaceGrotesk;
+
+          // Set CSS variable immediately so body picks it up
+          document.documentElement.style.setProperty("--font-family", font.family);
+
+          // Inject the Google Fonts stylesheet if it isn't the default (Exo already loaded)
+          if (savedFont !== "exo") {
+            var link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = "https://fonts.googleapis.com/css2?family=" + font.googleFont + "&display=swap";
+            document.head.appendChild(link);
           }
         } catch (e) {}
       })();
