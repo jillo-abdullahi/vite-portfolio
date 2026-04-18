@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { useCurrentPath } from "@/contexts/PathContext";
 import { IoChevronForward } from "react-icons/io5";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { SectionContent } from "./SectionContent";
@@ -11,8 +11,7 @@ interface BreadcrumbItem {
 }
 
 export const Breadcrumbs = () => {
-  const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = useCurrentPath();
   const isHomePage = pathname === "/";
 
   // Generate breadcrumb items based on current path
@@ -54,13 +53,13 @@ export const Breadcrumbs = () => {
                   {item.label}
                 </span>
               ) : (
-                <Link
-                  to={item.path}
+                <a
+                  href={item.path}
                   className="flex items-center space-x-2 hover:text-[var(--color-primary)]/80 transition-colors duration-200 font-medium hover:underline"
                 >
                   <HomeIcon className="w-3.5 h-3.5 group-hover:text-[var(--color-primary)] transition-colors duration-200 mr-1" />
                   {item.label}
-                </Link>
+                </a>
               )}
             </div>
           ))}

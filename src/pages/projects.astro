@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AppShell from "@/components/AppShell";
+---
+
+<Layout
+  title="Projects | Jillo Woche"
+  description="Browse projects built by Jillo Woche — React, TypeScript, Node.js, Web3, and more."
+  ogUrl="https://jillowoche.dev/projects"
+>
+  <AppShell currentPath="/projects" page="projects" client:only="react" />
+</Layout>

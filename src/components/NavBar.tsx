@@ -8,7 +8,7 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import Timer from "@/components/Timer";
-import { Link, useLocation } from "@tanstack/react-router";
+import { useCurrentPath } from "@/contexts/PathContext";
 import { DownloadResumeBtn } from "./DownloadResumeBtn";
 import { ThemeToggle } from "./ThemeToggle";
 import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
@@ -24,7 +24,7 @@ const NavBar: FC = () => {
   const linkedInRef = useRef<LinkedInIconHandle>(null);
   const githubRef = useRef<GithubIconHandle>(null);
 
-  const pathname = useLocation().pathname;
+  const pathname = useCurrentPath();
   const handleScroll = () => {
     const currentScrollOffset = window.scrollY;
     setScrollOffset(currentScrollOffset);
@@ -84,12 +84,12 @@ const NavBar: FC = () => {
                     <ThemeToggle />
                   </div>
                 </div>
-                <Link
+                <a
                   className={`group flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${isHome
                     ? "bg-gray-200 dark:bg-gray-100 dark:bg-gray-800/60 border border-[var(--color-primary)]/30"
                     : "border-transparent"
                     } hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors duration-300 hover:border-[var(--color-primary)]/30`}
-                  to="/"
+                  href="/"
                   onClick={close}
                   onMouseEnter={() => houseRef.current?.startAnimation()}
                   onMouseLeave={() => houseRef.current?.stopAnimation()}
@@ -99,19 +99,19 @@ const NavBar: FC = () => {
                     size={24}
                     className="text-[var(--color-primary)]/90 rounded-full group-hover:scale-115 transition-transform duration-200"
                   />
-                </Link>
+                </a>
                 <div className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4">
                   {navigation.map((item) => (
-                    <Link
+                    <a
                       key={item.name}
-                      to={item.href}
+                      href={item.href}
                       className={`rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${item.isActive
                         ? "bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-300 border-[var(--color-primary)]/50 backdrop-blur-sm cursor-default"
                         : "border-transparent text-gray-600 dark:text-gray-400 hover:bg-[var(--color-primary)]/10 hover:text-gray-900 dark:hover:text-gray-300"
                         }`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -142,9 +142,9 @@ const NavBar: FC = () => {
             <DisclosurePanel className="lg:hidden">
               <div className="space-y-1 p-3 mt-2 sm:px-3 bg-gray-100 dark:bg-gray-900 border-2 border-[var(--color-primary)]/30 rounded-3xl">
                 {navigation.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     className={`cursor-pointer hover:bg-[var(--color-primary)]/10 block rounded-lg px-3 py-2 text-base font-medium text-center border ${item.isActive
                       ? "bg-gray-100 dark:bg-gray-800/60 text-gray-900 dark:text-gray-300 border-[var(--color-primary)]/50"
                       : "border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
@@ -154,7 +154,7 @@ const NavBar: FC = () => {
                     }}
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
                 <div className="flex py-3 w-full flex-col items-center justify-center space-y-4 md:hidden">
                   <div className="flex flex-col items-center justify-center space-y-4">

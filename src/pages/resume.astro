@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AppShell from "@/components/AppShell";
+---
+
+<Layout
+  title="Resumé | Jillo Woche"
+  description="View the full resumé of Jillo Woche — Full Stack Engineer with expertise in React, TypeScript, Node.js, and Web3."
+  ogUrl="https://jillowoche.dev/resume"
+>
+  <AppShell currentPath="/resume" page="resume" client:only="react" />
+</Layout>

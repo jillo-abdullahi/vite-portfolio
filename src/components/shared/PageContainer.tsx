@@ -1,4 +1,4 @@
-import { useLocation } from "@tanstack/react-router";
+import { useCurrentPath } from "@/contexts/PathContext";
 import { Breadcrumbs } from "./Breadcrumbs";
 
 interface PageContainerProps {
@@ -28,8 +28,7 @@ export const PageContainer = ({
   showBreadcrumbs = false,
 }: PageContainerProps) => {
 
-  const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = useCurrentPath();
   const isHomePage = pathname === "/";
   return (
     <div className={`mx-auto ${isHomePage ? "pt-32 pb-38 pb-40 md:pb-38 md:pt-38" : "pt-28 pb-40 md:pb-38 md:pt-32"}  min-h-screen`}>
