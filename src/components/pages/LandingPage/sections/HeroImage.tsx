@@ -13,7 +13,7 @@ const HeroImage: FC = () => {
   );
 
   return (
-    <div className="flex-1 relative w-full max-w-[500px] md:max-w-none flex justify-center z-10 p-6 md:p-0">
+    <div className="flex-1 relative w-full max-w-[500px] md:max-w-none flex justify-center z-10 p-6 lg:p-0">
       <Fade
         cascade={true}
         damping={0.1}
@@ -21,7 +21,7 @@ const HeroImage: FC = () => {
         delay={0.2 * 1000}
         triggerOnce
       >
-        <div className="relative w-56 h-56 md:w-64 md:h-64 group">
+        <div className="relative w-56 h-56 lg:w-64 lg:h-64 group">
           {/* Decorative rings */}
           <div className="absolute inset-0 rounded-full border border-[var(--color-primary)]/20 scale-110 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
           <div className="absolute inset-0 rounded-full border border-dashed border-[var(--color-primary)]/20 scale-125 group-hover:scale-110 transition-transform duration-700 ease-out animate-spin-slow"></div>

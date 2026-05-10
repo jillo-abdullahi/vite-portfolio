@@ -12,17 +12,12 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { DownloadResumeBtn } from "./DownloadResumeBtn";
 import { ThemeToggle } from "./ThemeToggle";
 import { HouseIcon, type HouseHandle } from "./ui/HouseIcon";
-import { type LinkedInIconHandle } from "./ui/LinkedinIcon";
-import { type GithubIconHandle } from "./ui/GithubIcon";
-import { externalLinks } from "@/data";
 import { NavSocialLinks } from "./shared/NavSocialLinks";
 import type { NavigationItem } from "@/types";
 
 const NavBar: FC = () => {
   const [scrollOffset, setScrollOffset] = useState<number>(0);
   const houseRef = useRef<HouseHandle>(null);
-  const linkedInRef = useRef<LinkedInIconHandle>(null);
-  const githubRef = useRef<GithubIconHandle>(null);
 
   const pathname = useLocation().pathname;
   const handleScroll = () => {
@@ -50,14 +45,13 @@ const NavBar: FC = () => {
   return (
     <Disclosure
       as="nav"
-      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-14 lg:px-26 border-t-2 border-b-2 border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/10 bg-transparent md:bg-[var(--color-primary)]/3 py-4 ${isScrolled ? "mt-2" : "mt-4"
-        }`}
+      className={`z-50 fixed right-0 left-0 slideInFromTop transition-all duration-200 px-4 md:px-14 lg:px-26 border-t-2 border-b-2 border-[var(--color-primary)]/30 dark:border-[var(--color-primary)]/10 bg-transparent md:bg-[var(--color-primary)]/3 py-4 ${
+        isScrolled ? "mt-2" : "mt-4"
+      }`}
     >
       {({ open, close }: { open: boolean; close: () => void }) => (
         <>
-          <div
-            className="mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-100 ease-in-out backdrop-blur-sm bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent dark:bg-gray-900/50"
-          >
+          <div className="mx-auto px-5 relative border-2 border-[var(--color-primary)]/20 rounded-3xl transition-colors duration-100 ease-in-out backdrop-blur-sm bg-[var(--color-primary)]/3">
             <div className="flex h-18 justify-between">
               <div className="flex flex-row-reverse md:flex-row items-center justify-between w-full md:w-fit">
                 <div className="-ml-2 flex items-center lg:hidden">
@@ -85,10 +79,11 @@ const NavBar: FC = () => {
                   </div>
                 </div>
                 <Link
-                  className={`group flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${isHome
-                    ? "bg-gray-200 dark:bg-gray-100 dark:bg-gray-800/60 border border-[var(--color-primary)]/30"
-                    : "border-transparent"
-                    } hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors duration-300 hover:border-[var(--color-primary)]/30`}
+                  className={`group flex flex-shrink-0 items-center cursor-pointer p-2 justify-center rounded-full ${
+                    isHome
+                      ? "bg-gray-200 dark:bg-gray-100 dark:bg-gray-800/60 border border-[var(--color-primary)]/30"
+                      : "border-transparent"
+                  } hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors duration-300 hover:border-[var(--color-primary)]/30`}
                   to="/"
                   onClick={close}
                   onMouseEnter={() => houseRef.current?.startAnimation()}
@@ -105,10 +100,11 @@ const NavBar: FC = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${item.isActive
-                        ? "bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-300 border-[var(--color-primary)]/50 backdrop-blur-sm cursor-default"
-                        : "border-transparent text-gray-600 dark:text-gray-400 hover:bg-[var(--color-primary)]/10 hover:text-gray-900 dark:hover:text-gray-300"
-                        }`}
+                      className={`rounded-xl px-3 py-1 text-base font-medium transition-all duration-300 border-2 ${
+                        item.isActive
+                          ? "bg-[var(--color-primary)]/10 text-gray-900 dark:text-gray-300 border-[var(--color-primary)]/50 backdrop-blur-sm cursor-default"
+                          : "border-transparent text-gray-600 dark:text-gray-400 hover:bg-[var(--color-primary)]/10 hover:text-gray-900 dark:hover:text-gray-300"
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -118,11 +114,7 @@ const NavBar: FC = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <div className="flex items-center space-x-3">
                   <DownloadResumeBtn isInNavBar />
-                  <NavSocialLinks
-                    externalLinks={externalLinks}
-                    githubRef={githubRef}
-                    linkedInRef={linkedInRef}
-                  />
+                  <NavSocialLinks />
                 </div>
 
                 <div className="pl-3 border-l border-[var(--color-primary)]/15">
@@ -145,10 +137,11 @@ const NavBar: FC = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`cursor-pointer hover:bg-[var(--color-primary)]/10 block rounded-lg px-3 py-2 text-base font-medium text-center border ${item.isActive
-                      ? "bg-gray-100 dark:bg-gray-800/60 text-gray-900 dark:text-gray-300 border-[var(--color-primary)]/50"
-                      : "border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
-                      }`}
+                    className={`cursor-pointer hover:bg-[var(--color-primary)]/10 block rounded-lg px-3 py-2 text-base font-medium text-center border ${
+                      item.isActive
+                        ? "bg-gray-100 dark:bg-gray-800/60 text-gray-900 dark:text-gray-300 border-[var(--color-primary)]/50"
+                        : "border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
+                    }`}
                     onClick={() => {
                       close();
                     }}
@@ -160,11 +153,7 @@ const NavBar: FC = () => {
                   <div className="flex flex-col items-center justify-center space-y-4">
                     <div className="flex items-center space-x-3">
                       <DownloadResumeBtn isInNavBar />
-                      <NavSocialLinks
-                        externalLinks={externalLinks}
-                        githubRef={githubRef}
-                        linkedInRef={linkedInRef}
-                      />
+                      <NavSocialLinks />
                     </div>
                   </div>
                   <Timer />

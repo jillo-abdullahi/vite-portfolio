@@ -66,7 +66,9 @@ export type TechStack =
   | "The Graph"
   | "IPFS"
   | "Socket.io"
-  | "Fastify";
+  | "Fastify"
+  | "Azure DevOps";
+
 
 /**
  * External social and professional links
@@ -111,13 +113,13 @@ export interface Experience {
   description: string[];
   /** Nature of the work (if applicable) */
   workType?:
-  | "Full-time"
-  | "Part-time"
-  | "Contract"
-  | "Internship"
-  | "Consultancy";
-  /** List of technologies used */
-  technologies?: TechStack[];
+    | "Full-time"
+    | "Part-time"
+    | "Contract"
+    | "Internship"
+    | "Consultancy";
+  /** List of technologies used - either flat array or organized by category */
+  technologies?: TechStack[] | StackCategory[];
   /** Whether the experience is educational */
   isEducational?: boolean;
 }
@@ -125,6 +127,11 @@ export interface Experience {
 /**
  * Portfolio project entry
  */
+export interface StackCategory {
+  label: string;
+  items: TechStack[];
+}
+
 export interface PortfolioProject {
   /** Project title */
   title: string;
@@ -138,8 +145,8 @@ export interface PortfolioProject {
   preview: string;
   /** Optional GitHub repository URL */
   github?: string;
-  /** Technologies used in the project */
-  stacks: TechStack[];
+  /** Technologies used in the project - either flat array or organized by category */
+  stacks: TechStack[] | StackCategory[];
   /** Whether the project is completed */
   completed: boolean;
   /** Optional link to smart contracts code if applicable */
@@ -163,29 +170,39 @@ export type ProjectCategory = "Web3" | "Full Stack" | "Frontend" | "Backend";
  */
 export type SkillName =
   // Backend
-  | "Express.js/Fastify"
-  | "Apollo GraphQL"
-  | "Nest.js"
+  | "Express"
+  | "Fastify"
+  | "GraphQL"
+  | "NestJS"
   | "Django"
   | "Flask"
   // Frontend
   | "Vite/Next.js"
-  | "Tanstack Query/Router"
+  | "Tanstack Query"
+  | "Tanstack Router"
   | "Redux/Zustand"
-  | "Tailwind/ChakraUI"
-  | "Vue.js"
+  | "Tailwind CSS"
+  | "Styled Components"
+  | "Chakra UI"
   // Databases/DevOps
   | "Prisma ORM"
   | "Google Firebase"
   | "Supabase"
   | "Docker"
   | "Github Actions"
+  | "Vercel"
   // Web3
   | "Wagmi"
   | "ethers.js"
   | "Viem"
   | "WalletConnect"
-  | "Foundry";
+  | "Foundry"
+  // Testing & QA
+  | "Vitest"
+  | "Jest"
+  | "React Testing Library"
+  | "Cypress"
+  | "Playwright";
 
 /**
  * Individual skill entry
@@ -211,6 +228,8 @@ export interface Skills {
   "databases/devops"?: Skill[];
   /** Web3 and blockchain skills */
   web3?: Skill[];
+  /** Testing and QA skills */
+  "testing & QA"?: Skill[];
 }
 
 /**

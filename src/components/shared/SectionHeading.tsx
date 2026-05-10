@@ -41,7 +41,7 @@ export const SectionHeading = ({
     ? "text-4xl md:text-5xl lg:text-6xl"
     : "text-lg md:text-xl lg:text-2xl font-medium";
   return (
-    <SlideMeIn useFade>
+    <SlideMeIn>
       <SectionContent
         margins="mb-0"
         className={
@@ -50,34 +50,32 @@ export const SectionHeading = ({
             : "py-4 bg-[var(--color-primary)]/3"
         }
       >
-        <SlideMeIn>
-          <div className="flex space-x-4 items-center justify-between">
-            <div
-              className={`${fontSizeClass} text-gray-600 dark:text-gray-400 text-left space-x-2`}
-            >
-              <span>{children}</span>
-              {linkHref ? (
-                <a
-                  href={linkHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[var(--color-primary)]/80 underline hover:text-[var(--color-primary)] transition-all duration-150"
-                  {...(isDownload && { download: downloadFileName || true })}
-                >
-                  {linkText}
-                  {linkTextIcon ? (
-                    <span className="inline-block ml-1 text-xl">
-                      {linkTextIcon}
-                    </span>
-                  ) : null}
-                </a>
-              ) : null}
-            </div>
-            {rightLink ? (
-              <div className="inline-block md:hidden">{rightLink}</div>
+        <div className="flex space-x-4 items-center justify-between">
+          <div
+            className={`${fontSizeClass} text-gray-600 dark:text-gray-400 text-left space-x-2`}
+          >
+            <span>{children}</span>
+            {linkHref ? (
+              <a
+                href={linkHref}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[var(--color-primary)]/80 underline hover:text-[var(--color-primary)] transition-all duration-150"
+                {...(isDownload && { download: downloadFileName || true })}
+              >
+                {linkText}
+                {linkTextIcon ? (
+                  <span className="inline-block ml-1 text-xl">
+                    {linkTextIcon}
+                  </span>
+                ) : null}
+              </a>
             ) : null}
           </div>
-        </SlideMeIn>
+          {rightLink ? (
+            <div className="inline-block md:hidden">{rightLink}</div>
+          ) : null}
+        </div>
       </SectionContent>
     </SlideMeIn>
   );

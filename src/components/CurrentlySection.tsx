@@ -22,7 +22,7 @@ interface InfoCardProps {
 const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
   return (
     <div
-      className="group relative rounded-3xl p-4 bg-gradient-to-b from-[var(--color-primary)]/5 via-transparent to-transparent border-2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 transition-all duration-500 ease-out overflow-hidden"
+      className="group relative rounded-3xl p-4 border-2 bg-[var(--color-primary)]/2 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/30 hover:-translate-y-1 transition-all duration-500 ease-out overflow-hidden"
       onMouseEnter={() => iconRef.current?.startAnimation()}
       onMouseLeave={() => iconRef.current?.stopAnimation()}
     >
@@ -32,7 +32,7 @@ const InfoCard: FC<InfoCardProps> = ({ icon, label, value, iconRef }) => {
           {icon}
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-[var(--color-primary)] font-semibold uppercase tracking-wider mb-1">
+          <p className="text-lg text-[var(--color-primary)]/80 font-semibold lowercase mb-1">
             {label}
           </p>
           <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 font-semibold truncate">
@@ -59,9 +59,9 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
       transition={{ duration: 0.5, delay: 0.3 }}
       className="w-full"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         {exploring && (
-          <SlideMeIn>
+          <SlideMeIn useFade delay={0.2}>
             <InfoCard
               icon={<ZapIcon ref={zapRef} className="text-[var(--color-primary)]" />}
               label="Currently Exploring"
@@ -72,7 +72,7 @@ export const CurrentlySection: FC<CurrentlySectionProps> = ({
         )}
 
         {availableFor && (
-          <SlideMeIn>
+          <SlideMeIn useFade delay={0.3}>
             <InfoCard
               icon={<UserRoundCheckIcon ref={userRoundCheckRef} className="text-[var(--color-primary)]" />}
               label="Available For"

@@ -10,6 +10,8 @@ const Testimonials: FC = () => {
         {testimonials.map((testimonial, index) => (
           <SlideMeIn
             cascade
+            useFade
+            delay={0.1 * index}
             key={`${testimonial.name}-${index}`}
           >
             <div className="h-full">

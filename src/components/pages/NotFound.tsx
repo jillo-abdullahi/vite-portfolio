@@ -31,7 +31,7 @@ const NotFound: FC = () => {
     <PageContainer>
       <div className="mt-8 flex flex-col gap-2">
         <SectionContent className="bg-[var(--color-primary)]/3 pt-6">
-          <SlideMeIn delay={0.4} useFade>
+          <SlideMeIn delay={0.4}>
             <div className="flex items-center justify-center">
               {animationData && (
                 <Lottie
@@ -45,7 +45,7 @@ const NotFound: FC = () => {
         </SectionContent>
         <SectionContent className="bg-[var(--color-primary)]/3 pt-6">
           <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
-            <SlideMeIn delay={0.1} useFade>
+            <SlideMeIn delay={0.1}>
               <div className="text-center mb-8">
                 <p className="text-gray-600 dark:text-gray-300 text-xl mb-2 font-semibold dark:font-medium">
                   The page you're looking for seems to have wandered off into
@@ -100,7 +100,7 @@ const NotFound: FC = () => {
           </div>
         </SectionContent>
       </div>
-    </PageContainer >
+    </PageContainer>
   );
 };
 

@@ -8,7 +8,7 @@ import {
   SquareArrowOutUpRightIcon,
   type SquareArrowOutUpRightIconHandle,
 } from "./ui/SquareArrowOutUpRightIcon";
-import { LinkedInIcon, type LinkedInIconHandle } from "./ui/LinkedinIcon";
+import { LinkedinIcon, type LinkedinIconHandle } from "./ui/linkedin-icon";
 import { TwitterIcon, type TwitterIconHandle } from "./ui/TwitterIcon";
 import { GithubIcon, type GithubIconHandle } from "./ui/GithubIcon";
 import { SendIcon, type SendIconHandle } from "./ui/SendIcon";
@@ -16,14 +16,14 @@ import { MailIcon, type MailIconHandle } from "./ui/MailIcon";
 import { SlideMeIn } from "./shared/SlideMeIn";
 
 interface SocialLink {
-  icon: typeof MailIcon;
+  icon: typeof MailIcon | typeof LinkedinIcon | typeof SendIcon | typeof TwitterIcon;
   href: string;
   name?: string;
   iconRef?:
-  | React.RefObject<LinkedInIconHandle | null>
-  | React.RefObject<TwitterIconHandle | null>
-  | React.RefObject<SendIconHandle | null>
-  | React.RefObject<MailIconHandle | null>
+    | React.RefObject<LinkedinIconHandle | null>
+    | React.RefObject<TwitterIconHandle | null>
+    | React.RefObject<SendIconHandle | null>
+    | React.RefObject<MailIconHandle | null>;
   clipboardRef?: React.RefObject<ClipboardIconHandle | null>;
   checkIconRef?: React.RefObject<CheckIconHandle | null>;
   squareArrowRef?: React.RefObject<SquareArrowOutUpRightIconHandle | null>;
@@ -37,14 +37,14 @@ interface FooterLink {
   href: string;
   name?: string;
   ref:
-  | React.RefObject<GithubIconHandle | null>
-  | React.RefObject<LinkedInIconHandle | null>
-  | React.RefObject<TwitterIconHandle | null>;
+    | React.RefObject<GithubIconHandle | null>
+    | React.RefObject<LinkedinIconHandle | null>
+    | React.RefObject<TwitterIconHandle | null>;
 }
 
 const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   const { linkedIn, github, twitter } = externalLinks;
-  const linkedInRef = useRef<LinkedInIconHandle | null>(null);
+  const linkedInRef = useRef<LinkedinIconHandle | null>(null);
   const twitterRef = useRef<TwitterIconHandle | null>(null);
   const githubRef = useRef<GithubIconHandle | null>(null);
   const mailRef = useRef<MailIconHandle | null>(null);
@@ -56,6 +56,12 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   ];
 
   const contactPageSocialLinks: SocialLink[] = [
+    {
+      icon: LinkedinIcon,
+      href: linkedIn,
+      name: "LinkedIn",
+      iconRef: linkedInRef,
+    },
     {
       icon: MailIcon,
       href: `mailto:${externalLinks.email}`,
@@ -73,12 +79,6 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
       href: twitter,
       name: "Twitter(X)",
       iconRef: twitterRef,
-    },
-    {
-      icon: LinkedInIcon,
-      href: linkedIn,
-      name: "LinkedIn",
-      iconRef: linkedInRef,
     },
   ];
 
@@ -149,8 +149,10 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             })()}
           </div>
           <div className="text-left">
-            <div className="text-gray-700 dark:text-gray-300 font-semibold">{name}</div>
-            <div className="flex items-center space-x-1">
+            <div className="text-gray-700 dark:text-gray-300 font-semibold">
+              {name}
+            </div>
+            <div className="flex items-center space-x-1 font-semibold">
               <span className="text-sm text-gray-500 dark:text-gray-400 hidden sm:inline font-medium dark:font-normal">
                 {displayHref}
               </span>
@@ -238,7 +240,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
         const clipboardRef = useRef<ClipboardIconHandle | null>(null);
         const checkIconRef = useRef<CheckIconHandle | null>(null);
         const squareArrowRef = useRef<SquareArrowOutUpRightIconHandle | null>(
-          null
+          null,
         );
         return (
           <SlideMeIn key={index} cascade>
@@ -280,7 +282,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             }}
           >
             {name === "LinkedIn" && (
-              <LinkedInIcon
+              <LinkedinIcon
                 ref={ref}
                 className="w-3 h-3 text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />

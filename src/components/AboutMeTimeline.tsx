@@ -1,11 +1,12 @@
 import type { FC } from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { PiGraduationCapDuotone } from "react-icons/pi";
-import type { Experience, TechStack } from "@/types";
+import type { Experience } from "@/types";
 import { experiences } from "@/data";
 
 import { formatDateRange, getDuration } from "@/utils/date";
 import { SlideMeIn } from "./shared/SlideMeIn";
+import TechStackCard from "./shared/TechStackCard";
 
 export const AboutMeTimeline: FC = () => {
   const DateAndLocation = ({
@@ -76,16 +77,14 @@ export const AboutMeTimeline: FC = () => {
         } = experience;
 
         return (
-          <SlideMeIn
-            key={`${company}-${title}-${startDate}`}
-            cascade
-          >
+          <SlideMeIn key={`${company}-${title}-${startDate}`} cascade>
             <div
               key={`${company}-${title}-${startDate}`}
               className={`group relative border-2 rounded-3xl p-4 sm:p-6 py-6 hover:-translate-y-0.5 transition-all duration-300 ease-in
-                ${isCurrent
-                  ? "border-[var(--color-primary)]/50 bg-[var(--color-primary)]/8 dark:bg-[var(--color-primary)]/8"
-                  : "border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gradient-to-b from-gray-100/80 via-gray-100/60 to-gray-50/60 dark:from-gray-900/20 dark:via-gray-900/10 dark:to-gray-800/10"
+                ${
+                  isCurrent
+                    ? "border-[var(--color-primary)]/50 bg-[var(--color-primary)]/8 dark:bg-[var(--color-primary)]/8"
+                    : "border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 bg-gradient-to-b from-gray-100/80 via-gray-100/60 to-gray-50/60 dark:from-gray-900/20 dark:via-gray-900/10 dark:to-gray-800/10"
                 }
               `}
             >
@@ -196,23 +195,8 @@ export const AboutMeTimeline: FC = () => {
 
                   {/* Technologies */}
                   {technologies.length > 0 && (
-                    <div className="pt-3 mt-2">
-                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
-                        Tech Stack
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {technologies.map((tech: TechStack, idx: number) => (
-                          <span
-                            key={idx}
-                            className={`text-gray-700 dark:text-gray-300 rounded-md px-2 py-1 text-xs border border-[var(--color-primary)]/20 ${isCurrent
-                              ? "bg-[var(--color-primary)]/10 dark:bg-[var(--color-primary)]/10"
-                              : "bg-[var(--color-primary)]/5 dark:bg-[var(--color-primary)]/5"
-                              }`}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                    <div className="pt-2">
+                      <TechStackCard stacks={technologies} />
                     </div>
                   )}
                 </div>

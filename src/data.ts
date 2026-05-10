@@ -5,7 +5,7 @@ import type {
   Skills,
   Testimonial,
 } from "./types";
-import { Spade, Vote, Share2, Brain, BookOpen } from "lucide-react";
+import { Spade } from "lucide-react";
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
@@ -23,7 +23,7 @@ export const externalLinks: ExternalLinks = {
 };
 
 export const currentlyInfo = {
-  exploring: "Tanstack Start compared to Next.js",
+  exploring: "Production-grade React and Web3 engineering",
   availableFor: "Full-time & contract opportunities",
 };
 
@@ -39,16 +39,28 @@ export const experiences: Experience[] = [
     location: "Hybrid",
     startDate: "Oct 2025",
     description: [
-      "Building responsive, accessible web applications with React and TypeScript to support sustainability initiatives and improve user engagement.",
-      "Collaborating with cross-functional teams to design and implement new features that enhance the user experience and drive impact.",
+      "Designed and developed a reusable internal NPM-based design system package to standardize UI components and promote consistency across multiple engineering teams.",
+      "Delivered 20+ production-grade frontend features focused on improving large-scale consumer data collection workflows and platform usability.",
+      "Diagnosed and resolved 15+ production issues across critical user-facing flows, improving application stability and overall user experience.",
+      "Partnered closely with product and design teams to refine and improve 5+ user journeys with a focus on accessibility, usability, and scalable frontend architecture.",
+      "Contributed to frontend hiring processes by preparing technical job descriptions and designing practical code assessment exercises for engineering candidates.",
     ],
     technologies: [
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "Tanstack Query",
-      "Tanstack Router",
-    ],
+      {
+        label: "Frontend",
+        items: [
+          "React",
+          "TypeScript",
+          "TailwindCSS",
+          "Tanstack Query",
+          "Tanstack Router",
+        ],
+      },
+      {
+        label: "Infra",
+        items: ["Azure DevOps", "Docker"],
+      },
+    ] as const,
   },
   {
     isCurrent: false,
@@ -68,16 +80,20 @@ export const experiences: Experience[] = [
       "Enhanced the Framer-powered marketing site with a streamlined gas savings checker, increasing developer engagement and improving product visibility.",
     ],
     technologies: [
-      "React",
-      "Chakra UI",
-      "Zustand",
-      "TypeScript",
-      "Wagmi",
-      "ethers.js",
-      "Express.js",
-      "Postgres",
-      "Framer",
-    ],
+      {
+        label: "Frontend",
+        items: [
+          "React",
+          "Chakra UI",
+          "Zustand",
+          "TypeScript",
+          "Wagmi",
+          "Framer",
+        ],
+      },
+      { label: "Backend", items: ["Express.js", "ethers.js"] },
+      { label: "Database", items: ["Postgres"] },
+    ] as const,
   },
   {
     isCurrent: false,
@@ -94,7 +110,11 @@ export const experiences: Experience[] = [
       "Built backend systems to automate the exchange of SPS documents between IOTA and partners, reducing manual steps and improving process reliability.",
       "Revamped the TLIP web app frontend with React and TypeScript, enhancing usability and delivering a smoother, more responsive user experience.",
     ],
-    technologies: ["React", "TypeScript", "DynamoDB", "Express.js", "RabbitMQ"],
+    technologies: [
+      { label: "Frontend", items: ["React", "TypeScript"] },
+      { label: "Backend", items: ["Express.js", "RabbitMQ"] },
+      { label: "Database", items: ["DynamoDB"] },
+    ] as const,
   },
   {
     isCurrent: false,
@@ -114,17 +134,14 @@ export const experiences: Experience[] = [
       "Increased smart contract reliability by implementing a comprehensive automated testing suite, reducing the risk of regressions and strengthening security.",
     ],
     technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "GraphQL",
-      "TailwindCSS",
-      "Redux",
-      "Postgres",
-      "Solidity",
-      "ethers.js",
-      "Metamask",
-    ],
+      {
+        label: "Frontend",
+        items: ["React", "Next.js", "TypeScript", "TailwindCSS", "Redux"],
+      },
+      { label: "Backend", items: ["GraphQL", "Solidity", "ethers.js"] },
+      { label: "Database", items: ["Postgres"] },
+      { label: "Web3", items: ["Metamask"] },
+    ] as const,
   },
   {
     isCurrent: false,
@@ -141,7 +158,10 @@ export const experiences: Experience[] = [
       "Improved accessibility and usability of payment apps by redesigning flows in React/Next.js.",
       "Optimized checkout UX across 6+ payment options, leading to smoother transaction completion.",
     ],
-    technologies: ["React", "Redux", "Next.js", "TypeScript", "Express.js"],
+    technologies: [
+      { label: "Frontend", items: ["React", "Next.js", "TypeScript", "Redux"] },
+      { label: "Backend", items: ["Express.js"] },
+    ] as const,
   },
   {
     isCurrent: false,
@@ -158,7 +178,10 @@ export const experiences: Experience[] = [
       "Delivered multiple front-end applications with ReactJS on tight sprint cycles, enabling faster product iterations and improving user experience.",
       "Developed and deployed a REST API with Python/Django that supported scalable data handling and reduced backend response times under production load.",
     ],
-    technologies: ["React", "TypeScript", "Django", "Postgres"],
+    technologies: [
+      { label: "Frontend", items: ["React", "TypeScript", "Redux"] },
+      { label: "Backend", items: ["Django", "Postgres"] },
+    ] as const,
   },
   {
     isCurrent: false,
@@ -176,11 +199,11 @@ export const experiences: Experience[] = [
       "Coordinated workflows, evaluated team performance, and delivered constructive feedback that improved accuracy and efficiency.",
     ],
     technologies: [
-      "JavaScript",
-      "HTML/CSS",
-      "Ms Excel",
-      "Regular Expressions",
-      "Xpath",
+      {
+        label: "Frontend",
+        items: ["JavaScript", "HTML/CSS", "Regular Expressions", "Xpath"],
+      },
+      { label: "Tools", items: ["Ms Excel"] },
     ],
   },
   {
@@ -200,11 +223,11 @@ export const experiences: Experience[] = [
       "Delivered clear quality reports to managers and stakeholders, ensuring consistent performance standards.",
     ],
     technologies: [
-      "JavaScript",
-      "HTML/CSS",
-      "Ms Excel",
-      "Regular Expressions",
-      "Xpath",
+      {
+        label: "Frontend",
+        items: ["JavaScript", "HTML/CSS", "Regular Expressions", "Xpath"],
+      },
+      { label: "Tools", items: ["Ms Excel"] },
     ],
   },
   {
@@ -224,11 +247,11 @@ export const experiences: Experience[] = [
       "Delivered consistent, high-quality results in a fast-paced environment by verifying large data volumes, eliminating duplication, and supporting overall team performance.",
     ],
     technologies: [
-      "JavaScript",
-      "HTML/CSS",
-      "Ms Excel",
-      "Regular Expressions",
-      "Xpath",
+      {
+        label: "Frontend",
+        items: ["JavaScript", "HTML/CSS", "Regular Expressions", "Xpath"],
+      },
+      { label: "Tools", items: ["Ms Excel"] },
     ],
   },
   {
@@ -248,24 +271,22 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    title: "poker planning app for remote teams and agile squads",
+    title: "Real-time Poker Planning Platform",
     description:
-      "A collaborative poker planning application designed to help remote teams and agile squads estimate project tasks effectively.",
+      "A collaborative estimation platform for distributed agile teams, enabling synchronized sprint planning sessions with low-latency real-time updates and scalable room-based architecture.",
     moreDetails:
-      "Teams create rooms, invite members, and use virtual cards to estimate tasks in real-time. The app supports various estimation techniques and provides analytics to track team performance over time.",
+      "Teams estimate tasks using configurable planning methodologies including Fibonacci and T-shirt sizing, while historical analytics provide insights into velocity trends and estimation consistency. Designed with a production-focused architecture emphasizing WebSocket synchronization, state consistency, and horizontal scalability.",
     image:
       "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769077140/portfolioImages/votedeck_qc55sh.png",
     preview: "https://votedeck.vercel.app",
     stacks: [
-      "Fastify",
-      "Socket.io",
-      "Redis",
-      "Postgres",
-      "React",
-      "Vite",
-      "TailwindCSS",
-      "TypeScript",
-    ],
+      {
+        label: "Frontend",
+        items: ["React", "Vite", "TailwindCSS", "TypeScript"],
+      },
+      { label: "Backend", items: ["Fastify", "Socket.io"] },
+      { label: "Database", items: ["Postgres", "Redis"] },
+    ] as const,
     completed: true,
     github: "https://github.com/jillo-abdullahi/votedeck",
     contract: "https://github.com/jillo-abdullahi/votedeck-api",
@@ -295,102 +316,107 @@ export const portfolioProjects: PortfolioProject[] = [
   //   demoButtonText: "use gashawk",
   //   demoButtonIcon: Fuel,
   // },
-  {
-    title: "ballot app for decentralized voting",
-    description:
-      "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
-    moreDetails:
-      "Proposers connect their wallet and open proposals. Voters connect wallets to cast on-chain votes; the UI watches contract events to show tallies and closes automatically when the voting period ends.",
-    image:
-      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
-    preview: "https://ballot-box-green.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/ballotBox",
-    contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
-    stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
-    completed: true,
-    category: "Web3",
-    demoButtonText: "use ballot",
-    demoButtonIcon: Vote,
-  },
-  {
-    title: "a link sharing app for developers",
-    description:
-      "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
-    moreDetails:
-      "Users authenticate, add platform handles and custom links, and the app generates a single public profile URL. Visitors see a responsive card grid with the option to copy links or visit external sites.",
-    image:
-      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
-    preview: "https://my-links-amber.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/my-links",
-    stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
-    completed: true,
-    category: "Full Stack",
-    demoButtonText: "use devlinks",
-    demoButtonIcon: Share2,
-  },
-  {
-    title: "memory game",
-    description:
-      "A fun memory game where players try to match pairs against each other or against the CPU.",
-    moreDetails:
-      "Players choose board size and mode (solo, vs CPU, or head-to-head). Cards flip, turns alternate, and scores update in real time until all pairs are matched, then a results modal invites a rematch.",
-    image:
-      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/memory_gbwjvc.png",
-    preview: "https://memory-game-green-nine.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/memory-game",
-    stacks: ["TypeScript", "Next.js", "TailwindCSS"],
-    completed: true,
-    category: "Frontend",
-    demoButtonIcon: Brain,
-    demoButtonText: "play memory game",
-  },
-  {
-    title: "dictionary web app solution",
-    description:
-      "A dictionary web app built with TailwindCSS and Next.js. It uses a free Dictionary API to fetch data for the searched word. It also uses the Web Speech API to play the audio file for the searched word.",
-    moreDetails:
-      "Users search a term, the app fetches multiple definitions, phonetics, and examples from the API, and provides a one-click audio pronunciation via the Web Speech API. Theme toggles and responsive layout keep it readable everywhere.",
-    image:
-      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/dictionary_prq9mn.png",
-    preview: "https://dictionary-web-app-ashy.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/dictionary-web-app",
-    stacks: ["TypeScript", "Next.js", "TailwindCSS"],
-    completed: true,
-    category: "Frontend",
-    demoButtonIcon: BookOpen,
-    demoButtonText: "use dictionary",
-  },
+  // {
+  //   title: "ballot app for decentralized voting",
+  //   description:
+  //     "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
+  //   moreDetails:
+  //     "Proposers connect their wallet and open proposals. Voters connect wallets to cast on-chain votes; the UI watches contract events to show tallies and closes automatically when the voting period ends.",
+  //   image:
+  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
+  //   preview: "https://ballot-box-green.vercel.app/",
+  //   github: "https://github.com/jillo-abdullahi/ballotBox",
+  //   contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
+  //   stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
+  //   completed: true,
+  //   category: "Web3",
+  //   demoButtonText: "use ballot",
+  //   demoButtonIcon: Vote,
+  // },
+  // {
+  //   title: "a link sharing app for developers",
+  //   description:
+  //     "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
+  //   moreDetails:
+  //     "Users authenticate, add platform handles and custom links, and the app generates a single public profile URL. Visitors see a responsive card grid with the option to copy links or visit external sites.",
+  //   image:
+  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
+  //   preview: "https://my-links-amber.vercel.app/",
+  //   github: "https://github.com/jillo-abdullahi/my-links",
+  //   stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
+  //   completed: true,
+  //   category: "Full Stack",
+  //   demoButtonText: "use devlinks",
+  //   demoButtonIcon: Share2,
+  // },
+  // {
+  //   title: "memory game",
+  //   description:
+  //     "A fun memory game where players try to match pairs against each other or against the CPU.",
+  //   moreDetails:
+  //     "Players choose board size and mode (solo, vs CPU, or head-to-head). Cards flip, turns alternate, and scores update in real time until all pairs are matched, then a results modal invites a rematch.",
+  //   image:
+  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075457/portfolioImages/memory_gbwjvc.png",
+  //   preview: "https://memory-game-green-nine.vercel.app/",
+  //   github: "https://github.com/jillo-abdullahi/memory-game",
+  //   stacks: ["TypeScript", "Next.js", "TailwindCSS"],
+  //   completed: true,
+  //   category: "Frontend",
+  //   demoButtonIcon: Brain,
+  //   demoButtonText: "play memory game",
+  // },
+  // {
+  //   title: "dictionary web app solution",
+  //   description:
+  //     "A dictionary web app built with TailwindCSS and Next.js. It uses a free Dictionary API to fetch data for the searched word. It also uses the Web Speech API to play the audio file for the searched word.",
+  //   moreDetails:
+  //     "Users search a term, the app fetches multiple definitions, phonetics, and examples from the API, and provides a one-click audio pronunciation via the Web Speech API. Theme toggles and responsive layout keep it readable everywhere.",
+  //   image:
+  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/dictionary_prq9mn.png",
+  //   preview: "https://dictionary-web-app-ashy.vercel.app/",
+  //   github: "https://github.com/jillo-abdullahi/dictionary-web-app",
+  //   stacks: ["TypeScript", "Next.js", "TailwindCSS"],
+  //   completed: true,
+  //   category: "Frontend",
+  //   demoButtonIcon: BookOpen,
+  //   demoButtonText: "use dictionary",
+  // },
 ];
 
 export const skills: Skills = {
   backend: [
-    { name: "Express.js/Fastify", level: "90%" },
-    { name: "Apollo GraphQL", level: "80%" },
-    { name: "Nest.js", level: "70%" },
-    { name: "Django", level: "60%" },
-    { name: "Flask", level: "50%" },
+    { name: "Express", level: "99%" },
+    { name: "NestJS", level: "90%" },
+    { name: "GraphQL", level: "90%" },
+    { name: "Fastify", level: "85%" },
   ],
   frontend: [
     { name: "Vite/Next.js", level: "90%" },
-    { name: "Tanstack Query/Router", level: "90%" },
+    { name: "Tanstack Query", level: "90%" },
     { name: "Redux/Zustand", level: "90%" },
-    { name: "Tailwind/ChakraUI", level: "90%" },
-    { name: "Vue.js", level: "80%" },
+    { name: "Tailwind CSS", level: "90%" },
+    { name: "Styled Components", level: "80%" },
   ],
   "databases/devops": [
-    { name: "Prisma ORM", level: "80%" },
+    { name: "Prisma ORM", level: "93%" },
     { name: "Google Firebase", level: "80%" },
-    { name: "Supabase", level: "75%" },
-    { name: "Docker", level: "70%" },
-    { name: "Github Actions", level: "60%" },
+    { name: "Docker", level: "92%" },
+    { name: "Github Actions", level: "89%" },
+    { name: "Vercel", level: "91%" },
   ],
-  web3: [
-    { name: "Wagmi", level: "85%" },
-    { name: "ethers.js", level: "85%" },
-    { name: "Viem", level: "85%" },
-    { name: "WalletConnect", level: "85%" },
-    { name: "Foundry", level: "70%" },
+  "testing & QA": [
+    { name: "Vitest", level: "95%" },
+    { name: "Jest", level: "89%" },
+    { name: "React Testing Library", level: "93%" },
+    { name: "Playwright", level: "92%" },
   ],
+  // web3: [
+  //   { name: "Wagmi", level: "85%" },
+  //   { name: "ethers.js", level: "85%" },
+  //   { name: "Viem", level: "85%" },
+  //   { name: "WalletConnect", level: "85%" },
+  //   { name: "Foundry", level: "70%" },
+  // ],
 };
 
 export const testimonials: Testimonial[] = [
