@@ -78,12 +78,12 @@ const HeroSection: FC = () => {
                       full-stack systems.
                     </p>
                     <p className="pb-2">
-                      Delivered{" "}
+                      Shipped{" "}
                       <span className="text-[var(--color-primary)]/90">
                         100+
                       </span>{" "}
-                      production-facing features across consumer platforms,
-                      payment experiences, and decentralized applications with a
+                      production features across consumer,
+                      payments, and web3 platforms with a
                       strong focus on{" "}
                       <span className="text-[var(--color-primary)]/90">
                         performance
