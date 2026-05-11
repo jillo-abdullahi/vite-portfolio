@@ -1,143 +1,147 @@
-"use client";
-
-import { cn } from "@/lib/utils";
-import type { HTMLMotionProps, Variants } from "motion/react";
-import { motion, useAnimation, useReducedMotion } from "motion/react";
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
+import { cn } from "@/lib/utils";
+
 export interface GithubIconHandle {
-	startAnimation: () => void;
-	stopAnimation: () => void;
+  startAnimation: () => void;
+  stopAnimation: () => void;
 }
 
-interface GithubIconProps extends HTMLMotionProps<"div"> {
-	size?: number;
-	duration?: number;
+interface GithubIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
 }
+
+const BODY_VARIANTS: Variants = {
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  animate: {
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    scale: [0.9, 1],
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
+
+const TAIL_VARIANTS: Variants = {
+  normal: {
+    pathLength: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  draw: {
+    pathLength: [0, 1],
+    rotate: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  wag: {
+    pathLength: 1,
+    rotate: [0, -15, 15, -10, 10, -5, 5],
+    transition: {
+      duration: 2.5,
+      ease: "easeInOut",
+      repeat: Number.POSITIVE_INFINITY,
+    },
+  },
+};
 
 const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
-	(
-		{
-			onMouseEnter,
-			onMouseLeave,
-			className,
-			size = 28,
-			duration = 1,
-			...props
-		},
-		ref,
-	) => {
-		const controls = useAnimation();
-		const reduced = useReducedMotion();
-		const isControlled = useRef(false);
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const bodyControls = useAnimation();
+    const tailControls = useAnimation();
+    const isControlledRef = useRef(false);
 
-		useImperativeHandle(ref, () => {
-			isControlled.current = true;
-			return {
-				startAnimation: () =>
-					reduced ? controls.start("normal") : controls.start("animate"),
-				stopAnimation: () => controls.start("normal"),
-			};
-		});
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
 
-		const handleEnter = useCallback(
-			(e?: React.MouseEvent<HTMLDivElement>) => {
-				if (reduced) return;
-				if (!isControlled.current) controls.start("animate");
-				else onMouseEnter?.(e as any);
-			},
-			[controls, reduced, onMouseEnter],
-		);
+      return {
+        startAnimation: async () => {
+          bodyControls.start("animate");
+          await tailControls.start("draw");
+          tailControls.start("wag");
+        },
+        stopAnimation: () => {
+          bodyControls.start("normal");
+          tailControls.start("normal");
+        },
+      };
+    });
 
-		const handleLeave = useCallback(
-			(e: React.MouseEvent<HTMLDivElement>) => {
-				if (!isControlled.current) {
-					controls.start("normal");
-				} else {
-					onMouseLeave?.(e as any);
-				}
-			},
-			[controls, onMouseLeave],
-		);
+    const handleMouseEnter = useCallback(
+      async (e: React.MouseEvent<HTMLDivElement>) => {
+        if (isControlledRef.current) {
+          onMouseEnter?.(e);
+        } else {
+          bodyControls.start("animate");
+          await tailControls.start("draw");
+          tailControls.start("wag");
+        }
+      },
+      [bodyControls, onMouseEnter, tailControls],
+    );
 
-		const bodyVariants: Variants = {
-			normal: {
-				pathLength: 1,
-				pathOffset: 0,
-				opacity: 1,
-				transition: { duration: 0.3 * duration },
-			},
-			animate: {
-				pathLength: [1, 0.6, 1],
-				pathOffset: [0, 0.4, 0],
-				opacity: [1, 0.7, 1],
-				transition: { duration: 1 * duration },
-			},
-		};
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (isControlledRef.current) {
+          onMouseLeave?.(e);
+        } else {
+          bodyControls.start("normal");
+          tailControls.start("normal");
+        }
+      },
+      [bodyControls, tailControls, onMouseLeave],
+    );
 
-		const handWave: Variants = {
-			initial: { rotate: 0, originX: 0.9, originY: 0.5 },
-			animate: {
-				rotate: [0, 20, -15, 0],
-				originX: 0.9,
-				originY: 0.5,
-				transition: { duration: 1 * duration, repeat: Infinity },
-			},
-		};
-
-		return (
-			<motion.div
-				className={cn("inline-flex items-center justify-center", className)}
-				onMouseEnter={handleEnter}
-				onMouseLeave={handleLeave}
-				{...props}
-			>
-				<motion.svg
-					xmlns="http://www.w3.org/2000/svg"
-					width={size}
-					height={size}
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					variants={{
-						normal: { scale: 1, transition: { duration: 0.3 * duration } },
-						animate: {
-							scale: [1, 1.05, 1],
-							transition: { duration: 1 * duration },
-						},
-					}}
-					animate={controls}
-					initial="normal"
-				>
-					<motion.path
-						d="M15 22v-4a4.8 4.8 0 0 0-1-3.5
-               c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5
-               .28-1.15.28-2.35 0-3.5
-               0 0-1 0-3 1.5
-               -2.64-.5-5.36-.5-8 0
-               C6 2 5 2 5 2
-               c-.3 1.15-.3 2.35 0 3.5
-               A5.403 5.403 0 0 0 4 9
-               c0 3.5 3 5.5 6 5.5
-               -.39.49-.68 1.05-.85 1.65
-               -.17.6-.22 1.23-.15 1.85v4"
-						variants={bodyVariants}
-					/>
-
-					<motion.path
-						d="M9 18c-4.51 2-5-2-7-2"
-						variants={handWave}
-						initial="initial"
-						animate="animate"
-					/>
-				</motion.svg>
-			</motion.div>
-		);
-	},
+    return (
+      <div
+        className={cn(className)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
+      >
+        <svg
+          fill="none"
+          height={size}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <motion.path
+            animate={bodyControls}
+            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            initial="normal"
+            variants={BODY_VARIANTS}
+          />
+          <motion.path
+            animate={tailControls}
+            d="M9 18c-4.51 2-5-2-7-2"
+            initial="normal"
+            variants={TAIL_VARIANTS}
+          />
+        </svg>
+      </div>
+    );
+  },
 );
 
 GithubIcon.displayName = "GithubIcon";
+
 export { GithubIcon };

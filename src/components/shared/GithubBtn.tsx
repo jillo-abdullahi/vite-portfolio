@@ -14,7 +14,7 @@ export const GithubBtn: FC = () => {
       className="flex items-center justify-center w-11 h-11 rounded-xl text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-200 border border-[var(--color-primary)]/40 bg-gray-200 dark:bg-gray-700/10 hover:bg-gray-200 dark:hover:bg-gray-700/20"
       aria-label="GitHub Profile"
     >
-      <GithubIcon ref={githubRef} className="w-5 h-5" />
+      <GithubIcon ref={githubRef} size={20}/>
     </a>
   );
 };

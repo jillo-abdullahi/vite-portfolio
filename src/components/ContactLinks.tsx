@@ -16,7 +16,11 @@ import { MailIcon, type MailIconHandle } from "./ui/MailIcon";
 import { SlideMeIn } from "./shared/SlideMeIn";
 
 interface SocialLink {
-  icon: typeof MailIcon | typeof LinkedinIcon | typeof SendIcon | typeof TwitterIcon;
+  icon:
+    | typeof MailIcon
+    | typeof LinkedinIcon
+    | typeof SendIcon
+    | typeof TwitterIcon;
   href: string;
   name?: string;
   iconRef?:
@@ -48,7 +52,6 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
   const twitterRef = useRef<TwitterIconHandle | null>(null);
   const githubRef = useRef<GithubIconHandle | null>(null);
   const mailRef = useRef<MailIconHandle | null>(null);
-  const sendRef = useRef<SendIconHandle | null>(null);
   const socialLinks: FooterLink[] = [
     { href: github, name: "GitHub", ref: githubRef },
     { href: linkedIn, name: "LinkedIn", ref: linkedInRef },
@@ -63,22 +66,16 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
       iconRef: linkedInRef,
     },
     {
+      icon: GithubIcon,
+      href: github,
+      name: "GitHub",
+      iconRef: githubRef,
+    },
+    {
       icon: MailIcon,
       href: `mailto:${externalLinks.email}`,
       name: "Email",
       iconRef: mailRef,
-    },
-    {
-      icon: SendIcon,
-      href: externalLinks.telegram,
-      name: "Telegram",
-      iconRef: sendRef,
-    },
-    {
-      icon: TwitterIcon,
-      href: twitter,
-      name: "Twitter(X)",
-      iconRef: twitterRef,
     },
   ];
 
@@ -296,7 +293,8 @@ const ContactLinks: FC<ContactLinksProps> = ({ isContactPage }) => {
             {name === "GitHub" && (
               <GithubIcon
                 ref={ref}
-                className="w-3 h-3 text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                size={12}
+                className="text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] transition-colors duration-200"
               />
             )}
             <span className="text-gray-600 dark:text-gray-400 group-hover:text-[var(--color-primary)] font-medium text-xs transition-all duration-200">
