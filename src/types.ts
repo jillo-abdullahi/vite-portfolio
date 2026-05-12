@@ -149,8 +149,8 @@ export interface PortfolioProject {
   stacks: TechStack[] | StackCategory[];
   /** Whether the project is completed */
   completed: boolean;
-  /** Optional link to smart contracts code if applicable */
-  contract?: string;
+  /** Optional link to backend code if applicable */
+  backend?: string;
   /** Project category for filtering */
   category?: ProjectCategory;
   /** Optional custom text for the demo button */

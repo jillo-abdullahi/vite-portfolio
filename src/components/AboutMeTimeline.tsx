@@ -196,7 +196,7 @@ export const AboutMeTimeline: FC = () => {
                   {/* Technologies */}
                   {technologies.length > 0 && (
                     <div className="pt-2">
-                      <TechStackCard stacks={technologies} />
+                      <TechStackCard stacks={technologies} cols={16}/>
                     </div>
                   )}
                 </div>

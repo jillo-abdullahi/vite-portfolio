@@ -1,6 +1,6 @@
 import type { PortfolioProject } from "@/types";
 
-const TechStackCard = ({ stacks }: { stacks: PortfolioProject["stacks"] }) => {
+const TechStackCard = ({ stacks, cols }: { stacks: PortfolioProject["stacks"], cols?: number }) => {
   if (!stacks || stacks.length === 0) return null;
   return (
     <div className="flex-1 border-t border-[var(--color-primary)]/10 pt-4 w-full">
@@ -18,17 +18,17 @@ const TechStackCard = ({ stacks }: { stacks: PortfolioProject["stacks"] }) => {
 
             if (isOrganized) {
               return (
-                <div className="space-y-4 max-w-3xl">
+                <div className="space-y-4 max-w-2xl">
                   {(stacks as Array<{ label: string; items: string[] }>).map(
                     (section) => (
                       <div
                         key={section.label}
-                        className="md:grid md:grid-cols-12 md:gap-2"
+                        className={`md:grid md:grid-cols-${cols || 12} md:gap-2`}
                       >
                         <p className="text-sm lowercase font-semibold text-gray-500 dark:text-gray-400 tracking-wider mb-1.5 pl-1 col-span-2">
                           {section.label}
                         </p>
-                        <div className="flex flex-wrap gap-2 col-span-10">
+                        <div className={`flex flex-wrap gap-2 col-span-${cols ? cols - 2 : 10}`}>
                           {section.items.map((tech) => (
                             <span
                               key={tech}

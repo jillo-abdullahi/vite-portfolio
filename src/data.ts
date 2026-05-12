@@ -289,9 +289,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ] as const,
     completed: true,
     github: "https://github.com/jillo-abdullahi/votedeck",
-    contract: "https://github.com/jillo-abdullahi/votedeck-api",
+    backend: "https://github.com/jillo-abdullahi/votedeck-api",
     category: "Full Stack",
-    demoButtonText: "start planning",
+    demoButtonText: "view demo",
     demoButtonIcon: Spade,
   },
   // {
