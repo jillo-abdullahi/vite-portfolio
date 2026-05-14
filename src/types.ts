@@ -191,6 +191,7 @@ export type SkillName =
   | "Docker"
   | "Github Actions"
   | "Vercel"
+  | "Azure DevOps"
   // Web3
   | "Wagmi"
   | "ethers.js"

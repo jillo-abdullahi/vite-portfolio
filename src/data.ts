@@ -400,9 +400,9 @@ export const skills: Skills = {
   "databases/devops": [
     { name: "Prisma ORM", level: "93%" },
     { name: "Google Firebase", level: "80%" },
-    { name: "Docker", level: "92%" },
-    { name: "Github Actions", level: "89%" },
-    { name: "Vercel", level: "91%" },
+    { name: "Docker", level: "94%" },
+    { name: "Azure DevOps", level: "92%" },
+    { name: "Vercel", level: "79%" },
   ],
   "testing & QA": [
     { name: "Vitest", level: "95%" },
