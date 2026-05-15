@@ -39,11 +39,11 @@ export const experiences: Experience[] = [
     location: "Hybrid",
     startDate: "Oct 2025",
     description: [
-      "Designed and developed a reusable internal NPM-based design system package to standardize UI components and promote consistency across multiple engineering teams.",
-      "Delivered 20+ production-grade frontend features focused on improving large-scale consumer data collection workflows and platform usability.",
-      "Diagnosed and resolved 15+ production issues across critical user-facing flows, improving application stability and overall user experience.",
-      "Partnered closely with product and design teams to refine and improve 5+ user journeys with a focus on accessibility, usability, and scalable frontend architecture.",
-      "Contributed to frontend hiring processes by preparing technical job descriptions and designing practical code assessment exercises for engineering candidates.",
+      "Architected and shipped 20+ production-grade frontend features focused on consumer data collection, platform scalability, and long-term maintainability.",
+      "Resolved 15+ high-impact production issues across critical application workflows, improving platform stability, performance, and user experience.",
+      "Designed and maintained an internal NPM-based design system adopted across teams to standardize UI architecture, accelerate development, and improve consistency.",
+      "Partnered closely with product and design stakeholders to refine user flows, improve accessibility compliance, and drive UX-focused frontend decisions.",
+      "Contributed to frontend hiring initiatives by defining technical role requirements and developing engineering assessment exercises for candidate evaluation.",
     ],
     technologies: [
       {
@@ -74,10 +74,10 @@ export const experiences: Experience[] = [
     startDate: "Apr 2024",
     endDate: "Aug 2025",
     description: [
-      "Rebuilt and redesigned the core web application (React, TypeScript), improving reliability and reducing load times for a smoother user experience.",
-      "Implemented a secure authentication system and optimized REST APIs, cutting latency and eliminating recurring timeout errors.",
-      "Developed multi-chain interoperability and a quota plan system, enabling seamless support across multiple EVM-compatible networks.",
-      "Enhanced the Framer-powered marketing site with a streamlined gas savings checker, increasing developer engagement and improving product visibility.",
+      "Led the rebuild and redesign of the core web application using React and TypeScript, improving platform reliability, reducing load times, and delivering a more scalable user experience.",
+      "Implemented secure authentication flows and optimized REST API integrations, reducing latency and resolving recurring timeout and stability issues.",
+      "Engineered multi-chain interoperability and a quota-based plan system, enabling seamless support for multiple EVM-compatible networks and scalable account management.",
+      "Enhanced the Framer-powered marketing platform by streamlining the gas savings checker experience, improving developer engagement, product discoverability, and conversion flow efficiency.",
     ],
     technologies: [
       {
