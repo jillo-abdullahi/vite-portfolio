@@ -41,7 +41,7 @@ const HeroSection: FC = () => {
                 useFade
               >
                 <span className="font-semibold pt-1 text-xl sm:text-2xl text-gray-800 dark:text-gray-300 ">
-                  Senior Full Stack Engineer
+                  Senior Frontend-focused Full Stack Engineer
                 </span>
               </SlideMeIn>
               <SlideMeIn delay={0.3} className="w-full">
@@ -75,7 +75,7 @@ const HeroSection: FC = () => {
                       <span className="text-[var(--color-primary)]/90">
                         production-grade
                       </span>{" "}
-                      full-stack systems.
+                      full-stack systems across enterprise SaaS and blockchain products.
                     </p>
                     <p className="pb-2">
                       Shipped{" "}

@@ -69,7 +69,6 @@ export type TechStack =
   | "Fastify"
   | "Azure DevOps";
 
-
 /**
  * External social and professional links
  */
@@ -157,6 +156,8 @@ export interface PortfolioProject {
   demoButtonText?: string;
   /** Optional custom icon for the demo button */
   demoButtonIcon?: React.ElementType;
+  // Optional contract address for Web3 projectsP
+  contract?: string;
 }
 
 /**

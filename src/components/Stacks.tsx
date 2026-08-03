@@ -4,7 +4,7 @@ import {
   ServerStackIcon,
   CircleStackIcon,
 } from "@heroicons/react/24/outline";
-import { GrTest } from "react-icons/gr";
+import { SiSolana } from "react-icons/si";
 
 import { skills } from "../data";
 import { StackCard } from "./shared/StackCard";
@@ -31,16 +31,21 @@ const stackItems: StackItemProps[] = [
     skills: skills.backend,
   },
   {
+    icon: <SiSolana className="text-[var(--color-primary)] w-4 h-4" />,
+    title: "web3",
+    skills: skills.web3 || [],
+  },
+  {
     icon: <CircleStackIcon className="text-[var(--color-primary)] w-5 h-5" />,
     title: "cloud & infra",
     skills: skills["databases/devops"] || [],
   },
 
-  {
-    icon: <GrTest className="text-[var(--color-primary)] w-4 h-4" />,
-    title: "testing & QA",
-    skills: skills["testing & QA"] || [],
-  },
+  // {
+  //   icon: <GrTest className="text-[var(--color-primary)] w-4 h-4" />,
+  //   title: "testing & QA",
+  //   skills: skills["testing & QA"] || [],
+  // },
 ];
 
 const Stacks: FC = () => {

@@ -5,7 +5,7 @@ import type {
   Skills,
   Testimonial,
 } from "./types";
-import { Spade } from "lucide-react";
+import { Spade, Vote } from "lucide-react";
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
@@ -271,6 +271,29 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    title: "ballot app for decentralized voting",
+    description:
+      "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
+    moreDetails:
+      "Proposers connect their wallet and open proposals. Voters connect wallets to cast on-chain votes; the UI watches contract events to show tallies and closes automatically when the voting period ends.",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
+    preview: "https://ballot-box-green.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/ballotBox",
+    backend: "https://github.com/jillo-abdullahi/ballotBox-contracts",
+    stacks: [
+      {
+        label: "Frontend",
+        items: ["React", "Vite", "TailwindCSS", "TypeScript", "Wagmi"],
+      },
+      { label: "Backend", items: ["Solidity"] },
+    ] as const,
+    completed: true,
+    category: "Web3",
+    demoButtonText: "use ballot",
+    demoButtonIcon: Vote,
+  },
+  {
     title: "Real-time Poker Planning Platform",
     description:
       "A collaborative estimation platform for distributed agile teams, enabling synchronized sprint planning sessions with low-latency real-time updates and scalable room-based architecture.",
@@ -316,23 +339,7 @@ export const portfolioProjects: PortfolioProject[] = [
   //   demoButtonText: "use gashawk",
   //   demoButtonIcon: Fuel,
   // },
-  // {
-  //   title: "ballot app for decentralized voting",
-  //   description:
-  //     "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
-  //   moreDetails:
-  //     "Proposers connect their wallet and open proposals. Voters connect wallets to cast on-chain votes; the UI watches contract events to show tallies and closes automatically when the voting period ends.",
-  //   image:
-  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/ballot_ynqhgh.png",
-  //   preview: "https://ballot-box-green.vercel.app/",
-  //   github: "https://github.com/jillo-abdullahi/ballotBox",
-  //   contract: "https://github.com/jillo-abdullahi/ballotBox-contracts",
-  //   stacks: ["React", "Vite", "Solidity", "TailwindCSS", "TypeScript", "Wagmi"],
-  //   completed: true,
-  //   category: "Web3",
-  //   demoButtonText: "use ballot",
-  //   demoButtonIcon: Vote,
-  // },
+
   // {
   //   title: "a link sharing app for developers",
   //   description:
@@ -404,19 +411,19 @@ export const skills: Skills = {
     { name: "Azure DevOps", level: "92%" },
     { name: "Vercel", level: "79%" },
   ],
-  "testing & QA": [
-    { name: "Vitest", level: "95%" },
-    { name: "Jest", level: "89%" },
-    { name: "React Testing Library", level: "93%" },
-    { name: "Playwright", level: "92%" },
-  ],
-  // web3: [
-  //   { name: "Wagmi", level: "85%" },
-  //   { name: "ethers.js", level: "85%" },
-  //   { name: "Viem", level: "85%" },
-  //   { name: "WalletConnect", level: "85%" },
-  //   { name: "Foundry", level: "70%" },
+  // "testing & QA": [
+  //   { name: "Vitest", level: "95%" },
+  //   { name: "Jest", level: "89%" },
+  //   { name: "React Testing Library", level: "93%" },
+  //   { name: "Playwright", level: "92%" },
   // ],
+  web3: [
+    { name: "Wagmi", level: "93%" },
+    { name: "ethers.js", level: "95%" },
+    { name: "Viem", level: "90%" },
+    { name: "WalletConnect", level: "98%" },
+    { name: "Foundry", level: "70%" },
+  ],
 };
 
 export const testimonials: Testimonial[] = [
