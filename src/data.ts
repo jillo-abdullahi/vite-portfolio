@@ -271,7 +271,7 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    title: "ballot app for decentralized voting",
+    title: "Ballot app for decentralized voting",
     description:
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
     moreDetails:
