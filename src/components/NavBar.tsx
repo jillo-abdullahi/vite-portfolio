@@ -27,7 +27,7 @@ const NavBar: FC = () => {
 
   const navigation: NavigationItem[] = [
     { name: "projects", href: "/projects", isActive: pathname === "/projects" },
-    { name: "resumé", href: "/resume", isActive: pathname === "/resume" },
+    // { name: "resumé", href: "/resume", isActive: pathname === "/resume" },
     { name: "contact", href: "/contact", isActive: pathname === "/contact" },
   ];
   const isHome = pathname === "/";
