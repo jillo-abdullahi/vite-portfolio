@@ -5,7 +5,7 @@ import type {
   Skills,
   Testimonial,
 } from "./types";
-import { Spade, Vote } from "lucide-react";
+import { Share2, Spade, Vote } from "lucide-react";
 
 export const externalLinks: ExternalLinks = {
   github: "https://github.com/jillo-abdullahi",
@@ -271,6 +271,29 @@ export const experiences: Experience[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    title: "A link sharing app for developers",
+    description:
+      "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
+    moreDetails:
+      "Users authenticate, add platform handles and custom links, and the app generates a single public profile URL. Visitors see a responsive card grid with the option to copy links or visit external sites.",
+    image:
+      "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
+    preview: "https://my-links-amber.vercel.app/",
+    github: "https://github.com/jillo-abdullahi/my-links",
+    stacks: [
+      {
+        label: "Frontend",
+        items: ["Vue.js", "TailwindCSS", "TypeScript"],
+      },
+      { label: "Backend", items: ["Nest.js"] },
+      { label: "Database", items: ["Postgres"] },
+    ] as const,
+    completed: true,
+    category: "Full Stack",
+    demoButtonText: "use devlinks",
+    demoButtonIcon: Share2,
+  },
+  {
     title: "Ballot app for decentralized voting",
     description:
       "A modern, decentralized voting platform built on Ethereum that enables communities to create and vote on proposals.",
@@ -341,22 +364,6 @@ export const portfolioProjects: PortfolioProject[] = [
   // },
 
   // {
-  //   title: "a link sharing app for developers",
-  //   description:
-  //     "A link-sharing app for developers. You can now consolidate and share your links to different platforms with just one URL.",
-  //   moreDetails:
-  //     "Users authenticate, add platform handles and custom links, and the app generates a single public profile URL. Visitors see a responsive card grid with the option to copy links or visit external sites.",
-  //   image:
-  //     "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
-  //   preview: "https://my-links-amber.vercel.app/",
-  //   github: "https://github.com/jillo-abdullahi/my-links",
-  //   stacks: ["Nest.js", "Vue.js", "TailwindCSS", "TypeScript", "Postgres"],
-  //   completed: true,
-  //   category: "Full Stack",
-  //   demoButtonText: "use devlinks",
-  //   demoButtonIcon: Share2,
-  // },
-  // {
   //   title: "memory game",
   //   description:
   //     "A fun memory game where players try to match pairs against each other or against the CPU.",
@@ -398,11 +405,11 @@ export const skills: Skills = {
     { name: "Fastify", level: "85%" },
   ],
   frontend: [
-    { name: "Vite/Next.js", level: "90%" },
+    { name: "React/Next.js", level: "90%" },
     { name: "Tanstack Query", level: "90%" },
     { name: "Redux/Zustand", level: "90%" },
     { name: "Tailwind CSS", level: "90%" },
-    { name: "Styled Components", level: "80%" },
+    { name: "Vue.js", level: "80%" },
   ],
   "databases/devops": [
     { name: "Prisma ORM", level: "93%" },
