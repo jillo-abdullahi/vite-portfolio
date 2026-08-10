@@ -279,7 +279,8 @@ export const portfolioProjects: PortfolioProject[] = [
     image:
       "https://res.cloudinary.com/dsuhsqcb2/image/upload/v1769075456/portfolioImages/devlinks_nze4ir.png",
     preview: "https://my-links-amber.vercel.app/",
-    github: "https://github.com/jillo-abdullahi/my-links",
+    github: "https://github.com/jillo-abdullahi/my-links/tree/main/client",
+    backend: "https://github.com/jillo-abdullahi/my-links/tree/main/server",
     stacks: [
       {
         label: "Frontend",
