@@ -16,7 +16,7 @@ export const externalLinks: ExternalLinks = {
   repositories: "https://github.com/jillo-abdullahi?tab=repositories",
   instagram: "https://www.instagram.com/jillo_woche/",
   calLink: "https://calendar.app.google/UjK3FBKSAaX6jXvK6",
-  email: "jayloabdullahi@gmail.com",
+  email: "jeywoche@gmail.com",
   telegram: "https://t.me/shrewdTurtle",
   sneakerHeadImage:
     "https://res.cloudinary.com/dsuhsqcb2/image/upload/f_auto,q_auto,w_512/v1763295450/sneakerhead985NoBg_wzya7p.webp",
